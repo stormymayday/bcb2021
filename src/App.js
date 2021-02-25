@@ -19,6 +19,8 @@ import Navigation from './components/Navigation';
 
 // Sections
 import Hero from './components/Hero';
+import Farmers from './components/Farmers';
+import FarmerList from './components/FarmerList/FarmerList';
 import Farming from './components/Farming';
 import ProcessingExport from './components/ProcessingExport';
 import Journey from './components/Journey';
@@ -27,6 +29,96 @@ import EconomicsAndTransparency from './components/EconomicsAndTransparency';
 
 const App = () => {
 
+  // Dev Test getNode
+  const [devTestgetNode, setDevTestgetNode] = useState('fetching data from BEXT');
+
+  // Farmers
+  const [farmers, setFarmers] = useState([
+    {
+      farmerName: 'Gloria',
+      farmerPicture: 'https://robohash.org/1?set=set4',
+      harvestGeneralNodeID: 'a4c8bf16-7c5b-44d9-a25b-2635bc9d803e',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Luis',
+      farmerPicture: 'https://robohash.org/2?set=set4',
+      harvestGeneralNodeID: '5b10dd8f-2d9b-4595-98ab-4896ece46466',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Atanacio',
+      farmerPicture: 'https://robohash.org/3?set=set4',
+      harvestGeneralNodeID: '174a5f0c-0a98-46b9-b1af-c3fee2e78470',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'David',
+      farmerPicture: 'https://robohash.org/4?set=set4',
+      harvestGeneralNodeID: 'f5b260cf-afd8-4525-9533-4562a8741f0a',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Jose Antonio Nolasco',
+      farmerPicture: 'https://robohash.org/5?set=set4',
+      harvestGeneralNodeID: '8c8a341d-112d-43a0-bc28-8d7b5eceb697',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Adan Hernandez',
+      farmerPicture: 'https://robohash.org/6?set=set4',
+      harvestGeneralNodeID: 'd7a3d524-d8fa-4f0d-b695-e5c7dfbc09a2',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Mirian Vasquez',
+      farmerPicture: 'https://robohash.org/7?set=set4',
+      harvestGeneralNodeID: '1dd07753-5a46-4151-a720-badaa9462153',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Fidelina',
+      farmerPicture: 'https://robohash.org/8?set=set4',
+      harvestGeneralNodeID: '77073017-c640-4822-ad6d-7e6fd51da0f8',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Claudia & Juan',
+      farmerPicture: 'https://robohash.org/9?set=set4',
+      harvestGeneralNodeID: '702079e1-62c8-4087-bc82-544acf15d141',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Rigoberto',
+      farmerPicture: 'https://robohash.org/10?set=set4',
+      harvestGeneralNodeID: 'c0cd6532-86dd-4693-843a-5825cabb4e8e',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Maria Adela',
+      farmerPicture: 'https://robohash.org/11?set=set4',
+      harvestGeneralNodeID: '9efb04d1-76ab-4dae-94dd-29f0b0105fcc',
+      processingNodeID: '',
+      intakeNodeID: ''
+    },
+    {
+      farmerName: 'Gumercindo',
+      farmerPicture: 'https://robohash.org/12?set=set4',
+      harvestGeneralNodeID: '6e374ca1-ea5f-4cc4-863e-ece4143cad48',
+      processingNodeID: '',
+      intakeNodeID: ''
+    }
+  ]);
 
   // Lot History State (for Farming & Processing Sections)
   const [lotHistory, setLotHistory] = useState('fetching data from BEXT');
@@ -76,270 +168,321 @@ const App = () => {
 
   useEffect(() => {
 
-    // Render test
-    console.log('Hello From App.js');
+    // // Render test
+    // console.log('Hello From App.js');
 
-    // Google Analytics initiazation
-    ReactGA.initialize(`${process.env.REACT_APP_GA_ID}`);
+    // // Google Analytics initiazation
+    // ReactGA.initialize(`${process.env.REACT_APP_GA_ID}`);
 
-    // Page View Report
-    ReactGA.pageview('/');
+    // // Page View Report
+    // ReactGA.pageview('/');
 
-    // Lot History Call
-    fetch(`${process.env.REACT_APP_GET_LOT_HISTORY}/a58fc3bf-94fd-4f0f-bd37-0947d8ba4146`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => {
-      return res.json();
-    })
-      .then(json => {
-        setLotHistory(json);
-      });
+    // // Dev Test getNode
+    // fetch(`https://bext360api.azure-api.net/retaildev/v1/getnode/a4c8bf16-7c5b-44d9-a25b-2635bc9d803e`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': ``
+    //   }
+    // }).then(res => {
+    //   return res.json();
+    // })
+    //   .then(json => {
+    //     setDevTestgetNode(json.nodeId);
+    //   });
 
-    // Farming Section Call
-    fetch(`${process.env.REACT_APP_GET_LOT}/5c955a2e-90ef-6bf4-fa8a-1813ee5d4687`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+    // // Getting all the nodes
+    // fetch(`https://bext360api.azure-api.net/retaildev/v1/getnodes`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': ``
+    //   }
+    // }).then(res => {
+    //   return res.json();
+    // })
+    //   .then(json => {
+    //     setFarmers([
+    //       ...json,
+    //       {
+    //         id: json.nodeId,
+    //       }
+    //     ]);
+    //     // setFarmers(json => [...json]);
+    //     // setResult(result => [...result, response]);
+    //   });
 
-        setPickedBy(json.customData['FarmerName.Measure'].value);
-        setPickedCherriesWeight(json.customData['TotalValue.Measure'].value + ' lbs');
-        setDatePicked(json.customData['HarvestDate.MeasureTime'].dateTimeValue);
-        setVariety(json.customData['Varietal.Measure'].value);
-        setPickerImage(json.customData['LotFarmerProductImage.Measure'].value);
+    // // Lot History Call
+    // fetch(`${process.env.REACT_APP_GET_LOT_HISTORY}/a58fc3bf-94fd-4f0f-bd37-0947d8ba4146`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => {
+    //   return res.json();
+    // })
+    //   .then(json => {
+    //     setLotHistory(json);
+    //   });
 
-      });
-    // Farming Section - Video Call
-    fetch(`${process.env.REACT_APP_GET_VIDEO}/df5e4e96-5133-4c85-ad5f-032d65182723`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
-        setDePulpingVideo('data:video/mp4;base64,' + json);
-      });
-    // Farming Calls End
+    // // Farming Section Call
+    // fetch(`${process.env.REACT_APP_GET_LOT}/5c955a2e-90ef-6bf4-fa8a-1813ee5d4687`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
 
-    // Processing & Export Calls
-    // Catracha Intake Parchment - Image
-    fetch(`${process.env.REACT_APP_GET_IMAGE}/2d79f311-eb5f-4a4a-96b8-ec9adfca1617`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
-        setSatrachaIntakeImage('data:image/jpg;base64,' + json);
-      });
-    // Milling Calls - date, miller, weight
-    fetch(`${process.env.REACT_APP_GET_LOT}/b0c1846f-8cef-410e-a2ec-f6d9f3843e9f`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+    //     setPickedBy(json.customData['FarmerName.Measure'].value);
+    //     setPickedCherriesWeight(json.customData['TotalValue.Measure'].value + ' lbs');
+    //     setDatePicked(json.customData['HarvestDate.MeasureTime'].dateTimeValue);
+    //     setVariety(json.customData['Varietal.Measure'].value);
+    //     setPickerImage(json.customData['LotFarmerProductImage.Measure'].value);
 
-        setMilledOnDate(json.customData['MillingDate.MeasureTime'].dateTimeValue.split('T')[0]);
-        setMiller(json.customData['FarmerName.Measure'].value);
-        setLotCurrentWeight(json.currentWeight + ' lbs');
+    //   });
+    // // Farming Section - Video Call
+    // fetch(`${process.env.REACT_APP_GET_VIDEO}/df5e4e96-5133-4c85-ad5f-032d65182723`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
+    //     setDePulpingVideo('data:video/mp4;base64,' + json);
+    //   });
+    // // Farming Calls End
 
-      });
-    // Milling Location
-    fetch(`${process.env.REACT_APP_GET_NODE}/8a14226b-873b-4893-bedc-a9699dc28472`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json()).then(json => {
+    // // Processing & Export Calls
+    // // Catracha Intake Parchment - Image
+    // fetch(`${process.env.REACT_APP_GET_IMAGE}/2d79f311-eb5f-4a4a-96b8-ec9adfca1617`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
+    //     setSatrachaIntakeImage('data:image/jpg;base64,' + json);
+    //   });
+    // // Milling Calls - date, miller, weight
+    // fetch(`${process.env.REACT_APP_GET_LOT}/b0c1846f-8cef-410e-a2ec-f6d9f3843e9f`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
 
-      setMillingLocation(`${json.defaultLocation.city}, ${json.defaultLocation
-        .state}, ${json.defaultLocation.country}`);
+    //     setMilledOnDate(json.customData['MillingDate.MeasureTime'].dateTimeValue.split('T')[0]);
+    //     setMiller(json.customData['FarmerName.Measure'].value);
+    //     setLotCurrentWeight(json.currentWeight + ' lbs');
 
-    });
-    // Milling Video
-    fetch(`${process.env.REACT_APP_GET_VIDEO}/5b80c8dc-1dac-4eaf-8674-75052d83d0c5`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+    //   });
+    // // Milling Location
+    // fetch(`${process.env.REACT_APP_GET_NODE}/8a14226b-873b-4893-bedc-a9699dc28472`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json()).then(json => {
 
-        setMillingVideo('data:video/mp4;base64,' + json);
+    //   setMillingLocation(`${json.defaultLocation.city}, ${json.defaultLocation
+    //     .state}, ${json.defaultLocation.country}`);
 
-      });
-    // Milling Image
-    fetch(`${process.env.REACT_APP_GET_IMAGE}/14d5be6c-8f0e-48dd-88ca-46a1958a2fcf`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+    // });
+    // // Milling Video
+    // fetch(`${process.env.REACT_APP_GET_VIDEO}/5b80c8dc-1dac-4eaf-8674-75052d83d0c5`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
 
-        setMillingImage('data:image/jpg;base64,' + json);
+    //     setMillingVideo('data:video/mp4;base64,' + json);
 
-      });
-    // Processing & Export Calls End
+    //   });
+    // // Milling Image
+    // fetch(`${process.env.REACT_APP_GET_IMAGE}/14d5be6c-8f0e-48dd-88ca-46a1958a2fcf`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
 
-    // Journey Calls
-    // Green Export - Exported From
-    fetch(`${process.env.REACT_APP_GET_NODE}/c51f7616-5fb6-4416-be83-c98dc0d25df1`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json()).then(json => {
+    //     setMillingImage('data:image/jpg;base64,' + json);
 
-      setExportedFrom(`${json.defaultLocation.city}, ${json.defaultLocation
-        .state}, ${json.defaultLocation.country}`);
+    //   });
+    // // Processing & Export Calls End
 
-    });
-    // Green Export - Date & Weight
-    fetch(`${process.env.REACT_APP_GET_LOT}/f1222ba7-0c10-4abf-b49f-c197be1ec8e1`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+    // // Journey Calls
+    // // Green Export - Exported From
+    // fetch(`${process.env.REACT_APP_GET_NODE}/c51f7616-5fb6-4416-be83-c98dc0d25df1`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json()).then(json => {
 
-        setGreenExportDate(`${json.customData['ExportDate.MeasureTime'].dateTimeValue.split('T')[0]}`);
-        setGreenExportWeight(` ${json.absorbedWeight} Lbs`);
+    //   setExportedFrom(`${json.defaultLocation.city}, ${json.defaultLocation
+    //     .state}, ${json.defaultLocation.country}`);
 
-      });
-    // Green Export - Video
-    fetch(`${process.env.REACT_APP_GET_VIDEO}/c8bf9e23-1ae9-4422-8e00-984566d5663a`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
-        setGreenExportVideo('data:video/mp4;base64,' + json);
-      });
-    // Green Import - Imported At
-    fetch(`${process.env.REACT_APP_GET_NODE}/b2d1d8b3-498b-424e-87df-3050aa237115`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json()).then(json => {
+    // });
+    // // Green Export - Date & Weight
+    // fetch(`${process.env.REACT_APP_GET_LOT}/f1222ba7-0c10-4abf-b49f-c197be1ec8e1`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
 
-      setGreenImportLocation(`${json.defaultLocation.city}, ${json.defaultLocation
-        .state}, ${json.defaultLocation.country}`);
+    //     setGreenExportDate(`${json.customData['ExportDate.MeasureTime'].dateTimeValue.split('T')[0]}`);
+    //     setGreenExportWeight(` ${json.absorbedWeight} Lbs`);
 
-    });
-    // Green Import - Date
-    fetch(`${process.env.REACT_APP_GET_LOT}/8f43a6a8-52aa-45d6-9bba-cbf8f823037d`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
-        setGreenImportDate(`${json.customData['ImportDate.MeasureTime'].dateTimeValue.split('T')[0]}`);
-      });
-    // Green Import - Image
-    fetch(`${process.env.REACT_APP_GET_IMAGE}/4aa16929-f043-4520-809d-d1f62cfb106d`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
-        setGreenImportImage('data:image/jpg;base64,' + json);
-      });
-    // CIntake Green - Roaster Received in
-    fetch(`${process.env.REACT_APP_GET_NODE}/1dc41db1-f7b5-45f1-8810-432e6be023cb`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json()).then(json => {
-      setIntakeGreenLocation(`${json.defaultLocation.city}, ${json.defaultLocation.state}, ${json.defaultLocation.country}`);
-    });
-    // Intake Green - Date, Weight, & Received by
-    fetch(`${process.env.REACT_APP_GET_LOT}/a58fc3bf-94fd-4f0f-bd37-0947d8ba4146`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+    //   });
+    // // Green Export - Video
+    // fetch(`${process.env.REACT_APP_GET_VIDEO}/c8bf9e23-1ae9-4422-8e00-984566d5663a`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
+    //     setGreenExportVideo('data:video/mp4;base64,' + json);
+    //   });
+    // // Green Import - Imported At
+    // fetch(`${process.env.REACT_APP_GET_NODE}/b2d1d8b3-498b-424e-87df-3050aa237115`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json()).then(json => {
 
-        setIntakeGreenDate(`${json.customData['TransportDate.MeasureTime'].dateTimeValue.split('T')[0]}`);
-        setIntakeGreenWeight(`${json.currentWeight} Lbs`);
-        setIntakeGreenCollector(`${json.customData['CollectorName.Measure'].value}`);
+    //   setGreenImportLocation(`${json.defaultLocation.city}, ${json.defaultLocation
+    //     .state}, ${json.defaultLocation.country}`);
 
-      });
-    // Intake Green - Video
-    fetch(`${process.env.REACT_APP_GET_VIDEO}/6d48b0b4-25d3-469e-9d60-a657724ca296`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
-        setIntakeGreenVideo('data:video/mp4;base64,' + json);
-      });
-    // Journey Calls End
+    // });
+    // // Green Import - Date
+    // fetch(`${process.env.REACT_APP_GET_LOT}/8f43a6a8-52aa-45d6-9bba-cbf8f823037d`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
+    //     setGreenImportDate(`${json.customData['ImportDate.MeasureTime'].dateTimeValue.split('T')[0]}`);
+    //   });
+    // // Green Import - Image
+    // fetch(`${process.env.REACT_APP_GET_IMAGE}/4aa16929-f043-4520-809d-d1f62cfb106d`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
+    //     setGreenImportImage('data:image/jpg;base64,' + json);
+    //   });
+    // // CIntake Green - Roaster Received in
+    // fetch(`${process.env.REACT_APP_GET_NODE}/1dc41db1-f7b5-45f1-8810-432e6be023cb`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json()).then(json => {
+    //   setIntakeGreenLocation(`${json.defaultLocation.city}, ${json.defaultLocation.state}, ${json.defaultLocation.country}`);
+    // });
+    // // Intake Green - Date, Weight, & Received by
+    // fetch(`${process.env.REACT_APP_GET_LOT}/a58fc3bf-94fd-4f0f-bd37-0947d8ba4146`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
 
-    // Roasting Calls
-    fetch(`${process.env.REACT_APP_GET_NODE}/73427e9e-e29d-4b33-9a27-95244bdb0370`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json()).then(json => {
+    //     setIntakeGreenDate(`${json.customData['TransportDate.MeasureTime'].dateTimeValue.split('T')[0]}`);
+    //     setIntakeGreenWeight(`${json.currentWeight} Lbs`);
+    //     setIntakeGreenCollector(`${json.customData['CollectorName.Measure'].value}`);
 
-      setRoastingCounty(json.defaultLocation.country);
-      setRoastingState(json.defaultLocation.state);
-      setRoastingCity(json.defaultLocation.city);
+    //   });
+    // // Intake Green - Video
+    // fetch(`${process.env.REACT_APP_GET_VIDEO}/6d48b0b4-25d3-469e-9d60-a657724ca296`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
+    //     setIntakeGreenVideo('data:video/mp4;base64,' + json);
+    //   });
+    // // Journey Calls End
 
-    });
+    // // Roasting Calls
+    // fetch(`${process.env.REACT_APP_GET_NODE}/73427e9e-e29d-4b33-9a27-95244bdb0370`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json()).then(json => {
 
-    fetch(`${process.env.REACT_APP_GET_LOT}/50933c21-a1b8-4774-b023-0b7ec19063f4`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+    //   setRoastingCounty(json.defaultLocation.country);
+    //   setRoastingState(json.defaultLocation.state);
+    //   setRoastingCity(json.defaultLocation.city);
 
-        setCuppersNotes(json.customData['CuppersNotes.Measure'].value);
-        setRoastDate(json.customData['RoastDate.MeasureTime'].dateTimeValue);
-        setRoasterName(json.customData['FarmerName.Measure'].value);
+    // });
 
-      });
+    // fetch(`${process.env.REACT_APP_GET_LOT}/50933c21-a1b8-4774-b023-0b7ec19063f4`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
 
-    fetch(`${process.env.REACT_APP_GET_IMAGE}/3ba5c81b-076c-4db4-a235-67a6b8b8e90f`, {
-      method: 'GET',
-      headers: {
-        'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-      }
-    }).then(res => res.json())
-      .then(json => {
+    //     setCuppersNotes(json.customData['CuppersNotes.Measure'].value);
+    //     setRoastDate(json.customData['RoastDate.MeasureTime'].dateTimeValue);
+    //     setRoasterName(json.customData['FarmerName.Measure'].value);
 
-        setRoastingImage('data:image/jpg;base64,' + json);
+    //   });
 
-      });
+    // fetch(`${process.env.REACT_APP_GET_IMAGE}/3ba5c81b-076c-4db4-a235-67a6b8b8e90f`, {
+    //   method: 'GET',
+    //   headers: {
+    //     'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //   }
+    // }).then(res => res.json())
+    //   .then(json => {
+
+    //     setRoastingImage('data:image/jpg;base64,' + json);
+
+    //   });
     // Roasting Calls End
 
   }, [])
 
+
+  // Testing
+  // for (let i = 0; i < farmers.length; i++) {
+  //   console.log(`Hello from App.js - farmers: ${farmers[i].nodeId}`);
+  // }
+  // console.log(`Hello from App.js - farmers: ${farmers}`);
+  // console.log(`Hello from App.js - dev test node: ${devTestgetNode}`);
+
+
+
   return (
     <React.Fragment>
-      <Navigation />
+      {/* <Navigation /> */}
       <Hero />
-      <Farming
+
+
+      <FarmerList farmers={farmers} />
+
+
+
+
+      {/* <Farmers farmers={farmers} /> */}
+      {/* <Farming
         lotHistory={lotHistory}
         pickedBy={pickedBy}
         pickedCherriesWeight={pickedCherriesWeight}
@@ -384,7 +527,7 @@ const App = () => {
         roasterName={roasterName}
         roastingImage={roastingImage}
       />
-      <EconomicsAndTransparency />
+      <EconomicsAndTransparency /> */}
     </React.Fragment>
   );
 };
