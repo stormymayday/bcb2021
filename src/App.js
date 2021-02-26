@@ -1,4 +1,3 @@
-// React
 import React, { useEffect, useState } from 'react';
 
 // Google Analytics
@@ -7,17 +6,16 @@ import ReactGA from 'react-ga';
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// React Router Dom
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+// Router
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+// Pages
+import Home from './pages/Home';
+import FarmerDetails from './pages/FarmerDetails';
+import Error from './pages/Error';
 
 // Components
-import Navigation from './components/Navigation';
-
-// Sections
+import Navigation from './components/Navbar/Navigation';
 import Hero from './components/Hero';
 import Farmers from './components/Farmers';
 import FarmerList from './components/FarmerList/FarmerList';
@@ -26,6 +24,7 @@ import ProcessingExport from './components/ProcessingExport';
 import Journey from './components/Journey';
 import Roasting from './components/Roasting';
 import EconomicsAndTransparency from './components/EconomicsAndTransparency';
+
 
 const App = () => {
 
@@ -471,16 +470,22 @@ const App = () => {
 
 
   return (
-    <React.Fragment>
-      {/* <Navigation /> */}
-      <Hero />
+    <>
+      <Navigation />
+      {/* <Hero /> */}
+      <Home />
+      <Switch>
+        <Route exact path="/">
+        </Route>
+        <Route exact path="/farmer/:id">
+          <FarmerDetails />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
 
-
-      <FarmerList farmers={farmers} />
-
-
-
-
+      {/* <FarmerList farmers={farmers} /> */}
       {/* <Farmers farmers={farmers} /> */}
       {/* <Farming
         lotHistory={lotHistory}
@@ -528,7 +533,7 @@ const App = () => {
         roastingImage={roastingImage}
       />
       <EconomicsAndTransparency /> */}
-    </React.Fragment>
+    </>
   );
 };
 

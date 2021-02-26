@@ -11,18 +11,18 @@ export default function Navigation() {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Container>
 
-                    <Navbar.Brand href="#hero">BCB</Navbar.Brand>
+                    <Navbar.Brand href="/">BCB</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className="ml-auto">
-                            <Nav.Link href="#hero">HOME</Nav.Link>
-                            <Nav.Link href="#farming">FARMING</Nav.Link>
+                            <Nav.Link href="/">HOME</Nav.Link>
+                            {/* <Nav.Link href="#farming">FARMING</Nav.Link>
                             <Nav.Link href="#processing-export">PROCESSING & EXPORT</Nav.Link>
                             <Nav.Link href="#journey">JOURNEY</Nav.Link>
                             <Nav.Link href="#roasting">ROASTING</Nav.Link>
-                            <Nav.Link href="#economics">ECONOMICS</Nav.Link>
+                            <Nav.Link href="#economics">ECONOMICS</Nav.Link> */}
                         </Nav>
 
                     </Navbar.Collapse>
