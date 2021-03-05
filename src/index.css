@@ -145,7 +145,7 @@ Buttons
 Navbar
 ======
 */
-.navbar {
+/* .navbar {
   background: var(--mainWhite);
   height: 5rem;
   display: flex;
@@ -181,7 +181,7 @@ Navbar
 }
 .logo {
   width: 12rem;
-}
+} */
 /* 
 ====== 
 About

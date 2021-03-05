@@ -22,7 +22,6 @@ export default function DetailsPageNavigation(props) {
 
                     <Navbar.Brand href="/">BCB</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-
                     <Navbar.Collapse id="responsive-navbar-nav">
 
                         <Nav className="ml-auto">
@@ -50,6 +49,7 @@ export default function DetailsPageNavigation(props) {
 
                 </Container>
             </Navbar>
+
         </>
     );
 }
