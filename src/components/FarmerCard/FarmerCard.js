@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './FarmerCard.css';
+import slideOne from '../../images/slideOne.jpg';
 
 export const FarmerCard = (props) => {
 
@@ -15,13 +16,15 @@ export const FarmerCard = (props) => {
     return (
         <article className='cocktail'>
             <div className='img-contaienr'>
-                <img alt={props.farmer.farmerName} src={`${props.farmer.farmerPicture}`} />
+                <img alt={props.farmer.farmerName} src={slideOne} />
             </div>
             <div className='cocktail-footer'>
                 <h3>{props.farmer.farmerName}</h3>
+                {/* <p>{props.index}</p> */}
                 <Link
                     to={{
-                        pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
+                        // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
+                        pathname: `/farmer/${props.farmer.harvestGeneralNodeID}/${props.index}`,
                         state: {
                             farmer
                         }

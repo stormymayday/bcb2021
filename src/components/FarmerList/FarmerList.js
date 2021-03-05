@@ -10,25 +10,13 @@ export const FarmerList = (props) => {
 
     const { farmers, loading } = useGlobalContext();
 
-    // if (loading) {
-    //     return <Loading />
-    // }
-
-    // if (farmers.length < 1) {
-    //     return (
-    //         <h2 className='section-title'>
-    //             no farmers matched your search criteria
-    //         </h2>
-    //     )
-    // }
-
     return (
         <>
             <section className='section'>
                 <h2 className='section-title'>Farmers</h2>
                 <div className='cocktails-center'>
-                    {farmers.map((farmer) => {
-                        return <FarmerCard key={farmer.id} farmer={farmer} />
+                    {farmers.map((farmer, index) => {
+                        return <FarmerCard key={farmer.id} farmer={farmer} index={index} />
                     })}
                 </div>
             </section>
