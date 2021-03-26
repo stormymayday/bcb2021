@@ -9,7 +9,10 @@ import { useGlobalContext } from '../context';
 
 import Hero from '../components/Hero';
 import Image from 'react-bootstrap/Image';
+
 import slideOne from '../images/slideOne.jpg';
+import slideTwo from '../images/coffee_farm.JPG';
+
 import Jumbotron from 'react-bootstrap/Jumbotron';
 
 // Components
@@ -185,7 +188,20 @@ const FarmerDetails = (props) => {
     return (
         <React.Fragment>
             <DetailsPageNavigation location={location} />
-            <Jumbotron style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${slideOne})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '90vh' }} fluid>
+            <Jumbotron style={{
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
+             rgba(0, 0, 0, 0.5)),
+              url(${farmers[index].farmerName === 'Claudia & Juan' ?
+
+                        slideOne :
+
+                        slideTwo
+                    })`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                height: '93vh'
+            }}
+                fluid>
                 <Container>
                     {/* <h1 style={{ color: 'white' }}>{location.state.farmer.farmerName}</h1> */}
                     <h1 style={{ color: 'white' }}>{farmers[index].farmerName}</h1>
