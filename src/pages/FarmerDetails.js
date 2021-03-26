@@ -21,7 +21,8 @@ import DetailsPageNavigation from '../components/DetailsPageNavigation/DetailsPa
 
 // Sections
 import ProcessingSection from '../components/ProcessingSection/ProcessingSection';
-
+import ProcessingExport from '../components/ProcessingExport/ProcessingExport';
+import Roasting from '../components/Roasting/Roasting';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -267,39 +268,12 @@ const FarmerDetails = (props) => {
                 <Row id='processing'>
                     <ProcessingSection numberOfLots={farmers[index].processingLotIds.length} processingLotIds={farmers[index].processingLotIds} />
                 </Row>
-                <Row>
-                    <p>Coming Soon</p>
-                </Row>
-
-                <Row>
-                    <h2>Intake</h2>
-                </Row>
-                <Row>
-                    <p>Coming Soon</p>
-                </Row>
-
-                <Row>
-                    <h2>Export</h2>
-                </Row>
-                <Row>
-                    <p>Coming Soon</p>
-                </Row>
-
-                <Row>
-                    <h2>Import</h2>
-                </Row>
-                <Row>
-                    <p>Coming Soon</p>
-                </Row>
-
-                <Row>
-                    <h2>Roasting</h2>
-                </Row>
-                <Row>
-                    <p>Coming Soon</p>
-                </Row>
 
             </Container>
+
+            <ProcessingExport />
+
+            <Roasting />
             {/* </div > */}
         </React.Fragment>
     );
