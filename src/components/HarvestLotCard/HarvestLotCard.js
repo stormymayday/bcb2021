@@ -15,6 +15,10 @@ const HarvestLotCard = (props) => {
     const [absorbedWeightUnit, setAbsorbedWeightUnit] = useState('');
     const [harvestDate, setHarvestDate] = useState('');
 
+    const [paymentAmount, setPaymentAmount] = useState('');
+
+    const [paymentRatio, setPaymentRatio] = useState('');
+
     useEffect(() => {
 
         // Farmer Harvest
@@ -30,6 +34,9 @@ const HarvestLotCard = (props) => {
                 setAbsorbedWeightUnit(json.absorbedWeightUnit);
                 setHarvestDate(json.customData['HarvestDate.MeasureTime'].value.split(' ')[0]);
 
+                setPaymentAmount(`${Object.values(json.values)[0].value} ${Object.values(json.values)[0].asset}`);
+                setPaymentRatio(`${Object.values(json.values)[1].value} ${Object.values(json.values)[1].asset}`);
+
             });
     }, [props.harvestLot])
 
@@ -38,7 +45,9 @@ const HarvestLotCard = (props) => {
             <CardImage src={`https://robohash.org/${Math.floor(Math.random() * 10) + 1}?set=set4`} />
             <CardHeader>{props.harvestLot}</CardHeader>
             <CardText>Absorbed weight: {absorbedWeight} {absorbedWeightUnit}<br />
-            Harvest date: {harvestDate}
+                Total Payment: {paymentAmount}<br />
+                Payment Ratio: {paymentRatio}<br />
+                Harvest date: {harvestDate}
             </CardText>
             {/* <CardButton>Learn More</CardButton> */}
         </Card>
