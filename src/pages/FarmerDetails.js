@@ -60,6 +60,9 @@ const FarmerDetails = (props) => {
     const [harvestDate, setHarvestDate] = useState('');
     const [collectionDate, setCollectionDate] = useState('');
 
+    // NodeLots
+    const [nodeLots, setNodeLots] = useState('');
+
     useEffect(() => {
 
         // console.log(paginate(location.state.farmer.harvestLotIds));
@@ -142,6 +145,20 @@ const FarmerDetails = (props) => {
                 setElevation(json.defaultLocation.elevation);
             });
 
+        fetch(`https://bext360api.azure-api.net/retaildev/v1/getnodelot/${farmers[index].harvestGeneralNodeID}`, {
+            method: 'GET',
+            headers: {
+                'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+            }
+        }).then(res => {
+            return res.json();
+        })
+            .then(json => {
+
+                setNodeLots(json);
+
+            });
+
         // Farmer Harvest
         // fetch(`https://bext360api.azure-api.net/retaildev/v1/getlot/${location.state.farmer.harvestLotIds[0]}`, {
         //     method: 'GET',
@@ -185,6 +202,8 @@ const FarmerDetails = (props) => {
     // }
     // console.log(`Testing harveset lots object: ${JSON.stringify(harvestLots)}`);
     // console.log(`Testing absorbed weight: ${absorbedWeight}`);
+
+    console.log(nodeLots.lots.length);
 
     return (
         <React.Fragment>
@@ -252,6 +271,9 @@ const FarmerDetails = (props) => {
                 <Row>
                     <p>Collection date: {collectionDate}</p>
                 </Row> */}
+                <Row>
+                    Number of lots: {nodeLots.lots.length}
+                </Row>
                 <Row>
                     Total Absorbed Weight: {totalAbsorbedWeight}
                 </Row>

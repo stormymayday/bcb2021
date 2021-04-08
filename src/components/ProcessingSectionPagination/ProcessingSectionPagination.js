@@ -61,7 +61,7 @@ const ProcessingSectionPagination = (props) => {
     return (
         <div>
             <SectionTitleContainer>
-                <h2>Processing Pagination Component ({props.numberOfLots} Lots)</h2>
+                {/* <h2>Processing Pagination Component ({props.numberOfLots} Lots)</h2> */}
             </SectionTitleContainer>
             <CardsSection>
                 <CardContainer>

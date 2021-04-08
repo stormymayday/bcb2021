@@ -11,6 +11,9 @@ import {
 
 const HarvestLotCard = (props) => {
 
+    const [lotImage1, setLotImage1] = useState('');
+    const [lotImage2, setLotImage2] = useState('');
+
     const [absorbedWeight, setAbsorbedWeight] = useState('');
     const [absorbedWeightUnit, setAbsorbedWeightUnit] = useState('');
     const [harvestDate, setHarvestDate] = useState('');
@@ -30,6 +33,21 @@ const HarvestLotCard = (props) => {
         }).then(res => res.json())
             .then(json => {
 
+                if (json.images[0]) {
+
+                    setLotImage1(json.images[0].urls[0]);
+
+                } else {
+
+                    setLotImage1(`https://robohash.org/${Math.floor(Math.random() * 10) + 1}?set=set4`);
+
+                }
+                // if (json.images[1]) {
+
+                //     setLotImage2(json.images[1].urls[0]);
+
+                // }
+
                 setAbsorbedWeight(json.absorbedWeight);
                 setAbsorbedWeightUnit(json.absorbedWeightUnit);
                 setHarvestDate(json.customData['HarvestDate.MeasureTime'].value.split(' ')[0]);
@@ -40,9 +58,16 @@ const HarvestLotCard = (props) => {
             });
     }, [props.harvestLot])
 
+    // console.log(lotImage1, lotImage2);
+
     return (
         <Card>
-            <CardImage src={`https://robohash.org/${Math.floor(Math.random() * 10) + 1}?set=set4`} />
+            <CardImage
+
+                // src={`https://robohash.org/${Math.floor(Math.random() * 10) + 1}?set=set4`}
+                src={lotImage1}
+
+            />
             <CardHeader>{props.harvestLot}</CardHeader>
             <CardText>Absorbed weight: {absorbedWeight} {absorbedWeightUnit}<br />
                 Total Payment: {paymentAmount}<br />

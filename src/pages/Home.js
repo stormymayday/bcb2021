@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Hero from '../components/Hero';
 import HomePageNavigation from '../components/HomePageNavigation/HomePageNavigation';
 import FarmerList from '../components/FarmerList/FarmerList';

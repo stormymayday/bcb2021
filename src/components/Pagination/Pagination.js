@@ -64,7 +64,7 @@ const Pagination = (props) => {
     return (
         <div>
             <SectionTitleContainer>
-                <h2>Pagination Component ({props.numberOfLots} Harvest Lots)</h2>
+                {/* <h2>Pagination Component ({props.numberOfLots} Harvest Lots)</h2> */}
                 {/* <Underline /> */}
             </SectionTitleContainer>
             <CardsSection>

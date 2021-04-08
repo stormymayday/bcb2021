@@ -12,7 +12,10 @@ export const CardImage = styled.img`
   width: 130px;
   height: 130px;
   border-radius: 50%;
+
   object-fit: cover;
+  object-position: 50% 15%;
+
   margin-bottom: 0.75rem;
   margin-left: auto;
   margin-right: auto;
