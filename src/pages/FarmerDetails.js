@@ -203,7 +203,7 @@ const FarmerDetails = (props) => {
     // console.log(`Testing harveset lots object: ${JSON.stringify(harvestLots)}`);
     // console.log(`Testing absorbed weight: ${absorbedWeight}`);
 
-    console.log(nodeLots.lots.length);
+    // console.log(nodeLots.lots.length);
 
     return (
         <React.Fragment>
@@ -272,7 +272,7 @@ const FarmerDetails = (props) => {
                     <p>Collection date: {collectionDate}</p>
                 </Row> */}
                 <Row>
-                    Number of lots: {nodeLots.lots.length}
+                    Number of lots: {nodeLots ? nodeLots.lots.length : ''}
                 </Row>
                 <Row>
                     Total Absorbed Weight: {totalAbsorbedWeight}
