@@ -18,27 +18,22 @@ import HarvestLotCard from '../HarvestLotCard/HarvestLotCard';
 
 const Pagination = (props) => {
 
-    // const data = props.harvestLotIds;
-
-    // console.log(props.harvestLotIds, props.harvestLots);
-
-    const [data, setData] = useState(props.harvestLotIds);
-    // const [data, setData] = useState(
-    //     [["266b83d3-0a8d-4e8e-b380-a58487988f13", "aee0370c-214e-422d-8d3f-32fdc006b652", "368e6e57-8432-44dd-8e1d-5e9eeb25c046", "48ab0129-8bea-477c-bbf8-3a6cff4a8b15"]],
-    //     [["7ab506ff-57c1-48a7-8e0e-bd8a73ce3512", "a3d9df53-e520-4f0d-b2a8-e2e13f744a32", "5d48512e-6b6d-41bc-90e3-a3396937f97a", "b874f685-0cc8-4d80-b9f3-1dbaceddd5c9"]],
-    //     [["75548348-afe9-4cd5-b05b-3e261d0a36df", "588fc370-80eb-44a4-97df-a5cebca0a039", "932c3acf-943a-4a5e-b972-84071dfee949", "3e767b37-6374-4263-aa78-d58908302400"]],
-    //     [["856899eb-d96f-411c-b82d-4761af23c3f4", "95d070b6-57b8-4b79-a6eb-92b7da4a8fd6", "83f694a4-5ed8-43bb-86de-1636c5d13b99", "e3b4fe4a-5aba-4c08-b469-4e3bbe2b4479"]]);
+    const [data, setData] = useState();
     const [page, setPage] = useState(0);
     const [items, setItems] = useState([]);
 
     useEffect(() => {
 
-        // if (props.harvestLots) {
-        //     setData(props.harvestLots);
-        // }
-        setItems(data[page]);
+        if (props.harvestLots) {
+            setData(props.harvestLots);
+            if (data) {
+                setItems(data[page]);
 
-    }, [data, page])
+            }
+
+        }
+
+    }, [props.harvestLots, page])
 
     const handlePage = (index) => {
         setPage(index)
@@ -73,7 +68,7 @@ const Pagination = (props) => {
     //     setPage(index)
     // }
 
-    console.log(props.harvestLotIds);
+    console.log(props.harvestLots);
 
     return (
         <div>
@@ -91,13 +86,13 @@ const Pagination = (props) => {
 
                 <CardContainer>
                     {
-                        data ?
+                        data && items ?
 
                             items.map((item) => {
                                 return <HarvestLotCard key={item.id} harvestLot={item} />
                             })
 
-                            : 'hello'
+                            : ''
 
                     }
                 </CardContainer>
@@ -105,7 +100,7 @@ const Pagination = (props) => {
                 <ButtonContainer>
                     {
 
-                        data ?
+                        data && items ?
 
                             data.map((item, index) => {
                                 return (
@@ -118,7 +113,7 @@ const Pagination = (props) => {
                                 )
                             })
 
-                            : 'hello'
+                            : ''
 
                     }
                     {/* {data.map((item, index) => {
