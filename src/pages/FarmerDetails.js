@@ -52,6 +52,8 @@ const FarmerDetails = (props) => {
     const [totalAbsorbedWeight, setTotalAbsorbedWeight] = useState('fetching data from BEXT');
     const [harvestDates, setHarvestDates] = useState('fetching data from BEXT');
 
+    const [totalAbsorbedHarvestWeight, setTotalAbsorbedHarvestWeight] = useState(0);
+
     // Harvest Lot (Not in use atm)
     const [currentWeight, setCurrentWeight] = useState('');
     const [currentWeightUnit, setCurrentWeightUnit] = useState('');
@@ -60,8 +62,8 @@ const FarmerDetails = (props) => {
     const [harvestDate, setHarvestDate] = useState('');
     const [collectionDate, setCollectionDate] = useState('');
 
-    // NodeLots
-    const [nodeLots, setNodeLots] = useState('');
+    // HarvestNodeLots
+    const [harvestNodeLots, setHarvestNodeLots] = useState('');
 
     useEffect(() => {
 
@@ -155,7 +157,7 @@ const FarmerDetails = (props) => {
         })
             .then(json => {
 
-                setNodeLots(json);
+                setHarvestNodeLots(json);
 
             });
 
@@ -195,7 +197,16 @@ const FarmerDetails = (props) => {
 
         // console.log(`Api Key: ${process.env.REACT_APP_API_KEY}`);
 
-    }, [])
+        if (harvestNodeLots) {
+            let sum = 0;
+            for (let i = 0; i < harvestNodeLots.lots.length; i++) {
+                sum += Number.parseInt(harvestNodeLots.lots[i].lotStartWeight);
+            }
+            setTotalAbsorbedHarvestWeight(sum);
+        }
+
+    }, [harvestNodeLots])
+
 
     // for (let i = 0; i < location.state.farmer.harvestLotIds.length; i++) {
     //     console.log(`Harvest ID: ${location.state.farmer.harvestLotIds[i]}`);
@@ -203,7 +214,7 @@ const FarmerDetails = (props) => {
     // console.log(`Testing harveset lots object: ${JSON.stringify(harvestLots)}`);
     // console.log(`Testing absorbed weight: ${absorbedWeight}`);
 
-    // console.log(nodeLots.lots.length);
+    // console.log(harvestNodeLots.lots);
 
     return (
         <React.Fragment>
@@ -272,19 +283,27 @@ const FarmerDetails = (props) => {
                     <p>Collection date: {collectionDate}</p>
                 </Row> */}
                 <Row>
-                    Number of lots: {nodeLots ? nodeLots.lots.length : ''}
+                    Total number of harvest lots: {harvestNodeLots ? harvestNodeLots.lots.length : ''}
                 </Row>
                 <Row>
-                    Total Absorbed Weight: {totalAbsorbedWeight}
+                    Total Absorbed Weight: {totalAbsorbedHarvestWeight}
                 </Row>
-                <Row>
+                {/* <Row>
                     Harvested between: {harvestDates}
-                </Row>
+                </Row> */}
                 {/* <Row>
                     <HarvestList harvestLotIds={location.state.farmer.harvestLotIds} />
                 </Row> */}
                 <Row>
-                    <Pagination numberOfLots={farmers[index].harvestLotIds.length} harvestLotIds={paginate(farmers[index].harvestLotIds)} />
+                    <Pagination
+                        numberOfLots={farmers[index].harvestLotIds.length}
+                        harvestLotIds={paginate(farmers[index].harvestLotIds)}
+
+                        harvestLots={harvestNodeLots.lots ? harvestNodeLots.lots : []}
+
+                    // numberOfLots={harvestNodeLots ? harvestNodeLots.lots.length : ''}
+                    // harvestLotIds={paginate(harvestNodeLots ? harvestNodeLots.lots : '')}
+                    />
                 </Row>
 
                 <Row id='processing'>

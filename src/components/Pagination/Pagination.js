@@ -19,7 +19,9 @@ import HarvestLotCard from '../HarvestLotCard/HarvestLotCard';
 const Pagination = (props) => {
 
     const data = props.harvestLotIds;
-    // console.log(props.harvestLotIds);
+    // const data = props.harvestLots;
+
+    console.log(props.harvestLotIds, props.harvestLots);
 
     const [page, setPage] = useState(0);
     const [items, setItems] = useState([]);
