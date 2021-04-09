@@ -57,22 +57,6 @@ const AppProvider = ({ children }) => {
         //     intakeNodeID: ''
         // },
         {
-            farmerName: 'Mirian Vasquez',
-            farmerPicture: 'https://robohash.org/7?set=set4',
-            harvestGeneralNodeID: '1dd07753-5a46-4151-a720-badaa9462153',
-            harvestLotIds: ["e6d2169c-1832-4d6c-99f0-ef7ce201814f", "bca0833a-5ca8-4ab9-9a09-f865b3e83fb4", "fb23bd3c-0e7d-43bb-a19b-7662fe200b4f", "cf8be016-e1fe-4599-ae95-67ad0f0953a7", "be21e722-c84b-4b59-823b-8556be2cfbbd", "81594155-075b-4d2c-b8e5-c2a1e7bab24c", "7c4d9215-f8ba-47f2-abaf-3a605583c9ed", "41607094-0602-4d83-a1c6-72f3673158b0", "5fac7aec-4e7e-47bf-bf5a-3d33d4109fd9", "d67682b3-421f-45e6-a8ae-9a55b453c67e", "d6a87e15-fb8e-4e26-8160-3e360d929786", "8b639ef4-0e29-4a39-a245-dc2c9cce1335", "bbe52a53-b237-4398-a9d5-9453fd36a837"],
-            processingLotIds: ["04601f12-8060-45ec-9b31-5c3dc1c206de"],
-            intakeNodeIds: ''
-        },
-        // {
-        //     farmerName: 'Fidelina',
-        //     farmerPicture: 'https://robohash.org/8?set=set4',
-        //     harvestGeneralNodeID: '77073017-c640-4822-ad6d-7e6fd51da0f8',
-        //     harvestLotId: 'be0ae838-c8e1-4c82-9812-7dcec972cc16',
-        //     processingNodeID: '',
-        //     intakeNodeID: ''
-        // },
-        {
             farmerName: 'Claudia & Juan',
             farmerPicture: '../../src/images/slideOne.jpg',
             harvestGeneralNodeID: '702079e1-62c8-4087-bc82-544acf15d141',
@@ -167,6 +151,22 @@ const AppProvider = ({ children }) => {
                 "a72b07ca-7269-4535-8a3c-fe86eec71047",
                 "8dab8f8f-ddb4-4e63-a8ae-9449a0eb0e71"]
         },
+        {
+            farmerName: 'Mirian Vasquez',
+            farmerPicture: 'https://robohash.org/7?set=set4',
+            harvestGeneralNodeID: '1dd07753-5a46-4151-a720-badaa9462153',
+            harvestLotIds: ["e6d2169c-1832-4d6c-99f0-ef7ce201814f", "bca0833a-5ca8-4ab9-9a09-f865b3e83fb4", "fb23bd3c-0e7d-43bb-a19b-7662fe200b4f", "cf8be016-e1fe-4599-ae95-67ad0f0953a7", "be21e722-c84b-4b59-823b-8556be2cfbbd", "81594155-075b-4d2c-b8e5-c2a1e7bab24c", "7c4d9215-f8ba-47f2-abaf-3a605583c9ed", "41607094-0602-4d83-a1c6-72f3673158b0", "5fac7aec-4e7e-47bf-bf5a-3d33d4109fd9", "d67682b3-421f-45e6-a8ae-9a55b453c67e", "d6a87e15-fb8e-4e26-8160-3e360d929786", "8b639ef4-0e29-4a39-a245-dc2c9cce1335", "bbe52a53-b237-4398-a9d5-9453fd36a837"],
+            processingLotIds: ["04601f12-8060-45ec-9b31-5c3dc1c206de"],
+            intakeNodeIds: ''
+        },
+        // {
+        //     farmerName: 'Fidelina',
+        //     farmerPicture: 'https://robohash.org/8?set=set4',
+        //     harvestGeneralNodeID: '77073017-c640-4822-ad6d-7e6fd51da0f8',
+        //     harvestLotId: 'be0ae838-c8e1-4c82-9812-7dcec972cc16',
+        //     processingNodeID: '',
+        //     intakeNodeID: ''
+        // },
         // {
         //     farmerName: 'Rigoberto',
         //     farmerPicture: 'https://robohash.org/10?set=set4',

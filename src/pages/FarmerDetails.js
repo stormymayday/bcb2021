@@ -338,10 +338,14 @@ const FarmerDetails = (props) => {
 
             </Container>
 
-            <ProcessingExport id='processing'
-                numberOfLots={farmers[index].processingLotIds.length}
-                processingLotIds={farmers[index].processingLotIds}
-            />
+
+            <div id='processing'>
+
+                <ProcessingExport
+                    numberOfLots={farmers[index].processingLotIds.length}
+                    processingLotIds={farmers[index].processingLotIds}
+                />
+            </div>
 
             <Roasting />
             {/* </div > */}

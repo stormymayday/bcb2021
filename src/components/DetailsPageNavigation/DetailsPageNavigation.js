@@ -11,7 +11,7 @@ export default function DetailsPageNavigation(props) {
 
     const scrollWidthOffset = (el) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-        const yOffset = -110;
+        const yOffset = -55;
         window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
     }
 

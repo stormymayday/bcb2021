@@ -34,7 +34,8 @@ export const ProcessingExport = (props) => {
 
 
     return (
-        <div className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '1em' }} id='processing-export'>
+        <section className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '1em' }}>
+
             <Container>
 
                 <h2 style={{ color: 'white' }}>Processed and Exported by Catracha Coffee</h2>
@@ -42,9 +43,10 @@ export const ProcessingExport = (props) => {
                 <p style={{ color: 'white' }}>Test data:</p>
 
                 <ProcessingSectionPagination numberOfLots={props.numberOfLots} processingLotIds={paginate(props.processingLotIds)} ></ProcessingSectionPagination>
-
             </Container>
-        </div>
+
+
+        </section>
     );
 }
 
