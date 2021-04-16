@@ -20,6 +20,7 @@ import LeafletMap from '../components/LeafletMap/LeafletMap';
 import DetailsPageNavigation from '../components/DetailsPageNavigation/DetailsPageNavigation';
 
 // Sections
+import HarvestSection from '../components/HarvestSection/HarvestSection';
 import ProcessingSection from '../components/ProcessingSection/ProcessingSection';
 import ProcessingExport from '../components/ProcessingExport/ProcessingExport';
 import Roasting from '../components/Roasting/Roasting';
@@ -43,8 +44,8 @@ const FarmerDetails = (props) => {
     // Node Info
     const [city, setCity] = useState('fetching data from BEXT');
     const [state, setState] = useState('fetching data from BEXT');
-    const [latitude, setLatitude] = useState('fetching data from BEXT');
-    const [longitude, setLongitude] = useState('fetching data from BEXT');
+    const [latitude, setLatitude] = useState('');
+    const [longitude, setLongitude] = useState('');
     const [elevation, setElevation] = useState('fetching data from BEXT');
 
     // Totals
@@ -206,7 +207,11 @@ const FarmerDetails = (props) => {
 
             for (let i = 0; i < harvestNodeLots.lots.length; i++) {
 
-                sum += Number.parseInt(harvestNodeLots.lots[i].lotStartWeight);
+                if (Number.parseInt(harvestNodeLots.lots[i].lotStartWeight)) {
+
+                    sum += Number.parseInt(harvestNodeLots.lots[i].lotStartWeight);
+
+                }
 
                 placeholderArray.push(harvestNodeLots.lots[i].id);
 
@@ -218,7 +223,7 @@ const FarmerDetails = (props) => {
 
         }
 
-    }, [harvestNodeLots])
+    }, [harvestNodeLots, farmers[index].processingLotIds, farmers[index].harvestLotIds, farmers[index].farmerName, farmers[index].harvestGeneralNodeID, longitude, latitude])
 
 
     // for (let i = 0; i < location.state.farmer.harvestLotIds.length; i++) {
@@ -258,6 +263,34 @@ const FarmerDetails = (props) => {
             {/* <Hero /> */}
             {/* <Image src={slideOne} style={{}} /> */}
             {/* <div style={{ 'padding-top': '3rem', 'padding-bottom': '4em' }} id='farming'> */}
+            {/* <div id='harvestID'>
+
+                {
+                    harvestNodeLots && harvestLotIDs
+
+                        ?
+
+                        <HarvestSection
+                            harvestLotIds={paginate(farmers[index].harvestLotIds)}
+                            harvestLots={harvestLotIDs ? paginate(harvestLotIDs) : []}
+
+                            city={city}
+                            state={state}
+                            longitude={longitude}
+                            latitude={latitude}
+                            elevation={elevation}
+                            harvestNodeLots={harvestNodeLots}
+                            harvestLotIds={harvestLotIds}
+                            totalAbsorbedHarvestWeight={totalAbsorbedHarvestWeight}
+                        />
+
+                        :
+
+                        ''
+
+                }
+
+            </div> */}
             <Container>
                 {/* <Row>
                     <h1 style={{ 'margin-bottom': '1rem' }}>{location.state.farmer.farmerName}</h1>
@@ -284,71 +317,57 @@ const FarmerDetails = (props) => {
 
                     </Col>
                     <Col md='12' lg='6'>
-                        <LeafletMap farmer={farmers[index].farmerName} nodeId={farmers[index].harvestGeneralNodeID} longitude={longitude} latitude={latitude} />
+                        {
+                            farmers[index].farmerName && farmers[index].harvestGeneralNodeID && longitude && latitude
+
+                                ?
+
+                                <LeafletMap farmer={farmers[index].farmerName} nodeId={farmers[index].harvestGeneralNodeID} longitude={longitude} latitude={latitude} />
+
+                                :
+
+                                ''
+
+                        }
                     </Col>
                 </Row>
-                {/* <Row>
-                    <h3>Farmer Harvest</h3>
-                </Row> */}
-                {/* <Row>
-                    <p>Current weight: {currentWeight} {currentWeightUnit}</p>
-                </Row>
-                <Row>
-                    <p>Absorbed weight: {absorbedWeight} {absorbedWeightUnit}</p>
-                </Row>
-                <Row>
-                    <p>Harvest date: {harvestDate}</p>
-                </Row>
-                <Row>
-                    <p>Collection date: {collectionDate}</p>
-                </Row> */}
-                {/* <Row>
-                    Total number of harvest lots: {harvestNodeLots ? harvestNodeLots.lots.length : ''}
-                </Row>
-                <Row>
-                    Total Absorbed Weight: {totalAbsorbedHarvestWeight}
-                </Row> */}
-                {/* <Row>
-                    Harvested between: {harvestDates}
-                </Row> */}
-                {/* <Row>
-                    <HarvestList harvestLotIds={location.state.farmer.harvestLotIds} />
-                </Row> */}
+
                 <Row>
                     <Container>
 
                         <Pagination
-                            // numberOfLots={farmers[index].harvestLotIds.length}
+
                             harvestLotIds={paginate(farmers[index].harvestLotIds)}
 
                             harvestLots={harvestLotIDs ? paginate(harvestLotIDs) : []}
 
-                        // numberOfLots={harvestNodeLots ? harvestNodeLots.lots.length : ''}
-                        // harvestLotIds={paginate(harvestNodeLots ? harvestNodeLots.lots : '')}
                         />
                     </Container>
                 </Row>
-
-                {/* <Row>
-                    <ProcessingSection
-                        numberOfLots={farmers[index].processingLotIds.length}
-                        processingLotIds={farmers[index].processingLotIds}
-                    />
-                </Row> */}
 
             </Container>
 
 
             <div id='processing'>
+                {
+                    farmers[index].processingLotIds
 
-                <ProcessingExport
-                    numberOfLots={farmers[index].processingLotIds.length}
-                    processingLotIds={farmers[index].processingLotIds}
-                />
+                        ?
+
+                        <ProcessingExport
+                            numberOfLots={farmers[index].processingLotIds.length}
+                            processingLotIds={farmers[index].processingLotIds}
+                        />
+
+                        :
+
+                        ''
+
+                }
             </div>
 
             <Roasting />
-            {/* </div > */}
+
         </React.Fragment>
     );
 }

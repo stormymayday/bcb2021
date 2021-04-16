@@ -2,18 +2,21 @@ import React, { useRef, useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { L } from 'leaflet';
 
-const LeafletMap = (props) => {
+const LeafletMap = ({ farmer, nodeId, longitude, latitude }) => {
+
+    console.log(longitude, latitude);
 
     // const position = [14.113686, -88.108736];
-    let position = [14.113686, -88.108736];
+    // let position = [14.113686, -88.108736];
+    let position = [latitude, longitude];
 
     const mapRef = useRef();
-    const [longitude, setLongitude] = useState(0);
-    const [latitude, setLatitude] = useState(0);
+    // const [longitude, setLongitude] = useState(0);
+    // const [latitude, setLatitude] = useState(0);
 
-    useEffect(() => {
-        position = [14.113686, -88.108736];
-    }, [position]);
+    // useEffect(() => {
+    //     position = [14.113686, -88.108736];
+    // }, [position]);
 
 
 
@@ -42,9 +45,9 @@ const LeafletMap = (props) => {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            <Marker position={[14.113686, -88.108736]}>
+            <Marker position={[latitude, longitude]}>
                 <Popup>
-                    {props.farmer}
+                    {farmer}
                 </Popup>
             </Marker>
         </MapContainer >

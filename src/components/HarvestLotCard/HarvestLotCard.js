@@ -50,10 +50,15 @@ const HarvestLotCard = (props) => {
 
                 setAbsorbedWeight(json.absorbedWeight);
                 setAbsorbedWeightUnit(json.absorbedWeightUnit);
-                setHarvestDate(json.customData['HarvestDate.MeasureTime'].value.split(' ')[0]);
 
-                setPaymentAmount(`${Object.values(json.values)[0].value} ${Object.values(json.values)[0].asset}`);
-                setPaymentRatio(`${Object.values(json.values)[1].value} ${Object.values(json.values)[1].asset}`);
+                if (json.customData['HarvestDate.MeasureTime'].value) {
+                    setHarvestDate(json.customData['HarvestDate.MeasureTime'].value.split(' ')[0]);
+                }
+
+                if (json.values) {
+                    setPaymentAmount(`${Object.values(json.values)[0].value} ${Object.values(json.values)[0].asset}`);
+                    setPaymentRatio(`${Object.values(json.values)[1].value} ${Object.values(json.values)[1].asset}`);
+                }
 
             });
     }, [props.harvestLot])
