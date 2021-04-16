@@ -32,19 +32,33 @@ const ProcessingLotCard = (props) => {
     //         });
     // }, [props.harvestLot])
 
-    console.log(props);
+    // let string = props.harvestLot.lotName.toLowerCase();
+
+    // let substring = props.farmerName.toLowerCase().split(" ")[0];
+
+    // let condition = string.includes(substring, 0);
+
+    // console.log(string, substring, condition);
+
 
     return (
-        <Card>
+
+
+        < Card >
             {/* <CardImage src={`https://robohash.org/${Math.floor(Math.random() * 10) + 1}?set=set4`} /> */}
-            <CardHeader>{props.harvestLot.id}</CardHeader>
+            < CardHeader >
+                {/* {props.harvestLot.id} */}
+                {props.harvestLot.lotName}
+            </CardHeader >
             <CardText>
-                {/* Absorbed weight: {absorbedWeight} {absorbedWeightUnit}<br /> */}
-                Lot Name: {props.harvestLot.lotName}<br />
+
                 Current Weight: {props.harvestLot.lotCurrentWeight} {props.harvestLot.lotCurrentWeightUnit}<br />
             </CardText>
             {/* <CardButton>Learn More</CardButton> */}
-        </Card>
+        </Card >
+
+
+
     )
 }
 

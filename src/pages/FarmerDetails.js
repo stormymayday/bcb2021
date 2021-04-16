@@ -51,7 +51,7 @@ const FarmerDetails = (props) => {
 
     // Totals
     const [harvestLots, setHarvestLots] = useState([]);
-    const [totalAbsorbedWeight, setTotalAbsorbedWeight] = useState('fetching data from BEXT');
+    const [totalAbsorbedWeight, setTotalAbsorbedWeight] = useState(0);
     const [harvestDates, setHarvestDates] = useState('fetching data from BEXT');
 
     const [totalAbsorbedHarvestWeight, setTotalAbsorbedHarvestWeight] = useState(0);
@@ -242,7 +242,7 @@ const FarmerDetails = (props) => {
 
                         <p>Elevation: {elevation}</p>
                         <p>
-                            Total number of harvest lots: {harvestNodeLots ? harvestNodeLots.lots.length : ''}
+                            Total number of harvest lots: {harvestNodeLots ? harvestNodeLots.lots.length : 0}
                         </p>
                         <p>
                             Total Absorbed Weight: {totalAbsorbedHarvestWeight}

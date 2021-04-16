@@ -15,6 +15,8 @@ import ProcessingLotCard from '../ProcessingLotCard/ProcessingLotCard';
 
 const ProcessingSectionPagination = (props) => {
 
+    // console.log(props);
+
     const data = props.processingLotIds;
     // console.log(props.processingLotIds);
 
@@ -58,6 +60,12 @@ const ProcessingSectionPagination = (props) => {
     //     setPage(index)
     // }
 
+    // let string = props.harvestLot.lotName.toLowerCase();
+
+    // let substring = props.farmerName.toLowerCase().split(" ")[0];
+
+    // let condition = string.includes(substring, 0);
+
     return (
 
         <div>
@@ -70,12 +78,17 @@ const ProcessingSectionPagination = (props) => {
                     items ?
 
                         <CardContainer>
-                            {items.map((item) => {
-                                return <ProcessingLotCard key={item.id} harvestLot={item} />
-                            })}
+                            {
+
+                                items.map((item) => {
+                                    return <ProcessingLotCard key={item.id} harvestLot={item} farmerName={props.farmerName} />
+                                })
+
+                            }
                         </CardContainer>
 
                         :
+
                         'Coming Soon'
 
                 }

@@ -29,6 +29,10 @@ export const ProcessingExport = (props) => {
         return newItems
     }
 
+    const substring = props.farmerIndex.farmerName.toLowerCase().split(" ")[0];
+
+    let filteredMarcalaIntakeLots = [];
+
     // MarcalaIntake
     const [marcalaIntakeLots, setMarcalaIntakeLots] = useState('');
 
@@ -51,19 +55,30 @@ export const ProcessingExport = (props) => {
 
             });
 
-        // if (marcalaIntakeLots) {
+    }, [
+        marcalaIntakeLots,
+        filteredMarcalaIntakeLots
+    ])
 
-        //     let marcalaIntakeLotIdsPlaceholderArray = marcalaIntakeLots.lots.map(x => x.id);
+    if (marcalaIntakeLots) {
 
-        //     setMarcalaIntakeLotIds(marcalaIntakeLotIdsPlaceholderArray);
+        // let filteredMarcalaIntakeLots = marcalaIntakeLots.lots.filter(obj => {
 
-        // }
+        //     return obj.lotName.toLowerCase().includes(substring);
 
-    }, [marcalaIntakeLots])
+        // })
 
-    // console.log(marcalaIntakeLots);
-    // console.log(marcalaIntakeLots.lots);
+        for (let i = 0; i < marcalaIntakeLots.lots.length; i++) {
 
+            if (marcalaIntakeLots.lots[i].lotName.toLowerCase().includes(substring)) {
+
+                filteredMarcalaIntakeLots.push(marcalaIntakeLots.lots[i]);
+
+            }
+        }
+    }
+
+    console.log(filteredMarcalaIntakeLots);
 
     return (
         <section className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '1em', 'min-height': '50vh' }}>
@@ -73,16 +88,26 @@ export const ProcessingExport = (props) => {
                 <h2 style={{ color: 'white' }}>Processed and Exported by Catracha Coffee</h2>
                 <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
                 {
-                    marcalaIntakeLots
+                    marcalaIntakeLots && filteredMarcalaIntakeLots
+
                         ?
                         <ProcessingSectionPagination
 
-                            numberOfLots={marcalaIntakeLots.lots}
-                            processingLotIds={paginate(marcalaIntakeLots.lots)}
+                            farmerName={props.farmerIndex.farmerName}
+
+                            numberOfLots={filteredMarcalaIntakeLots}
+                            processingLotIds={paginate(filteredMarcalaIntakeLots)}
+
+
+                        // numberOfLots={marcalaIntakeLots.lots}
+                        // processingLotIds={paginate(marcalaIntakeLots.lots)}
 
                         />
+
                         :
+
                         ''
+
                 }
 
             </Container>
