@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -29,20 +29,62 @@ export const ProcessingExport = (props) => {
         return newItems
     }
 
+    // MarcalaIntake
+    const [marcalaIntakeLots, setMarcalaIntakeLots] = useState('');
+
+    // const [marcalaIntakeLotIds, setMarcalaIntakeLotIds] = useState([]);
 
 
+    useEffect(() => {
+
+        fetch(`https://bext360api.azure-api.net/retaildev/v1/getnodelot/${props.farmerIndex.MarcalaIntakeNodeId}`, {
+            method: 'GET',
+            headers: {
+                'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+            }
+        }).then(res => {
+            return res.json();
+        })
+            .then(json => {
+
+                setMarcalaIntakeLots(json);
+
+            });
+
+        // if (marcalaIntakeLots) {
+
+        //     let marcalaIntakeLotIdsPlaceholderArray = marcalaIntakeLots.lots.map(x => x.id);
+
+        //     setMarcalaIntakeLotIds(marcalaIntakeLotIdsPlaceholderArray);
+
+        // }
+
+    }, [marcalaIntakeLots])
+
+    // console.log(marcalaIntakeLots);
+    // console.log(marcalaIntakeLots.lots);
 
 
     return (
-        <section className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '1em' }}>
+        <section className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '1em', 'min-height': '50vh' }}>
 
             <Container>
 
                 <h2 style={{ color: 'white' }}>Processed and Exported by Catracha Coffee</h2>
                 <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
-                <p style={{ color: 'white' }}>Test data:</p>
+                {
+                    marcalaIntakeLots
+                        ?
+                        <ProcessingSectionPagination
 
-                <ProcessingSectionPagination numberOfLots={props.numberOfLots} processingLotIds={paginate(props.processingLotIds)} ></ProcessingSectionPagination>
+                            numberOfLots={marcalaIntakeLots.lots}
+                            processingLotIds={paginate(marcalaIntakeLots.lots)}
+
+                        />
+                        :
+                        ''
+                }
+
             </Container>
 
 

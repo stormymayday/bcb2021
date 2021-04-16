@@ -23,6 +23,13 @@ const ProcessingSection = (props) => {
         return newItems
     }
 
+    useEffect(() => {
+
+
+    }, [])
+
+    console.log(props.marcalaIntakeLots, props.numberOfLots)
+
     return (
         <section>
             <h2>Processing</h2>

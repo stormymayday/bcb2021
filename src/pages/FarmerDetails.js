@@ -3,6 +3,7 @@ import Loading from '../components/Loading/Loading';
 import HarvestList from '../components/HarvestList/HarvestList';
 import Pagination from '../components/Pagination/Pagination';
 import paginate from '../utils';
+
 import { useParams, useHistory, Link } from 'react-router-dom';
 
 import { useGlobalContext } from '../context';
@@ -67,70 +68,11 @@ const FarmerDetails = (props) => {
     const [harvestNodeLots, setHarvestNodeLots] = useState('');
     const [harvestLotIDs, setHarvestLotIDs] = useState([]);
 
+    // MarcalaIntake
+    const [marcalaIntakeLots, setMarcalaIntakeLots] = useState('');
+    const [marcalaIntakeLotIds, setMarcalaIntakeLotIds] = useState([]);
+
     useEffect(() => {
-
-        // console.log(paginate(location.state.farmer.harvestLotIds));
-
-        const getTotals = async (lotIds) => {
-
-            // Getting the lotIDs Array
-            const lotIDs = lotIds;
-
-            // Placeholder object
-            const lotData = {};
-
-            const harvestLotsArray = [];
-
-            // Absorbed Weights array
-            const absorbedWeights = [];
-
-            // Harvest Dates array
-            const dates = [];
-
-            let sumOfAbsorbedWeights;
-
-            for (let i = 0; i < lotIDs.length; i++) {
-                // API call and object assignment
-                Object.assign(lotData,
-                    await fetch(`https://bext360api.azure-api.net/retaildev/v1/getlot/${lotIDs[i]}`, {
-                        method: 'GET',
-                        headers: {
-                            'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-                        }
-                    }).then(res => res.json()));
-
-                // Getting Absorbed Weight in integer format
-                absorbedWeights[i] = parseInt(lotData.absorbedWeight);
-
-                // Capturing De-Pupled Date into the array
-                dates[i] = lotData.customData['HarvestDate.MeasureTime'].value;
-
-                // Pushin current object into harvest lots array
-                harvestLotsArray.push(lotData);
-            }
-
-            // Getting the sum of Absorbed Weights
-            sumOfAbsorbedWeights = await absorbedWeights.reduce((accumulator, currentValue) => {
-                return accumulator + currentValue;
-            }, 0);
-
-            // Sorting the De-Pupled Dates Array
-            dates.sort();
-
-            // Testing
-            // console.log(sumOfAbsorbedWeights, sumOfDePupledWeights, dePupledDates[0], dePupledDates[dePupledDates.length - 1]);
-
-            setTotalAbsorbedWeight(`${sumOfAbsorbedWeights} Lbs`);
-
-            setHarvestDates(`${dates[0]} and ${dates[dates.length - 1]}`);
-
-            setHarvestLots(harvestLotsArray);
-        }
-        // getTotals(location.state.farmer.harvestLotIds);
-        // Totals End
-
-        // console.log(`Harvest lot ids: ${location.state.farmer.harvestLotIds}`);
-        // console.log(`Harvest lots: ${harvestLots}`);
 
         // Dev Test getNode
         fetch(`https://bext360api.azure-api.net/retaildev/v1/getnode/${farmers[index].harvestGeneralNodeID}`, {
@@ -163,47 +105,11 @@ const FarmerDetails = (props) => {
 
             });
 
-        // Farmer Harvest
-        // fetch(`https://bext360api.azure-api.net/retaildev/v1/getlot/${location.state.farmer.harvestLotIds[0]}`, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-        //     }
-        // }).then(res => res.json())
-        //     .then(json => {
-
-        //         setCurrentWeight(json.currentWeight);
-        //         setCurrentWeightUnit(json.currentWeightUnit);
-        //         setAbsorbedWeight(json.absorbedWeight);
-        //         setAbsorbedWeightUnit(json.absorbedWeightUnit);
-
-        //         setHarvestDate(json.customData['HarvestDate.MeasureTime'].value);
-        //         setCollectionDate(json.customData['CollectionDate.MeasureTime'].value);
-
-        //     });
-
-        // Getting Harvest Lot objects
-        // useState(location.state.farmer.harvestLotIds);
-        // for (let i = 0; i < location.state.farmer.harvestLotIds.length; i++) {
-
-        //     await fetch(`https://bext360api.azure-api.net/retaildev/v1/getlot/${location.state.farmer.harvestLotIds[i]}`, {
-        //         method: 'GET',
-        //         headers: {
-        //             'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-        //         }
-        //     }).then(res => res.json())
-        //         .then(json => {
-        //             setHarvestLot(json);
-        //         });
-        // }
-
-        // console.log(`Api Key: ${process.env.REACT_APP_API_KEY}`);
-
         if (harvestNodeLots) {
 
             let sum = 0;
 
-            let placeholderArray = [];
+            let harvestLotIDsPlaceholderArray = [];
 
             for (let i = 0; i < harvestNodeLots.lots.length; i++) {
 
@@ -213,26 +119,53 @@ const FarmerDetails = (props) => {
 
                 }
 
-                placeholderArray.push(harvestNodeLots.lots[i].id);
-
             }
+
+            harvestLotIDsPlaceholderArray = harvestNodeLots.lots.map(x => x.id);
 
             setTotalAbsorbedHarvestWeight(sum);
 
-            setHarvestLotIDs(placeholderArray);
+            setHarvestLotIDs(harvestLotIDsPlaceholderArray);
 
         }
 
-    }, [harvestNodeLots, farmers[index].processingLotIds, farmers[index].harvestLotIds, farmers[index].farmerName, farmers[index].harvestGeneralNodeID, longitude, latitude])
+        // fetch(`https://bext360api.azure-api.net/retaildev/v1/getnodelot/${farmers[index].MarcalaIntakeNodeId}`, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+        //     }
+        // }).then(res => {
+        //     return res.json();
+        // })
+        //     .then(json => {
+
+        //         setMarcalaIntakeLots(json);
+
+        //     });
+
+        // if (marcalaIntakeLots) {
+
+        //     let marcalaIntakeLotIdsPlaceholderArray = marcalaIntakeLots.lots.map(x => x.id);
+
+        //     setMarcalaIntakeLotIds(marcalaIntakeLotIdsPlaceholderArray);
+
+        // }
 
 
-    // for (let i = 0; i < location.state.farmer.harvestLotIds.length; i++) {
-    //     console.log(`Harvest ID: ${location.state.farmer.harvestLotIds[i]}`);
-    // }
-    // console.log(`Testing harveset lots object: ${JSON.stringify(harvestLots)}`);
-    // console.log(`Testing absorbed weight: ${absorbedWeight}`);
+    }, [
+        harvestNodeLots,
 
-    // console.log(harvestNodeLots.lots);
+
+        // marcalaIntakeLotIds
+
+        // farmers[index].processingLotIds,
+        // farmers[index].harvestLotIds,
+
+        // longitude,
+        // latitude,
+    ])
+
+    // console.log(marcalaIntakeLots, marcalaIntakeLotIds);
 
     return (
         <React.Fragment>
@@ -318,7 +251,7 @@ const FarmerDetails = (props) => {
                     </Col>
                     <Col md='12' lg='6'>
                         {
-                            farmers[index].farmerName && farmers[index].harvestGeneralNodeID && longitude && latitude
+                            longitude && latitude
 
                                 ?
 
@@ -337,11 +270,12 @@ const FarmerDetails = (props) => {
 
                         <Pagination
 
-                            harvestLotIds={paginate(farmers[index].harvestLotIds)}
+                            // harvestLotIds={paginate(farmers[index].harvestLotIds)}
 
                             harvestLots={harvestLotIDs ? paginate(harvestLotIDs) : []}
 
                         />
+
                     </Container>
                 </Row>
 
@@ -349,21 +283,20 @@ const FarmerDetails = (props) => {
 
 
             <div id='processing'>
-                {
-                    farmers[index].processingLotIds
 
-                        ?
 
-                        <ProcessingExport
-                            numberOfLots={farmers[index].processingLotIds.length}
-                            processingLotIds={farmers[index].processingLotIds}
-                        />
+                <ProcessingExport
 
-                        :
+                    farmerIndex={farmers[index]}
 
-                        ''
+                // numberOfLots={farmers[index].processingLotIds.length}
+                // processingLotIds={farmers[index].processingLotIds}
 
-                }
+                // numberOfLots={marcalaIntakeLotIds.length}
+                // processingLotIds={marcalaIntakeLotIds}
+
+                />
+
             </div>
 
             <Roasting />

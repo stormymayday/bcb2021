@@ -33,7 +33,10 @@ const Pagination = (props) => {
 
         }
 
-    }, [props.harvestLots, page])
+    }, [
+        props.harvestLots,
+        page
+    ])
 
     const handlePage = (index) => {
         setPage(index)
@@ -68,7 +71,7 @@ const Pagination = (props) => {
     //     setPage(index)
     // }
 
-    console.log(props.harvestLots);
+    // console.log(props.harvestLots);
 
     return (
         <div>

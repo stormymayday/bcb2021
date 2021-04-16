@@ -91,7 +91,7 @@ export const ProcessingExport = (props) => {
             intakeDates.sort();
 
             // Testing
-            // console.log(`${sumOfWeights}, ${(sumOfPayments / 24.5).toFixed(2)}, ${intakeDates}`);
+            console.log(props.marcalaIntakeLotIds);
 
             setTotalIntakeWeight(`${sumOfWeights} Lbs from ${weights.length} separate intakes`);
 

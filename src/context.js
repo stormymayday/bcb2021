@@ -31,31 +31,18 @@ const AppProvider = ({ children }) => {
                 "fca23d55-c571-454e-964c-fbe3c7992941",
                 "7a29756d-48c6-4586-be82-eef1a97e65bd",
                 "0264a7f1-fae7-4c01-aeef-c863cf6fd610"],
-            intakeNodeIds: []
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
+
         },
         {
-            farmerName: 'Gloria',
-            farmerPicture: 'https://robohash.org/1?set=set4',
-            harvestGeneralNodeID: 'a4c8bf16-7c5b-44d9-a25b-2635bc9d803e',
+            farmerName: 'Mirian Vasquez',
+            farmerPicture: '',
+            harvestGeneralNodeID: '1dd07753-5a46-4151-a720-badaa9462153',
             harvestLotIds: [],
-            processingLotIds: '',
-            intakeNodeID: ''
-        },
-        {
-            farmerName: 'Luis',
-            farmerPicture: 'https://robohash.org/2?set=set4',
-            harvestGeneralNodeID: '5b10dd8f-2d9b-4595-98ab-4896ece46466',
-            harvestLotIds: [],
-            processingLotIds: '',
-            intakeNodeIds: ''
-        },
-        {
-            farmerName: 'Atanacio',
-            farmerPicture: 'https://robohash.org/3?set=set4',
-            harvestGeneralNodeID: '174a5f0c-0a98-46b9-b1af-c3fee2e78470',
-            harvestLotIds: [],
-            processingLotIds: '',
-            intakeNodeID: ''
+            processingLotIds: [],
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
         },
         {
             farmerName: 'David',
@@ -63,31 +50,8 @@ const AppProvider = ({ children }) => {
             harvestGeneralNodeID: 'f5b260cf-afd8-4525-9533-4562a8741f0a',
             harvestLotIds: [],
             processingLotIds: '',
-            intakeNodeID: ''
-        },
-        {
-            farmerName: 'Jose Antonio Nolasco',
-            farmerPicture: 'https://robohash.org/5?set=set4',
-            harvestGeneralNodeID: '8c8a341d-112d-43a0-bc28-8d7b5eceb697',
-            harvestLotIds: [],
-            processingLotIds: '',
-            intakeNodeID: ''
-        },
-        {
-            farmerName: 'Adan Hernandez',
-            farmerPicture: 'https://robohash.org/6?set=set4',
-            harvestGeneralNodeID: 'd7a3d524-d8fa-4f0d-b695-e5c7dfbc09a2',
-            harvestLotIds: [],
-            processingLotIds: '',
-            intakeNodeID: ''
-        },
-        {
-            farmerName: 'Mirian Vasquez',
-            farmerPicture: '',
-            harvestGeneralNodeID: '1dd07753-5a46-4151-a720-badaa9462153',
-            harvestLotIds: [],
-            processingLotIds: '',
-            intakeNodeIds: ''
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
         },
         {
             farmerName: 'Fidelina',
@@ -95,7 +59,35 @@ const AppProvider = ({ children }) => {
             harvestGeneralNodeID: '77073017-c640-4822-ad6d-7e6fd51da0f8',
             harvestLotIds: [],
             processingLotIds: '',
-            intakeNodeID: ''
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
+        },
+        {
+            farmerName: 'Jose Antonio Nolasco',
+            farmerPicture: 'https://robohash.org/5?set=set4',
+            harvestGeneralNodeID: '8c8a341d-112d-43a0-bc28-8d7b5eceb697',
+            harvestLotIds: [],
+            processingLotIds: '',
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
+        },
+        {
+            farmerName: 'Luis',
+            farmerPicture: 'https://robohash.org/2?set=set4',
+            harvestGeneralNodeID: '5b10dd8f-2d9b-4595-98ab-4896ece46466',
+            harvestLotIds: [],
+            processingLotIds: '',
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
+        },
+        {
+            farmerName: 'Atanacio',
+            farmerPicture: 'https://robohash.org/3?set=set4',
+            harvestGeneralNodeID: '174a5f0c-0a98-46b9-b1af-c3fee2e78470',
+            harvestLotIds: [],
+            processingLotIds: '',
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
         },
         {
             farmerName: 'Rigoberto',
@@ -103,7 +95,8 @@ const AppProvider = ({ children }) => {
             harvestGeneralNodeID: 'c0cd6532-86dd-4693-843a-5825cabb4e8e',
             harvestLotIds: [],
             processingLotIds: '',
-            intakeNodeID: ''
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
         },
         {
             farmerName: 'Maria Adela',
@@ -111,7 +104,26 @@ const AppProvider = ({ children }) => {
             harvestGeneralNodeID: '9efb04d1-76ab-4dae-94dd-29f0b0105fcc',
             harvestLotIds: [],
             processingLotIds: '',
-            intakeNodeID: ''
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
+        },
+        {
+            farmerName: 'Gloria',
+            farmerPicture: 'https://robohash.org/1?set=set4',
+            harvestGeneralNodeID: 'a4c8bf16-7c5b-44d9-a25b-2635bc9d803e',
+            harvestLotIds: [],
+            processingLotIds: '',
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
+        },
+        {
+            farmerName: 'Adan Hernandez',
+            farmerPicture: 'https://robohash.org/6?set=set4',
+            harvestGeneralNodeID: 'd7a3d524-d8fa-4f0d-b695-e5c7dfbc09a2',
+            harvestLotIds: [],
+            processingLotIds: '',
+            MarcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            MarcalaIntakeLotIds: []
         },
         {
             farmerName: 'Gumercindo',
@@ -119,7 +131,8 @@ const AppProvider = ({ children }) => {
             harvestGeneralNodeID: '6e374ca1-ea5f-4cc4-863e-ece4143cad48',
             harvestLotIds: [],
             processingLotIds: '',
-            intakeNodeID: ''
+            marcalaIntakeNodeId: 'c32bae0b-daae-465b-92d0-b9e5fdbbf9ee',
+            marcalaIntakeLotIds: []
         }
     ]);
 

@@ -59,16 +59,26 @@ const ProcessingSectionPagination = (props) => {
     // }
 
     return (
+
         <div>
+
             <SectionTitleContainer>
                 {/* <h2>Processing Pagination Component ({props.numberOfLots} Lots)</h2> */}
             </SectionTitleContainer>
             <CardsSection>
-                <CardContainer>
-                    {items.map((item) => {
-                        return <ProcessingLotCard key={item.id} harvestLot={item} />
-                    })}
-                </CardContainer>
+                {
+                    items ?
+
+                        <CardContainer>
+                            {items.map((item) => {
+                                return <ProcessingLotCard key={item.id} harvestLot={item} />
+                            })}
+                        </CardContainer>
+
+                        :
+                        'Coming Soon'
+
+                }
                 <ButtonContainer>
                     {data.map((item, index) => {
                         return (
@@ -114,7 +124,7 @@ const ProcessingSectionPagination = (props) => {
                     </div>
                 )}
             </section> */}
-        </div>
+        </div >
     )
 }
 
