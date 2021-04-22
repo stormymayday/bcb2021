@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+// Google Analytics
+import ReactGA from 'react-ga';
 import './FarmerCard.css';
 import slideOne from '../../images/slideOne.jpg';
 import slideTwo from '../../images/coffee_farm.JPG';
@@ -7,6 +9,13 @@ import slideTwo from '../../images/coffee_farm.JPG';
 export const FarmerCard = (props) => {
 
     const [farmer, setFarmer] = useState({});
+
+    const googleAnalyicsEvent = () => {
+        ReactGA.event({
+            category: 'Learn More Farmer button',
+            action: `Learn More button for ${props.farmer.farmerName}`
+        })
+    }
 
     useEffect(() => {
         setFarmer(props.farmer);
@@ -32,6 +41,7 @@ export const FarmerCard = (props) => {
                 <h3>{props.farmer.farmerName}</h3>
                 {/* <p>{props.index}</p> */}
                 <Link
+                    onClick={googleAnalyicsEvent}
                     to={{
                         // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
                         pathname: `/farmer/${props.farmer.harvestGeneralNodeID}/${props.index}`,

@@ -12,6 +12,7 @@ import {
 } from './ProcessingSectionPagination.styles';
 
 import ProcessingLotCard from '../ProcessingLotCard/ProcessingLotCard';
+import { Container } from 'react-bootstrap';
 
 const ProcessingSectionPagination = (props) => {
 
@@ -69,7 +70,6 @@ const ProcessingSectionPagination = (props) => {
     return (
 
         <div>
-
             <SectionTitleContainer>
                 {/* <h2>Processing Pagination Component ({props.numberOfLots} Lots)</h2> */}
             </SectionTitleContainer>
@@ -137,6 +137,7 @@ const ProcessingSectionPagination = (props) => {
                     </div>
                 )}
             </section> */}
+
         </div >
     )
 }

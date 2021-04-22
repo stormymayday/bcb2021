@@ -4,6 +4,7 @@ import HomePageNavigation from '../components/HomePageNavigation/HomePageNavigat
 import FarmerList from '../components/FarmerList/FarmerList';
 import SearchForm from '../components/SearchForm/SearchForm';
 export const Home = () => {
+
     return (
         <main>
             {/* <Hero /> */}

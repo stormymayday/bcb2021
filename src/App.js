@@ -79,11 +79,10 @@ const App = () => {
     // // Render test
     // console.log('Hello From App.js');
 
-    // // Google Analytics initiazation
-    // ReactGA.initialize(`${process.env.REACT_APP_GA_ID}`);
-
-    // // Page View Report
-    // ReactGA.pageview('/');
+    // Google Analytics initiazation
+    ReactGA.initialize(`${process.env.REACT_APP_GA_ID}`);
+    // Google Analytics Page View report
+    ReactGA.pageview(window.location.pathname + window.location.search);
 
     // // Dev Test getNode
     // fetch(`https://bext360api.azure-api.net/retaildev/v1/getnode/a4c8bf16-7c5b-44d9-a25b-2635bc9d803e`, {
