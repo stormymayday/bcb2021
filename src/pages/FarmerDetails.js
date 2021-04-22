@@ -6,6 +6,9 @@ import paginate from '../utils';
 
 import { useParams, useHistory, Link } from 'react-router-dom';
 
+// Google Analytics
+import ReactGA from 'react-ga';
+
 import { useGlobalContext } from '../context';
 
 import Hero from '../components/Hero';
@@ -32,6 +35,11 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 const FarmerDetails = (props) => {
+
+    // Google Analytics initiazation
+    // ReactGA.initialize(`${process.env.REACT_APP_GA_ID}`);
+    // Google Analytics Page View report
+    ReactGA.pageview(window.location.pathname + window.location.search);
 
     const { id, index } = useParams();
     const { location } = useHistory();

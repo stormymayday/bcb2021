@@ -44,7 +44,7 @@ export const FarmerCard = (props) => {
                     onClick={googleAnalyicsEvent}
                     to={{
                         // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
-                        pathname: `/farmer/${props.farmer.harvestGeneralNodeID}/${props.index}`,
+                        pathname: `/farmer/${props.farmer.farmerName.replace(/\s/g, '')}/${props.farmer.harvestGeneralNodeID}/${props.index}`,
                         state: {
                             farmer
                         }
