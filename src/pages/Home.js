@@ -7,9 +7,9 @@ export const Home = () => {
 
     return (
         <main>
-            {/* <Hero /> */}
             {/* <SearchForm /> */}
             <HomePageNavigation />
+            <Hero />
             <FarmerList />
         </main>
     )
