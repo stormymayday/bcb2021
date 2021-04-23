@@ -7,6 +7,8 @@ import ReactGA from 'react-ga';
 import HomePageNavigation from '../components/HomePageNavigation/HomePageNavigation';
 import FarmerList from '../components/FarmerList/FarmerList';
 import SearchForm from '../components/SearchForm/SearchForm';
+import PartnersSection from '../sections/partners/PartnersSection';
+
 export const Home = () => {
 
     useEffect(() => {
@@ -24,6 +26,7 @@ export const Home = () => {
             <HomePageNavigation />
             <Hero />
             <FarmerList />
+            <PartnersSection />
         </main>
     )
 }

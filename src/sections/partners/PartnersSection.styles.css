@@ -1,0 +1,7 @@
+.partners-section-bg {
+	background: linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
