@@ -3,8 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 // Bootstrap components
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 
 export default function DetailsPageNavigation(props) {
@@ -26,6 +25,11 @@ export default function DetailsPageNavigation(props) {
 
                         <Nav className="ml-auto">
                             <Nav.Link href="/">HOME</Nav.Link>
+
+                            <Nav.Link href="/roasters">ROASTERS</Nav.Link>
+                            <NavDropdown title="FARMERS" id="basic-nav-dropdown">
+                                <NavDropdown.Item as={Link} to="/farmers" key="1">Harvest 2021</NavDropdown.Item>
+                            </NavDropdown>
 
                             <Nav.Link
                                 as={HashLink}

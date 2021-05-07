@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import Hero from '../components/Hero';
+// import Hero from '../components/Hero';
 
 // Google Analytics
 import ReactGA from 'react-ga';
 
-import HomePageNavigation from '../components/HomePageNavigation/HomePageNavigation';
-import FarmerList from '../components/FarmerList/FarmerList';
-import SearchForm from '../components/SearchForm/SearchForm';
-import PartnersSection from '../sections/partners/PartnersSection';
+import HomePageNavigation from '../../components/HomePageNavigation/HomePageNavigation';
+import FarmerList from '../../components/FarmerList/FarmerList';
+import SearchForm from '../../components/SearchForm/SearchForm';
 
-export const Home = () => {
+export const FarmersPage = () => {
 
     useEffect(() => {
 
@@ -24,11 +23,11 @@ export const Home = () => {
         <main>
             {/* <SearchForm /> */}
             <HomePageNavigation />
-            <Hero />
-            {/* <FarmerList /> */}
-            <PartnersSection />
+            {/* <Hero /> */}
+            <FarmerList />
+            {/* <PartnersSection /> */}
         </main>
     )
 }
 
-export default Home;
+export default FarmersPage;

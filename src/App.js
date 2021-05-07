@@ -13,6 +13,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './pages/Home';
 import FarmerDetails from './pages/FarmerDetails';
 import Error from './pages/Error';
+import FarmersPage from './pages/FarmersPage/FarmersPage';
 
 // Components
 import Navigation from './components/HomePageNavigation/HomePageNavigation';
@@ -384,6 +385,13 @@ const App = () => {
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route exact path="/roasters">
+          {/* <FarmerDetails /> */}
+        </Route>
+        <Route exact path="/farmers">
+          <FarmersPage />
+          {/* <FarmerDetails /> */}
         </Route>
         <Route exact path="/farmer/:name/:id/:index">
           <FarmerDetails />

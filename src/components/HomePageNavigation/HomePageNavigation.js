@@ -1,9 +1,9 @@
 import React from 'react';
 
 // Bootstrap components
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
+import { Link } from "react-router-dom";
 
 export default function HomePageNavigation() {
     return (
@@ -23,6 +23,10 @@ export default function HomePageNavigation() {
                             <Nav.Link href="#journey">JOURNEY</Nav.Link>
                             <Nav.Link href="#roasting">ROASTING</Nav.Link>
                             <Nav.Link href="#economics">ECONOMICS</Nav.Link> */}
+                            <Nav.Link href="/roasters">ROASTERS</Nav.Link>
+                            <NavDropdown title="FARMERS" id="basic-nav-dropdown">
+                                <NavDropdown.Item as={Link} to="/farmers" key="1">Harvest 2021</NavDropdown.Item>
+                            </NavDropdown>
                         </Nav>
 
                     </Navbar.Collapse>
