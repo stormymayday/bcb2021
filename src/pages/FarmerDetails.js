@@ -21,7 +21,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 
 // Components
 import LeafletMap from '../components/LeafletMap/LeafletMap';
-import DetailsPageNavigation from '../components/DetailsPageNavigation/DetailsPageNavigation';
+import FarmerDetailsPageNavigation from '../components/FarmerDetailsPageNavigation/FarmerDetailsPageNavigation';
 
 // Sections
 import HarvestSection from '../components/HarvestSection/HarvestSection';
@@ -177,7 +177,7 @@ const FarmerDetails = (props) => {
 
     return (
         <React.Fragment>
-            <DetailsPageNavigation location={location} />
+            <FarmerDetailsPageNavigation location={location} />
             <Jumbotron style={{
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
              rgba(0, 0, 0, 0.5)),

@@ -6,7 +6,7 @@ import { HashLink } from 'react-router-hash-link';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 
-export default function DetailsPageNavigation(props) {
+export default function FarmerDetailsPageNavigation(props) {
 
     const scrollWidthOffset = (el) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;

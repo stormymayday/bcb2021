@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import FarmerDetails from './pages/FarmerDetails';
 import Error from './pages/Error';
 import FarmersPage from './pages/FarmersPage/FarmersPage';
+import RoastersPage from './pages/RoastersPage/RoastersPage';
 
 // Components
 import Navigation from './components/HomePageNavigation/HomePageNavigation';
@@ -387,6 +388,7 @@ const App = () => {
           <Home />
         </Route>
         <Route exact path="/roasters">
+          <RoastersPage />
           {/* <FarmerDetails /> */}
         </Route>
         <Route exact path="/farmers">
