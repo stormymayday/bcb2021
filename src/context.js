@@ -7,12 +7,19 @@ const AppProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('a');
+
+
+
+
     const [roasters, setRoasters] = useState([
         {
             roasterName: 'Queen City',
             roasterUrl: 'https://queencitycollectivecoffee.com/'
         }
     ]);
+
+
+
     const [farmers, setFarmers] = useState([
         {
             farmerName: 'Claudia & Juan',

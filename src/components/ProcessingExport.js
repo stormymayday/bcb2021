@@ -27,86 +27,86 @@ export const ProcessingExport = (props) => {
 
     const [paymentsTotal, setPaymentsTotal] = useState('fetching data from BEXT');
 
-    Object.keys(props.lotHistory).forEach(async function (key) {
+    // Object.keys(props.lotHistory).forEach(async function (key) {
 
-        if (props.lotHistory[key].nodeId === '01b66b57-c0a0-481c-abb0-57be005096da') {
+    //     if (props.lotHistory[key].nodeId === '01b66b57-c0a0-481c-abb0-57be005096da') {
 
-            // Getting the lotIDs Array
-            const lotIDs = props.lotHistory[key].lotIds;
+    //         // Getting the lotIDs Array
+    //         const lotIDs = props.lotHistory[key].lotIds;
 
-            // console.log(lotIDs);
+    //         // console.log(lotIDs);
 
-            // Placeholder object
-            const lotData = {};
+    //         // Placeholder object
+    //         const lotData = {};
 
-            // Weights array
-            const weights = [];
+    //         // Weights array
+    //         const weights = [];
 
-            // Money array
-            const payments = [];
+    //         // Money array
+    //         const payments = [];
 
-            // Dates array
-            const intakeDates = [];
+    //         // Dates array
+    //         const intakeDates = [];
 
-            for (let i = 0; i < lotIDs.length; i++) {
-                // API call and object assignment
-                Object.assign(lotData,
-                    await fetch(`${process.env.REACT_APP_GET_LOT}/${lotIDs[i]}`, {
-                        method: 'GET',
-                        headers: {
-                            'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-                        }
-                    }).then(res => res.json()));
+    //         for (let i = 0; i < lotIDs.length; i++) {
+    //             // API call and object assignment
+    //             Object.assign(lotData,
+    //                 await fetch(`${process.env.REACT_APP_GET_LOT}/${lotIDs[i]}`, {
+    //                     method: 'GET',
+    //                     headers: {
+    //                         'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+    //                     }
+    //                 }).then(res => res.json()));
 
-                // Getting Current Weight in integer format
-                weights[i] = parseInt(lotData.currentWeight);
+    //             // Getting Current Weight in integer format
+    //             weights[i] = parseInt(lotData.currentWeight);
 
-                // Placing Transaction Date value into a string variable
-                const str = lotData.customData['TransactionDate.MeasureTime'].dateTimeValue;
-
-
-                // Slicing off first 10 characters
-                const intakeDate = str.slice(0, 10);
+    //             // Placing Transaction Date value into a string variable
+    //             const str = lotData.customData['TransactionDate.MeasureTime'].dateTimeValue;
 
 
-                // Capturing Intake Date into the array
-                intakeDates[i] = intakeDate;
+    //             // Slicing off first 10 characters
+    //             const intakeDate = str.slice(0, 10);
 
-                // Capturing TotalValue.Measure into the array
-                payments[i] = parseInt(lotData.customData["TotalValue.Measure"].value);
 
-            }
+    //             // Capturing Intake Date into the array
+    //             intakeDates[i] = intakeDate;
 
-            // Getting the sum of weights
-            const sumOfWeights = weights.reduce((accumulator, currentValue) => {
-                return accumulator + currentValue;
-            }, 0);
+    //             // Capturing TotalValue.Measure into the array
+    //             payments[i] = parseInt(lotData.customData["TotalValue.Measure"].value);
 
-            // Getting the sum of payments
-            const sumOfPayments = payments.reduce((accumulator, currentValue) => {
-                return accumulator + currentValue;
-            }, 0);
+    //         }
 
-            // Sorting the Dates Array
-            intakeDates.sort();
+    //         // Getting the sum of weights
+    //         const sumOfWeights = weights.reduce((accumulator, currentValue) => {
+    //             return accumulator + currentValue;
+    //         }, 0);
 
-            // Testing
-            console.log(props.marcalaIntakeLotIds);
+    //         // Getting the sum of payments
+    //         const sumOfPayments = payments.reduce((accumulator, currentValue) => {
+    //             return accumulator + currentValue;
+    //         }, 0);
 
-            setTotalIntakeWeight(`${sumOfWeights} Lbs from ${weights.length} separate intakes`);
+    //         // Sorting the Dates Array
+    //         intakeDates.sort();
 
-            setIntakeDates(`${intakeDates[0]} and ${intakeDates[intakeDates.length - 1]}`);
+    //         // Testing
+    //         console.log(props.marcalaIntakeLotIds);
 
-            setPaymentsTotal(`${(sumOfPayments / 24.5).toFixed(2)} USD`);
-        }
+    //         setTotalIntakeWeight(`${sumOfWeights} Lbs from ${weights.length} separate intakes`);
 
-    });
+    //         setIntakeDates(`${intakeDates[0]} and ${intakeDates[intakeDates.length - 1]}`);
+
+    //         setPaymentsTotal(`${(sumOfPayments / 24.5).toFixed(2)} USD`);
+    //     }
+
+    // });
 
     return (
         <div className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='processing-export'>
             <Container>
 
-                <h2 style={{ color: 'white' }}>Processed and Exported by Catracha Coffee</h2>
+                <h2 style={{ color: 'white' }}>Catracha Coffee</h2>
                 <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
                 <Row>
                     <Col lg={3} md={6} sm={12}>
@@ -120,11 +120,12 @@ export const ProcessingExport = (props) => {
 
                         <Card border="light" text='light' border='light' style={{ 'background-color': 'transparent', 'margin-bottom': '2rem' }}>
                             <Card.Body>
-                                <Card.Title>Catracha Intake Parchment</Card.Title>
+                                <Card.Title>Intake</Card.Title>
                                 <Card.Text>
-                                    Total Intake Weight: {totalIntakeWeight}<br />
-                                    Intake Dates between: {intakeDates}<br />
-                                    Payments total: {paymentsTotal}<br />
+                                    Total Weight: {totalIntakeWeight}<br />
+                                    Number of Intake lots: {totalIntakeWeight}<br />
+                                    {/* Intake Dates between: {intakeDates}<br />
+                                    Payments total: {paymentsTotal}<br /> */}
                                 </Card.Text>
                             </Card.Body>
                             <Card.Img variant="top" src={props.catrachaIntakeImage} style={{ 'max-height': '40rem' }} />
@@ -132,19 +133,25 @@ export const ProcessingExport = (props) => {
 
                     </Col>
 
+                </Row>
+
+                <Row>
+
                     <Col lg>
 
                         <Card border="light" text='light' border='light' style={{ 'background-color': 'transparent' }}>
                             <Card.Body>
-                                <Card.Title>Milling</Card.Title>
+                                <Card.Title>Wet Mill</Card.Title>
                                 <Card.Text>
-                                    Milled on: {props.milledOnDate}<br />
+                                    Total Weight: {totalIntakeWeight}<br />
+                                    Number of Wetl Mill lots: {totalIntakeWeight}<br />
+                                    {/* Milled on: {props.milledOnDate}<br />
                                     Miller: {props.miller}<br />
                                     Location: {props.millingLocation}<br />
-                                    Lot Current Weight: {props.lotCurrentWeight}
+                                    Lot Current Weight: {props.lotCurrentWeight} */}
                                 </Card.Text>
                             </Card.Body>
-                            <video style={{ 'max-height': '40rem' }} src={props.millingVideo} controls></video>
+                            {/* <video style={{ 'max-height': '40rem' }} src={props.millingVideo} controls></video> */}
                             <Card.Img variant="top" src={props.millingImage} style={{ 'max-height': '40rem' }} />
                         </Card>
 

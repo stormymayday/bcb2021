@@ -5,6 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+
 export const Journey = (props) => {
 
     // Converting Green Export Video
@@ -20,7 +22,7 @@ export const Journey = (props) => {
         <div style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='journey'>
             <Container>
 
-                <h2 style={{ 'margin-bottom': '3rem' }}>Journey Highlights</h2>
+                <h2 style={{ 'margin-bottom': '3rem' }}>Export, Import, and Intake</h2>
 
                 <Row>
 
@@ -34,7 +36,7 @@ export const Journey = (props) => {
                                     Weight: {props.greenExportWeight}
                                 </Card.Text>
                             </Card.Body>
-                            <video style={{ 'max-height': '40rem' }} src={props.greenExportVideo} controls></video>
+                            {/* <video style={{ 'max-height': '40rem' }} src={props.greenExportVideo} controls></video> */}
                         </Card>
                     </Col>
 
@@ -62,9 +64,26 @@ export const Journey = (props) => {
                                     Received by: {props.intakeGreenCollector}
                                 </Card.Text>
                             </Card.Body>
-                            <video style={{ 'max-height': '40rem' }} src={props.intakeGreenVideo} controls></video>
+                            {/* <video style={{ 'max-height': '40rem' }} src={props.intakeGreenVideo} controls></video> */}
                         </Card>
                     </Col>
+
+                </Row>
+                <Row>
+
+                    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+                        <TileLayer
+                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        <Marker position={[51.505, -0.09]}>
+                            <Popup>
+                                A pretty CSS3 popup. <br /> Easily customizable.
+                        </Popup>
+                        </Marker>
+                    </MapContainer>
+
+
 
                 </Row>
 
