@@ -60,9 +60,9 @@ const Farming = ({
                         <p>
                             Coffee Cherry Total Absorbed Weight: {harvestTotalAbsorbedWeight} {harvestTotalAbsorbedWeightUnit}
                         </p>
-                        <p>
+                        {/* <p>
                             Harvested between: { }
-                        </p>
+                        </p> */}
 
                         <p>
                             Total number of harvest lots: {numberOfHarvestLots}
