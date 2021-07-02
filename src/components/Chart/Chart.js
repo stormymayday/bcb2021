@@ -30,6 +30,20 @@ class Chart extends Component {
                         legend: {
                             display: this.props.displayLegend,
                             position: this.props.legendPosition
+                        },
+                        scales: {
+                            yAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Y text'
+                                }
+                            }],
+                            xAxes: [{
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'X text'
+                                }
+                            }],
                         }
                     }}
                 />

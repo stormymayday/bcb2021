@@ -1,148 +1,148 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Image from 'react-bootstrap/Image';
+
+import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
+import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 
-const Farming = (props) => {
+import LeafletMap from '../components/LeafletMap/LeafletMap';
 
-    // Render Test
-    // console.log('Hello from farming');
+import Pagination from '../components/Pagination/Pagination';
+import paginate from '../utils';
 
-    const [totalAbsorbedWeight, setTotalAbsorbedWeight] = useState('fetching data from BEXT');
+const Farming = ({
 
-    const [totalDePulpedWeight, setTotalDePulpedWeight] = useState('fetching data from BEXT');
+    farmerName,
+    farmerPicture,
+    city,
+    state,
+    country,
+    longitude,
+    latitude,
+    elevation,
+    elevationUnit,
+    harvestTotalAbsorbedWeight,
+    harvestTotalAbsorbedWeightUnit,
+    numberOfHarvestLots,
+    harvestLots,
 
-    const [dePulpedDates, setdePulpedDates] = useState('fetching data from BEXT');
+    wetMilltTotalAbsorbedWeight,
+    wetMillTotalAbsorbedWeightUnit,
 
-    // Placeholder object
-    const lotData = {};
+    wetMillLots
 
-    // Absorbed Weights array
-    const absorbedWeights = [];
+}) => {
 
-    // De-pupled Weights array
-    const dePupledWeights = [];
-
-    // De-pluped Dates array
-    const dePupledDates = [];
-
-    let sumOfAbsorbedWeights;
-
-    let sumOfDePupledWeights;
-
-    // Object.keys(props.lotHistory).forEach(async function (key) {
-
-    //     if (props.lotHistory[key].nodeId === '0270eada-dbb8-45dc-a38d-cffc166d87ea') {
-
-    //         // Getting the lotIDs Array
-    //         const lotIDs = props.lotHistory[key].lotIds;
-
-    //         // console.log(lotIDs);
-
-    //         for (let i = 0; i < lotIDs.length; i++) {
-    //             // API call and object assignment
-    //             Object.assign(lotData,
-    //                 await fetch(`${process.env.REACT_APP_GET_LOT}/${lotIDs[i]}`, {
-    //                     method: 'GET',
-    //                     headers: {
-    //                         'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-    //                     }
-    //                 }).then(res => res.json()));
-
-    //             // Getting Absorbed Weight in integer format
-    //             absorbedWeights[i] = parseInt(lotData.absorbedWeight);
-
-    //             // Getting De-Pupled Weight in integer format
-    //             dePupledWeights[i] = parseInt(lotData.currentWeight);
-
-    //             // Capturing De-Pupled Date into the array
-    //             dePupledDates[i] = lotData.customData['De-PulpingDate.MeasureTime'].dateTimeValue;
-    //         }
-
-    //         // Getting the sum of Absorbed Weights
-    //         sumOfAbsorbedWeights = absorbedWeights.reduce((accumulator, currentValue) => {
-    //             return accumulator + currentValue;
-    //         }, 0);
-
-    //         // Getting the sum of De-Pupled Weight Weights
-    //         sumOfDePupledWeights = dePupledWeights.reduce((accumulator, currentValue) => {
-    //             return accumulator + currentValue;
-    //         }, 0);
-
-    //         // Sorting the De-Pupled Dates Array
-    //         dePupledDates.sort();
-
-    //         // Testing
-    //         // console.log(sumOfAbsorbedWeights, sumOfDePupledWeights, dePupledDates[0], dePupledDates[dePupledDates.length - 1]);
-
-    //         setTotalAbsorbedWeight(`${sumOfAbsorbedWeights} Lbs`);
-
-    //         setTotalDePulpedWeight(`${sumOfDePupledWeights} Lbs`);
-
-    //         setdePulpedDates(`${dePupledDates[0]} and ${dePupledDates[dePupledDates.length - 1]}`);
-
-    //     }
-
-    // });
+    // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
 
     return (
         <div style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='farming'>
             <Container>
 
-                <h2 style={{ 'margin-bottom': '2rem' }}>Farmer</h2>
-                {/* <h3 style={{ 'margin-bottom': '1rem' }}>Harvest</h3> */}
+                <h2 style={{ 'margin-bottom': '1rem' }}>{farmerName}</h2>
 
+                <Row id='harvest' style={{ 'padding-top': '1em' }}>
+                    <Col md='12' lg='6'>
+
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>Harvest</h3>
+
+                        <p>City: {city}</p>
+
+                        <p>State: {state}</p>
+
+                        <p>Country: {country}</p>
+
+                        <p>Elevation: {elevation} {elevationUnit}</p>
+
+                        <p>
+                            Coffee Cherry Total Absorbed Weight: {harvestTotalAbsorbedWeight} {harvestTotalAbsorbedWeightUnit}
+                        </p>
+                        <p>
+                            Harvested between: { }
+                        </p>
+
+                        <p>
+                            Total number of harvest lots: {numberOfHarvestLots}
+                        </p>
+
+                    </Col>
+                    <Col md='12' lg='6'>
+                        <LeafletMap farmer={farmerName} longitude={longitude} latitude={latitude} />
+                    </Col>
+                </Row>
 
                 <Row>
 
-                    <Col md>
+                </Row>
 
-                        <Card border="dark" style={{ 'margin-bottom': '2rem' }}>
 
-                            {/* <Card.Img variant="top" src={slideOne} style={{ 'height': '20rem' }} /> */}
-                            <Card.Body>
-                                <Card.Title>Harvest</Card.Title>
-                                <Card.Text>
-                                    City: <br />
-                                    State: <br />
-                                    Total Absorbed Weight: <br />
-                                    Total number of harvest lots:
-                                </Card.Text>
-                            </Card.Body>
-                            <Card.Img variant="top" src={props.pickerImage} style={{ 'max-height': '40rem' }} />
-                        </Card>
+                <Row>
+                    <Container>
 
+                        <Pagination
+
+                            lots={harvestLots ? paginate(harvestLots) : []}
+
+                        />
+
+                    </Container>
+                </Row>
+
+                <Row>
+
+                    <Col md='12' lg='6'>
+
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>Wet Mill</h3>
+
+                        <p>
+                            Wet Parchment Total Absorbed Weight: {wetMilltTotalAbsorbedWeight} {wetMillTotalAbsorbedWeightUnit}
+                        </p>
+
+                    </Col>
+
+                    <Col md='12' lg='6'>
+                        <Image src={`${farmerPicture}`} rounded fluid></Image>
                     </Col>
 
                 </Row>
 
-                <Row>
+                {/* <Row>
+                    <Container>
 
-                </Row>
+                        <Pagination
 
-                {/* <h3 style={{ 'margin-bottom': '1rem' }}>Wet Mill</h3> */}
+                            lots={wetMillLots ? paginate(wetMillLots) : []}
 
+                        />
 
+                    </Container>
+                </Row> */}
 
-                <Row>
-
-                    <Col md>
-
-                        <Card border="dark">
+                <Accordion style={{ 'margin-top': '2rem' }}>
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                            Show Wet Mill Lots
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
                             <Card.Body>
-                                <Card.Title>Wet Mill</Card.Title>
-                                <Card.Text>
-                                    Total Absorbed Weight: <br />
-                                    Total number of wet mill lots:
-                                </Card.Text>
-                            </Card.Body>
-                            {/* <video style={{ 'height': '20rem' }} src={props.dePulpingVideo} controls></video> */}
-                        </Card>
-                    </Col>
 
-                </Row>
+
+
+                                <Pagination
+
+                                    lots={wetMillLots ? paginate(wetMillLots) : []}
+
+                                />
+
+
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
 
             </Container>
         </div >

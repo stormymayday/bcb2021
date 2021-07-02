@@ -83,61 +83,23 @@ const FarmerDetails = (props) => {
     useEffect(() => {
 
         // Dev Test getNode
-        fetch(`https://bext360api.azure-api.net/retaildev/v1/getnode/${farmers[index].harvestGeneralNodeID}`, {
-            method: 'GET',
-            headers: {
-                'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-            }
-        }).then(res => {
-            return res.json();
-        })
-            .then(json => {
-                setCity(json.defaultLocation.city);
-                setState(json.defaultLocation.state);
-                setLatitude(json.defaultLocation.latitude);
-                setLongitude(json.defaultLocation.longitude);
-                setElevation(json.defaultLocation.elevation);
-            });
+        // fetch(`${process.env.REACT_APP_GET_NODE}/${farmers[index].harvestGeneralNodeID}`, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+        //     }
+        // }).then(res => {
+        //     return res.json();
+        // })
+        //     .then(json => {
+        //         setCity(json.defaultLocation.city);
+        //         setState(json.defaultLocation.state);
+        //         setLatitude(json.defaultLocation.latitude);
+        //         setLongitude(json.defaultLocation.longitude);
+        //         setElevation(json.defaultLocation.elevation);
+        //     });
 
-        fetch(`https://bext360api.azure-api.net/retaildev/v1/getnodelot/${farmers[index].harvestGeneralNodeID}`, {
-            method: 'GET',
-            headers: {
-                'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-            }
-        }).then(res => {
-            return res.json();
-        })
-            .then(json => {
-
-                setHarvestNodeLots(json);
-
-            });
-
-        if (harvestNodeLots) {
-
-            let sum = 0;
-
-            let harvestLotIDsPlaceholderArray = [];
-
-            for (let i = 0; i < harvestNodeLots.lots.length; i++) {
-
-                if (Number.parseInt(harvestNodeLots.lots[i].lotStartWeight)) {
-
-                    sum += Number.parseInt(harvestNodeLots.lots[i].lotStartWeight);
-
-                }
-
-            }
-
-            harvestLotIDsPlaceholderArray = harvestNodeLots.lots.map(x => x.id);
-
-            setTotalAbsorbedHarvestWeight(sum);
-
-            setHarvestLotIDs(harvestLotIDsPlaceholderArray);
-
-        }
-
-        // fetch(`https://bext360api.azure-api.net/retaildev/v1/getnodelot/${farmers[index].MarcalaIntakeNodeId}`, {
+        // fetch(`${process.env.REACT_APP_GET_NODE_LOT}/${farmers[index].harvestGeneralNodeID}`, {
         //     method: 'GET',
         //     headers: {
         //         'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
@@ -147,33 +109,35 @@ const FarmerDetails = (props) => {
         // })
         //     .then(json => {
 
-        //         setMarcalaIntakeLots(json);
+        //         setHarvestNodeLots(json);
 
         //     });
 
-        // if (marcalaIntakeLots) {
+        // if (harvestNodeLots) {
 
-        //     let marcalaIntakeLotIdsPlaceholderArray = marcalaIntakeLots.lots.map(x => x.id);
+        //     let sum = 0;
 
-        //     setMarcalaIntakeLotIds(marcalaIntakeLotIdsPlaceholderArray);
+        //     let harvestLotIDsPlaceholderArray = [];
+
+        //     for (let i = 0; i < harvestNodeLots.lots.length; i++) {
+
+        //         if (Number.parseInt(harvestNodeLots.lots[i].lotStartWeight)) {
+
+        //             sum += Number.parseInt(harvestNodeLots.lots[i].lotStartWeight);
+
+        //         }
+
+        //     }
+
+        //     harvestLotIDsPlaceholderArray = harvestNodeLots.lots.map(x => x.id);
+
+        //     setTotalAbsorbedHarvestWeight(sum);
+
+        //     setHarvestLotIDs(harvestLotIDsPlaceholderArray);
 
         // }
 
-
-    }, [
-        harvestNodeLots,
-
-
-        // marcalaIntakeLotIds
-
-        // farmers[index].processingLotIds,
-        // farmers[index].harvestLotIds,
-
-        // longitude,
-        // latitude,
-    ])
-
-    // console.log(marcalaIntakeLots, marcalaIntakeLotIds);
+    }, [harvestNodeLots]);
 
     return (
         <React.Fragment>
@@ -193,67 +157,33 @@ const FarmerDetails = (props) => {
             }}
                 fluid>
                 <Container>
-                    {/* <h1 style={{ color: 'white' }}>{location.state.farmer.farmerName}</h1> */}
                     <h1 style={{ color: 'white' }}>{farmers[index].farmerName}</h1>
-                    {/* <p>
+                    <p>
                         This is a modified jumbotron that occupies the entire horizontal space of
                         its parent.
-                    </p> */}
+                    </p>
                 </Container>
             </Jumbotron>
-            {/* <Hero /> */}
-            {/* <Image src={slideOne} style={{}} /> */}
-            {/* <div style={{ 'padding-top': '3rem', 'padding-bottom': '4em' }} id='farming'> */}
-            {/* <div id='harvestID'>
 
-                {
-                    harvestNodeLots && harvestLotIDs
-
-                        ?
-
-                        <HarvestSection
-                            harvestLotIds={paginate(farmers[index].harvestLotIds)}
-                            harvestLots={harvestLotIDs ? paginate(harvestLotIDs) : []}
-
-                            city={city}
-                            state={state}
-                            longitude={longitude}
-                            latitude={latitude}
-                            elevation={elevation}
-                            harvestNodeLots={harvestNodeLots}
-                            harvestLotIds={harvestLotIds}
-                            totalAbsorbedHarvestWeight={totalAbsorbedHarvestWeight}
-                        />
-
-                        :
-
-                        ''
-
-                }
-
-            </div> */}
             <Container>
-                {/* <Row>
-                    <h1 style={{ 'margin-bottom': '1rem' }}>{location.state.farmer.farmerName}</h1>
-                </Row> */}
 
                 <Row id='harvest' style={{ 'padding-top': '4em' }}>
                     <Col md='12' lg='6'>
                         <h2>Harvest</h2><br />
-                        <p>City: {city}</p>
+                        <p>City: { }</p>
 
-                        <p>State: {state}</p>
+                        <p>State: { }</p>
 
-                        <p>Longitude: {longitude}</p>
+                        <p>Longitude: { }</p>
 
-                        <p>Latitude: {latitude}</p>
+                        <p>Latitude: { }</p>
 
-                        <p>Elevation: {elevation}</p>
+                        <p>Elevation: { }</p>
                         <p>
                             Total number of harvest lots: {harvestNodeLots ? harvestNodeLots.lots.length : 0}
                         </p>
                         <p>
-                            Total Absorbed Weight: {totalAbsorbedHarvestWeight}
+                            Total Absorbed Weight: { }
                         </p>
 
                     </Col>
@@ -278,9 +208,9 @@ const FarmerDetails = (props) => {
 
                         <Pagination
 
-                            // harvestLotIds={paginate(farmers[index].harvestLotIds)}
+                        // harvestLotIds={paginate(farmers[index].harvestLotIds)}
 
-                            harvestLots={harvestLotIDs ? paginate(harvestLotIDs) : []}
+                        // harvestLots={harvestLotIDs ? paginate(harvestLotIDs) : []}
 
                         />
 
@@ -295,13 +225,7 @@ const FarmerDetails = (props) => {
 
                 <ProcessingExport
 
-                    farmerIndex={farmers[index]}
-
-                // numberOfLots={farmers[index].processingLotIds.length}
-                // processingLotIds={farmers[index].processingLotIds}
-
-                // numberOfLots={marcalaIntakeLotIds.length}
-                // processingLotIds={marcalaIntakeLotIds}
+                // farmerIndex={farmers[index]}
 
                 />
 

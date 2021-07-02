@@ -17,19 +17,19 @@ import ProcessingSectionPagination from '../ProcessingSectionPagination/Processi
 export const ProcessingExport = (props) => {
 
 
-    const paginate = (items) => {
-        const itemsPerPage = 4
-        const numberOfPages = Math.ceil(items.length / itemsPerPage)
+    // const paginate = (items) => {
+    //     const itemsPerPage = 4
+    //     const numberOfPages = Math.ceil(items.length / itemsPerPage)
 
-        const newItems = Array.from({ length: numberOfPages }, (_, index) => {
-            const start = index * itemsPerPage
-            return items.slice(start, start + itemsPerPage)
-        })
+    //     const newItems = Array.from({ length: numberOfPages }, (_, index) => {
+    //         const start = index * itemsPerPage
+    //         return items.slice(start, start + itemsPerPage)
+    //     })
 
-        return newItems
-    }
+    //     return newItems
+    // }
 
-    const substring = props.farmerIndex.farmerName.toLowerCase().split(" ")[0];
+    // const substring = props.farmerIndex.farmerName.toLowerCase().split(" ")[0];
 
     let filteredMarcalaIntakeLots = [];
 
@@ -41,42 +41,37 @@ export const ProcessingExport = (props) => {
 
     useEffect(() => {
 
-        fetch(`https://bext360api.azure-api.net/retaildev/v1/getnodelot/${props.farmerIndex.MarcalaIntakeNodeId}`, {
-            method: 'GET',
-            headers: {
-                'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-            }
-        }).then(res => {
-            return res.json();
-        })
-            .then(json => {
+        // fetch(`${process.env.REACT_APP_GET_NODE_LOT}/${props.farmerIndex.MarcalaIntakeNodeId}`, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
+        //     }
+        // }).then(res => {
+        //     return res.json();
+        // })
+        //     .then(json => {
 
-                setMarcalaIntakeLots(json);
+        //         setMarcalaIntakeLots(json);
 
-            });
+        //     });
 
     }, [
         marcalaIntakeLots,
         filteredMarcalaIntakeLots
     ])
 
-    if (marcalaIntakeLots) {
+    // if (marcalaIntakeLots) {
 
-        // let filteredMarcalaIntakeLots = marcalaIntakeLots.lots.filter(obj => {
 
-        //     return obj.lotName.toLowerCase().includes(substring);
+    //     for (let i = 0; i < marcalaIntakeLots.lots.length; i++) {
 
-        // })
+    //         if (marcalaIntakeLots.lots[i].lotName.toLowerCase().includes(substring)) {
 
-        for (let i = 0; i < marcalaIntakeLots.lots.length; i++) {
+    //             filteredMarcalaIntakeLots.push(marcalaIntakeLots.lots[i]);
 
-            if (marcalaIntakeLots.lots[i].lotName.toLowerCase().includes(substring)) {
-
-                filteredMarcalaIntakeLots.push(marcalaIntakeLots.lots[i]);
-
-            }
-        }
-    }
+    //         }
+    //     }
+    // }
 
     console.log(filteredMarcalaIntakeLots);
 
@@ -87,7 +82,8 @@ export const ProcessingExport = (props) => {
 
                 <h2 style={{ color: 'white' }}>Processed and Exported by Catracha Coffee</h2>
                 <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
-                {
+
+                {/* {
                     marcalaIntakeLots && filteredMarcalaIntakeLots
 
                         ?
@@ -98,17 +94,13 @@ export const ProcessingExport = (props) => {
                             numberOfLots={filteredMarcalaIntakeLots}
                             processingLotIds={paginate(filteredMarcalaIntakeLots)}
 
-
-                        // numberOfLots={marcalaIntakeLots.lots}
-                        // processingLotIds={paginate(marcalaIntakeLots.lots)}
-
                         />
 
                         :
 
                         ''
 
-                }
+                } */}
 
             </Container>
 

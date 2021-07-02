@@ -21,6 +21,7 @@ export const Underline = styled.div`
 export const CardsSection = styled.section`
   width: 90vw;
   max-width: 1170px;
+  max-width: 1000px;
   margin: 5rem auto;
 `;
 

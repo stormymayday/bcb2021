@@ -8,7 +8,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import slideOne from '../images/slideOne.jpg';
 import slideTwo from '../images/slideTwo.jpg';
 
-export default function Slider() {
+export default function Slider({ image }) {
     // style={{'height': '100vh'}}
 
     // className="d-block w-100"
@@ -17,12 +17,19 @@ export default function Slider() {
             <Carousel>
 
                 <Carousel.Item interval={5000} >
-                    <div className='slide1' />
+                    <div style={{
+
+                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image})`,
+                        backgroundSize: `cover`,
+                        backgroundPosition: `center`,
+                        height: `93vh`
+
+                    }}
+                    // className='slide1' 
+                    />
                     <Carousel.Caption>
                         <h3>Your coffee might be opaque, but how it got to you should be transparent</h3>
                         <p>Thank you for being a coffee pioneer! You are one of the first who have this level of visibility at the wave of your hand. The link that took you here is tied to a specific batch of roasted coffee, and you can see some highlights of its origin and how it got to you, recorded using blockchain technology.</p>
-
-                        <p>We invite you to explore this site and share your feedback in the form below.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
 
@@ -31,8 +38,6 @@ export default function Slider() {
                     <Carousel.Caption>
                         <h3>Your coffee might be opaque, but how it got to you should be transparent</h3>
                         <p>Thank you for being a coffee pioneer! You are one of the first who have this level of visibility at the wave of your hand. The link that took you here is tied to a specific batch of roasted coffee, and you can see some highlights of its origin and how it got to you, recorded using blockchain technology.</p>
-
-                        <p>We invite you to explore this site and share your feedback in the form below.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
 

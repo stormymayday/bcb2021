@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { L } from 'leaflet';
 
-const LeafletMap = ({ farmer, nodeId, longitude, latitude }) => {
+const LeafletMap = ({ farmer, longitude, latitude }) => {
 
     let position = [latitude, longitude];
 

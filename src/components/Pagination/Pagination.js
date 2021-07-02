@@ -24,8 +24,8 @@ const Pagination = (props) => {
 
     useEffect(() => {
 
-        if (props.harvestLots) {
-            setData(props.harvestLots);
+        if (props.lots) {
+            setData(props.lots);
             if (data) {
                 setItems(data[page]);
 
@@ -34,7 +34,7 @@ const Pagination = (props) => {
         }
 
     }, [
-        props.harvestLots,
+        props.lots,
         page
     ])
 
@@ -92,7 +92,11 @@ const Pagination = (props) => {
                         data && items ?
 
                             items.map((item) => {
-                                return <HarvestLotCard key={item.id} harvestLot={item} />
+
+                                // return <HarvestLotCard key={item.id} harvestLot={item} />
+
+                                return <HarvestLotCard key={item.harvestLotId} lot={item} />
+
                             })
 
                             : ''

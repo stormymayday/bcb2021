@@ -11,6 +11,8 @@ import PartnersSection from '../sections/partners/PartnersSection';
 
 import Container from 'react-bootstrap/Container';
 
+// Context
+import { useGlobalContext } from '../context';
 
 import Farming from '../components/Farming';
 import ProcessingExport from '../components/ProcessingExport';
@@ -18,31 +20,15 @@ import Journey from '../components/Journey';
 import Roasting from '../components/Roasting';
 import Chart from '../components/Chart/Chart';
 
-const chartData = {
-    labels: ['Harvest', 'Wet Mill', 'Intake', 'Dry Mill', 'Roasting'],
-    datasets: [
-        {
-            label: 'Weight',
-            data: [
-                10000,
-                8000,
-                7000,
-                6000,
-                5000
-            ],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.6)',
-                'rgba(54, 162, 235, 0.6)',
-                'rgba(255, 206, 86, 0.6)',
-                'rgba(75, 192, 192, 0.6)',
-                'rgba(153, 102, 255, 0.6)',
-                'rgba(255, 159, 64, 0.6)'
-            ]
-        }
-    ]
-};
+import Loading from '../components/Loading/Loading';
 
 export const Home = () => {
+
+    const { farmersMongoDB } = useGlobalContext();
+
+    const [farmers, setFarmers] = useState({});
+
+    console.log(farmersMongoDB);
 
     useEffect(() => {
 
@@ -51,30 +37,103 @@ export const Home = () => {
         // Google Analytics Page View report
         ReactGA.pageview(window.location.pathname + window.location.search);
 
-    }, [])
+    }, [farmersMongoDB])
 
     return (
         <main>
-            {/* <SearchForm /> */}
-            <HomePageNavigation />
-            <Hero />
+
+            {farmersMongoDB.length > 0 ?
+
+                <>
+                    <HomePageNavigation />
+                    <Hero farmerPicture={farmersMongoDB[0].harvestNode.images[0]} />
+                    <Farming
+
+                        farmerName={farmersMongoDB[0].farmerName}
+                        farmerPicture={farmersMongoDB[0].harvestNode.images[0]}
+                        city={farmersMongoDB[0].harvestNode.city}
+                        state={farmersMongoDB[0].harvestNode.state}
+                        country={farmersMongoDB[0].harvestNode.country}
+                        elevation={farmersMongoDB[0].harvestNode.elevation}
+                        longitude={farmersMongoDB[0].harvestNode.longitude}
+                        latitude={farmersMongoDB[0].harvestNode.latitude}
+                        elevationUnit={farmersMongoDB[0].harvestNode.elevationUnit}
+                        harvestTotalAbsorbedWeight={farmersMongoDB[0].harvestNode.totaAbsorbedWeight}
+                        harvestTotalAbsorbedWeightUnit={farmersMongoDB[0].harvestNode.totalAbsorbedWeightUnit}
+                        numberOfHarvestLots={farmersMongoDB[0].harvestNode.harvestLots.length}
+
+                        wetMilltTotalAbsorbedWeight={farmersMongoDB[0].wetMillNode.totaAbsorbedWeight}
+                        wetMillTotalAbsorbedWeightUnit={farmersMongoDB[0].wetMillNode.totalAbsorbedWeightUnit}
+
+                        harvestLots={farmersMongoDB[0].harvestNode.harvestLots}
+
+                        wetMillLots={farmersMongoDB[0].wetMillNode.wetMillLots}
+                    >
+                    </Farming>
+
+                    <ProcessingExport
+
+                        dryParchmentAbsorbedWeight={farmersMongoDB[0].dryMillNode.dryMillLots[1].absorbedWeight}
+                        dryParchmentAbsorbedWeightUnit={farmersMongoDB[0].dryMillNode.dryMillLots[1].absorbedWeightUnit}
+
+                        greenCoffeeAbsorbedWeight={farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeight}
+                        greenCoffeeAbsorbedWeightUnit={farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeightUnit}
+
+                    >
+                    </ProcessingExport>
+
+                    <Journey></Journey>
+                    <Roasting></Roasting>
+
+                    <Container>
+
+                        <Chart
+                            chartData={{
+
+                                labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting', 'a cup of coffee'],
+                                datasets: [
+                                    {
+                                        label: 'Weight of microlot at different stages',
+
+                                        data: [
+                                            farmersMongoDB[0].harvestNode.totaAbsorbedWeight,
+                                            farmersMongoDB[0].wetMillNode.totaAbsorbedWeight,
+                                            farmersMongoDB[0].dryMillNode.dryMillLots[1].absorbedWeight,
+                                            farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeight,
+                                            0,
+                                            1.25
+                                        ],
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.6)',
+                                            'rgba(54, 162, 235, 0.6)',
+                                            'rgba(255, 206, 86, 0.6)',
+                                            'rgba(75, 192, 192, 0.6)',
+                                            'rgba(153, 102, 255, 0.6)',
+                                            'rgba(255, 159, 64, 0.6)',
+                                            'rgba(255, 99, 132, 0.6)'
+                                        ]
+                                    }
+                                ]
+                            }}
 
 
+                            location="Massachusetts"
 
+                            legendPosition="bottom"
+                        />
 
-            <Farming></Farming>
-            <ProcessingExport></ProcessingExport>
-            <Journey></Journey>
-            <Roasting></Roasting>
+                    </Container>
 
-            <Container>
-                <Chart chartData={chartData} location="Massachusetts" legendPosition="bottom" />
+                    <PartnersSection />
+                </>
 
-            </Container>
+                :
 
-            {/* <FarmerList /> */}
-            <PartnersSection />
-        </main>
+                <Loading />
+
+            }
+
+        </main >
     )
 }
 

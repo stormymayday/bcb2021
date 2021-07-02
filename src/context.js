@@ -8,7 +8,306 @@ const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState('a');
 
+    const [farmersMongoDB, setFarmersMongoDB] = useState({});
 
+    let requestBody = {
+
+        query: `
+
+        query {
+            farmers {
+
+                _id
+                farmerName
+
+                harvestNode {
+
+                    _id
+
+                    harvestNodeId
+
+                    totaAbsorbedWeight
+                    totalAbsorbedWeightUnit
+
+                    organizationId
+                    marketplaceId
+                    defaultLocationId
+                    nodeName
+                    nodeType
+                    nodeDetailType
+                    createdDate
+                    lastModifiedDate
+                    organizationName
+
+                    images
+                    videos
+                    documents
+
+                    country
+                    city
+                    state
+                    latitude
+                    longitude
+                    elevation
+                    elevationUnit
+
+                    harvestLots {
+
+                        _id
+
+                        harvestLotId
+                        harvestNodeId
+
+                        organizationId
+                        marketplaceId
+                        productId
+                        lotName
+                        lotType
+                        lotDetailType
+                        createdDate
+                        lastModifiedDate
+                        productName
+                        productToken
+                        productSku
+                        organizationName
+                        currentWeight
+                        currentWeightUnit
+                        absorbedWeight
+                        absorbedWeightUnit
+                        quality
+                        lotIsOpen
+
+                        images
+                        documents
+                        videos
+
+                        value
+                        asset
+                        timestamp
+
+                        coffeeVarietal
+
+                        harvestDate
+                    }
+                }
+
+
+                wetMillNode {
+
+                    _id
+
+                    wetMillNodeId
+
+                    totaAbsorbedWeight
+                    totalAbsorbedWeightUnit
+
+                    organizationId
+                    marketplaceId
+                    defaultLocationId
+                    nodeName
+                    nodeType
+                    nodeDetailType
+                    createdDate
+                    lastModifiedDate
+                    organizationName
+
+                    images
+                    videos
+                    documents
+
+                    country
+                    city
+                    state
+                    latitude
+                    longitude
+                    elevation
+                    elevationUnit
+
+                    wetMillLots {
+
+                        _id
+
+                        wetMillLotId
+                        wetMillNodeId
+
+                        organizationId
+                        marketplaceId
+                        productId
+                        lotName
+                        lotType
+                        lotDetailType
+                        createdDate
+                        lastModifiedDate
+                        productName
+                        productToken
+                        productSku
+                        organizationName
+                        currentWeight
+                        currentWeightUnit
+                        absorbedWeight
+                        absorbedWeightUnit
+                        quality
+                        lotIsOpen
+
+                        images
+                        documents
+                        videos
+
+                        value
+                        asset
+                        timestamp
+
+                        processingDate
+
+                    }
+                }
+
+                exporterIntakeNode {
+
+                    _id
+
+                    exporterIntakeNodeId
+
+                    totaAbsorbedWeight
+                    totalAbsorbedWeightUnit
+
+                    organizationId
+                    marketplaceId
+                    defaultLocationId
+                    nodeName
+                    nodeType
+                    nodeDetailType
+                    createdDate
+                    lastModifiedDate
+                    organizationName
+
+                    images
+                    videos
+                    documents
+
+                    country
+                    city
+                    state
+                    latitude
+                    longitude
+                    elevation
+                    elevationUnit
+
+                    exporterIntakeLots {
+
+                        _id
+
+                        exporterIntakeLotId
+                        exporterIntakeNodeId
+
+                        organizationId
+                        marketplaceId
+                        productId
+                        lotName
+                        lotType
+                        lotDetailType
+                        createdDate
+                        lastModifiedDate
+                        productName
+                        productToken
+                        productSku
+                        organizationName
+                        currentWeight
+                        currentWeightUnit
+                        absorbedWeight
+                        absorbedWeightUnit
+                        quality
+                        lotIsOpen
+
+                        images
+                        documents
+                        videos
+
+                        value
+                        asset
+                        timestamp
+
+                        processingDate
+                    }
+                }
+
+                
+                dryMillNode {
+
+                    _id
+
+                    dryMillNodeId
+
+                    totaAbsorbedWeight
+                    totalAbsorbedWeightUnit
+
+                    organizationId
+                    marketplaceId
+                    defaultLocationId
+                    nodeName
+                    nodeType
+                    nodeDetailType
+                    createdDate
+                    lastModifiedDate
+                    organizationName
+
+                    images
+                    videos
+                    documents
+
+                    country
+                    city
+                    state
+                    latitude
+                    longitude
+                    elevation
+                    elevationUnit
+
+                    dryMillLots {
+
+                        _id
+
+                        dryMillLotId
+                        dryMillNodeId
+
+                        organizationId
+                        marketplaceId
+                        productId
+                        lotName
+                        lotType
+                        lotDetailType
+                        createdDate
+                        lastModifiedDate
+                        productName
+                        productToken
+                        productSku
+                        organizationName
+                        currentWeight
+                        currentWeightUnit
+                        absorbedWeight
+                        absorbedWeightUnit
+                        quality
+                        lotIsOpen
+
+                        images
+                        documents
+                        videos
+
+                        value
+                        asset
+                        timestamp
+
+                        processingDate
+
+                    }
+                }
+
+
+            }
+        }
+
+      `
+    };
 
 
     const [roasters, setRoasters] = useState([
@@ -149,9 +448,37 @@ const AppProvider = ({ children }) => {
         }
     ]);
 
+    useEffect(() => {
+
+        fetch(`${process.env.REACT_APP_GRAPHQL_URL}`, {
+            method: 'POST',
+            body: JSON.stringify(requestBody),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => {
+                if (res.status !== 200 && res.status !== 201) {
+                    throw new Error('Failed!');
+                }
+                return res.json();
+            })
+            .then(resData => {
+
+                console.log(resData.data.farmers);
+
+                setFarmersMongoDB(resData.data.farmers);
+
+            })
+            .catch(err => {
+                console.log(err);
+            });
+
+    }, [])
+
     return (
         <AppContext.Provider
-            value={{ loading, roasters, farmers, setSearchTerm }}
+            value={{ loading, roasters, farmers, setSearchTerm, farmersMongoDB }}
         >
             {children}
         </AppContext.Provider>
