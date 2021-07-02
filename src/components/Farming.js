@@ -7,7 +7,6 @@ import Image from 'react-bootstrap/Image';
 
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 
 import LeafletMap from '../components/LeafletMap/LeafletMap';
 
@@ -79,7 +78,7 @@ const Farming = ({
 
                 </Row>
 
-
+                {/* 
                 <Row>
                     <Container>
 
@@ -90,7 +89,26 @@ const Farming = ({
                         />
 
                     </Container>
-                </Row>
+                </Row> */}
+
+                <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                            Harvest Lots
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+
+                                <Pagination
+
+                                    lots={harvestLots ? paginate(harvestLots) : []}
+
+                                />
+
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
 
                 <Row>
 
@@ -122,10 +140,10 @@ const Farming = ({
                     </Container>
                 </Row> */}
 
-                <Accordion style={{ 'margin-top': '2rem' }}>
+                <Accordion style={{ 'margin-top': '3rem' }}>
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="0">
-                            Show Wet Mill Lots
+                            Wet Mill Lots
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>

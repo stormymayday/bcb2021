@@ -35,7 +35,9 @@ const Pagination = (props) => {
 
     }, [
         props.lots,
-        page
+        page,
+        data
+
     ])
 
     const handlePage = (index) => {
@@ -75,10 +77,10 @@ const Pagination = (props) => {
 
     return (
         <div>
-            <SectionTitleContainer>
-                {/* <h2>Pagination Component ({props.numberOfLots} Harvest Lots)</h2> */}
-                {/* <Underline /> */}
-            </SectionTitleContainer>
+            {/* <SectionTitleContainer>
+                <h2>Pagination Component ({props.numberOfLots} Harvest Lots)</h2>
+                <Underline />
+            </SectionTitleContainer> */}
             <CardsSection>
                 {/* <CardContainer>
                     {props.harvestLotIds.map((harvestLot) => {
@@ -95,7 +97,7 @@ const Pagination = (props) => {
 
                                 // return <HarvestLotCard key={item.id} harvestLot={item} />
 
-                                return <HarvestLotCard key={item.harvestLotId} lot={item} />
+                                return <HarvestLotCard key={item._id} lot={item} />
 
                             })
 

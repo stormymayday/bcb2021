@@ -4,6 +4,7 @@ export const PaginationContainer = styled.div`
   width: 85vw;
   max-width: 40rem;
   margin: 0 auto;
+  margin-bottom: 10rem;
 `;
 
 export const SectionTitleContainer = styled.div`
@@ -23,6 +24,7 @@ export const CardsSection = styled.section`
   max-width: 1170px;
   max-width: 1000px;
   margin: 5rem auto;
+  margin: 2rem auto 1rem auto;
 `;
 
 export const CardContainer = styled.div`

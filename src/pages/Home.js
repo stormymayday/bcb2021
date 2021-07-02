@@ -79,6 +79,8 @@ export const Home = () => {
                         greenCoffeeAbsorbedWeight={farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeight}
                         greenCoffeeAbsorbedWeightUnit={farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeightUnit}
 
+                        dryMillLots={farmersMongoDB[0].dryMillNode.dryMillLots}
+
                     >
                     </ProcessingExport>
 
@@ -100,7 +102,7 @@ export const Home = () => {
                                             farmersMongoDB[0].wetMillNode.totaAbsorbedWeight,
                                             farmersMongoDB[0].dryMillNode.dryMillLots[1].absorbedWeight,
                                             farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeight,
-                                            0,
+                                            10000,
                                             1.25
                                         ],
                                         backgroundColor: [

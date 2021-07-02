@@ -7,6 +7,8 @@ import Card from 'react-bootstrap/Card';
 
 import Button from 'react-bootstrap/Button';
 
+import Accordion from 'react-bootstrap/Accordion';
+
 import './ProcessingExport.css';
 
 import Pagination from '../components/Pagination/Pagination';
@@ -21,7 +23,7 @@ export const ProcessingExport = ({
     greenCoffeeAbsorbedWeight,
     greenCoffeeAbsorbedWeightUnit,
 
-    wetMillLots
+    dryMillLots
 
 }) => {
 
@@ -44,7 +46,7 @@ export const ProcessingExport = ({
                         <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Intake</h3>
 
                         <p style={{ color: 'white' }}>
-                            Dry Parchment Total Absorbed Weight: {dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}
+                            Dry Parchment Absorbed Weight: {dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}
                         </p>
 
                     </Col>
@@ -54,12 +56,31 @@ export const ProcessingExport = ({
                         <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Dry Mill</h3>
 
                         <p style={{ color: 'white' }}>
-                            Green Coffee Total Absorbed Weight: {greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}
+                            Green Coffee Absorbed Weight: {greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}
                         </p>
 
                     </Col>
 
                 </Row>
+
+                <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                            Dry Mill Lots
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+
+                                <Pagination
+
+                                    lots={dryMillLots ? paginate(dryMillLots) : []}
+
+                                />
+
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
 
             </Container>
         </div>
