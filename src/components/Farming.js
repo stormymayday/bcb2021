@@ -36,6 +36,11 @@ const Farming = ({
 
 }) => {
 
+    // Filtering out the Wet Parchment lots
+    const filteredWetMillLots = wetMillLots.filter(function (wetMillLot) {
+        return wetMillLot.productName === 'Wet Parchment';
+    });
+
     // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
 
     return (
@@ -152,7 +157,7 @@ const Farming = ({
 
                                 <Pagination
 
-                                    lots={wetMillLots ? paginate(wetMillLots) : []}
+                                    lots={filteredWetMillLots ? paginate(filteredWetMillLots) : []}
 
                                 />
 

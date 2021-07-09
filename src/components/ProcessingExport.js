@@ -27,6 +27,16 @@ export const ProcessingExport = ({
 
 }) => {
 
+    // Filtering out the Dry Parchment lots
+    const dryParchmentLots = dryMillLots.filter(function (dryMillLot) {
+        return dryMillLot.productName === 'Dry Parchment';
+    });
+
+    // Filtering out the Coffee Green lots
+    const coffeeGreenLots = dryMillLots.filter(function (dryMillLot) {
+        return dryMillLot.productName === 'Coffee Green';
+    });
+
     return (
         <div className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='processing-export'>
             <Container>
@@ -63,24 +73,49 @@ export const ProcessingExport = ({
 
                 </Row>
 
-                <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
-                    <Card>
-                        <Accordion.Toggle as={Card.Header} eventKey="0">
-                            Dry Mill Lots
-                        </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>
+                <Row>
+                    <Col md='12' lg='6'>
+                        <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    Dry Mill Lots
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
 
-                                <Pagination
+                                        <Pagination
 
-                                    lots={dryMillLots ? paginate(dryMillLots) : []}
+                                            lots={dryParchmentLots ? paginate(dryParchmentLots) : []}
 
-                                />
+                                        />
 
-                            </Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+                    </Col>
+
+                    <Col md='12' lg='6'>
+                        <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    Dry Mill Lots
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        <Pagination
+
+                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
+
+                                        />
+
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+                    </Col>
+                </Row>
 
             </Container>
         </div>

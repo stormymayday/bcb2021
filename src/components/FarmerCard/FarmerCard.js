@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 // Google Analytics
 import ReactGA from 'react-ga';
 import './FarmerCard.css';
+import Loading from '../Loading/Loading';
+
 import slideOne from '../../images/slideOne.jpg';
 import slideTwo from '../../images/coffee_farm.JPG';
 
@@ -19,45 +21,54 @@ export const FarmerCard = (props) => {
 
     useEffect(() => {
         setFarmer(props.farmer);
-    }, [])
+    }, [farmer])
 
-    // console.log(farmer);
+    console.log(farmer);
 
     return (
-        <article className='cocktail'>
-            <div className='img-contaienr'>
-                <img alt={props.farmer.farmerName}
+        <>
+            {props.farmer ?
 
-                    src={
-                        props.farmer.farmerName === 'Claudia & Juan' ?
+                <>
 
-                            slideOne :
+                    <article className='cocktail'>
+                        <div className='img-contaienr'>
+                            <img alt={props.farmer.farmerName}
 
-                            slideTwo
-                    }
-                />
-            </div>
-            <div className='cocktail-footer'>
-                <h3>{props.farmer.farmerName}</h3>
-                {/* <p>{props.index}</p> */}
-                <Link
-                    onClick={googleAnalyicsEvent}
-                    to={{
-                        // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
-                        pathname: `/farmer/${props.farmer.farmerName.replace(/\s/g, '')}/${props.farmer.harvestGeneralNodeID}/${props.index}`,
-                        state: {
-                            farmer
-                        }
-                    }}
-                    className="btn btn-primary btn-details">
-                    Learn More
-                </Link>
-            </div>
-        </article >
-        // <div className='card-container'>
+                                src={props.farmer.harvestNode.images[0]}
+                            />
+                        </div>
+                        <div className='cocktail-footer'>
+                            <h3>{props.farmer.farmerName}</h3>
+                            {/* <p>{props.index}</p> */}
+                            <Link
+                                onClick={googleAnalyicsEvent}
+                                to={{
+                                    // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
+                                    pathname: `/farmer/${props.farmer.farmerName.replace(/\s/g, '')}/${props.farmer.harvestGeneralNodeID}/${props.index}`,
+                                    state: {
+                                        farmer
+                                    }
+                                }}
+                                className="btn btn-primary btn-details">
+                                Learn More
+                            </Link>
+                        </div>
+                    </article >
+                    {/* // <div className='card-container'>
         //     <img alt='farmer' src={`${props.farmer.farmerPicture}&size=180x180`} />
         //     <h1>{props.farmer.farmerName}</h1>
-        // </div>
+        // </div> */}
+                </>
+                :
+
+                <Loading />
+
+
+
+            }
+        </>
+
     );
 }
 
