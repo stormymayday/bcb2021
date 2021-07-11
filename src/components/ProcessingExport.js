@@ -39,16 +39,19 @@ export const ProcessingExport = ({
 
     return (
         <div className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='processing-export'>
+
             <Container>
 
-                <h2 style={{ color: 'white' }}>Catracha Coffee</h2>
+                <h2 style={{ 'padding-bottom': '1.5em', 'text-align': 'center', 'color': 'white' }}>Processing & Export</h2>
+
+                <h3 style={{ color: 'white' }}>Catracha Coffee</h3>
                 <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
 
                 <Row>
 
                     <Col md='12' lg='6'>
 
-                        <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Intake</h3>
+                        <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Exporter Intake</h3>
 
                         <p style={{ color: 'white' }}>The producer dries the wet parchment at their mill and then sells the dry parchment to Catracha Coffee.   After the moisture is removed, the remaining weight of the seed inside the thin membrane is called dry parchment.  The producer is paid based on the weight of the dry parchment delivered to Catracha Coffee.</p>
 

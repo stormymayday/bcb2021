@@ -20,15 +20,16 @@ export const Journey = (props) => {
 
     return (
         <div style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='journey'>
+
             <Container>
 
-                <h2 style={{ 'margin-bottom': '3rem' }}>Export, Import, and Intake</h2>
+                <h2 style={{ 'padding-bottom': '1.5em', 'text-align': 'center' }}>Product's Journey</h2>
 
                 <Row>
 
                     <Col md='12' lg='4'>
 
-                        <h3 style={{ 'padding-bottom': '0.5em' }}>Green Export</h3>
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>Export</h3>
 
                         <p>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export.  A container can hold up to 275 bags of green coffee</p>
 
@@ -42,7 +43,7 @@ export const Journey = (props) => {
 
                     <Col md='12' lg='4'>
 
-                        <h3 style={{ 'padding-bottom': '0.5em' }}>Green Import</h3>
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>Import</h3>
 
                         <p>The container with bags of green coffee is shipped to a port in Oakland California and taken to the coffee importer’s warehouse</p>
 
@@ -56,7 +57,7 @@ export const Journey = (props) => {
 
                     <Col md='12' lg='4'>
 
-                        <h3 style={{ 'padding-bottom': '0.5em' }}>Green Intake</h3>
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>Roaster Intake</h3>
 
                         <p>The importer sends the bags of green coffee to the roastery where the coffee is roasted</p>
 

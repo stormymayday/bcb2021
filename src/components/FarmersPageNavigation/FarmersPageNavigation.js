@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import React from 'react';
+
+import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 
 // Bootstrap components
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 
-export default function FarmerDetailsPageNavigation() {
+export default function FarmersPageNavigation() {
 
     const scrollWidthOffset = (el) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
@@ -27,29 +28,7 @@ export default function FarmerDetailsPageNavigation() {
 
                             <Nav.Link href="/">HOME</Nav.Link>
 
-                            <Nav.Link
-                                as={HashLink}
-                                to={`#farming`}
-                                smooth
-                                scroll={el => scrollWidthOffset(el)}
-                            >
-                                FARMING
-                            </Nav.Link>
-
-                            <Nav.Link
-                                as={HashLink}
-                                to={`#processing`}
-                                smooth
-                                scroll={el => scrollWidthOffset(el)}
-                            >
-                                PROCESSING
-                            </Nav.Link>
-
                             <Nav.Link href="/roasters">ROASTERS</Nav.Link>
-
-                            <NavDropdown title="FARMERS" id="basic-nav-dropdown">
-                                <NavDropdown.Item as={Link} to="/farmers" key="1">Harvest 2021</NavDropdown.Item>
-                            </NavDropdown>
 
                         </Nav>
 
@@ -57,7 +36,6 @@ export default function FarmerDetailsPageNavigation() {
 
                 </Container>
             </Navbar>
-
         </>
     );
 }

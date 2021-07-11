@@ -14,10 +14,12 @@ import Container from 'react-bootstrap/Container';
 // Context
 import { useGlobalContext } from '../context';
 
+// Sections
 import Farming from '../components/Farming';
 import ProcessingExport from '../components/ProcessingExport';
 import Journey from '../components/Journey';
 import Roasting from '../components/Roasting';
+import Economics from '../components/EconomicsAndTransparency';
 import Chart from '../components/Chart/Chart';
 
 import Loading from '../components/Loading/Loading';
@@ -46,7 +48,9 @@ export const Home = () => {
 
                 <>
                     <HomePageNavigation />
+
                     <Hero farmerPicture={farmersMongoDB[0].harvestNode.images[0]} />
+
                     <Farming
 
                         farmerName={farmersMongoDB[0].farmerName}
@@ -71,6 +75,7 @@ export const Home = () => {
                     >
                     </Farming>
 
+                    <div id="processing"></div>
                     <ProcessingExport
 
                         dryParchmentAbsorbedWeight={farmersMongoDB[0].dryMillNode.dryMillLots[1].absorbedWeight}
@@ -85,11 +90,15 @@ export const Home = () => {
                     </ProcessingExport>
 
                     <Journey></Journey>
+
                     <Roasting></Roasting>
+
+                    <Economics></Economics>
 
                     <Container>
 
                         <Chart
+                            id="chart"
                             chartData={{
 
                                 labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting', 'a cup of coffee'],
@@ -126,7 +135,9 @@ export const Home = () => {
 
                     </Container>
 
+                    <div id="about"></div>
                     <PartnersSection />
+
                 </>
 
                 :

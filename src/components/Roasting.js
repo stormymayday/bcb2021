@@ -20,8 +20,11 @@ export const Roasting = (props) => {
 
     return (
         <div className="roasting-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='roasting'>
+
+            <h2 style={{ 'padding-bottom': '1.5em', 'text-align': 'center', 'color': 'white' }}>Roasting</h2>
+
             <Container>
-                <h2 style={{ color: 'white' }}>Roasted by Queen City</h2>
+                <h3 style={{ color: 'white' }}>Roasted by Queen City</h3>
                 <p style={{ color: 'white' }}>Queen City is a collective coffee company in Denver building community from farm to cup. Our coffee comes from farmers and producers we know, and is then small-batch roasted in the city we love. We believe that honest relationships, from farmers to consumers, achieve an equitable and sustainable coffee supply chain.</p>
                 <Row>
                     <Col lg>

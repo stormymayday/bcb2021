@@ -4,10 +4,9 @@ import React, { useEffect, useState } from 'react'
 // Google Analytics
 import ReactGA from 'react-ga';
 
-import HomePageNavigation from '../../components/HomePageNavigation/HomePageNavigation';
+import RoastersPageNavigation from '../../components/RoastersPageNavigation/RoastersPageNavigation';
 import RoasterList from '../../components/RoasterList/RoasterList';
 
-import SearchForm from '../../components/SearchForm/SearchForm';
 
 export const RoastersPage = () => {
 
@@ -22,11 +21,11 @@ export const RoastersPage = () => {
 
     return (
         <main>
-            {/* <SearchForm /> */}
-            <HomePageNavigation />
-            {/* <Hero /> */}
+
+            <RoastersPageNavigation />
+
             <RoasterList />
-            {/* <PartnersSection /> */}
+
         </main>
     )
 }

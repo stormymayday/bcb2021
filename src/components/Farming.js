@@ -53,6 +53,8 @@ const Farming = ({
         <div style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='farming'>
             <Container>
 
+                <h2 style={{ 'padding-bottom': '1.5em', 'text-align': 'center' }}>Farming</h2>
+
                 <Row id='harvest' style={{ 'padding-top': '1em' }}>
 
                     <Col md='12' lg='6'>
