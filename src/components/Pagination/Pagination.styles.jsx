@@ -29,11 +29,18 @@ export const CardsSection = styled.section`
 
 export const CardContainer = styled.div`
   display: grid;
+  align-items: center;
   gap: 2rem;
   margin-bottom: 4rem;
   @media screen and (min-width: 576px) {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
+
+
+  
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 `;
 
 export const ButtonContainer = styled.div`

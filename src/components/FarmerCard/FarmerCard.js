@@ -23,7 +23,7 @@ export const FarmerCard = (props) => {
         setFarmer(props.farmer);
     }, [farmer])
 
-    console.log(farmer);
+    console.log(`Farmer Card: ${props.farmer}`);
 
     return (
         <>
@@ -43,13 +43,14 @@ export const FarmerCard = (props) => {
                             {/* <p>{props.index}</p> */}
                             <Link
                                 onClick={googleAnalyicsEvent}
-                                to={{
-                                    // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
-                                    pathname: `/farmer/${props.farmer.farmerName.replace(/\s/g, '')}/${props.farmer.harvestGeneralNodeID}/${props.index}`,
-                                    state: {
-                                        farmer
-                                    }
-                                }}
+                                to={`/farmer/${props.farmer.farmerName}`}
+                                // to={{
+                                //     // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
+                                //     pathname: `/farmer/${props.farmer.farmerName}`,
+                                //     state: {
+                                //         farmer
+                                //     }
+                                // }}
                                 className="btn btn-primary btn-details">
                                 Learn More
                             </Link>

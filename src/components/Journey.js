@@ -26,64 +26,67 @@ export const Journey = (props) => {
 
                 <Row>
 
-                    <Col lg>
-                        <Card border="light" style={{ 'margin-bottom': '2rem' }}>
-                            <Card.Body>
-                                <Card.Title>Green Export</Card.Title>
-                                <Card.Text>
-                                    Exported From: {props.exportedFrom}<br />
-                                    Date: {props.greenExportDate}<br />
-                                    Weight: {props.greenExportWeight}
-                                </Card.Text>
-                            </Card.Body>
-                            {/* <video style={{ 'max-height': '40rem' }} src={props.greenExportVideo} controls></video> */}
-                        </Card>
+                    <Col md='12' lg='4'>
+
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>Green Export</h3>
+
+                        <p>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export.  A container can hold up to 275 bags of green coffee</p>
+
+                        <p>
+                            Location: {props.exportedFrom}
+                            <br />
+                            Date: {props.greenExportDate}
+                        </p>
+
                     </Col>
 
-                    <Col lg>
-                        <Card border="light" style={{ 'margin-bottom': '2rem' }}>
-                            <Card.Body>
-                                <Card.Title>Green Import</Card.Title>
-                                <Card.Text>
-                                    Imported At: {props.greenImportLocation}<br />
-                                    Date: {props.greenImportDate}
-                                </Card.Text>
-                            </Card.Body>
-                            <Card.Img variant="top" src={props.greenImportImage} style={{ 'max-height': '40rem' }} />
-                        </Card>
+                    <Col md='12' lg='4'>
+
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>Green Import</h3>
+
+                        <p>The container with bags of green coffee is shipped to a port in Oakland California and taken to the coffee importer’s warehouse</p>
+
+                        <p>
+                            Location: {props.exportedFrom}
+                            <br />
+                            Date: {props.greenExportDate}
+                        </p>
+
                     </Col>
 
-                    <Col lg>
-                        <Card border="light">
-                            <Card.Body>
-                                <Card.Title>Green Intake</Card.Title>
-                                <Card.Text>
-                                    Roaster Received in: {props.intakeGreenLocation}<br />
-                                    Date: {props.intakeGreenDate}<br />
-                                    Current Weight Remaining: {props.intakeGreenWeight}<br />
-                                    Received by: {props.intakeGreenCollector}
-                                </Card.Text>
-                            </Card.Body>
-                            {/* <video style={{ 'max-height': '40rem' }} src={props.intakeGreenVideo} controls></video> */}
-                        </Card>
+                    <Col md='12' lg='4'>
+
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>Green Intake</h3>
+
+                        <p>The importer sends the bags of green coffee to the roastery where the coffee is roasted</p>
+
+                        <p>
+                            Location: {props.exportedFrom}
+                            <br />
+                            Date: {props.greenExportDate}
+                        </p>
+
                     </Col>
 
                 </Row>
+
                 <Row>
 
-                    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-                        <TileLayer
-                            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        />
-                        <Marker position={[51.505, -0.09]}>
-                            <Popup>
-                                A pretty CSS3 popup. <br /> Easily customizable.
-                        </Popup>
-                        </Marker>
-                    </MapContainer>
+                    <Col lg='12'>
 
+                        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
+                            <TileLayer
+                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            />
+                            <Marker position={[51.505, -0.09]}>
+                                <Popup>
+                                    A pretty CSS3 popup. <br /> Easily customizable.
+                                </Popup>
+                            </Marker>
+                        </MapContainer>
 
+                    </Col>
 
                 </Row>
 

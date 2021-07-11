@@ -395,7 +395,7 @@ const App = () => {
           <FarmersPage />
           {/* <FarmerDetails /> */}
         </Route>
-        <Route exact path="/farmer/:name/:id/:index">
+        <Route exact path="/farmer/:name">
           <FarmerDetails />
         </Route>
         <Route path="*">

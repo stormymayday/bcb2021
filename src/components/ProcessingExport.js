@@ -43,17 +43,14 @@ export const ProcessingExport = ({
 
                 <h2 style={{ color: 'white' }}>Catracha Coffee</h2>
                 <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
-                <Row>
-                    {/* <Col lg={3} md={6} sm={12}>
-                        <Button variant="outline-light" size="lg" block style={{ 'margin-bottom': '2rem' }}>LEARN MORE</Button>
-                    </Col> */}
-                </Row>
 
                 <Row>
 
                     <Col md='12' lg='6'>
 
                         <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Intake</h3>
+
+                        <p style={{ color: 'white' }}>The producer dries the wet parchment at their mill and then sells the dry parchment to Catracha Coffee.   After the moisture is removed, the remaining weight of the seed inside the thin membrane is called dry parchment.  The producer is paid based on the weight of the dry parchment delivered to Catracha Coffee.</p>
 
                         <p style={{ color: 'white' }}>
                             Dry Parchment Absorbed Weight: {dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}
@@ -65,20 +62,20 @@ export const ProcessingExport = ({
 
                         <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Dry Mill</h3>
 
+                        <p style={{ color: 'white' }}>The coffee seeds are removed from the thin membrane (parchment) and sorted to remove lower quality seeds.  After this process of dehulling and sorting, the remaining weight of the seed is called green coffee</p>
+
                         <p style={{ color: 'white' }}>
                             Green Coffee Absorbed Weight: {greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}
                         </p>
 
                     </Col>
 
-                </Row>
 
-                <Row>
-                    <Col md='12' lg='6'>
+                    <Col md='12' lg='12'>
                         <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey="0">
-                                    Dry Mill Lots
+                                    <Button>Dry Parchment Lots</Button>
                                 </Accordion.Toggle>
                                 <Accordion.Collapse eventKey="0">
                                     <Card.Body>
@@ -92,16 +89,12 @@ export const ProcessingExport = ({
                                     </Card.Body>
                                 </Accordion.Collapse>
                             </Card>
-                        </Accordion>
-                    </Col>
 
-                    <Col md='12' lg='6'>
-                        <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
                             <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="0">
-                                    Dry Mill Lots
+                                <Accordion.Toggle as={Card.Header} eventKey="1">
+                                    <Button>Coffee Green Lots</Button>
                                 </Accordion.Toggle>
-                                <Accordion.Collapse eventKey="0">
+                                <Accordion.Collapse eventKey="1">
                                     <Card.Body>
 
                                         <Pagination
@@ -113,8 +106,10 @@ export const ProcessingExport = ({
                                     </Card.Body>
                                 </Accordion.Collapse>
                             </Card>
+
                         </Accordion>
                     </Col>
+
                 </Row>
 
             </Container>
