@@ -10,6 +10,10 @@ import SearchForm from '../components/SearchForm/SearchForm';
 import PartnersSection from '../sections/partners/PartnersSection';
 
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
+import ReactPlayer from 'react-player';
 
 // Context
 import { useGlobalContext } from '../context';
@@ -132,11 +136,30 @@ export const Home = () => {
 
                     <Container>
 
+                        <Row id='' style={{ 'padding-top': '5em' }}>
+
+                            <Col md='12' lg='6'>
+
+                                <h3 style={{ 'padding-bottom': '0.5em' }}>Webinar: Efficiency in Coffee Processing</h3>
+
+                                <p>Dr. Irwin Ronaldo Donis-Gonzalez of the UC Davis Department of Biological and Argricultural Engineering and Evan Gilman and Chris Kornman of The Crown discuss efficiency in post-harvest processing in coffee. Dr. Donis-Gonzalez presents his exhaustive research focusing on the loss of mass from each stage of washed process coffee.</p>
+
+                            </Col>
+                            <Col md='12' lg='6'>
+                                <ReactPlayer controls url='https://vimeo.com/526315128' width='100%' />
+                            </Col>
+                        </Row>
+
+
+
                         <Chart
+
                             id="chart"
+
                             chartData={{
 
-                                labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting'],
+                                labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting Coming Soon'],
+
                                 datasets: [
                                     {
                                         label: 'Weight of microlot at different stages',
