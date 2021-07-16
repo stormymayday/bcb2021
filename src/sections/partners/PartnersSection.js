@@ -15,10 +15,13 @@ import './PartnersSection.styles.css';
 
 export const PartnersSection = () => {
     return (
-        <div className="economics-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='economics'>
+        <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='partners'>
+
             <Container>
 
-                <h2 style={{ color: 'white' }}>About this Project</h2>
+                <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center', 'color': 'white' }}>Partners</h2>
+                <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
+
                 <p style={{ color: 'white' }}>In June 2020 iDE With Bext360’s help set out to answer some important questions:</p>
                 <ul style={{ color: 'white' }}>
                     <li>
@@ -46,7 +49,7 @@ export const PartnersSection = () => {
                                 </a>
                                 <Card.Text>
                                     Bext360 provides comprehensive and measurable accountability for critical supply chains. The SaaS platform provides unsurpassed blockchain traceability and quantifiable measurements for sustainability. Bext360 focuses on supply chains such as coffee, seafood, timber, minerals, cotton and palm oil to provide a traceable fingerprint from producer to consumer. After all, how can you prove sustainability without traceability?
-                            </Card.Text>
+                                </Card.Text>
                             </Card.Body>
                         </Card>
 
@@ -62,7 +65,7 @@ export const PartnersSection = () => {
                                 <Card.Text>
                                     One entrepreneur can change their community, and millions can change the world.
                                     We believe that the best way to end poverty is to empower entrepreneurs. iDE coaches businesses that improve their communities and stimulates the market ecosystems in which they operate, helping them to succeed and multiply. In addition to economic prosperity, we ensure these sustainable businesses create gender equity, protect the natural environment, and build resilience to climate change. By scaling up our model, these entrepreneurs will change the world.
-                            </Card.Text>
+                                </Card.Text>
                             </Card.Body>
                         </Card>
 

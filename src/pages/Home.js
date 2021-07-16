@@ -28,7 +28,7 @@ export const Home = () => {
 
     const { farmersMongoDB } = useGlobalContext();
 
-    const [farmers, setFarmers] = useState({});
+    const [farmer, setFarmer] = useState({});
 
     console.log(farmersMongoDB);
 
@@ -39,57 +39,92 @@ export const Home = () => {
         // Google Analytics Page View report
         ReactGA.pageview(window.location.pathname + window.location.search);
 
-    }, [farmersMongoDB])
+        if (farmersMongoDB.length > 0) {
+
+            // Filtering farmer based on farmerName
+            const thisFarmer = farmersMongoDB.filter(function (value) {
+
+                return value.farmerName === 'Claudia & Juan' && setFarmer(value);;
+
+            });
+
+        }
+
+    }, [farmersMongoDB]);
+
+    console.log(farmer);
 
     return (
         <main>
 
-            {farmersMongoDB.length > 0 ?
+            {farmer.harvestNode ?
 
                 <>
                     <HomePageNavigation />
 
-                    <Hero farmerPicture={farmersMongoDB[0].harvestNode.images[0]} />
+                    {/* <Hero farmerPicture={farmersMongoDB[0].harvestNode.images[0]} /> */}
+                    <Hero farmerPicture={farmer.harvestNode.images[0]} />
 
                     <Farming
 
-                        farmerName={farmersMongoDB[0].farmerName}
-                        farmerPicture={farmersMongoDB[0].harvestNode.images[0]}
-                        city={farmersMongoDB[0].harvestNode.city}
-                        state={farmersMongoDB[0].harvestNode.state}
-                        country={farmersMongoDB[0].harvestNode.country}
-                        elevation={farmersMongoDB[0].harvestNode.elevation}
-                        longitude={farmersMongoDB[0].harvestNode.longitude}
-                        latitude={farmersMongoDB[0].harvestNode.latitude}
-                        elevationUnit={farmersMongoDB[0].harvestNode.elevationUnit}
-                        harvestTotalAbsorbedWeight={farmersMongoDB[0].harvestNode.totaAbsorbedWeight}
-                        harvestTotalAbsorbedWeightUnit={farmersMongoDB[0].harvestNode.totalAbsorbedWeightUnit}
-                        numberOfHarvestLots={farmersMongoDB[0].harvestNode.harvestLots.length}
+                        farmerName={farmer.farmerName}
+                        farmerPicture={farmer.harvestNode.images[0]}
+                        harvestCity={farmer.harvestNode.city}
+                        harvestState={farmer.harvestNode.state}
+                        harvestCountry={farmer.harvestNode.country}
+                        harvestElevation={farmer.harvestNode.elevation}
+                        harvestElevationUnit={farmer.harvestNode.elevationUnit}
+                        longitude={farmer.harvestNode.longitude}
+                        latitude={farmer.harvestNode.latitude}
+                        harvestTotalAbsorbedWeight={farmer.harvestNode.totaAbsorbedWeight}
+                        harvestTotalAbsorbedWeightUnit={farmer.harvestNode.totalAbsorbedWeightUnit}
+                        harvestLots={farmer.harvestNode.harvestLots}
+                        numberOfHarvestLots={farmer.harvestNode.harvestLots.length}
 
-                        wetMilltTotalAbsorbedWeight={farmersMongoDB[0].wetMillNode.totaAbsorbedWeight}
-                        wetMillTotalAbsorbedWeightUnit={farmersMongoDB[0].wetMillNode.totalAbsorbedWeightUnit}
-
-                        harvestLots={farmersMongoDB[0].harvestNode.harvestLots}
-
-                        wetMillLots={farmersMongoDB[0].wetMillNode.wetMillLots}
+                        wetMillCity={farmer.wetMillNode.city}
+                        wetMillState={farmer.wetMillNode.state}
+                        wetMillCountry={farmer.wetMillNode.country}
+                        wetMillElevation={farmer.wetMillNode.elevation}
+                        wetMillElevationUnit={farmer.wetMillNode.elevationUnit}
+                        wetMilltTotalAbsorbedWeight={farmer.wetMillNode.totaAbsorbedWeight}
+                        wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode.totalAbsorbedWeightUnit}
+                        wetMillLots={farmer.wetMillNode.wetMillLots}
+                        numberOfWetMillLots={farmer.wetMillNode.wetMillLots.length}
                     >
                     </Farming>
 
-                    <div id="processing"></div>
                     <ProcessingExport
 
-                        dryParchmentAbsorbedWeight={farmersMongoDB[0].dryMillNode.dryMillLots[1].absorbedWeight}
-                        dryParchmentAbsorbedWeightUnit={farmersMongoDB[0].dryMillNode.dryMillLots[1].absorbedWeightUnit}
+                        exporterIntakeCity={farmer.exporterIntakeNode.city}
+                        exporterIntakeState={farmer.exporterIntakeNode.state}
+                        exporterIntakeCountry={farmer.exporterIntakeNode.country}
+                        exporterIntakeElevation={farmer.exporterIntakeNode.elevation}
+                        exporterIntakeElevationUnit={farmer.exporterIntakeNode.elevationUnit}
 
-                        greenCoffeeAbsorbedWeight={farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeight}
-                        greenCoffeeAbsorbedWeightUnit={farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeightUnit}
+                        dryMillIntakeCity={farmer.dryMillNode.city}
+                        dryMillIntakeState={farmer.dryMillNode.state}
+                        dryMillIntakeCountry={farmer.dryMillNode.country}
+                        dryMillIntakeElevation={farmer.dryMillNode.elevation}
+                        dryMillIntakeElevationUnit={farmer.dryMillNode.elevationUnit}
 
-                        dryMillLots={farmersMongoDB[0].dryMillNode.dryMillLots}
+                        dryParchmentAbsorbedWeight={farmer.dryMillNode.dryMillLots[1].absorbedWeight}
+                        dryParchmentAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit}
+
+                        greenCoffeeAbsorbedWeight={farmer.dryMillNode.dryMillLots[0].absorbedWeight}
+                        greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit}
+
+                        dryMillLots={farmer.dryMillNode.dryMillLots}
 
                     >
                     </ProcessingExport>
 
-                    <Journey></Journey>
+                    <Journey
+
+                        farmerName={farmer.farmerName}
+                        longitude={farmer.harvestNode.longitude}
+                        latitude={farmer.harvestNode.latitude}
+
+                    ></Journey>
 
                     <Roasting></Roasting>
 
@@ -101,18 +136,18 @@ export const Home = () => {
                             id="chart"
                             chartData={{
 
-                                labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting', 'a cup of coffee'],
+                                labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting'],
                                 datasets: [
                                     {
                                         label: 'Weight of microlot at different stages',
 
                                         data: [
-                                            farmersMongoDB[0].harvestNode.totaAbsorbedWeight,
-                                            farmersMongoDB[0].wetMillNode.totaAbsorbedWeight,
-                                            farmersMongoDB[0].dryMillNode.dryMillLots[1].absorbedWeight,
-                                            farmersMongoDB[0].dryMillNode.dryMillLots[0].absorbedWeight,
-                                            10000,
-                                            1.25
+                                            farmer.harvestNode.totaAbsorbedWeight,
+                                            farmer.wetMillNode.totaAbsorbedWeight,
+                                            farmer.dryMillNode.dryMillLots[1].absorbedWeight,
+                                            farmer.dryMillNode.dryMillLots[0].absorbedWeight,
+                                            0,
+                                            // 200
                                         ],
                                         backgroundColor: [
                                             'rgba(255, 99, 132, 0.6)',
@@ -121,7 +156,7 @@ export const Home = () => {
                                             'rgba(75, 192, 192, 0.6)',
                                             'rgba(153, 102, 255, 0.6)',
                                             'rgba(255, 159, 64, 0.6)',
-                                            'rgba(255, 99, 132, 0.6)'
+                                            // 'rgba(255, 99, 132, 0.6)'
                                         ]
                                     }
                                 ]
@@ -135,7 +170,6 @@ export const Home = () => {
 
                     </Container>
 
-                    <div id="about"></div>
                     <PartnersSection />
 
                 </>

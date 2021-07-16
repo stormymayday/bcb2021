@@ -18,17 +18,24 @@ const Farming = ({
 
     farmerName,
     farmerPicture,
-    city,
-    state,
-    country,
+    harvestCity,
+    harvestState,
+    harvestCountry,
     longitude,
     latitude,
-    elevation,
-    elevationUnit,
+    harvestElevation,
+    harvestElevationUnit,
     harvestTotalAbsorbedWeight,
     harvestTotalAbsorbedWeightUnit,
     numberOfHarvestLots,
     harvestLots,
+
+    wetMillCity,
+    wetMillState,
+    wetMillCountry,
+    wetMillElevation,
+    wetMillElevationUnit,
+    numberOfWetMillLots,
 
     wetMilltTotalAbsorbedWeight,
     wetMillTotalAbsorbedWeightUnit,
@@ -50,10 +57,11 @@ const Farming = ({
     // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
 
     return (
-        <div style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='farming'>
+        <div style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='farming'>
             <Container>
 
-                <h2 style={{ 'padding-bottom': '1.5em', 'text-align': 'center' }}>Farming</h2>
+                <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center' }}>Farming</h2>
+                <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
 
                 <Row id='harvest' style={{ 'padding-top': '1em' }}>
 
@@ -64,28 +72,23 @@ const Farming = ({
                         <p>People hand picked cherries from the coffee trees each day of the harvest.  At the end of the day the cherries are weighed and people are paid based on the weight of the cherry picked.</p>
 
 
-                        <p>Producer Name: {farmerName}</p>
-
-                        <p>Location: {city}, {state}</p>
-
-                        <p>Country: {country}</p>
-
-                        <p>Elevation: {elevation} {elevationUnit}</p>
-
                         <p>
-                            Coffee Cherry Total Absorbed Weight: {harvestTotalAbsorbedWeight} {harvestTotalAbsorbedWeightUnit}
-                        </p>
-                        {/* <p>
-                            Harvested between: { }
-                        </p> */}
+                            Producer Name: <b>{farmerName}</b><br />
 
-                        <p>
-                            Total number of harvest lots: {numberOfHarvestLots}
+                            Location: <b>{harvestCity}, {harvestState}</b><br />
+
+                            Country: <b>{harvestCountry}</b><br />
+
+                            Elevation: <b>{harvestElevation} {harvestElevationUnit}</b><br />
+
+                            Coffee Cherry Total Weight: <b>{harvestTotalAbsorbedWeight} {harvestTotalAbsorbedWeightUnit}</b><br />
+
+                            Total number of harvest lots: <b>{numberOfHarvestLots}</b><br />
                         </p>
 
                     </Col>
                     <Col md='12' lg='6'>
-                        <LeafletMap farmer={farmerName} longitude={longitude} latitude={latitude} />
+                        <LeafletMap name={farmerName} longitude={longitude} latitude={latitude} />
                     </Col>
                 </Row>
 
@@ -121,7 +124,15 @@ const Farming = ({
                         <p>All of the cherries picked in a day are combined.  Then the coffee seeds are separated from coffee cherry using a process called depulping.  After the cherry skin is removed, the remaining weight of the wet seed inside a thin membrane is called wet parchment.  </p>
 
                         <p>
-                            Wet Parchment Total Absorbed Weight: {wetMilltTotalAbsorbedWeight} {wetMillTotalAbsorbedWeightUnit}
+                            Location: <b>{wetMillCity}, {wetMillState}</b><br />
+
+                            {/* Country: <b>{wetMillCountry}</b><br /> */}
+
+                            Elevation: <b>{wetMillElevation} {wetMillElevationUnit}</b><br />
+
+                            Wet Parchment Total Weight: <b>{wetMilltTotalAbsorbedWeight} {wetMillTotalAbsorbedWeightUnit}</b><br />
+
+                            Total number of wet parchment lots: <b>{filteredWetMillLots50.length + filteredWetMillLots15.length}</b><br />
                         </p>
 
                     </Col>

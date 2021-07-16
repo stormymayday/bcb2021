@@ -38,7 +38,7 @@ export default function HomePageNavigation() {
 
                             <Nav.Link
                                 as={HashLink}
-                                to={`#processing`}
+                                to={`#processing-export`}
                                 smooth
                                 scroll={el => scrollWidthOffset(el)}
                             >
@@ -74,11 +74,11 @@ export default function HomePageNavigation() {
 
                             <Nav.Link
                                 as={HashLink}
-                                to={`#about`}
+                                to={`#partners`}
                                 smooth
                                 scroll={el => scrollWidthOffset(el)}
                             >
-                                ABOUT
+                                PARTNERS
                             </Nav.Link>
 
                             <Nav.Link href="/roasters">ROASTERS</Nav.Link>

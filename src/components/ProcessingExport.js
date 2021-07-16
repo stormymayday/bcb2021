@@ -17,6 +17,18 @@ import paginate from '../utils';
 
 export const ProcessingExport = ({
 
+    exporterIntakeCity,
+    exporterIntakeState,
+    exporterIntakeCountry,
+    exporterIntakeElevation,
+    exporterIntakeElevationUnit,
+
+    dryMillIntakeCity,
+    dryMillIntakeState,
+    dryMillIntakeCountry,
+    dryMillIntakeElevation,
+    dryMillIntakeElevationUnit,
+
     dryParchmentAbsorbedWeight,
     dryParchmentAbsorbedWeightUnit,
 
@@ -38,11 +50,12 @@ export const ProcessingExport = ({
     });
 
     return (
-        <div className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='processing-export'>
+        <div className="processing-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='processing-export'>
 
             <Container>
 
-                <h2 style={{ 'padding-bottom': '1.5em', 'text-align': 'center', 'color': 'white' }}>Processing & Export</h2>
+                <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center', 'color': 'white' }}>Processing & Export</h2>
+                <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
                 <h3 style={{ color: 'white' }}>Catracha Coffee</h3>
                 <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
@@ -53,11 +66,38 @@ export const ProcessingExport = ({
 
                         <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Exporter Intake</h3>
 
-                        <p style={{ color: 'white' }}>The producer dries the wet parchment at their mill and then sells the dry parchment to Catracha Coffee.   After the moisture is removed, the remaining weight of the seed inside the thin membrane is called dry parchment.  The producer is paid based on the weight of the dry parchment delivered to Catracha Coffee.</p>
-
                         <p style={{ color: 'white' }}>
-                            Dry Parchment Absorbed Weight: {dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}
+
+                            Location: <b>{exporterIntakeCity}, {exporterIntakeState}</b><br />
+
+                            {/* Country: <b>{exporterIntakeCountry}</b><br /> */}
+
+                            Elevation: <b>{exporterIntakeElevation} {exporterIntakeElevationUnit}</b><br />
+
+                            Dry Parchment Total Weight: <b>{dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}</b><br />
+
                         </p>
+
+                        <Accordion style={{ 'margin-bottom': '1.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    <Button>Dry Parchment Lots</Button>
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        <Pagination
+
+                                            lots={dryParchmentLots ? paginate(dryParchmentLots) : []}
+
+                                        />
+
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+
+                        <p style={{ color: 'white' }}>The producer dries the wet parchment at their mill and then sells the dry parchment to Catracha Coffee.   After the moisture is removed, the remaining weight of the seed inside the thin membrane is called dry parchment.  The producer is paid based on the weight of the dry parchment delivered to Catracha Coffee.</p>
 
                     </Col>
 
@@ -65,16 +105,44 @@ export const ProcessingExport = ({
 
                         <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Dry Mill</h3>
 
+                        <p style={{ color: 'white' }}>
+
+                            Location: <b>{dryMillIntakeCity}, {dryMillIntakeState}</b><br />
+
+                            {/* Country: <b>{dryMillIntakeCountry}</b><br /> */}
+
+                            Elevation: <b>{dryMillIntakeElevation} {dryMillIntakeElevationUnit}</b><br />
+
+                            Green Coffee Total Weight: <b>{greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}</b><br />
+
+                        </p>
+
+                        <Accordion style={{ 'margin-bottom': '1.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    <Button>Coffee Green Lots</Button>
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        <Pagination
+
+                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
+
+                                        />
+
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+
                         <p style={{ color: 'white' }}>The coffee seeds are removed from the thin membrane (parchment) and sorted to remove lower quality seeds.  After this process of dehulling and sorting, the remaining weight of the seed is called green coffee</p>
 
-                        <p style={{ color: 'white' }}>
-                            Green Coffee Absorbed Weight: {greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}
-                        </p>
 
                     </Col>
 
-
-                    <Col md='12' lg='12'>
+                    {/* 
+                    <Col md='12' lg='6'>
                         <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey="0">
@@ -111,7 +179,7 @@ export const ProcessingExport = ({
                             </Card>
 
                         </Accordion>
-                    </Col>
+                    </Col> */}
 
                 </Row>
 

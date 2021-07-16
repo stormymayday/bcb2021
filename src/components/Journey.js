@@ -5,9 +5,17 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import LeafletMap from '../components/LeafletMap/LeafletMap';
 
-export const Journey = (props) => {
+export const Journey = ({
+
+    farmerName,
+    longitude,
+    latitude,
+
+    nodeCoordinates
+
+}) => {
 
     // Converting Green Export Video
     // const greenExportVideo = 'data:video/mp4;base64,' + props.greenExportVideo;
@@ -19,11 +27,12 @@ export const Journey = (props) => {
     // const intakeGreenVideo = 'data:video/mp4;base64,' + props.intakeGreenVideo;
 
     return (
-        <div style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='journey'>
+        <div style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='journey'>
 
             <Container>
 
-                <h2 style={{ 'padding-bottom': '1.5em', 'text-align': 'center' }}>Product's Journey</h2>
+                <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center' }}>Product's Journey</h2>
+                <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
 
                 <Row>
 
@@ -31,13 +40,15 @@ export const Journey = (props) => {
 
                         <h3 style={{ 'padding-bottom': '0.5em' }}>Export</h3>
 
-                        <p>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export.  A container can hold up to 275 bags of green coffee</p>
-
                         <p>
-                            Location: {props.exportedFrom}
+                            Location: <b>Puerto Cortes</b>
                             <br />
-                            Date: {props.greenExportDate}
                         </p>
+
+                        <LeafletMap name={`Puerto Cortes`} longitude={'-87.943893'} latitude={'15.845310'} nodeCoordinates={nodeCoordinates} />
+
+                        <p style={{ 'padding-top': '2em', 'padding-bottom': '2em' }}>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export.  A container can hold up to 275 bags of green coffee</p>
+
 
                     </Col>
 
@@ -45,13 +56,14 @@ export const Journey = (props) => {
 
                         <h3 style={{ 'padding-bottom': '0.5em' }}>Import</h3>
 
-                        <p>The container with bags of green coffee is shipped to a port in Oakland California and taken to the coffee importer’s warehouse</p>
-
                         <p>
-                            Location: {props.exportedFrom}
+                            Location: <b>Port Houston</b>
                             <br />
-                            Date: {props.greenExportDate}
                         </p>
+
+                        <LeafletMap name={'Port Houston'} longitude={'-95.280980'} latitude={'29.768000'} nodeCoordinates={nodeCoordinates} />
+
+                        <p style={{ 'padding-top': '2em', 'padding-bottom': '2em' }}>The container with bags of green coffee is shipped to a port in Oakland California and taken to the coffee importer’s warehouse</p>
 
                     </Col>
 
@@ -59,33 +71,14 @@ export const Journey = (props) => {
 
                         <h3 style={{ 'padding-bottom': '0.5em' }}>Roaster Intake</h3>
 
-                        <p>The importer sends the bags of green coffee to the roastery where the coffee is roasted</p>
-
                         <p>
-                            Location: {props.exportedFrom}
+                            Location: <b>Denver, CO</b>
                             <br />
-                            Date: {props.greenExportDate}
                         </p>
 
-                    </Col>
+                        <LeafletMap name={'Queen City Collective Coffee'} longitude={'-104.991531'} latitude={'39.742043'} nodeCoordinates={nodeCoordinates} />
 
-                </Row>
-
-                <Row>
-
-                    <Col lg='12'>
-
-                        <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={false}>
-                            <TileLayer
-                                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            />
-                            <Marker position={[51.505, -0.09]}>
-                                <Popup>
-                                    A pretty CSS3 popup. <br /> Easily customizable.
-                                </Popup>
-                            </Marker>
-                        </MapContainer>
+                        <p style={{ 'padding-top': '2em', 'padding-bottom': '2em' }}>The importer sends the bags of green coffee to the roastery where the coffee is roasted</p>
 
                     </Col>
 

@@ -19,9 +19,10 @@ export const Roasting = (props) => {
     // const source = 'data:image/jpeg;base64,' + props.roastingImage;
 
     return (
-        <div className="roasting-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '4em' }} id='roasting'>
+        <div className="roasting-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='roasting'>
 
-            <h2 style={{ 'padding-bottom': '1.5em', 'text-align': 'center', 'color': 'white' }}>Roasting</h2>
+            <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center', 'color': 'white' }}>Roasting</h2>
+            <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
             <Container>
                 <h3 style={{ color: 'white' }}>Roasted by Queen City</h3>
@@ -31,8 +32,8 @@ export const Roasting = (props) => {
                         <Card border="light" text='light' border='light' style={{ 'background-color': 'transparent', 'margin-bottom': '2rem' }}>
                             <Card.Body>
                                 <Card.Text>
-                                    Total Weight: <br />
-                                    Number of Roasting lots: <br />
+                                    Total Weight: <b>Coming Soon</b><br />
+                                    Number of Roasting lots: <b>Coming Soon</b><br />
                                     {/* Roasted at: {props.roastingCity}, {props.roastingState}, {props.roastingCounty}<br />
                                     Cuppers Notes: {props.cuppersNotes}<br />
                                     Roast Date: {props.roastDate}<br />
