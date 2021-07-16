@@ -7,6 +7,8 @@ import { HashLink } from 'react-router-hash-link';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 
+import logo from '../../images/logo-white.png';
+
 export default function FarmersPageNavigation() {
 
     const scrollWidthOffset = (el) => {
@@ -20,7 +22,8 @@ export default function FarmersPageNavigation() {
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
                 <Container>
 
-                    <Navbar.Brand href="/">BCB</Navbar.Brand>
+                    <Navbar.Brand href="/"><img src={logo} style={{ 'width': '3em' }}></img></Navbar.Brand>
+
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
 
