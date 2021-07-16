@@ -19,7 +19,7 @@ export const PartnersSection = () => {
 
             <Container>
 
-                <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center', 'color': 'white' }}>Partners</h2>
+                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': 'white' }}>Partners</h2>
                 <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
                 <p style={{ color: 'white' }}>In June 2020 iDE With Bext360’s help set out to answer some important questions:</p>

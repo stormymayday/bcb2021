@@ -21,7 +21,7 @@ export const Roasting = (props) => {
     return (
         <div className="roasting-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='roasting'>
 
-            <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center', 'color': 'white' }}>Roasting</h2>
+            <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': 'white' }}>Roasting</h2>
             <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
             <Container>

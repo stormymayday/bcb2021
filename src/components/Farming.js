@@ -60,7 +60,7 @@ const Farming = ({
         <div style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='farming'>
             <Container>
 
-                <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center' }}>Farming</h2>
+                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Farming</h2>
                 <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
 
                 <Row id='harvest' style={{ 'padding-top': '1em' }}>

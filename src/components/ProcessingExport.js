@@ -54,7 +54,7 @@ export const ProcessingExport = ({
 
             <Container>
 
-                <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center', 'color': 'white' }}>Processing & Export</h2>
+                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': 'white' }}>Processing & Export</h2>
                 <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
                 <h3 style={{ color: 'white' }}>Catracha Coffee</h3>

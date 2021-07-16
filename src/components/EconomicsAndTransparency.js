@@ -18,7 +18,7 @@ export const EconomicsAndTransparency = () => {
     return (
         <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='economics'>
 
-            <h2 style={{ 'padding-bottom': '0.4em', 'text-align': 'center', 'color': 'white' }}>Economics & Transparency</h2>
+            <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': 'white' }}>Economics & Transparency</h2>
             <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
             <Container>
