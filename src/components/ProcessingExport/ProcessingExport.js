@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 
 import Button from 'react-bootstrap/Button';
 
-import './ProcessingExport.css';
+// import './ProcessingExport.css';
 
 // Components
 import ProcessingSectionPagination from '../ProcessingSectionPagination/ProcessingSectionPagination';
