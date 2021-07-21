@@ -25,6 +25,7 @@ import Journey from '../components/Journey';
 import Roasting from '../components/Roasting';
 import Economics from '../components/EconomicsAndTransparency';
 import Chart from '../components/Chart/Chart';
+import BarChart from '../components/Chart/BarChart';
 
 import Loading from '../components/Loading/Loading';
 
@@ -33,6 +34,8 @@ export const Home = () => {
     const { farmersMongoDB } = useGlobalContext();
 
     const [farmer, setFarmer] = useState({});
+
+    const mapStyle = `ckr6jrmhs0tg218qk5ym975gf`;
 
     console.log(farmersMongoDB);
 
@@ -124,6 +127,8 @@ export const Home = () => {
 
                     <Journey
 
+                        mapStyle={mapStyle}
+
                         farmerName={farmer.farmerName}
                         longitude={farmer.harvestNode.longitude}
                         latitude={farmer.harvestNode.latitude}
@@ -140,37 +145,53 @@ export const Home = () => {
 
                             <Col md='12' lg='6'>
 
-                                <h3 style={{ 'padding-bottom': '0.5em' }}>Webinar: Efficiency in Coffee Processing</h3>
+                                <h3>Webinar: Efficiency in Coffee Processing</h3>
 
                                 <p>Dr. Irwin Ronaldo Donis-Gonzalez of the UC Davis Department of Biological and Argricultural Engineering and Evan Gilman and Chris Kornman of The Crown discuss efficiency in post-harvest processing in coffee. Dr. Donis-Gonzalez presents his exhaustive research focusing on the loss of mass from each stage of washed process coffee.</p>
 
                             </Col>
                             <Col md='12' lg='6'>
-                                <ReactPlayer controls url='https://vimeo.com/526315128' width='100%' />
+
+                                <div
+                                    style={{
+                                        'position': 'relative',
+                                        'padding-top': '56.25%'
+                                    }}
+                                >
+                                    <ReactPlayer
+
+                                        style={{
+
+                                            'position': 'absolute',
+                                            'top': '0',
+                                            'left': '0',
+                                            'width': '100 %',
+                                            'height': '100 %'
+
+                                        }}
+
+                                        controls url='https://vimeo.com/526315128' width='100%' height='100%' />
+
+                                </div>
                             </Col>
                         </Row>
 
+                        <BarChart
 
-
-                        <Chart
-
-                            id="chart"
-
-                            chartData={{
+                            data={{
 
                                 labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting Coming Soon'],
 
                                 datasets: [
                                     {
-                                        label: 'Weight of microlot at different stages',
+                                        label: 'Weight of Coffee at Main Processing Stages',
 
                                         data: [
                                             farmer.harvestNode.totaAbsorbedWeight,
                                             farmer.wetMillNode.totaAbsorbedWeight,
                                             farmer.dryMillNode.dryMillLots[1].absorbedWeight,
                                             farmer.dryMillNode.dryMillLots[0].absorbedWeight,
-                                            0,
-                                            // 200
+                                            0
                                         ],
                                         backgroundColor: [
                                             'rgba(255, 99, 132, 0.6)',
@@ -178,17 +199,13 @@ export const Home = () => {
                                             'rgba(255, 206, 86, 0.6)',
                                             'rgba(75, 192, 192, 0.6)',
                                             'rgba(153, 102, 255, 0.6)',
-                                            'rgba(255, 159, 64, 0.6)',
-                                            // 'rgba(255, 99, 132, 0.6)'
+                                            'rgba(255, 159, 64, 0.6)'
                                         ]
                                     }
                                 ]
+
                             }}
 
-
-                            location="Massachusetts"
-
-                            legendPosition="bottom"
                         />
 
                     </Container>
