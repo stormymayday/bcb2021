@@ -17,6 +17,7 @@ const BarChart = ({ data }) => {
                         legend: {
                             labels: {
                                 // This more specific font property overrides the global property
+                                boxWidth: 0,
                                 font: function (context) {
                                     var width = context.chart.width;
                                     var size = Math.round(width / 32);
@@ -40,7 +41,7 @@ const BarChart = ({ data }) => {
                                 text: "Weight in Pounds",
                                 font: function (context) {
                                     var width = context.chart.width;
-                                    var size = Math.round(width / 32);
+                                    var size = Math.round(width / 36);
                                     return {
                                         size: size,
                                         weight: 400
@@ -56,7 +57,7 @@ const BarChart = ({ data }) => {
                                 text: "Processing Stages",
                                 font: function (context) {
                                     var width = context.chart.width;
-                                    var size = Math.round(width / 32);
+                                    var size = Math.round(width / 36);
                                     return {
                                         size: size,
                                         weight: 400
