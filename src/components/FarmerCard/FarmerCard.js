@@ -51,7 +51,9 @@ export const FarmerCard = (props) => {
                                 //         farmer
                                 //     }
                                 // }}
-                                className="bttn bttn-primary bttn-details">
+                                className="bttn bttn-primary bttn-details"
+                                style={{ 'text-decoration': 'none' }}
+                            >
                                 Learn More
                             </Link>
                         </div>

@@ -44,7 +44,9 @@ export const RoasterCard = (props) => {
                     onClick={googleAnalyicsEvent}
                     href={props.roaster.roasterUrl}
                     target="_blank"
-                    className="bttn bttn-primary bttn-details">
+                    className="bttn bttn-primary bttn-details"
+                    style={{ 'text-decoration': 'none' }}
+                >
                     Learn More
                 </a>
             </div>
