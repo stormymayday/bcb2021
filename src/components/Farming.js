@@ -99,7 +99,7 @@ const Farming = ({
                 <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="0">
-                            <Button>Harvest Lots</Button>
+                            <button className='bttn bttn-primary'>Harvest Lots</button>
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>
@@ -146,7 +146,7 @@ const Farming = ({
                 <Accordion style={{ 'margin-top': '3rem' }}>
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="0">
-                            <Button>Wet Mill Lots (50% moisture)</Button>
+                            <button className='bttn bttn-primary'>Wet Mill Lots (50% moisture)</button>
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>
@@ -165,7 +165,7 @@ const Farming = ({
                     </Card>
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="1">
-                            <Button>Wet Mill Lots (15% moisture)</Button>
+                            <button className='bttn bttn-primary'>Wet Mill Lots (15% moisture)</button>
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="1">
                             <Card.Body>

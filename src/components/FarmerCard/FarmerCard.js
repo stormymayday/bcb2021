@@ -51,7 +51,7 @@ export const FarmerCard = (props) => {
                                 //         farmer
                                 //     }
                                 // }}
-                                className="btn btn-primary btn-details">
+                                className="bttn bttn-primary bttn-details">
                                 Learn More
                             </Link>
                         </div>

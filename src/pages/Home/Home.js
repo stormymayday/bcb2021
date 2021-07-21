@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Hero from '../components/Hero';
+import Hero from '../../components/Hero';
 
 // Google Analytics
 import ReactGA from 'react-ga';
 
-import HomePageNavigation from '../components/HomePageNavigation/HomePageNavigation';
-import FarmerList from '../components/FarmerList/FarmerList';
-import SearchForm from '../components/SearchForm/SearchForm';
-import PartnersSection from '../sections/partners/PartnersSection';
+import HomePageNavigation from '../../components/HomePageNavigation/HomePageNavigation';
+import PartnersSection from '../../sections/partners/PartnersSection';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -16,19 +14,19 @@ import Col from 'react-bootstrap/Col';
 import ReactPlayer from 'react-player';
 
 // Context
-import { useGlobalContext } from '../context';
+import { useGlobalContext } from '../../context';
 
 // Sections
-import Farming from '../components/Farming';
-import ProcessingExport from '../components/ProcessingExport';
-import Journey from '../components/Journey';
-import Roasting from '../components/Roasting';
-import Economics from '../components/EconomicsAndTransparency';
-import Chart from '../components/Chart/Chart';
-import BarChart from '../components/Chart/BarChart';
+import Farming from '../../components/Farming';
+import ProcessingExport from '../../components/ProcessingExport';
+import Journey from '../../components/Journey';
+import Roasting from '../../components/Roasting';
+import Economics from '../../components/EconomicsAndTransparency';
 
-import Loading from '../components/Loading/Loading';
-import ScrollToTop from '../components/ScrollToTop/ScrollTopTop';
+import BarChart from '../../components/Chart/BarChart';
+
+import Loading from '../../components/Loading/Loading';
+import ScrollToTop from '../../components/ScrollToTop/ScrollTopTop';
 
 export const Home = () => {
 

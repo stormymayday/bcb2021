@@ -81,7 +81,7 @@ export const ProcessingExport = ({
                         <Accordion style={{ 'margin-bottom': '1.5rem' }}>
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey="0">
-                                    <Button>Dry Parchment Lots</Button>
+                                    <button className='bttn bttn-primary'>Dry Parchment Lots</button>
                                 </Accordion.Toggle>
                                 <Accordion.Collapse eventKey="0">
                                     <Card.Body>
@@ -120,7 +120,7 @@ export const ProcessingExport = ({
                         <Accordion style={{ 'margin-bottom': '1.5rem' }}>
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey="0">
-                                    <Button>Coffee Green Lots</Button>
+                                    <button className='bttn bttn-primary'>Coffee Green Lots</button>
                                 </Accordion.Toggle>
                                 <Accordion.Collapse eventKey="0">
                                     <Card.Body>

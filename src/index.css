@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,7 +10,7 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 /* 
 ====== 
@@ -88,9 +88,9 @@ img {
 Buttons 
 ======
 */
-.btn,
-.btn-white,
-.btn-primary {
+.bttn,
+.bttn-white,
+.bttn-primary {
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   color: var(--primaryColor);
@@ -104,113 +104,44 @@ Buttons
   border-radius: var(--mainBorderRadius);
   display: inline-block;
 }
-.btn:hover {
+.bttn:hover {
   background: var(--primaryColor);
   color: var(--mainWhite);
 }
-.btn-white {
+.bttn-white {
   background: transparent;
   color: var(--mainWhite);
   border-color: var(--mainWhite);
 }
-.btn-white:hover {
+.bttn-white:hover {
   background: var(--mainWhite);
   color: var(--primaryColor);
 }
-.btn-primary {
+.bttn-primary {
   background: var(--primaryColor);
   color: var(--mainWhite);
   border-color: transparent;
 }
-.btn-primary:hover {
+.bttn-primary:hover {
   background: var(--primaryLightColor);
   color: var(--primaryColor);
 }
-.btn-block {
+.bttn-block {
   width: 100%;
   display: block;
   margin: 0 auto;
   box-shadow: var(--lightShadow);
   text-align: center;
 }
-.btn-details {
+.bttn-details {
   padding: 0.25rem 0.4rem;
 }
-.btn-details:hover {
+.bttn-details:hover {
   background: var(--primaryLightColor);
   border-color: var(--primaryLightColor);
 }
 /* 
-====== 
-Navbar
-======
-*/
-/* .navbar {
-  background: var(--mainWhite);
-  height: 5rem;
-  display: flex;
-  align-items: center;
-  border-bottom: 2px solid var(--primaryColor);
-  box-shadow: var(--lightShadow);
-}
-.nav-center {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: var(--smallWidth);
-  margin: 0 auto;
-  max-width: var(--fullWidth);
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-}
-.nav-links a {
-  text-transform: capitalize;
-  display: inline-block;
-  font-weight: bold;
-  margin-right: 0.5rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-  font-size: 1.2rem;
-  padding: 0.25rem 0.5rem;
-  transition: var(--mainTransition);
-}
-.nav-links a:hover {
-  color: var(--primaryColor);
-}
-.logo {
-  width: 12rem;
-} */
-/* 
-====== 
-About
-======
-*/
-.about-section {
-  width: var(--smallWidth);
-  max-width: var(--maxWidth);
-  margin: 0 auto;
-}
-.about-section p {
-  line-height: 2rem;
-  font-weight: 400;
-  letter-spacing: 2px;
-}
-/* 
-====== 
-Error
-======
-*/
-.error-page {
-  display: flex;
-  justify-content: center;
-}
-.error-container {
-  text-align: center;
-  text-transform: capitalize;
-}
-/* 
+
 ====== 
 Cocktails List 
 ======
