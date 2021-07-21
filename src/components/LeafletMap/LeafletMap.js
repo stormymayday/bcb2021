@@ -17,7 +17,7 @@ const LeafletMap = ({ name, longitude, latitude, nodeCoordinates, mapStyle }) =>
     }, [nodeCoordinates]);
 
     return (
-        <MapContainer style={{ 'border-radius': '0.3em' }} center={position} zoom={6} scrollWheelZoom={false} >
+        <MapContainer style={{ 'border-radius': '0.3em', 'z-index': '0' }} center={position} zoom={6} scrollWheelZoom={false} >
             <TileLayer
 
                 attribution="© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"

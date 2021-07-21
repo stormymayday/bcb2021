@@ -28,6 +28,7 @@ import Chart from '../components/Chart/Chart';
 import BarChart from '../components/Chart/BarChart';
 
 import Loading from '../components/Loading/Loading';
+import ScrollToTop from '../components/ScrollToTop/ScrollTopTop';
 
 export const Home = () => {
 
@@ -180,7 +181,7 @@ export const Home = () => {
 
                             data={{
 
-                                labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting Coming Soon'],
+                                labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting (Coming Soon)'],
 
                                 datasets: [
                                     {
@@ -211,6 +212,8 @@ export const Home = () => {
                     </Container>
 
                     <PartnersSection />
+
+                    <ScrollToTop />
 
                 </>
 
