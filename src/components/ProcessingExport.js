@@ -70,10 +70,6 @@ export const ProcessingExport = ({
 
                             Location: <b>{exporterIntakeCity}, {exporterIntakeState}</b><br />
 
-                            {/* Country: <b>{exporterIntakeCountry}</b><br /> */}
-
-                            Elevation: <b>{exporterIntakeElevation} {exporterIntakeElevationUnit}</b><br />
-
                             Dry Parchment Total Weight: <b>{dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}</b><br />
 
                         </p>
@@ -108,10 +104,6 @@ export const ProcessingExport = ({
                         <p style={{ color: 'white' }}>
 
                             Location: <b>{dryMillIntakeCity}, {dryMillIntakeState}</b><br />
-
-                            {/* Country: <b>{dryMillIntakeCountry}</b><br /> */}
-
-                            Elevation: <b>{dryMillIntakeElevation} {dryMillIntakeElevationUnit}</b><br />
 
                             Green Coffee Total Weight: <b>{greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}</b><br />
 
