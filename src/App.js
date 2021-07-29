@@ -40,7 +40,7 @@ const App = () => {
         <Route exact path="/roasters">
           <RoastersPage />
         </Route>
-        <Route exact path="/farmers">
+        <Route exact path="/farmers-2021">
           <FarmersPage />
         </Route>
         <Route exact path="/farmer/:name">
