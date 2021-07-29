@@ -10,6 +10,10 @@ import logo from '../../images/logo-white.png';
 
 export default function HomePageNavigation() {
 
+    const openExternalURL = () => {
+        window.open('https://blockchaincoffeebeans.herokuapp.com/');
+    }
+
     const scrollWidthOffset = (el) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
         const yOffset = -55;
@@ -87,6 +91,7 @@ export default function HomePageNavigation() {
                             <Nav.Link href="/roasters">ROASTERS</Nav.Link>
 
                             <NavDropdown title="FARMERS" id="basic-nav-dropdown">
+                                <NavDropdown.Item onClick={openExternalURL} key="0">Harvest 2020</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/farmers" key="1">Harvest 2021</NavDropdown.Item>
                             </NavDropdown>
 
