@@ -43,7 +43,7 @@ export const FarmerCard = (props) => {
                             {/* <p>{props.index}</p> */}
                             <Link
                                 onClick={googleAnalyicsEvent}
-                                to={`/farmer/${props.farmer.farmerName}`}
+                                to={`/farmer-2021/${props.farmer.farmerName}`}
                                 // to={{
                                 //     // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
                                 //     pathname: `/farmer/${props.farmer.farmerName}`,
