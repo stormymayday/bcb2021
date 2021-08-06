@@ -72,7 +72,7 @@ export const PartnersSection = () => {
                                     href={'https://www.bext360.com/'}
                                     target="_blank"
                                 >
-                                    Learn More
+                                    <b>Learn More</b>
                                 </Button>
                             </Card.Body>
                         </Card>
@@ -108,7 +108,7 @@ export const PartnersSection = () => {
                                     href={'https://www.ideglobal.org/'}
                                     target="_blank"
                                 >
-                                    Learn More
+                                    <b>Learn More</b>
                                 </Button>
                             </Card.Body>
                         </Card>

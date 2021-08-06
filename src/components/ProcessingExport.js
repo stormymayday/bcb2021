@@ -5,6 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
+import catrachalogo from '../images/catracha-logo.jpg';
+
 import Button from 'react-bootstrap/Button';
 
 import Accordion from 'react-bootstrap/Accordion';
@@ -56,16 +58,49 @@ export const ProcessingExport = ({
             <Container>
 
                 <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': 'white' }}>Processing & Export</h2>
-                <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
+                <div className='underline' style={{ 'margin-bottom': '3em', 'background': '#fff' }}></div>
 
-                <h3 style={{ color: 'white' }}>Catracha Coffee</h3>
-                <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
+                <Card
+                    className="text-center"
+                    border="light"
+                    text='light'
+                    style={{ 'background-color': 'transparent', 'margin-bottom': '1rem' }}>
 
-                <Button
+                    <Card.Body>
+
+                        <a href="https://www.catrachacoffee.com/" target="_blank">
+
+                            <Card.Img
+                                className="d-block mx-auto img-fluid w-50"
+                                variant="top"
+                                src={catrachalogo}
+                                style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
+                            />
+
+                        </a>
+
+                        <Card.Text>
+                            {/* <h3 style={{ color: 'white' }}>Queen City Collective Coffee</h3> */}
+                            A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.
+                        </Card.Text>
+                        <Button
+                            variant="outline-light"
+                            href={'https://www.catrachacoffee.com/'}
+                            target="_blank"
+                        >
+                            <b>Learn More</b>
+                        </Button>
+                    </Card.Body>
+                </Card>
+
+                {/* <h3 style={{ color: 'white' }}>Catracha Coffee</h3>
+                <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p> */}
+
+                {/* <Button
                     variant="outline-light"
                     href={'https://www.catrachacoffee.com/'}
                     target="_blank"
-                >Learn More</Button>
+                >Learn More</Button> */}
 
                 <Row>
 
