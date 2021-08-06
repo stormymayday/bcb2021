@@ -54,10 +54,11 @@ const Farming = ({
         return wetMillLot.productName === 'Wet Parchment' && wetMillLot.images[0] !== "";
     });
 
-    // const decoratedOnClick = useAccordionToggle(eventKey, onClick);
 
     return (
+
         <div style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='farming'>
+
             <Container>
 
                 <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Farming</h2>

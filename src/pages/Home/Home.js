@@ -207,12 +207,9 @@ export const Home = () => {
 
             {
 
-                farmer.harvestNode
-                    &&
-                    farmer.wetMillNode
-                    &&
-                    farmer.dryMillNode
-                    ?
+                farmer.harvestNode &&
+                    farmer.wetMillNode &&
+                    farmer.dryMillNode ?
 
                     <>
 

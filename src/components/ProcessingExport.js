@@ -50,6 +50,7 @@ export const ProcessingExport = ({
     });
 
     return (
+
         <div className="processing-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='processing-export'>
 
             <Container>
@@ -60,11 +61,17 @@ export const ProcessingExport = ({
                 <h3 style={{ color: 'white' }}>Catracha Coffee</h3>
                 <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
 
+                <Button
+                    variant="outline-light"
+                    href={'https://www.catrachacoffee.com/'}
+                    target="_blank"
+                >Learn More</Button>
+
                 <Row>
 
                     <Col md='12' lg='6'>
 
-                        <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Exporter Intake</h3>
+                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Exporter Intake</h3>
 
                         <p style={{ color: 'white' }}>
 
@@ -99,7 +106,7 @@ export const ProcessingExport = ({
 
                     <Col md='12' lg='6'>
 
-                        <h3 style={{ 'padding-bottom': '0.5em', 'color': 'white' }}>Dry Mill</h3>
+                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Dry Mill</h3>
 
                         <p style={{ color: 'white' }}>
 
