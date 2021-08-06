@@ -61,163 +61,255 @@ export const Home = () => {
     console.log(farmer);
 
     return (
+
         <main>
 
-            {farmer.harvestNode ?
+            {
 
-                <>
-                    <HomePageNavigation />
+                farmer.harvestNode && farmer.wetMillNode ?
 
-                    {/* <Hero farmerPicture={farmersMongoDB[0].harvestNode.images[0]} /> */}
-                    <Hero farmerPicture={farmer.harvestNode.images[0]} />
+                    <>
 
-                    <Farming
+                        <HomePageNavigation />
 
-                        farmerName={farmer.farmerName}
-                        farmerPicture={farmer.harvestNode.images[0]}
-                        harvestCity={farmer.harvestNode.city}
-                        harvestState={farmer.harvestNode.state}
-                        harvestCountry={farmer.harvestNode.country}
-                        harvestElevation={farmer.harvestNode.elevation}
-                        harvestElevationUnit={farmer.harvestNode.elevationUnit}
-                        longitude={farmer.harvestNode.longitude}
-                        latitude={farmer.harvestNode.latitude}
-                        harvestTotalAbsorbedWeight={farmer.harvestNode.totaAbsorbedWeight}
-                        harvestTotalAbsorbedWeightUnit={farmer.harvestNode.totalAbsorbedWeightUnit}
-                        harvestLots={farmer.harvestNode.harvestLots}
-                        numberOfHarvestLots={farmer.harvestNode.harvestLots.length}
+                        <Hero farmerPicture={farmer.harvestNode.images[0]} />
 
-                        wetMillCity={farmer.wetMillNode.city}
-                        wetMillState={farmer.wetMillNode.state}
-                        wetMillCountry={farmer.wetMillNode.country}
-                        wetMillElevation={farmer.wetMillNode.elevation}
-                        wetMillElevationUnit={farmer.wetMillNode.elevationUnit}
-                        wetMilltTotalAbsorbedWeight={farmer.wetMillNode.totaAbsorbedWeight}
-                        wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode.totalAbsorbedWeightUnit}
-                        wetMillLots={farmer.wetMillNode.wetMillLots}
-                        numberOfWetMillLots={farmer.wetMillNode.wetMillLots.length}
-                    >
-                    </Farming>
+                        <Farming
 
-                    <ProcessingExport
+                            farmerName={farmer.farmerName}
+                            farmerPicture={farmer.harvestNode.images[0]}
+                            harvestCity={farmer.harvestNode.city}
+                            harvestState={farmer.harvestNode.state}
+                            harvestCountry={farmer.harvestNode.country}
+                            harvestElevation={farmer.harvestNode.elevation}
+                            harvestElevationUnit={farmer.harvestNode.elevationUnit}
+                            longitude={farmer.harvestNode.longitude}
+                            latitude={farmer.harvestNode.latitude}
+                            harvestTotalAbsorbedWeight={farmer.harvestNode.totaAbsorbedWeight}
+                            harvestTotalAbsorbedWeightUnit={farmer.harvestNode.totalAbsorbedWeightUnit}
+                            harvestLots={farmer.harvestNode.harvestLots}
+                            numberOfHarvestLots={farmer.harvestNode.harvestLots.length}
 
-                        exporterIntakeCity={farmer.exporterIntakeNode.city}
-                        exporterIntakeState={farmer.exporterIntakeNode.state}
-                        exporterIntakeCountry={farmer.exporterIntakeNode.country}
-                        exporterIntakeElevation={farmer.exporterIntakeNode.elevation}
-                        exporterIntakeElevationUnit={farmer.exporterIntakeNode.elevationUnit}
+                            wetMillCity={farmer.wetMillNode.city}
+                            wetMillState={farmer.wetMillNode.state}
+                            wetMillCountry={farmer.wetMillNode.country}
+                            wetMillElevation={farmer.wetMillNode.elevation}
+                            wetMillElevationUnit={farmer.wetMillNode.elevationUnit}
+                            wetMilltTotalAbsorbedWeight={farmer.wetMillNode.totaAbsorbedWeight}
+                            wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode.totalAbsorbedWeightUnit}
+                            wetMillLots={farmer.wetMillNode.wetMillLots}
+                            numberOfWetMillLots={farmer.wetMillNode.wetMillLots.length}
+                        >
+                        </Farming>
 
-                        dryMillIntakeCity={farmer.dryMillNode.city}
-                        dryMillIntakeState={farmer.dryMillNode.state}
-                        dryMillIntakeCountry={farmer.dryMillNode.country}
-                        dryMillIntakeElevation={farmer.dryMillNode.elevation}
-                        dryMillIntakeElevationUnit={farmer.dryMillNode.elevationUnit}
+                    </>
 
-                        dryParchmentAbsorbedWeight={farmer.dryMillNode.dryMillLots[1].absorbedWeight}
-                        dryParchmentAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit}
+                    :
 
-                        greenCoffeeAbsorbedWeight={farmer.dryMillNode.dryMillLots[0].absorbedWeight}
-                        greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit}
+                    <Loading />
 
-                        dryMillLots={farmer.dryMillNode.dryMillLots}
+            }
 
-                    >
-                    </ProcessingExport>
+            {
 
-                    <Journey
+                farmer.exporterIntakeNode && farmer.dryMillNode ?
 
-                        mapStyle={mapStyle}
+                    <>
 
-                        farmerName={farmer.farmerName}
-                        longitude={farmer.harvestNode.longitude}
-                        latitude={farmer.harvestNode.latitude}
+                        <ProcessingExport
 
-                    ></Journey>
+                            exporterIntakeCity={farmer.exporterIntakeNode.city}
+                            exporterIntakeState={farmer.exporterIntakeNode.state}
+                            exporterIntakeCountry={farmer.exporterIntakeNode.country}
+                            exporterIntakeElevation={farmer.exporterIntakeNode.elevation}
+                            exporterIntakeElevationUnit={farmer.exporterIntakeNode.elevationUnit}
 
-                    <Roasting></Roasting>
+                            dryMillIntakeCity={farmer.dryMillNode.city}
+                            dryMillIntakeState={farmer.dryMillNode.state}
+                            dryMillIntakeCountry={farmer.dryMillNode.country}
+                            dryMillIntakeElevation={farmer.dryMillNode.elevation}
+                            dryMillIntakeElevationUnit={farmer.dryMillNode.elevationUnit}
 
-                    <Economics></Economics>
+                            dryParchmentAbsorbedWeight={farmer.dryMillNode.dryMillLots[1].absorbedWeight}
+                            dryParchmentAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit}
 
-                    <Container>
+                            greenCoffeeAbsorbedWeight={farmer.dryMillNode.dryMillLots[0].absorbedWeight}
+                            greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit}
 
-                        <Row id='' style={{ 'padding-top': '5em' }}>
+                            dryMillLots={farmer.dryMillNode.dryMillLots}
 
-                            <Col md='12' lg='6'>
+                        >
+                        </ProcessingExport>
 
-                                <h3>Webinar: Efficiency in Coffee Processing</h3>
+                    </>
 
-                                <p>Dr. Irwin Ronaldo Donis-Gonzalez of the UC Davis Department of Biological and Argricultural Engineering and Evan Gilman and Chris Kornman of The Crown discuss efficiency in post-harvest processing in coffee. Dr. Donis-Gonzalez presents his exhaustive research focusing on the loss of mass from each stage of washed process coffee.</p>
+                    :
 
-                            </Col>
-                            <Col md='12' lg='6'>
+                    null
 
-                                <div
-                                    style={{
-                                        'position': 'relative',
-                                        'padding-top': '56.25%'
-                                    }}
-                                >
-                                    <ReactPlayer
+            }
 
+            {
+
+                farmer.farmerName && farmer.harvestNode.longitude && farmer.harvestNode.latitude ?
+
+                    <>
+
+                        <Journey
+
+                            mapStyle={mapStyle}
+                            farmerName={farmer.farmerName}
+                            longitude={farmer.harvestNode.longitude}
+                            latitude={farmer.harvestNode.latitude}
+
+                        >
+                        </Journey>
+
+                    </>
+
+                    :
+
+                    null
+
+            }
+
+            {
+
+                farmer.farmerName ?
+
+                    <>
+
+                        <Roasting></Roasting>
+
+                    </>
+
+                    :
+
+                    null
+
+            }
+
+            {
+
+                farmer.farmerName ?
+
+                    <>
+
+                        <Economics></Economics>
+
+                    </>
+
+                    :
+
+                    null
+
+            }
+
+            {
+
+                farmer.harvestNode
+                    &&
+                    farmer.wetMillNode
+                    &&
+                    farmer.dryMillNode
+                    ?
+
+                    <>
+
+                        <Container>
+
+                            <Row id='' style={{ 'padding-top': '5em' }}>
+
+                                <Col md='12' lg='6'>
+
+                                    <h3>Webinar: Efficiency in Coffee Processing</h3>
+
+                                    <p>Dr. Irwin Ronaldo Donis-Gonzalez of the UC Davis Department of Biological and Argricultural Engineering and Evan Gilman and Chris Kornman of The Crown discuss efficiency in post-harvest processing in coffee. Dr. Donis-Gonzalez presents his exhaustive research focusing on the loss of mass from each stage of washed process coffee.</p>
+
+                                </Col>
+                                <Col md='12' lg='6'>
+
+                                    <div
                                         style={{
-
-                                            'position': 'absolute',
-                                            'top': '0',
-                                            'left': '0',
-                                            'width': '100 %',
-                                            'height': '100 %'
-
+                                            'position': 'relative',
+                                            'padding-top': '56.25%'
                                         }}
+                                    >
+                                        <ReactPlayer
 
-                                        controls url='https://vimeo.com/526315128' width='100%' height='100%' />
+                                            style={{
 
-                                </div>
-                            </Col>
-                        </Row>
+                                                'position': 'absolute',
+                                                'top': '0',
+                                                'left': '0',
+                                                'width': '100 %',
+                                                'height': '100 %'
 
-                        <BarChart
+                                            }}
 
-                            data={{
+                                            controls url='https://vimeo.com/526315128' width='100%' height='100%' />
 
-                                labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting (Coming Soon)'],
+                                    </div>
+                                </Col>
+                            </Row>
 
-                                datasets: [
-                                    {
-                                        label: 'Weight of Coffee at Main Processing Stages',
+                            <BarChart
 
-                                        data: [
-                                            farmer.harvestNode.totaAbsorbedWeight,
-                                            farmer.wetMillNode.totaAbsorbedWeight,
-                                            farmer.dryMillNode.dryMillLots[1].absorbedWeight,
-                                            farmer.dryMillNode.dryMillLots[0].absorbedWeight,
-                                            0
-                                        ],
-                                        backgroundColor: [
-                                            'rgba(255, 99, 132, 0.6)',
-                                            'rgba(54, 162, 235, 0.6)',
-                                            'rgba(255, 206, 86, 0.6)',
-                                            'rgba(75, 192, 192, 0.6)',
-                                            'rgba(153, 102, 255, 0.6)',
-                                            'rgba(255, 159, 64, 0.6)'
-                                        ]
-                                    }
-                                ]
+                                data={{
 
-                            }}
+                                    labels: ['Coffee Cherry', 'Wet Parchment', 'Dry Parchment', 'Green Coffee', 'Roasting (Coming Soon)'],
 
-                        />
+                                    datasets: [
+                                        {
+                                            label: 'Weight of Coffee at Main Processing Stages',
 
-                    </Container>
+                                            data: [
+                                                farmer.harvestNode.totaAbsorbedWeight,
+                                                farmer.wetMillNode.totaAbsorbedWeight,
+                                                farmer.dryMillNode.dryMillLots[1].absorbedWeight,
+                                                farmer.dryMillNode.dryMillLots[0].absorbedWeight,
+                                                0
+                                            ],
+                                            backgroundColor: [
+                                                'rgba(255, 99, 132, 0.6)',
+                                                'rgba(54, 162, 235, 0.6)',
+                                                'rgba(255, 206, 86, 0.6)',
+                                                'rgba(75, 192, 192, 0.6)',
+                                                'rgba(153, 102, 255, 0.6)',
+                                                'rgba(255, 159, 64, 0.6)'
+                                            ]
+                                        }
+                                    ]
 
-                    <PartnersSection />
+                                }}
 
-                    <ScrollToTop />
+                            />
 
-                </>
+                        </Container>
 
-                :
+                    </>
 
-                <Loading />
+                    :
+
+                    null
+
+            }
+
+            {
+
+                farmer.farmerName ?
+
+                    <>
+
+                        <PartnersSection />
+
+                        <ScrollToTop />
+
+                    </>
+
+                    :
+
+                    null
 
             }
 
