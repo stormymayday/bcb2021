@@ -58,69 +58,102 @@ const FarmerDetails = () => {
 
         <main>
 
-            {farmer.harvestNode ?
+            {
 
-                <>
+                farmer.harvestNode && farmer.wetMillNode ?
 
-                    <FarmerDetailsPageNavigation />
+                    <>
 
-                    <Jumbotron style={{
-                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
+                        <FarmerDetailsPageNavigation />
+
+                        <Jumbotron style={{
+                            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
                         rgba(0, 0, 0, 0.5)),
                         url(${farmer.harvestNode.images[0]})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        height: '93vh'
-                    }}
-                        fluid>
-                        <Container>
-                            <h1 style={{ color: 'white' }}>{farmer.farmerName}</h1>
-                        </Container>
-                    </Jumbotron>
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            height: '93vh'
+                        }}
+                            fluid>
+                            <Container>
+                                <h1 style={{ color: 'white' }}>{farmer.farmerName}</h1>
+                            </Container>
+                        </Jumbotron>
 
-                    <Farming
+                        <Farming
 
-                        farmerName={farmer.farmerfarmerName}
-                        farmerPicture={farmer.harvestNode.images[0]}
-                        city={farmer.harvestNode.city}
-                        state={farmer.harvestNode.state}
-                        country={farmer.harvestNode.country}
-                        elevation={farmer.harvestNode.elevation}
-                        longitude={farmer.harvestNode.longitude}
-                        latitude={farmer.harvestNode.latitude}
-                        elevationUnit={farmer.harvestNode.elevationUnit}
-                        harvestTotalAbsorbedWeight={farmer.harvestNode.totaAbsorbedWeight}
-                        harvestTotalAbsorbedWeightUnit={farmer.harvestNode.totalAbsorbedWeightUnit}
-                        numberOfHarvestLots={farmer.harvestNode.harvestLots.length}
+                            farmerName={farmer.farmerName}
+                            farmerPicture={farmer.harvestNode.images[0]}
+                            harvestCity={farmer.harvestNode.city}
+                            harvestState={farmer.harvestNode.state}
+                            harvestCountry={farmer.harvestNode.country}
+                            harvestElevation={farmer.harvestNode.elevation}
+                            harvestElevationUnit={farmer.harvestNode.elevationUnit}
+                            longitude={farmer.harvestNode.longitude}
+                            latitude={farmer.harvestNode.latitude}
+                            harvestTotalAbsorbedWeight={farmer.harvestNode.totaAbsorbedWeight}
+                            harvestTotalAbsorbedWeightUnit={farmer.harvestNode.totalAbsorbedWeightUnit}
+                            harvestLots={farmer.harvestNode.harvestLots}
+                            numberOfHarvestLots={farmer.harvestNode.harvestLots.length}
 
-                        wetMilltTotalAbsorbedWeight={farmer.wetMillNode.totaAbsorbedWeight}
-                        wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode.totalAbsorbedWeightUnit}
+                            wetMillCity={farmer.wetMillNode.city}
+                            wetMillState={farmer.wetMillNode.state}
+                            wetMillCountry={farmer.wetMillNode.country}
+                            wetMillElevation={farmer.wetMillNode.elevation}
+                            wetMillElevationUnit={farmer.wetMillNode.elevationUnit}
+                            wetMilltTotalAbsorbedWeight={farmer.wetMillNode.totaAbsorbedWeight}
+                            wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode.totalAbsorbedWeightUnit}
+                            wetMillLots={farmer.wetMillNode.wetMillLots}
+                            numberOfWetMillLots={farmer.wetMillNode.wetMillLots.length}
+                        >
+                        </Farming>
 
-                        harvestLots={farmer.harvestNode.harvestLots}
+                    </>
 
-                        wetMillLots={farmer.wetMillNode.wetMillLots}
-                    >
-                    </Farming>
+                    :
 
-                    <div id='processing'></div>
-                    <ProcessingExport
+                    <Loading />
 
-                        dryParchmentAbsorbedWeight={farmer.dryMillNode.dryMillLots[1].absorbedWeight}
-                        dryParchmentAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit}
+            }
 
-                        greenCoffeeAbsorbedWeight={farmer.dryMillNode.dryMillLots[0].absorbedWeight}
-                        greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit}
+            {
 
-                        dryMillLots={farmer.dryMillNode.dryMillLots}
+                farmer.exporterIntakeNode && farmer.dryMillNode ?
 
-                    >
-                    </ProcessingExport>
+                    <>
 
-                </>
 
-                :
+                        <div id='processing'></div>
+                        <ProcessingExport
 
-                <Loading />
+                            exporterIntakeCity={farmer.exporterIntakeNode.city}
+                            exporterIntakeState={farmer.exporterIntakeNode.state}
+                            exporterIntakeCountry={farmer.exporterIntakeNode.country}
+                            exporterIntakeElevation={farmer.exporterIntakeNode.elevation}
+                            exporterIntakeElevationUnit={farmer.exporterIntakeNode.elevationUnit}
+
+                            dryMillIntakeCity={farmer.dryMillNode.city}
+                            dryMillIntakeState={farmer.dryMillNode.state}
+                            dryMillIntakeCountry={farmer.dryMillNode.country}
+                            dryMillIntakeElevation={farmer.dryMillNode.elevation}
+                            dryMillIntakeElevationUnit={farmer.dryMillNode.elevationUnit}
+
+                            dryParchmentAbsorbedWeight={farmer.dryMillNode.dryMillLots[1].absorbedWeight}
+                            dryParchmentAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit}
+
+                            greenCoffeeAbsorbedWeight={farmer.dryMillNode.dryMillLots[0].absorbedWeight}
+                            greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit}
+
+                            dryMillLots={farmer.dryMillNode.dryMillLots}
+
+                        >
+                        </ProcessingExport>
+
+                    </>
+
+                    :
+
+                    null
 
             }
 
