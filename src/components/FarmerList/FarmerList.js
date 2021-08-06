@@ -8,10 +8,6 @@ import FarmerCard from '../FarmerCard/FarmerCard';
 
 export const FarmerList = (props) => {
 
-    // Old Static array
-    // const { farmers, loading } = useGlobalContext();
-
-    // New Dynamic Array
     const { farmersMongoDB } = useGlobalContext();
 
     return (
@@ -19,6 +15,7 @@ export const FarmerList = (props) => {
             {farmersMongoDB.length > 0 ?
 
                 <>
+
                     <section className='section'>
                         <h2 className='section-title'>Farmers</h2>
                         <div className='cocktails-center'>
@@ -27,21 +24,11 @@ export const FarmerList = (props) => {
                             })}
                         </div>
                     </section>
-                    {/* <h1 style={{ 'margin-bottom': '3rem', 'margin-top': '3rem', 'text-align': 'center' }}>Farmers</h1>
-            <section className="farmer-list">
-                {(props.farmers.length !== 0)
-                    ? props.farmers.map(farmer => (
-                        <FarmerCard key={farmer.harvestGeneralNodeID} farmer={farmer} />
-                    ))
-                    : <p>fetching data from BEXT</p>
-                }
-            </section> */}
+
                 </>
                 :
 
                 <Loading />
-
-
 
             }
         </>

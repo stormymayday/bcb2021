@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useParams, useHistory, useLocation } from 'react-router-dom';
+
 // Google Analytics
 import ReactGA from 'react-ga';
 import './FarmerCard.css';
 import Loading from '../Loading/Loading';
 
-import slideOne from '../../images/slideOne.jpg';
-import slideTwo from '../../images/coffee_farm.JPG';
-
 export const FarmerCard = (props) => {
+
+    let location = useLocation().pathname;
+
+    console.log(location);
 
     const [farmer, setFarmer] = useState({});
 
@@ -40,17 +43,9 @@ export const FarmerCard = (props) => {
                         </div>
                         <div className='cocktail-footer'>
                             <h3>{props.farmer.farmerName}</h3>
-                            {/* <p>{props.index}</p> */}
                             <Link
                                 onClick={googleAnalyicsEvent}
                                 to={`/farmer-2021/${props.farmer.farmerName}`}
-                                // to={{
-                                //     // pathname: `/farmer/${props.farmer.farmerName.replace(/\s+/g, '')}`,
-                                //     pathname: `/farmer/${props.farmer.farmerName}`,
-                                //     state: {
-                                //         farmer
-                                //     }
-                                // }}
                                 className="bttn bttn-primary bttn-details"
                                 style={{ 'text-decoration': 'none' }}
                             >
@@ -58,16 +53,11 @@ export const FarmerCard = (props) => {
                             </Link>
                         </div>
                     </article >
-                    {/* // <div className='card-container'>
-        //     <img alt='farmer' src={`${props.farmer.farmerPicture}&size=180x180`} />
-        //     <h1>{props.farmer.farmerName}</h1>
-        // </div> */}
                 </>
+
                 :
 
                 <Loading />
-
-
 
             }
         </>
