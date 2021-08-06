@@ -3,13 +3,15 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image'
 
 import Button from 'react-bootstrap/Button';
 
-import slideOne from '../images/slideOne.jpg';
-import slideTwo from '../images/slideTwo.jpg';
+import Accordion from 'react-bootstrap/Accordion';
+import Card from 'react-bootstrap/Card';
+
+import Pagination from '../components/Pagination/Pagination';
+import paginate from '../utils';
 
 import './Roasting.css';
 
@@ -40,6 +42,26 @@ export const Roasting = (props) => {
 
                     </Col>
                 </Row>
+
+                <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                            <button className='bttn bttn-primary'>Roasting Lots (Coming Soon)</button>
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+
+                                {/* <Pagination
+
+                                    lots={harvestLots ? paginate(harvestLots) : []}
+
+                                /> */}
+
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion>
+
             </Container>
         </div>
     );
