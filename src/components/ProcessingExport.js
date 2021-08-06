@@ -140,46 +140,6 @@ export const ProcessingExport = ({
 
                     </Col>
 
-                    {/* 
-                    <Col md='12' lg='6'>
-                        <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
-                            <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="0">
-                                    <Button>Dry Parchment Lots</Button>
-                                </Accordion.Toggle>
-                                <Accordion.Collapse eventKey="0">
-                                    <Card.Body>
-
-                                        <Pagination
-
-                                            lots={dryParchmentLots ? paginate(dryParchmentLots) : []}
-
-                                        />
-
-                                    </Card.Body>
-                                </Accordion.Collapse>
-                            </Card>
-
-                            <Card>
-                                <Accordion.Toggle as={Card.Header} eventKey="1">
-                                    <Button>Coffee Green Lots</Button>
-                                </Accordion.Toggle>
-                                <Accordion.Collapse eventKey="1">
-                                    <Card.Body>
-
-                                        <Pagination
-
-                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
-
-                                        />
-
-                                    </Card.Body>
-                                </Accordion.Collapse>
-                            </Card>
-
-                        </Accordion>
-                    </Col> */}
-
                 </Row>
 
             </Container>
