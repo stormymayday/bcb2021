@@ -22,6 +22,7 @@ import ProcessingExport from '../../components/ProcessingExport';
 import Journey from '../../components/Journey';
 import Roasting from '../../components/Roasting';
 import Economics from '../../components/EconomicsAndTransparency';
+import Footer from '../../components/Footer/Footer';
 
 import BarChart from '../../components/Chart/BarChart';
 
@@ -299,6 +300,8 @@ export const Home = () => {
                     <>
 
                         <PartnersSection />
+
+                        <Footer />
 
                         <ScrollToTop />
 
