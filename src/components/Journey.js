@@ -7,6 +7,8 @@ import Card from 'react-bootstrap/Card';
 
 import LeafletMap from '../components/LeafletMap/LeafletMap';
 
+import JourneyMap from '../components/JourneyMap/JourneyMap';
+
 export const Journey = ({
 
     farmerName,
@@ -33,6 +35,12 @@ export const Journey = ({
 
                 <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Product's Journey</h2>
                 <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
+
+                <Row style={{ 'padding-bottom': '5em' }}>
+                    <Col lg='6'>
+                        <JourneyMap />
+                    </Col>
+                </Row>
 
                 <Row>
 

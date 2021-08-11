@@ -9,6 +9,7 @@
     "bootstrap": "^4.5.3",
     "chart.js": "^3.3.0",
     "leaflet": "^1.7.1",
+    "leaflet.polyline.snakeanim": "^0.2.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-chartjs-2": "^3.0.3",

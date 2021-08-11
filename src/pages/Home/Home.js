@@ -29,6 +29,9 @@ import BarChart from '../../components/Chart/BarChart';
 import Loading from '../../components/Loading/Loading';
 import ScrollToTop from '../../components/ScrollToTop/ScrollTopTop';
 
+
+import JourneyMap from '../../components/JourneyMap/JourneyMap';
+
 export const Home = () => {
 
     const { farmersMongoDB } = useGlobalContext();
@@ -217,6 +220,7 @@ export const Home = () => {
                         <Container>
 
                             <Row id='' style={{ 'padding-top': '5em' }}>
+
 
                                 <Col md='12' lg='6'>
 
