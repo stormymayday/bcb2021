@@ -54,11 +54,11 @@ export default function HomePageNavigation() {
 
                             <Nav.Link
                                 as={HashLink}
-                                to={`#journey`}
+                                to={`#import`}
                                 smooth
                                 scroll={el => scrollWidthOffset(el)}
                             >
-                                JOURNEY
+                                IMPORT
                             </Nav.Link>
 
                             <Nav.Link
