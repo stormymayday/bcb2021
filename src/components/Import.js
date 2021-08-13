@@ -66,7 +66,7 @@ export const Import = ({
 
                         <Card.Text>
                             <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3>
-                            Royal Coffee is a wholesale green coffee beans importer that is family-owned and operated since 1978
+                            Royal Coffee is a wholesale green coffee beans importer that is family-owned and operated since 1978.
                         </Card.Text>
                         <Button
                             variant="outline-dark"
@@ -111,7 +111,7 @@ export const Import = ({
                             </Card>
                         </Accordion>
 
-                        <p style={{}}>The container with bags of green coffee is shipped to a port in Oakland California and taken to the coffee importer’s warehouse</p>
+                        <p style={{}}>The container with bags of green coffee is shipped to a port in Oakland California and taken to the coffee importer’s warehouse.</p>
 
                     </Col>
 

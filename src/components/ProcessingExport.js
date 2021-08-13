@@ -161,7 +161,7 @@ export const ProcessingExport = ({
                             </Card>
                         </Accordion>
 
-                        <p style={{ color: 'white' }}>The coffee seeds are removed from the thin membrane (parchment) and sorted to remove lower quality seeds.  After this process of dehulling and sorting, the remaining weight of the seed is called green coffee</p>
+                        <p style={{ color: 'white' }}>The coffee seeds are removed from the thin membrane (parchment) and sorted to remove lower quality seeds.  After this process of dehulling and sorting, the remaining weight of the seed is called green coffee.</p>
 
 
                     </Col>
@@ -197,7 +197,7 @@ export const ProcessingExport = ({
                             </Card>
                         </Accordion>
 
-                        <p style={{ color: 'white' }}>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export. A container can hold up to 275 bags of green coffee</p>
+                        <p style={{ color: 'white' }}>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export. A container can hold up to 275 bags of green coffee.</p>
 
                     </Col>
 

@@ -94,7 +94,7 @@ export const Roasting = (props) => {
                             </Card>
                         </Accordion>
 
-                        <p style={{ 'color': 'white' }}>The importer sends the bags of green coffee to the roastery where the coffee is roasted</p>
+                        <p style={{ 'color': 'white' }}>The importer sends the bags of green coffee to the roastery where the coffee is roasted.</p>
 
                     </Col>
                 </Row>
