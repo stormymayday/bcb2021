@@ -80,7 +80,7 @@ export const Import = ({
 
                 <Row>
 
-                    <Col lg='12'>
+                    <Col md='12' lg='6'>
 
                         <h3 style={{ 'padding-top': '0.5em' }}>Import</h3>
 
@@ -114,13 +114,12 @@ export const Import = ({
                         <p style={{}}>The container with bags of green coffee is shipped to a port in Oakland California and taken to the coffee importer’s warehouse</p>
 
                     </Col>
-                </Row>
 
-                <Row style={{ 'padding-bottom': '2em' }}>
-                    <Col lg='12'>
+                    <Col md='12' lg='6'>
                         <h3 style={{ 'padding-top': '0.5em' }}>Product's Journey</h3>
                         <JourneyMap />
                     </Col>
+
                 </Row>
 
             </Container>

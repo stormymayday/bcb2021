@@ -95,7 +95,7 @@ export const ProcessingExport = ({
 
                 <Row>
 
-                    <Col md='12' lg='6'>
+                    <Col md='12' lg='4'>
 
                         <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Exporter Intake</h3>
 
@@ -130,7 +130,7 @@ export const ProcessingExport = ({
 
                     </Col>
 
-                    <Col md='12' lg='6'>
+                    <Col md='12' lg='4'>
 
                         <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Dry Mill</h3>
 
@@ -166,11 +166,7 @@ export const ProcessingExport = ({
 
                     </Col>
 
-                </Row>
-
-                <Row>
-
-                    <Col lg='12'>
+                    <Col md='12' lg='4'>
 
                         <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Export</h3>
 
@@ -204,6 +200,7 @@ export const ProcessingExport = ({
                         <p style={{ color: 'white' }}>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export. A container can hold up to 275 bags of green coffee</p>
 
                     </Col>
+
                 </Row>
 
             </Container>
