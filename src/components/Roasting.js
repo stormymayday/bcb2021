@@ -61,52 +61,77 @@ export const Roasting = (props) => {
                     </Card.Body>
                 </Card>
 
-
-                {/* <h3 style={{ color: 'white' }}>Roasted by Queen City</h3>
-                <p style={{ color: 'white' }}>Queen City is a collective coffee company in Denver building community from farm to cup. Our coffee comes from farmers and producers we know, and is then small-batch roasted in the city we love. We believe that honest relationships, from farmers to consumers, achieve an equitable and sustainable coffee supply chain.</p>
-
-                <Button
-                    variant="outline-light"
-                    href={'https://queencitycollectivecoffee.com/'}
-                    target="_blank"
-                    style={{ 'margin-bottom': '1em' }}
-                >
-                    Shop
-                </Button>
-
-                <p style={{ color: 'white' }}>
-
-                    Location: <b>Coming Soon</b><br />
-                    Total Weight: <b>Coming Soon</b><br />
-                    Number of lots: <b>Coming Soon</b><br />
-
-                </p> */}
-
                 <Row>
 
-                    <Col lg>
+                    <Col lg='12'>
+
+                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Roaster Intake</h3>
+
+                        <p style={{ 'color': 'white' }}>
+
+                            Location: <b>Coming Soon</b><br />
+
+                            Green Coffee Total Weight: <b>Coming Soon</b><br />
+
+                        </p>
+
+                        <Accordion style={{ 'margin-bottom': '1.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    <button className='bttn bttn-primary'>Roaster Intake Lots (Coming Soon)</button>
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        {/* <Pagination
+
+                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
+
+                                        /> */}
+
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+
+                        <p style={{ 'color': 'white' }}>The importer sends the bags of green coffee to the roastery where the coffee is roasted</p>
 
                     </Col>
                 </Row>
 
-                <Accordion style={{ 'margin-top': '3rem', 'margin-bottom': '3.5rem' }}>
-                    <Card>
-                        <Accordion.Toggle as={Card.Header} eventKey="0">
-                            <button className='bttn bttn-primary'>Roasting Lots (Coming Soon)</button>
-                        </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>
+                <Row>
 
-                                {/* <Pagination
+                    <Col lg='12'>
+
+                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Roasting</h3>
+
+                        <p style={{ 'color': 'white' }}>
+
+                            Location: <b>Coming Soon</b><br />
+
+                            Weight: <b>Coming Soon</b><br />
+
+                        </p>
+                        <Accordion style={{ 'margin-bottom': '3.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    <button className='bttn bttn-primary'>Roasting Lots (Coming Soon)</button>
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        {/* <Pagination
 
                                     lots={harvestLots ? paginate(harvestLots) : []}
 
                                 /> */}
 
-                            </Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion>
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+                    </Col>
+                </Row>
 
             </Container>
         </div>

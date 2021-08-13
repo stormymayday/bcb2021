@@ -93,15 +93,6 @@ export const ProcessingExport = ({
                     </Card.Body>
                 </Card>
 
-                {/* <h3 style={{ color: 'white' }}>Catracha Coffee</h3>
-                <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p> */}
-
-                {/* <Button
-                    variant="outline-light"
-                    href={'https://www.catrachacoffee.com/'}
-                    target="_blank"
-                >Learn More</Button> */}
-
                 <Row>
 
                     <Col md='12' lg='6'>
@@ -112,7 +103,7 @@ export const ProcessingExport = ({
 
                             Location: <b>{exporterIntakeCity}, {exporterIntakeState}</b><br />
 
-                            Dry Parchment Total Weight: <b>{dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}</b><br />
+                            Dry Parchment Total Weight: <b>{dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}s</b><br />
 
                         </p>
 
@@ -147,7 +138,7 @@ export const ProcessingExport = ({
 
                             Location: <b>{dryMillIntakeCity}, {dryMillIntakeState}</b><br />
 
-                            Green Coffee Total Weight: <b>{greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}</b><br />
+                            Green Coffee Total Weight: <b>{greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}s</b><br />
 
                         </p>
 
@@ -175,6 +166,44 @@ export const ProcessingExport = ({
 
                     </Col>
 
+                </Row>
+
+                <Row>
+
+                    <Col lg='12'>
+
+                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Export</h3>
+
+                        <p style={{ color: 'white' }}>
+
+                            Location: <b>Puerto Cortes</b><br />
+
+                            Green Coffee Total Weight: <b>1521.19 lbs</b><br />
+
+                        </p>
+
+                        <Accordion style={{ 'margin-bottom': '1.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    <button className='bttn bttn-primary'>Export Lots</button>
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        <Pagination
+
+                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
+
+                                        />
+
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+
+                        <p style={{ color: 'white' }}>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export. A container can hold up to 275 bags of green coffee</p>
+
+                    </Col>
                 </Row>
 
             </Container>

@@ -19,7 +19,7 @@ import { useGlobalContext } from '../../context';
 // Sections
 import Farming from '../../components/Farming';
 import ProcessingExport from '../../components/ProcessingExport';
-import Journey from '../../components/Journey';
+import Import from '../../components/Import';
 import Roasting from '../../components/Roasting';
 import Economics from '../../components/EconomicsAndTransparency';
 import Footer from '../../components/Footer/Footer';
@@ -159,7 +159,7 @@ export const Home = () => {
 
                     <>
 
-                        <Journey
+                        <Import
 
                             mapStyle={mapStyle}
                             farmerName={farmer.farmerName}
@@ -167,7 +167,7 @@ export const Home = () => {
                             latitude={farmer.harvestNode.latitude}
 
                         >
-                        </Journey>
+                        </Import>
 
                     </>
 

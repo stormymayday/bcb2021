@@ -14,6 +14,7 @@ const JourneyMap = ({ name, longitude, latitude, nodeCoordinates, mapStyle }) =>
         useEffect(() => {
 
             if (!startAnimation) return;
+
             const PuertoCortes = [15.845310, -87.943893];
             const QueenCityCollectiveCoffee = [39.742043, -104.991531];
             const Oakland = [37.804363, -122.271111];
@@ -70,7 +71,8 @@ const JourneyMap = ({ name, longitude, latitude, nodeCoordinates, mapStyle }) =>
 
     return (
         <>
-            <MapContainer style={{ 'border-radius': '0.3em', 'z-index': '0' }} center={[31.000000, -100.000000]} zoom={3} scrollWheelZoom={false}>
+            <button className='bttn bttn-primary' style={{ 'margin-top': '1rem', 'margin-bottom': '1rem' }} onClick={startSnake}>Play</button>
+            <MapContainer style={{ 'border-radius': '0.3em', 'z-index': '0', 'height': '60vh' }} center={[31.000000, -100.000000]} zoom={4} scrollWheelZoom={false}>
                 <TileLayer
 
                     attribution="© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>"
@@ -80,7 +82,7 @@ const JourneyMap = ({ name, longitude, latitude, nodeCoordinates, mapStyle }) =>
                 <SnakeAnim startAnimation={startAnimation} />
 
             </MapContainer >
-            <button className='bttn bttn-primary' onClick={startSnake}>Play</button>
+
         </>
     );
 };
