@@ -109,9 +109,9 @@ Buttons
   color: var(--mainWhite);
 }
 .bttn-white {
-  background: transparent;
-  color: var(--mainWhite);
-  border-color: var(--mainWhite);
+  background: var(--mainWhite);
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
 }
 .bttn-white:hover {
   background: var(--mainWhite);
