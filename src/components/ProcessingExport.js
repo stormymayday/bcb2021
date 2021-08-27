@@ -5,8 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
-import catrachalogo from '../images/catracha-logo.jpg';
-
 import Button from 'react-bootstrap/Button';
 
 import Accordion from 'react-bootstrap/Accordion';
@@ -18,6 +16,8 @@ import paginate from '../utils';
 
 
 export const ProcessingExport = ({
+
+    exporterLogo,
 
     exporterIntakeCity,
     exporterIntakeState,
@@ -73,7 +73,7 @@ export const ProcessingExport = ({
                             <Card.Img
                                 className="d-block mx-auto img-fluid w-50"
                                 variant="top"
-                                src={catrachalogo}
+                                src={exporterLogo}
                                 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
                             />
 
