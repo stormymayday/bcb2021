@@ -16,7 +16,9 @@ const HarvestLotCard = (props) => {
 
     useEffect(() => {
 
-    }, [props.lot])
+    }, [props.lot]);
+
+    // console.log(`Harvest Lot type ${}`)
 
     return (
         <Card>
@@ -33,15 +35,37 @@ const HarvestLotCard = (props) => {
             <CardText>
 
                 Absorbed weight: {props.lot.absorbedWeight} {props.lot.absorbedWeightUnit}<br />
-                Value: {props.lot.value} {props.lot.asset}<br />
-                Product: {props.lot.productName}<br />
+
+                {/* Not Displaying lot value if it is a harvest lot */}
                 {
-                    props.lot.harvestDate ?
-                        <p>Harvest date: {props.lot.harvestDate.split(' ')[0]}<br /></p>
+
+                    props.lot.lotDetailType === "HarvestGeneral"
+
+                        ?
+
+                        null
+
+                        // `Value: ${props.lot.value} ${props.lot.asset}`
+
                         :
-                        <p>Processing date: { }</p>
+
+                        null
                 }
-                {/* Harvest date: {props.lot.harvestDate.split(' ')[0]}<br /> */}
+
+                Product: {props.lot.productName}<br />
+
+                {/* Displaying Harvest Date if it is harvest lot*/}
+                {
+                    props.lot.lotDetailType === "HarvestGeneral"
+
+                        ?
+
+                        <p>Harvest date: {props.lot.harvestDate.split(' ')[0]}<br /></p>
+
+                        :
+
+                        null
+                }
 
             </CardText>
             {/* <CardButton>Learn More</CardButton> */}
