@@ -46,7 +46,7 @@ export const EconomicsAndTransparency = ({
                         <h3 style={{ 'padding-bottom': '0.5em' }}>{farmerName}</h3>
 
                         <p>
-                            Paid for Parchment: <b>{firstPayment}</b><br />
+                            Paid for Parchment: <b>{firstPayment} {wetParchmentLots[0].asset}</b><br />
                             Profit Share: <b>Coming Soon</b><br />
                             Total Payment: <b>Coming Soon</b><br />
                             Total Payment Price: <b>Coming Soon</b>
