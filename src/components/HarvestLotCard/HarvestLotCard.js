@@ -54,6 +54,21 @@ const HarvestLotCard = (props) => {
 
                 Product: {props.lot.productName}<br />
 
+                {/* Displaying value if it is a Wet Mill Lot on an ExporterIntake Node */}
+                {
+
+                    props.lot.productName === "Wet Parchment" && props.lot.lotType === "Storage"
+
+                        ?
+
+
+                        `Payment: ${props.lot.value} ${props.lot.asset}`
+
+                        :
+
+                        null
+                }
+
                 {/* Displaying Harvest Date if it is harvest lot*/}
                 {
                     props.lot.lotDetailType === "HarvestGeneral"

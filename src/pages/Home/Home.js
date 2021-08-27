@@ -21,7 +21,7 @@ import Farming from '../../components/Farming';
 import ProcessingExport from '../../components/ProcessingExport';
 import Import from '../../components/Import';
 import Roasting from '../../components/Roasting';
-import Economics from '../../components/EconomicsAndTransparency';
+import Economics from '../../components/EconomicsAndTransparency/EconomicsAndTransparency';
 import Footer from '../../components/Footer/Footer';
 
 import BarChart from '../../components/Chart/BarChart';
@@ -201,7 +201,12 @@ export const Home = () => {
 
                     <>
 
-                        <Economics></Economics>
+                        <Economics
+
+                            farmerName={farmer.farmerName}
+                            exporterIntakeLots={farmer.exporterIntakeNode.exporterIntakeLots}
+
+                        ></Economics>
 
                     </>
 

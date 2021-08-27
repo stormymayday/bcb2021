@@ -8,13 +8,28 @@ import Card from 'react-bootstrap/Card';
 
 import Button from 'react-bootstrap/Button';
 
-import slideOne from '../images/slideOne.jpg';
-import slideTwo from '../images/slideTwo.jpg';
-
 import './EconomicsAndTransparency.css';
 
+import Accordion from 'react-bootstrap/Accordion';
+import Pagination from '../../components/Pagination/Pagination';
+import paginate from '../../utils';
 
-export const EconomicsAndTransparency = () => {
+
+export const EconomicsAndTransparency = ({
+
+    farmerName,
+    exporterIntakeLots
+
+}) => {
+
+    // Filtering out the Wet Parchment lots
+    const wetParchmentLots = exporterIntakeLots.filter(function (exporterIntakeLot) {
+        return exporterIntakeLot.productName === 'Wet Parchment';
+    });
+
+    // Summarizing First Payment from the Wet Parchmenet Lots on Exporter Intake Node
+    const firstPayment = wetParchmentLots.reduce(function (acc, obj) { return acc + parseFloat(obj.value); }, 0);
+
     return (
         <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='economics'>
 
@@ -28,10 +43,10 @@ export const EconomicsAndTransparency = () => {
 
                     <Col lg={4} sm={12}>
 
-                        <h3 style={{ 'padding-bottom': '0.5em' }}>Claudia & Juan</h3>
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>{farmerName}</h3>
 
                         <p>
-                            Paid for Parchment: <b>Coming Soon</b><br />
+                            Paid for Parchment: <b>{firstPayment}</b><br />
                             Profit Share: <b>Coming Soon</b><br />
                             Total Payment: <b>Coming Soon</b><br />
                             Total Payment Price: <b>Coming Soon</b>
@@ -67,6 +82,26 @@ export const EconomicsAndTransparency = () => {
                     </Col>
 
                 </Row>
+
+                {/* Testing the Lots */}
+                {/* <Accordion style={{ 'margin-bottom': '1.5rem' }}>
+                    <Card>
+                        <Accordion.Toggle as={Card.Header} eventKey="0">
+                            <button className='bttn bttn-primary'>Test</button>
+                        </Accordion.Toggle>
+                        <Accordion.Collapse eventKey="0">
+                            <Card.Body>
+
+                                <Pagination
+
+                                    lots={wetParchmentLots ? paginate(wetParchmentLots) : []}
+
+                                />
+
+                            </Card.Body>
+                        </Accordion.Collapse>
+                    </Card>
+                </Accordion> */}
 
 
             </Container>
