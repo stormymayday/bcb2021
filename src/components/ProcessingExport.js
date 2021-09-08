@@ -37,7 +37,10 @@ export const ProcessingExport = ({
     greenCoffeeAbsorbedWeight,
     greenCoffeeAbsorbedWeightUnit,
 
-    dryMillLots
+    dryMillLots,
+
+    exportNode,
+    exportLots
 
 }) => {
 
@@ -172,9 +175,9 @@ export const ProcessingExport = ({
 
                         <p style={{ color: 'white' }}>
 
-                            Location: <b>Puerto Cortes</b><br />
+                            Location: <b>{exportNode.city}</b><br />
 
-                            Green Coffee Total Weight: <b>1521.19 lbs</b><br />
+                            Green Coffee Total Weight: <b>{exportLots[0].absorbedWeight} {exportLots[0].absorbedWeightUnit}s</b><br />
 
                         </p>
 
@@ -188,7 +191,7 @@ export const ProcessingExport = ({
 
                                         <Pagination
 
-                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
+                                            lots={exportLots ? paginate(exportLots) : []}
 
                                         />
 

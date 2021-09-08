@@ -302,6 +302,85 @@ const AppProvider = ({ children }) => {
                     }
                 }
 
+                exportNode {
+
+                    _id
+
+                    exportNodeId
+
+                    totaAbsorbedWeight
+                    totalAbsorbedWeightUnit
+
+                    organizationId
+                    marketplaceId
+                    defaultLocationId
+                    nodeName
+                    nodeType
+                    nodeDetailType
+                    createdDate
+                    lastModifiedDate
+                    organizationName
+
+                    images
+                    videos
+                    documents
+
+                    country
+                    city
+                    state
+                    latitude
+                    longitude
+                    elevation
+                    elevationUnit
+
+                    exportLots {
+
+                        _id
+
+                        exportLotId
+                        exportNodeId
+
+                        organizationId
+                        marketplaceId
+                        productId
+                        lotName
+                        lotType
+                        lotDetailType
+                        createdDate
+                        lastModifiedDate
+                        productName
+                        productToken
+                        productSku
+                        organizationName
+                        currentWeight
+                        currentWeightUnit
+                        absorbedWeight
+                        absorbedWeightUnit
+                        quality
+                        lotIsOpen
+
+                        images
+                        documents
+                        videos
+
+                        secondPaymentValue
+                        secondPaymentAsset
+                        secondPaymentTimeStamp
+                        secondPaymentNotes
+                        spousePaymentValue
+                        spousePaymentAsset
+                        spousePaymentTimestamp
+                        spousePaymentNotes
+                        ihcafePaymentValue
+                        ihcafePaymentAsset
+                        ihcafePaymentTimeStamp
+                        ihcafePaymentNotes
+                        
+                        numberOfBags
+
+                    }
+                }
+
 
             }
         }

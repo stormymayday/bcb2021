@@ -18,7 +18,8 @@ import paginate from '../../utils';
 export const EconomicsAndTransparency = ({
 
     farmerName,
-    exporterIntakeLots
+    exporterIntakeLots,
+    exportLots
 
 }) => {
 
@@ -47,10 +48,15 @@ export const EconomicsAndTransparency = ({
 
                         <p>
                             Paid for Parchment: <b>{firstPayment} {wetParchmentLots[0].asset}</b><br />
-                            Profit Share: <b>Coming Soon</b><br />
-                            Total Payment: <b>Coming Soon</b><br />
-                            Total Payment Price: <b>Coming Soon</b>
+                            Second Payment: <b>{exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : "N/A"} {exportLots[0].secondPaymentAsset ? exportLots[0].secondPaymentAsset : ""}</b><br />
+                            Payment to spouse: <b>{exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : "N/A"} {exportLots[0].spousePaymentAsset ? exportLots[0].spousePaymentAsset : ""}</b><br />
+                            IHCAFE Payment: <b>{exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : "N/A"} {exportLots[0].ihcafePaymentAsset ? exportLots[0].ihcafePaymentAsset : ""}</b>
                         </p>
+
+
+
+
+
 
                     </Col>
 

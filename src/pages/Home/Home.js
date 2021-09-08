@@ -144,6 +144,9 @@ export const Home = () => {
 
                             dryMillLots={farmer.dryMillNode.dryMillLots}
 
+                            exportNode={farmer.exportNode}
+                            exportLots={farmer.exportNode.exportLots}
+
                         >
                         </ProcessingExport>
 
@@ -205,6 +208,8 @@ export const Home = () => {
 
                             farmerName={farmer.farmerName}
                             exporterIntakeLots={farmer.exporterIntakeNode.exporterIntakeLots}
+
+                            exportLots={farmer.exportNode.exportLots}
 
                         ></Economics>
 

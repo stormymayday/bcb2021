@@ -81,6 +81,18 @@ const HarvestLotCard = (props) => {
 
                         null
                 }
+                {/* Displaying Number of bags*/}
+                {
+                    props.lot.numberOfBags
+
+                        ?
+
+                        <p>Number of bags: {props.lot.numberOfBags}<br /></p>
+
+                        :
+
+                        null
+                }
 
             </CardText>
             {/* <CardButton>Learn More</CardButton> */}
