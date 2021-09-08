@@ -53,19 +53,19 @@ export const Import = ({
 
                     <Card.Body>
 
-                        {/* <a href="https://www.catrachacoffee.com/" target="_blank">
+                        <a href="https://royalcoffee.com/" target="_blank">
 
                             <Card.Img
                                 className="d-block mx-auto img-fluid w-50"
                                 variant="top"
-                                src={royalcoffeelogo}
+                                src={"https://bext360develop.blob.core.windows.net/bext-images/5eef0922-c3b6-48f0-aa93-2bc7e102d5c0.jpeg"}
                                 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
                             />
 
-                        </a> */}
+                        </a>
 
                         <Card.Text>
-                            <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3>
+                            {/* <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3> */}
                             Royal Coffee is a wholesale green coffee beans importer that is family-owned and operated since 1978.
                         </Card.Text>
                         <Button
