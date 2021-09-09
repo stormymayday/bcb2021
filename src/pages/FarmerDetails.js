@@ -118,7 +118,7 @@ const FarmerDetails = () => {
 
             {
 
-                farmer.exporterIntakeNode && farmer.dryMillNode ?
+                farmer.exporterIntakeNode && farmer.dryMillNode && farmer.exportNode ?
 
                     <>
 
@@ -145,6 +145,9 @@ const FarmerDetails = () => {
                             greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit}
 
                             dryMillLots={farmer.dryMillNode.dryMillLots}
+
+                            exportNode={farmer.exportNode}
+                            exportLots={farmer.exportNode.exportLots}
 
                         >
                         </ProcessingExport>
