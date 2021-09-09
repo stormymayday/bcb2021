@@ -175,9 +175,11 @@ export const ProcessingExport = ({
 
                         <p style={{ color: 'white' }}>
 
-                            Location: <b>{exportNode.city}</b><br />
+                            Location: <b>{exportNode ? exportNode.city : "Coming Soon"}</b><br />
 
-                            Green Coffee Total Weight: <b>{exportLots[0].absorbedWeight} {exportLots[0].absorbedWeightUnit}s</b><br />
+                            Green Coffee Total Weight: <b>
+                                {exportLots ? exportLots[0].absorbedWeight : "Coming Soon"}
+                                {exportLots ? exportLots[0].absorbedWeightUnit : ""}</b><br />
 
                         </p>
 
