@@ -126,6 +126,8 @@ const FarmerDetails = () => {
                         <div id='processing'></div>
                         <ProcessingExport
 
+                            exporterLogo={farmer.exporterIntakeNode.images[0]}
+
                             exporterIntakeCity={farmer.exporterIntakeNode.city}
                             exporterIntakeState={farmer.exporterIntakeNode.state}
                             exporterIntakeCountry={farmer.exporterIntakeNode.country}
