@@ -7,6 +7,9 @@ import ReactGA from 'react-ga';
 import './FarmerCard.css';
 import Loading from '../Loading/Loading';
 
+// Importing default farm picture
+import defaultPicture from '../../images/coffee_farm.JPG';
+
 export const FarmerCard = (props) => {
 
     let location = useLocation().pathname;
@@ -38,7 +41,7 @@ export const FarmerCard = (props) => {
                         <div className='img-contaienr'>
                             <img alt={props.farmer.farmerName}
 
-                                src={props.farmer.harvestNode.images[0]}
+                                src={props.farmer.harvestNode ? props.farmer.harvestNode.images[0] : defaultPicture}
                             />
                         </div>
                         <div className='cocktail-footer'>
