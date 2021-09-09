@@ -160,16 +160,21 @@ export const Home = () => {
 
             {
 
-                farmer.farmerName && farmer.harvestNode.longitude && farmer.harvestNode.latitude ?
+                farmer.farmerName && farmer.harvestNode.longitude && farmer.harvestNode.latitude && farmer.importNode ?
 
                     <>
 
                         <Import
 
+                            importerLogo={farmer.importNode.images[0]}
+
                             mapStyle={mapStyle}
                             farmerName={farmer.farmerName}
                             longitude={farmer.harvestNode.longitude}
                             latitude={farmer.harvestNode.latitude}
+
+                            importNode={farmer.importNode}
+                            importLots={farmer.importNode.importLots}
 
                         >
                         </Import>

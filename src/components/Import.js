@@ -11,15 +11,21 @@ import LeafletMap from './LeafletMap/LeafletMap';
 
 import JourneyMap from './JourneyMap/JourneyMap';
 
-import royalcoffeelogo from '../images/royalcoffeelogo.png';
+import Pagination from '../components/Pagination/Pagination';
+import paginate from '../utils';
 
 export const Import = ({
+
+    importerLogo,
 
     farmerName,
     longitude,
     latitude,
 
-    nodeCoordinates
+    nodeCoordinates,
+
+    importNode,
+    importLots
 
 }) => {
 
@@ -58,7 +64,7 @@ export const Import = ({
                             <Card.Img
                                 className="d-block mx-auto img-fluid w-50"
                                 variant="top"
-                                src={"https://bext360develop.blob.core.windows.net/bext-images/5eef0922-c3b6-48f0-aa93-2bc7e102d5c0.jpeg"}
+                                src={importerLogo}
                                 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
                             />
 
@@ -86,25 +92,31 @@ export const Import = ({
 
                         <p style={{}}>
 
-                            Location: <b>Coming Soon</b><br />
+                            Location:
+                            <b>
+                                {importNode ? importNode.city + ', ' + importNode.state : "Coming Soon"}
+                            </b><br />
 
-                            Green Coffee Total Weight: <b>Coming Soon</b><br />
+                            Green Coffee Total Weight:
+                            <b>
+                                {importLots ? importLots[0].absorbedWeight + ' ' + importLots[0].absorbedWeightUnit : "Coming Soon"}
+                            </b><br />
 
                         </p>
 
                         <Accordion style={{ 'margin-bottom': '1.5rem' }}>
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey="0">
-                                    <button className='bttn bttn-primary'>Import Lots (Coming Soon)</button>
+                                    <button className='bttn bttn-primary'>Import Lots</button>
                                 </Accordion.Toggle>
                                 <Accordion.Collapse eventKey="0">
                                     <Card.Body>
 
-                                        {/* <Pagination
+                                        <Pagination
 
-                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
+                                            lots={importLots ? paginate(importLots) : []}
 
-                                        /> */}
+                                        />
 
                                     </Card.Body>
                                 </Accordion.Collapse>

@@ -45,7 +45,7 @@ const HarvestLotCard = (props) => {
 
                         null
 
-                        // `Value: ${props.lot.value} ${props.lot.asset}`
+                        // <span>Value: {props.lot.value} {props.lot.asset}<br /></span>
 
                         :
 
@@ -62,7 +62,7 @@ const HarvestLotCard = (props) => {
                         ?
 
 
-                        `Payment: ${props.lot.value} ${props.lot.asset}`
+                        <span>Payment: {props.lot.value} {props.lot.asset}<br /></span>
 
                         :
 
@@ -75,7 +75,7 @@ const HarvestLotCard = (props) => {
 
                         ?
 
-                        <p>Harvest date: {props.lot.harvestDate.split(' ')[0]}<br /></p>
+                        <span>Harvest date: {props.lot.harvestDate.split(' ')[0]}<br /></span>
 
                         :
 
@@ -87,7 +87,31 @@ const HarvestLotCard = (props) => {
 
                         ?
 
-                        <p>Number of bags: {props.lot.numberOfBags}<br /></p>
+                        <span>Number of bags: {props.lot.numberOfBags}<br /></span>
+
+                        :
+
+                        null
+                }
+                {/* Displaying Import Lot Damage*/}
+                {
+                    props.lot.damage
+
+                        ?
+
+                        <span>Damage: {props.lot.damage}<br /></span>
+
+                        :
+
+                        null
+                }
+                {/* Displaying Import Lot Transfer Date*/}
+                {
+                    props.lot.transferDate
+
+                        ?
+
+                        <span>Transfer Date: {props.lot.transferDate}<br /></span>
 
                         :
 

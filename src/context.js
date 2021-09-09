@@ -381,6 +381,74 @@ const AppProvider = ({ children }) => {
                     }
                 }
 
+                importNode {
+
+                    _id
+
+                    importNodeId
+
+                    totaAbsorbedWeight
+                    totalAbsorbedWeightUnit
+
+                    organizationId
+                    marketplaceId
+                    defaultLocationId
+                    nodeName
+                    nodeType
+                    nodeDetailType
+                    createdDate
+                    lastModifiedDate
+                    organizationName
+
+                    images
+                    videos
+                    documents
+
+                    country
+                    city
+                    state
+                    latitude
+                    longitude
+                    elevation
+                    elevationUnit
+
+                    importLots {
+
+                        _id
+
+                        importLotId
+                        importNodeId
+
+                        organizationId
+                        marketplaceId
+                        productId
+                        lotName
+                        lotType
+                        lotDetailType
+                        createdDate
+                        lastModifiedDate
+                        productName
+                        productToken
+                        productSku
+                        organizationName
+                        currentWeight
+                        currentWeightUnit
+                        absorbedWeight
+                        absorbedWeightUnit
+                        quality
+                        lotIsOpen
+
+                        images
+                        documents
+                        videos
+
+                        numberOfBags
+                        damage
+                        transferDate
+
+                    }
+                }
+
 
             }
         }
