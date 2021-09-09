@@ -62,23 +62,29 @@ const FarmerDetails = () => {
         <main>
             {
 
-                <>
-                    <FarmerDetailsPageNavigation />
+                farmer.farmerName ?
 
-                    <Jumbotron style={{
-                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
+                    <>
+                        <FarmerDetailsPageNavigation />
+
+                        <Jumbotron style={{
+                            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
                         rgba(0, 0, 0, 0.5)),
                         url(${farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        height: '93vh'
-                    }}
-                        fluid>
-                        <Container>
-                            <h1 style={{ color: 'white' }}>{farmer.farmerName}</h1>
-                        </Container>
-                    </Jumbotron>
-                </>
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            height: '93vh'
+                        }}
+                            fluid>
+                            <Container>
+                                <h1 style={{ color: 'white' }}>{farmer.farmerName}</h1>
+                            </Container>
+                        </Jumbotron>
+                    </>
+
+                    :
+
+                    <Loading />
 
             }
 
@@ -120,7 +126,7 @@ const FarmerDetails = () => {
 
                     :
 
-                    <Loading />
+                    null
 
             }
 
