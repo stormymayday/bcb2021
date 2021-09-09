@@ -24,6 +24,9 @@ import Card from 'react-bootstrap/Card';
 import Farming from '../components/Farming';
 import ProcessingExport from '../components/ProcessingExport';
 
+// Importing default farm picture
+import defaultPicture from '../images/coffee_farm.JPG';
+
 const FarmerDetails = () => {
 
     // Google Analytics initiazation
@@ -57,28 +60,33 @@ const FarmerDetails = () => {
     return (
 
         <main>
+            {
+
+                <>
+                    <FarmerDetailsPageNavigation />
+
+                    <Jumbotron style={{
+                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
+                        rgba(0, 0, 0, 0.5)),
+                        url(${farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        height: '93vh'
+                    }}
+                        fluid>
+                        <Container>
+                            <h1 style={{ color: 'white' }}>{farmer.farmerName}</h1>
+                        </Container>
+                    </Jumbotron>
+                </>
+
+            }
 
             {
 
                 farmer.harvestNode && farmer.wetMillNode ?
 
                     <>
-
-                        <FarmerDetailsPageNavigation />
-
-                        <Jumbotron style={{
-                            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
-                        rgba(0, 0, 0, 0.5)),
-                        url(${farmer.harvestNode.images[0]})`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                            height: '93vh'
-                        }}
-                            fluid>
-                            <Container>
-                                <h1 style={{ color: 'white' }}>{farmer.farmerName}</h1>
-                            </Container>
-                        </Jumbotron>
 
                         <Farming
 
