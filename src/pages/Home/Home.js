@@ -116,7 +116,7 @@ export const Home = () => {
 
             {
 
-                farmer.exporterIntakeNode && farmer.dryMillNode ?
+                farmer.exporterIntakeNode && farmer.dryMillNode && farmer.exportNode ?
 
                     <>
 
