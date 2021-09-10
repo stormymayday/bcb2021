@@ -23,6 +23,7 @@ import Card from 'react-bootstrap/Card';
 // Sections
 import Farming from '../../components/Farming/Farming';
 import ProcessingExport from '../../components/ProcessingExport/ProcessingExport';
+import Import from '../../components/Import/Import';
 import Footer from '../../components/Footer/Footer';
 
 // Importing default farm picture
@@ -148,6 +149,22 @@ const FarmerDetails = () => {
 
             >
             </ProcessingExport>
+
+
+            <Import
+
+                // importerLogo={farmer.importNode.images[0]}
+                // mapStyle={mapStyle}
+                // farmerName={farmer.farmerName}
+                // longitude={farmer.harvestNode.longitude}
+                // latitude={farmer.harvestNode.latitude}
+
+                importerLogo={farmer.importNode ? farmer.importNode.images[0] : null}
+                importNode={farmer.importNode ? farmer.importNode : null}
+                importLots={farmer.importNode ? farmer.importNode.importLots : null}
+
+            />
+
 
             {
                 farmer.farmerName

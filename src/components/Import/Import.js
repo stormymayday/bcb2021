@@ -13,6 +13,7 @@ import JourneyMap from '../JourneyMap/JourneyMap';
 
 import Pagination from '../../components/Pagination/Pagination';
 import paginate from '../../utils';
+import HarvestList from '../HarvestList/HarvestList';
 
 export const Import = ({
 
@@ -58,20 +59,48 @@ export const Import = ({
                 >
 
                     <Card.Body>
+                        {
+                            importNode
 
-                        <a href="https://royalcoffee.com/" target="_blank">
+                                ?
 
-                            <Card.Img
-                                className="d-block mx-auto img-fluid w-50"
-                                variant="top"
-                                src={importerLogo}
-                                style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
-                            />
+                                <>
 
-                        </a>
+                                    <a href="https://royalcoffee.com/" target="_blank">
+
+                                        <Card.Img
+                                            className="d-block mx-auto img-fluid w-50"
+                                            variant="top"
+                                            src={importerLogo}
+                                            style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
+                                        />
+
+                                    </a>
+
+                                </>
+
+                                :
+
+                                null
+
+                        }
+
 
                         <Card.Text>
-                            {/* <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3> */}
+
+                            {
+                                importNode
+
+                                    ?
+
+                                    null
+
+                                    :
+
+                                    <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3>
+
+                            }
+
                             Royal Coffee is a wholesale green coffee beans importer that is family-owned and operated since 1978.
                         </Card.Text>
                         <Button
@@ -105,7 +134,7 @@ export const Import = ({
                         <Accordion style={{ 'margin-bottom': '1.5rem' }}>
                             <Card>
                                 <Accordion.Toggle as={Card.Header} eventKey="0">
-                                    <button className='bttn bttn-primary'>Import Lots</button>
+                                    <button className='bttn bttn-primary'>{importLots ? `Import Lots` : `Import Lots (Coming Soon)`}</button>
                                 </Accordion.Toggle>
                                 <Accordion.Collapse eventKey="0">
                                     <Card.Body>
@@ -127,7 +156,19 @@ export const Import = ({
 
                     <Col md='12' lg='6'>
                         <h3 style={{ 'padding-top': '0.5em' }}>Product's Journey</h3>
-                        <JourneyMap />
+                        {
+                            importNode
+
+                                ?
+
+                                <JourneyMap />
+
+                                :
+
+                                <p><b>Coming Soon</b></p>
+
+                        }
+
                     </Col>
 
                 </Row>

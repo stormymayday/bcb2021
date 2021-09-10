@@ -16,7 +16,7 @@ const JourneyMap = ({ nodeCoordinates }) => {
             const portOfExport = [15.845310, -87.943893];
             const PortHouston = [29.768000, -95.2809805];
             const portOfImport = [37.804363, -122.271111];
-            const roasterIntake = [39.742043, -104.991531];
+            // const roasterIntake = [39.742043, -104.991531];
 
             const route = L.featureGroup([
                 L.marker(portOfExport, { icon }).bindPopup('<p>Puerto Cortes</p>').openPopup(),
@@ -24,8 +24,8 @@ const JourneyMap = ({ nodeCoordinates }) => {
                 L.marker(PortHouston, { icon }).bindPopup('<p>Port Houston</p>').openPopup(),
                 L.polyline([PortHouston, portOfImport], { snakingSpeed: 100 }),
                 L.marker(portOfImport, { icon }).bindPopup('<p>Oakland</p>').openPopup(),
-                L.polyline([portOfImport, roasterIntake], { snakingSpeed: 100 }),
-                L.marker(roasterIntake, { icon }).bindPopup('<p>Denver</p>').openPopup()
+                // L.polyline([portOfImport, roasterIntake], { snakingSpeed: 100 }),
+                // L.marker(roasterIntake, { icon }).bindPopup('<p>Denver</p>').openPopup()
             ], { snakingPause: 1000 });
 
 
