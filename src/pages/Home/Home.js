@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Hero from '../../components/Hero';
+import Hero from '../../components/Hero/Hero';
 
 // Google Analytics
 import ReactGA from 'react-ga';
@@ -18,9 +18,9 @@ import { useGlobalContext } from '../../context';
 
 // Sections
 import Farming from '../../components/Farming/Farming';
-import ProcessingExport from '../../components/ProcessingExport';
-import Import from '../../components/Import';
-import Roasting from '../../components/Roasting';
+import ProcessingExport from '../../components/ProcessingExport/ProcessingExport';
+import Import from '../../components/Import/Import';
+import Roasting from '../../components/Roasting/Roasting';
 import Economics from '../../components/EconomicsAndTransparency/EconomicsAndTransparency';
 import Footer from '../../components/Footer/Footer';
 
@@ -119,49 +119,34 @@ export const Home = () => {
             </Farming>
 
 
-            {
+            <ProcessingExport
 
-                farmer.exporterIntakeNode && farmer.dryMillNode && farmer.exportNode ?
+                exporterIntakeNode={farmer.exporterIntakeNode ? farmer.exporterIntakeNode : null}
+                exporterLogo={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.images[0] : null}
+                exporterIntakeCity={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.city : null}
+                exporterIntakeState={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.state : null}
+                exporterIntakeCountry={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.country : null}
+                exporterIntakeElevation={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.elevation : null}
+                exporterIntakeElevationUnit={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.elevationUnit : null}
 
-                    <>
+                dryMillNode={farmer.dryMillNode ? farmer.dryMillNode : null}
+                dryMillIntakeCity={farmer.dryMillNode ? farmer.dryMillNode.city : null}
+                dryMillIntakeState={farmer.dryMillNode ? farmer.dryMillNode.state : null}
+                dryMillIntakeCountry={farmer.dryMillNode ? farmer.dryMillNode.country : null}
+                dryMillIntakeElevation={farmer.dryMillNode ? farmer.dryMillNode.elevation : null}
+                dryMillIntakeElevationUnit={farmer.dryMillNode ? farmer.dryMillNode.elevationUnit : null}
+                dryParchmentAbsorbedWeight={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[1].absorbedWeight : null}
+                dryParchmentAbsorbedWeightUnit={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit : null}
+                greenCoffeeAbsorbedWeight={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[0].absorbedWeight : null}
+                greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit : null}
+                dryMillLots={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots : null}
 
-                        <ProcessingExport
+                exportNode={farmer.exportNode ? farmer.exportNode : null}
+                exportLots={farmer.exportNode ? farmer.exportNode.exportLots : null}
 
-                            exporterLogo={farmer.exporterIntakeNode.images[0]}
+            >
+            </ProcessingExport>
 
-                            exporterIntakeCity={farmer.exporterIntakeNode.city}
-                            exporterIntakeState={farmer.exporterIntakeNode.state}
-                            exporterIntakeCountry={farmer.exporterIntakeNode.country}
-                            exporterIntakeElevation={farmer.exporterIntakeNode.elevation}
-                            exporterIntakeElevationUnit={farmer.exporterIntakeNode.elevationUnit}
-
-                            dryMillIntakeCity={farmer.dryMillNode.city}
-                            dryMillIntakeState={farmer.dryMillNode.state}
-                            dryMillIntakeCountry={farmer.dryMillNode.country}
-                            dryMillIntakeElevation={farmer.dryMillNode.elevation}
-                            dryMillIntakeElevationUnit={farmer.dryMillNode.elevationUnit}
-
-                            dryParchmentAbsorbedWeight={farmer.dryMillNode.dryMillLots[1].absorbedWeight}
-                            dryParchmentAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit}
-
-                            greenCoffeeAbsorbedWeight={farmer.dryMillNode.dryMillLots[0].absorbedWeight}
-                            greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit}
-
-                            dryMillLots={farmer.dryMillNode.dryMillLots}
-
-                            exportNode={farmer.exportNode}
-                            exportLots={farmer.exportNode.exportLots}
-
-                        >
-                        </ProcessingExport>
-
-                    </>
-
-                    :
-
-                    null
-
-            }
 
             {
 

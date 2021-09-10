@@ -6,6 +6,7 @@ import ReactGA from 'react-ga';
 
 import FarmersPageNavigation from '../../components/FarmersPageNavigation/FarmersPageNavigation';
 import FarmerList from '../../components/FarmerList/FarmerList';
+import Footer from '../../components/Footer/Footer';
 
 export const FarmersPage = () => {
 
@@ -24,6 +25,8 @@ export const FarmersPage = () => {
             <FarmersPageNavigation />
 
             <FarmerList />
+
+            <Footer />
 
         </main>
     )

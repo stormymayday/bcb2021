@@ -48,7 +48,7 @@ const Farming = ({
 
 }) => {
 
-    // Filtering out the Wet Parchment lots with 50% moisture
+    // Filtering out the Wet Parchment lots
 
     let filteredWetMillLots50 = 0;
 
@@ -65,18 +65,6 @@ const Farming = ({
         });
 
     }
-
-
-
-    // Filtering out the Wet Parchment lots with 15% moisture
-
-
-    // const filteredWetMillLots15 = wetMillLots.filter(function (wetMillLot) {
-    //     return wetMillLot.productName === 'Wet Parchment' && wetMillLot.images[0] !== "";
-    // });
-
-    const test = 0;
-
 
     return (
 

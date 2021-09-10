@@ -4,10 +4,6 @@ import './Slider.css';
 // Bootstrap components
 import Carousel from 'react-bootstrap/Carousel'
 
-// Images
-import slideOne from '../images/slideOne.jpg';
-import slideTwo from '../images/slideTwo.jpg';
-
 export default function Slider({ image }) {
     // style={{'height': '100vh'}}
 

@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import Loading from '../components/Loading/Loading';
-import HarvestList from '../components/HarvestList/HarvestList';
-import Pagination from '../components/Pagination/Pagination';
-import paginate from '../utils';
+import Loading from '../../components/Loading/Loading';
+import HarvestList from '../../components/HarvestList/HarvestList';
+import Pagination from '../../components/Pagination/Pagination';
+import paginate from '../../utils';
 
 import { useParams, useHistory, useLocation, Link } from 'react-router-dom';
 
 // Google Analytics
 import ReactGA from 'react-ga';
 
-import { useGlobalContext } from '../context';
+import { useGlobalContext } from '../../context';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
 
 // Components
-import FarmerDetailsPageNavigation from '../components/FarmerDetailsPageNavigation/FarmerDetailsPageNavigation';
+import FarmerDetailsPageNavigation from '../../components/FarmerDetailsPageNavigation/FarmerDetailsPageNavigation';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 
 // Sections
-import Farming from '../components/Farming/Farming';
-import ProcessingExport from '../components/ProcessingExport';
+import Farming from '../../components/Farming/Farming';
+import ProcessingExport from '../../components/ProcessingExport/ProcessingExport';
+import Footer from '../../components/Footer/Footer';
 
 // Importing default farm picture
-import defaultPicture from '../images/coffee_farm.JPG';
+import defaultPicture from '../../images/coffee_farm.JPG';
 
 const FarmerDetails = () => {
 
@@ -116,53 +117,48 @@ const FarmerDetails = () => {
                 wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode ? farmer.wetMillNode.totalAbsorbedWeightUnit : null}
                 wetMillLots={farmer.wetMillNode ? farmer.wetMillNode.wetMillLots : null}
                 numberOfWetMillLots={farmer.wetMillNode ? farmer.wetMillNode.wetMillLots.length : null}
+
             >
             </Farming>
 
+            <ProcessingExport
+
+                exporterIntakeNode={farmer.exporterIntakeNode ? farmer.exporterIntakeNode : null}
+                exporterLogo={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.images[0] : null}
+                exporterIntakeCity={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.city : null}
+                exporterIntakeState={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.state : null}
+                exporterIntakeCountry={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.country : null}
+                exporterIntakeElevation={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.elevation : null}
+                exporterIntakeElevationUnit={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.elevationUnit : null}
+
+                dryMillNode={farmer.dryMillNode ? farmer.dryMillNode : null}
+                dryMillIntakeCity={farmer.dryMillNode ? farmer.dryMillNode.city : null}
+                dryMillIntakeState={farmer.dryMillNode ? farmer.dryMillNode.state : null}
+                dryMillIntakeCountry={farmer.dryMillNode ? farmer.dryMillNode.country : null}
+                dryMillIntakeElevation={farmer.dryMillNode ? farmer.dryMillNode.elevation : null}
+                dryMillIntakeElevationUnit={farmer.dryMillNode ? farmer.dryMillNode.elevationUnit : null}
+                dryParchmentAbsorbedWeight={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[1].absorbedWeight : null}
+                dryParchmentAbsorbedWeightUnit={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit : null}
+                greenCoffeeAbsorbedWeight={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[0].absorbedWeight : null}
+                greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit : null}
+                dryMillLots={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots : null}
+
+                exportNode={farmer.exportNode ? farmer.exportNode : null}
+                exportLots={farmer.exportNode ? farmer.exportNode.exportLots : null}
+
+            >
+            </ProcessingExport>
+
             {
+                farmer.farmerName
 
-                farmer.exporterIntakeNode && farmer.dryMillNode && farmer.exportNode ?
+                    ?
 
-                    <>
-
-
-                        <div id='processing'></div>
-                        <ProcessingExport
-
-                            exporterLogo={farmer.exporterIntakeNode.images[0]}
-
-                            exporterIntakeCity={farmer.exporterIntakeNode.city}
-                            exporterIntakeState={farmer.exporterIntakeNode.state}
-                            exporterIntakeCountry={farmer.exporterIntakeNode.country}
-                            exporterIntakeElevation={farmer.exporterIntakeNode.elevation}
-                            exporterIntakeElevationUnit={farmer.exporterIntakeNode.elevationUnit}
-
-                            dryMillIntakeCity={farmer.dryMillNode.city}
-                            dryMillIntakeState={farmer.dryMillNode.state}
-                            dryMillIntakeCountry={farmer.dryMillNode.country}
-                            dryMillIntakeElevation={farmer.dryMillNode.elevation}
-                            dryMillIntakeElevationUnit={farmer.dryMillNode.elevationUnit}
-
-                            dryParchmentAbsorbedWeight={farmer.dryMillNode.dryMillLots[1].absorbedWeight}
-                            dryParchmentAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit}
-
-                            greenCoffeeAbsorbedWeight={farmer.dryMillNode.dryMillLots[0].absorbedWeight}
-                            greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit}
-
-                            dryMillLots={farmer.dryMillNode.dryMillLots}
-
-                            exportNode={farmer.exportNode}
-                            exportLots={farmer.exportNode.exportLots}
-
-                        >
-                        </ProcessingExport>
-
-                    </>
+                    <Footer />
 
                     :
 
                     null
-
             }
 
         </main>

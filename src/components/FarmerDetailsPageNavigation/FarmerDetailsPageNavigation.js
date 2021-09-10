@@ -45,7 +45,7 @@ export default function FarmerDetailsPageNavigation() {
 
                             <Nav.Link
                                 as={HashLink}
-                                to={`#processing`}
+                                to={`#processing-export`}
                                 smooth
                                 scroll={el => scrollWidthOffset(el)}
                             >

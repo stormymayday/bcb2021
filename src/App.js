@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 // Pages
 import Home from './pages/Home/Home';
-import FarmerDetails from './pages/FarmerDetails';
+import FarmerDetails from './pages/FarmerDetails/FarmerDetails';
 import Error from './pages/Error/Error';
 import FarmersPage from './pages/FarmersPage/FarmersPage';
 import RoastersPage from './pages/RoastersPage/RoastersPage';

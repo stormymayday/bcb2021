@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,105 +7,324 @@ import Card from 'react-bootstrap/Card';
 
 import Button from 'react-bootstrap/Button';
 
-// import './ProcessingExport.css';
+import Accordion from 'react-bootstrap/Accordion';
 
-// Components
-import ProcessingSectionPagination from '../ProcessingSectionPagination/ProcessingSectionPagination';
+import './ProcessingExport.css';
 
-
-
-export const ProcessingExport = (props) => {
+import Pagination from '../Pagination/Pagination';
+import paginate from '../../utils';
 
 
-    // const paginate = (items) => {
-    //     const itemsPerPage = 4
-    //     const numberOfPages = Math.ceil(items.length / itemsPerPage)
+export const ProcessingExport = ({
 
-    //     const newItems = Array.from({ length: numberOfPages }, (_, index) => {
-    //         const start = index * itemsPerPage
-    //         return items.slice(start, start + itemsPerPage)
-    //     })
+    exporterIntakeNode,
+    exporterLogo,
+    exporterIntakeCity,
+    exporterIntakeState,
+    exporterIntakeCountry,
+    exporterIntakeElevation,
+    exporterIntakeElevationUnit,
 
-    //     return newItems
-    // }
+    dryMillNode,
+    dryMillIntakeCity,
+    dryMillIntakeState,
+    dryMillIntakeCountry,
+    dryMillIntakeElevation,
+    dryMillIntakeElevationUnit,
+    dryParchmentAbsorbedWeight,
+    dryParchmentAbsorbedWeightUnit,
+    greenCoffeeAbsorbedWeight,
+    greenCoffeeAbsorbedWeightUnit,
+    dryMillLots,
 
-    // const substring = props.farmerIndex.farmerName.toLowerCase().split(" ")[0];
+    exportNode,
+    exportLots
 
-    let filteredMarcalaIntakeLots = [];
+}) => {
 
-    // MarcalaIntake
-    const [marcalaIntakeLots, setMarcalaIntakeLots] = useState('');
+    let dryParchmentLots = 0;
 
-    // const [marcalaIntakeLotIds, setMarcalaIntakeLotIds] = useState([]);
+    let coffeeGreenLots = 0;
 
+    if (dryMillLots) {
 
-    useEffect(() => {
+        // Filtering out the Dry Parchment lots
+        dryParchmentLots = dryMillLots.filter(function (dryMillLot) {
+            return dryMillLot.productName === 'Dry Parchment';
+        });
 
-        // fetch(`${process.env.REACT_APP_GET_NODE_LOT}/${props.farmerIndex.MarcalaIntakeNodeId}`, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Ocp-Apim-Subscription-Key': `${process.env.REACT_APP_API_KEY}`
-        //     }
-        // }).then(res => {
-        //     return res.json();
-        // })
-        //     .then(json => {
+        // Filtering out the Coffee Green lots
+        coffeeGreenLots = dryMillLots.filter(function (dryMillLot) {
+            return dryMillLot.productName === 'Coffee Green';
+        });
 
-        //         setMarcalaIntakeLots(json);
+    }
 
-        //     });
-
-    }, [
-        marcalaIntakeLots,
-        filteredMarcalaIntakeLots
-    ])
-
-    // if (marcalaIntakeLots) {
-
-
-    //     for (let i = 0; i < marcalaIntakeLots.lots.length; i++) {
-
-    //         if (marcalaIntakeLots.lots[i].lotName.toLowerCase().includes(substring)) {
-
-    //             filteredMarcalaIntakeLots.push(marcalaIntakeLots.lots[i]);
-
-    //         }
-    //     }
-    // }
-
-    console.log(filteredMarcalaIntakeLots);
+    const test = 0;
 
     return (
-        <section className="processing-section-bg" style={{ 'padding-top': '4em', 'padding-bottom': '1em', 'min-height': '50vh' }}>
+
+        <div className="processing-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='processing-export'>
 
             <Container>
 
-                <h2 style={{ color: 'white' }}>Processed and Exported by Catracha Coffee</h2>
-                <p style={{ color: 'white' }}>A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.</p>
+                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': 'white' }}>Processing & Export</h2>
+                <div className='underline' style={{ 'margin-bottom': '3em', 'background': '#fff' }}></div>
 
-                {/* {
-                    marcalaIntakeLots && filteredMarcalaIntakeLots
+                <Card
+                    className="text-center"
+                    border="light"
+                    text='light'
+                    style={{ 'background-color': 'transparent', 'margin-bottom': '1rem' }}>
 
-                        ?
-                        <ProcessingSectionPagination
+                    <Card.Body>
 
-                            farmerName={props.farmerIndex.farmerName}
+                        {
+                            exporterIntakeNode
 
-                            numberOfLots={filteredMarcalaIntakeLots}
-                            processingLotIds={paginate(filteredMarcalaIntakeLots)}
+                                ?
 
-                        />
+                                <a href="https://www.catrachacoffee.com/" target="_blank">
 
-                        :
 
-                        ''
+                                    <Card.Img
+                                        className="d-block mx-auto img-fluid w-50"
+                                        variant="top"
+                                        src={exporterIntakeNode ? exporterLogo : null}
+                                        style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
+                                    />
 
-                } */}
+                                </a>
+
+                                :
+
+                                null
+
+                        }
+
+
+                        <Card.Text>
+                            {
+                                exporterIntakeNode
+
+                                    ?
+
+                                    null
+
+                                    :
+
+                                    <h3 style={{ color: 'white' }}>Catracha Coffee</h3>
+
+                            }
+                            A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.
+                        </Card.Text>
+                        <Button
+                            variant="outline-light"
+                            href={'https://www.catrachacoffee.com/'}
+                            target="_blank"
+                        >
+                            <b>Learn More</b>
+                        </Button>
+                    </Card.Body>
+                </Card>
+
+                <Row>
+
+                    <Col md='12' lg='4'>
+
+                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Exporter Intake</h3>
+                        {
+                            exporterIntakeNode
+
+                                ?
+
+                                <>
+
+                                    <p style={{ color: 'white' }}>
+
+                                        Location: <b>{exporterIntakeCity}, {exporterIntakeState}</b><br />
+
+                                        Dry Parchment Total Weight: <b>{dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}s</b><br />
+
+                                    </p>
+
+                                </>
+
+                                :
+                                <>
+
+                                    <p style={{ color: 'white' }}>
+
+                                        Location: <b>Coming Soon</b><br />
+
+                                        Dry Parchment Total Weight: <b>Coming Soon</b><br />
+
+                                    </p>
+
+                                </>
+                        }
+
+
+                        <Accordion style={{ 'margin-bottom': '1.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    <button className='bttn bttn-primary'>{dryMillLots ? `Dry Parchment Lots` : `Dry Parchment Lots (Coming Soon)`}</button>
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        <Pagination
+
+                                            lots={dryParchmentLots ? paginate(dryParchmentLots) : []}
+
+                                        />
+
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+
+                        <p style={{ color: 'white' }}>The producer dries the wet parchment at their mill and then sells the dry parchment to Catracha Coffee.   After the moisture is removed, the remaining weight of the seed inside the thin membrane is called dry parchment.  The producer is paid based on the weight of the dry parchment delivered to Catracha Coffee.</p>
+
+                    </Col>
+
+                    <Col md='12' lg='4'>
+
+                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Dry Mill</h3>
+                        {
+                            dryMillNode
+
+                                ?
+
+                                <>
+
+                                    <p style={{ color: 'white' }}>
+
+                                        Location: <b>{dryMillIntakeCity}, {dryMillIntakeState}</b><br />
+
+                                        Green Coffee Total Weight: <b>{greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}s</b><br />
+
+                                    </p>
+
+                                </>
+
+                                :
+
+                                <>
+
+                                    <p style={{ color: 'white' }}>
+
+                                        Location: <b>Coming Soon</b><br />
+
+                                        Green Coffee Total Weight: <b>Coming Soon</b><br />
+
+                                    </p>
+
+                                </>
+
+                        }
+
+
+
+                        <Accordion style={{ 'margin-bottom': '1.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    <button className='bttn bttn-primary'>
+                                        {dryMillLots ? `Coffee Green Lots` : `Coffee Green Lots (Coming Soon)`}
+                                    </button>
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        <Pagination
+
+                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
+
+                                        />
+
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+
+                        <p style={{ color: 'white' }}>The coffee seeds are removed from the thin membrane (parchment) and sorted to remove lower quality seeds.  After this process of dehulling and sorting, the remaining weight of the seed is called green coffee.</p>
+
+
+                    </Col>
+
+                    <Col md='12' lg='4'>
+
+                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Export</h3>
+                        {
+                            exportNode && exportLots
+
+                                ?
+
+                                <>
+
+                                    <p style={{ color: 'white' }}>
+
+                                        Location: <b>
+                                            {exportNode.city}
+                                        </b><br />
+
+                                        Green Coffee Total Weight: <b>
+                                            {exportLots[0].absorbedWeight + ' ' + exportLots[0].absorbedWeightUnit}
+                                        </b><br />
+
+                                    </p>
+
+                                </>
+
+                                :
+
+                                <>
+
+                                    <p style={{ color: 'white' }}>
+
+                                        Location: <b>
+                                            Coming Soon
+                                        </b><br />
+
+                                        Green Coffee Total Weight: <b>
+                                            Coming Soon
+                                        </b><br />
+
+                                    </p>
+
+                                </>
+
+                        }
+
+                        <Accordion style={{ 'margin-bottom': '1.5rem' }}>
+                            <Card>
+                                <Accordion.Toggle as={Card.Header} eventKey="0">
+                                    <button className='bttn bttn-primary'>
+                                        {exportLots ? `Export Lots` : `Export Lots (Coming Soon)`}
+                                    </button>
+                                </Accordion.Toggle>
+                                <Accordion.Collapse eventKey="0">
+                                    <Card.Body>
+
+                                        <Pagination
+
+                                            lots={exportLots ? paginate(exportLots) : []}
+
+                                        />
+
+                                    </Card.Body>
+                                </Accordion.Collapse>
+                            </Card>
+                        </Accordion>
+
+                        <p style={{ color: 'white' }}>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export. A container can hold up to 275 bags of green coffee.</p>
+
+                    </Col>
+
+                </Row>
 
             </Container>
-
-
-        </section>
+        </div>
     );
 }
 

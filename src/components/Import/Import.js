@@ -7,12 +7,12 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 
-import LeafletMap from './LeafletMap/LeafletMap';
+import LeafletMap from '../LeafletMap/LeafletMap';
 
-import JourneyMap from './JourneyMap/JourneyMap';
+import JourneyMap from '../JourneyMap/JourneyMap';
 
-import Pagination from '../components/Pagination/Pagination';
-import paginate from '../utils';
+import Pagination from '../../components/Pagination/Pagination';
+import paginate from '../../utils';
 
 export const Import = ({
 
@@ -92,13 +92,11 @@ export const Import = ({
 
                         <p style={{}}>
 
-                            Location:
-                            <b>
+                            Location: <b>
                                 {importNode ? importNode.city + ', ' + importNode.state : "Coming Soon"}
                             </b><br />
 
-                            Green Coffee Total Weight:
-                            <b>
+                            Green Coffee Total Weight: <b>
                                 {importLots ? importLots[0].absorbedWeight + ' ' + importLots[0].absorbedWeightUnit : "Coming Soon"}
                             </b><br />
 

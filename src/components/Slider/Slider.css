@@ -1,0 +1,13 @@
+.slide1 {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/slideOne.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 93vh;
+}
+
+.slide2 {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../images/slideTwo.jpg');
+	background-size: cover;
+	background-position: center;
+	height: 93vh;
+}

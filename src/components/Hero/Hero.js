@@ -3,7 +3,7 @@ import React from 'react';
 // Bootstrap components
 import Container from 'react-bootstrap/Container';
 
-import Slider from './Slider';
+import Slider from '../Slider/Slider';
 
 export const Hero = ({ farmerPicture }) => {
     return (

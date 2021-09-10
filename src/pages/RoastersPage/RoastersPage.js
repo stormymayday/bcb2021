@@ -6,6 +6,7 @@ import ReactGA from 'react-ga';
 
 import RoastersPageNavigation from '../../components/RoastersPageNavigation/RoastersPageNavigation';
 import RoasterList from '../../components/RoasterList/RoasterList';
+import Footer from '../../components/Footer/Footer';
 
 
 export const RoastersPage = () => {
@@ -25,6 +26,8 @@ export const RoastersPage = () => {
             <RoastersPageNavigation />
 
             <RoasterList />
+
+            <Footer />
 
         </main>
     )
