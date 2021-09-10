@@ -17,7 +17,7 @@ import ReactPlayer from 'react-player';
 import { useGlobalContext } from '../../context';
 
 // Sections
-import Farming from '../../components/Farming';
+import Farming from '../../components/Farming/Farming';
 import ProcessingExport from '../../components/ProcessingExport';
 import Import from '../../components/Import';
 import Roasting from '../../components/Roasting';
@@ -29,6 +29,8 @@ import BarChart from '../../components/Chart/BarChart';
 import Loading from '../../components/Loading/Loading';
 import ScrollToTop from '../../components/ScrollToTop/ScrollTopTop';
 
+// Importing default farm picture
+import defaultPicture from '../../images/coffee_farm.JPG';
 
 import JourneyMap from '../../components/JourneyMap/JourneyMap';
 
@@ -70,42 +72,12 @@ export const Home = () => {
 
             {
 
-                farmer.harvestNode && farmer.wetMillNode ?
+                farmer.farmerName ?
 
                     <>
-
                         <HomePageNavigation />
 
-                        <Hero farmerPicture={farmer.harvestNode.images[0]} />
-
-                        <Farming
-
-                            farmerName={farmer.farmerName}
-                            farmerPicture={farmer.harvestNode.images[0]}
-                            harvestCity={farmer.harvestNode.city}
-                            harvestState={farmer.harvestNode.state}
-                            harvestCountry={farmer.harvestNode.country}
-                            harvestElevation={farmer.harvestNode.elevation}
-                            harvestElevationUnit={farmer.harvestNode.elevationUnit}
-                            longitude={farmer.harvestNode.longitude}
-                            latitude={farmer.harvestNode.latitude}
-                            harvestTotalAbsorbedWeight={farmer.harvestNode.totaAbsorbedWeight}
-                            harvestTotalAbsorbedWeightUnit={farmer.harvestNode.totalAbsorbedWeightUnit}
-                            harvestLots={farmer.harvestNode.harvestLots}
-                            numberOfHarvestLots={farmer.harvestNode.harvestLots.length}
-
-                            wetMillCity={farmer.wetMillNode.city}
-                            wetMillState={farmer.wetMillNode.state}
-                            wetMillCountry={farmer.wetMillNode.country}
-                            wetMillElevation={farmer.wetMillNode.elevation}
-                            wetMillElevationUnit={farmer.wetMillNode.elevationUnit}
-                            wetMilltTotalAbsorbedWeight={farmer.wetMillNode.totaAbsorbedWeight}
-                            wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode.totalAbsorbedWeightUnit}
-                            wetMillLots={farmer.wetMillNode.wetMillLots}
-                            numberOfWetMillLots={farmer.wetMillNode.wetMillLots.length}
-                        >
-                        </Farming>
-
+                        <Hero farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture} />
                     </>
 
                     :
@@ -113,6 +85,39 @@ export const Home = () => {
                     <Loading />
 
             }
+
+
+            <Farming
+
+                farmerName={farmer.farmerName}
+
+                harvestNode={farmer.harvestNode ? farmer.harvestNode : null}
+                farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : null}
+                harvestCity={farmer.harvestNode ? farmer.harvestNode.city : null}
+                harvestState={farmer.harvestNode ? farmer.harvestNode.state : null}
+                harvestCountry={farmer.harvestNode ? farmer.harvestNode.country : null}
+                harvestElevation={farmer.harvestNode ? farmer.harvestNode.elevation : null}
+                harvestElevationUnit={farmer.harvestNode ? farmer.harvestNode.elevationUnit : null}
+                longitude={farmer.harvestNode ? farmer.harvestNode.longitude : null}
+                latitude={farmer.harvestNode ? farmer.harvestNode.latitude : null}
+                harvestTotalAbsorbedWeight={farmer.harvestNode ? farmer.harvestNode.totaAbsorbedWeight : null}
+                harvestTotalAbsorbedWeightUnit={farmer.harvestNode ? farmer.harvestNode.totalAbsorbedWeightUnit : null}
+                harvestLots={farmer.harvestNode ? farmer.harvestNode.harvestLots : null}
+                numberOfHarvestLots={farmer.harvestNode ? farmer.harvestNode.harvestLots.length : null}
+
+                wetMillNode={farmer.wetMillNode ? farmer.wetMillNode : null}
+                wetMillCity={farmer.wetMillNode ? farmer.wetMillNode.city : null}
+                wetMillState={farmer.wetMillNode ? farmer.wetMillNode.state : null}
+                wetMillCountry={farmer.wetMillNode ? farmer.wetMillNode.country : null}
+                wetMillElevation={farmer.wetMillNode ? farmer.wetMillNode.elevation : null}
+                wetMillElevationUnit={farmer.wetMillNode ? farmer.wetMillNode.elevationUnit : null}
+                wetMilltTotalAbsorbedWeight={farmer.wetMillNode ? farmer.wetMillNode.totaAbsorbedWeight : null}
+                wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode ? farmer.wetMillNode.totalAbsorbedWeightUnit : null}
+                wetMillLots={farmer.wetMillNode ? farmer.wetMillNode.wetMillLots : null}
+                numberOfWetMillLots={farmer.wetMillNode ? farmer.wetMillNode.wetMillLots.length : null}
+            >
+            </Farming>
+
 
             {
 
