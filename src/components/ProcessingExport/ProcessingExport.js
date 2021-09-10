@@ -31,10 +31,12 @@ export const ProcessingExport = ({
     dryMillIntakeCountry,
     dryMillIntakeElevation,
     dryMillIntakeElevationUnit,
+
     dryParchmentAbsorbedWeight,
     dryParchmentAbsorbedWeightUnit,
     greenCoffeeAbsorbedWeight,
     greenCoffeeAbsorbedWeightUnit,
+
     dryMillLots,
 
     exportNode,
@@ -133,36 +135,15 @@ export const ProcessingExport = ({
                     <Col md='12' lg='4'>
 
                         <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Exporter Intake</h3>
-                        {
-                            exporterIntakeNode
 
-                                ?
 
-                                <>
+                        <p style={{ color: 'white' }}>
 
-                                    <p style={{ color: 'white' }}>
+                            Location: <b>{exporterIntakeNode ? exporterIntakeCity + ', ' + exporterIntakeState : `Coming Soon`}</b><br />
 
-                                        Location: <b>{exporterIntakeCity}, {exporterIntakeState}</b><br />
+                            Dry Parchment Total Weight: <b>{dryParchmentLots != 0 ? dryParchmentLots[0].absorbedWeight + ' ' + dryParchmentLots[0].absorbedWeightUnit : `Coming Soon`}</b><br />
 
-                                        Dry Parchment Total Weight: <b>{dryParchmentAbsorbedWeight} {dryParchmentAbsorbedWeightUnit}s</b><br />
-
-                                    </p>
-
-                                </>
-
-                                :
-                                <>
-
-                                    <p style={{ color: 'white' }}>
-
-                                        Location: <b>Coming Soon</b><br />
-
-                                        Dry Parchment Total Weight: <b>Coming Soon</b><br />
-
-                                    </p>
-
-                                </>
-                        }
+                        </p>
 
 
                         <Accordion style={{ 'margin-bottom': '1.5rem' }}>
@@ -191,40 +172,14 @@ export const ProcessingExport = ({
                     <Col md='12' lg='4'>
 
                         <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Dry Mill</h3>
-                        {
-                            dryMillNode
 
-                                ?
+                        <p style={{ color: 'white' }}>
 
-                                <>
+                            Location: <b> {dryMillNode ? dryMillIntakeCity + ', ' + dryMillIntakeState : `Coming Soon`}</b><br />
 
-                                    <p style={{ color: 'white' }}>
+                            Green Coffee Total Weight: <b>{coffeeGreenLots != 0 ? coffeeGreenLots[0].absorbedWeight + ' ' + coffeeGreenLots[0].absorbedWeightUnit : `Coming Soon`}</b><br />
 
-                                        Location: <b>{dryMillIntakeCity}, {dryMillIntakeState}</b><br />
-
-                                        Green Coffee Total Weight: <b>{greenCoffeeAbsorbedWeight} {greenCoffeeAbsorbedWeightUnit}s</b><br />
-
-                                    </p>
-
-                                </>
-
-                                :
-
-                                <>
-
-                                    <p style={{ color: 'white' }}>
-
-                                        Location: <b>Coming Soon</b><br />
-
-                                        Green Coffee Total Weight: <b>Coming Soon</b><br />
-
-                                    </p>
-
-                                </>
-
-                        }
-
-
+                        </p>
 
                         <Accordion style={{ 'margin-bottom': '1.5rem' }}>
                             <Card>
@@ -255,46 +210,18 @@ export const ProcessingExport = ({
                     <Col md='12' lg='4'>
 
                         <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Export</h3>
-                        {
-                            exportNode && exportLots
 
-                                ?
+                        <p style={{ color: 'white' }}>
 
-                                <>
+                            Location: <b>
+                                {exportNode ? exportNode.city : `Coming Soon`}
+                            </b><br />
 
-                                    <p style={{ color: 'white' }}>
+                            Green Coffee Total Weight: <b>
+                                {exportLots ? exportLots[0].absorbedWeight + ' ' + exportLots[0].absorbedWeightUnit : `Coming Soon`}
+                            </b><br />
 
-                                        Location: <b>
-                                            {exportNode.city}
-                                        </b><br />
-
-                                        Green Coffee Total Weight: <b>
-                                            {exportLots[0].absorbedWeight + ' ' + exportLots[0].absorbedWeightUnit}
-                                        </b><br />
-
-                                    </p>
-
-                                </>
-
-                                :
-
-                                <>
-
-                                    <p style={{ color: 'white' }}>
-
-                                        Location: <b>
-                                            Coming Soon
-                                        </b><br />
-
-                                        Green Coffee Total Weight: <b>
-                                            Coming Soon
-                                        </b><br />
-
-                                    </p>
-
-                                </>
-
-                        }
+                        </p>
 
                         <Accordion style={{ 'margin-bottom': '1.5rem' }}>
                             <Card>

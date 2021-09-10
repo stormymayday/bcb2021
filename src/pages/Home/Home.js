@@ -135,10 +135,12 @@ export const Home = () => {
                 dryMillIntakeCountry={farmer.dryMillNode ? farmer.dryMillNode.country : null}
                 dryMillIntakeElevation={farmer.dryMillNode ? farmer.dryMillNode.elevation : null}
                 dryMillIntakeElevationUnit={farmer.dryMillNode ? farmer.dryMillNode.elevationUnit : null}
+
                 dryParchmentAbsorbedWeight={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[1].absorbedWeight : null}
                 dryParchmentAbsorbedWeightUnit={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[1].absorbedWeightUnit : null}
                 greenCoffeeAbsorbedWeight={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[0].absorbedWeight : null}
                 greenCoffeeAbsorbedWeightUnit={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots[0].absorbedWeightUnit : null}
+
                 dryMillLots={farmer.dryMillNode ? farmer.dryMillNode.dryMillLots : null}
 
                 exportNode={farmer.exportNode ? farmer.exportNode : null}
