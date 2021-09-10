@@ -52,6 +52,33 @@ export default function FarmerDetailsPageNavigation() {
                                 PROCESSING
                             </Nav.Link>
 
+                            <Nav.Link
+                                as={HashLink}
+                                to={`#import`}
+                                smooth
+                                scroll={el => scrollWidthOffset(el)}
+                            >
+                                IMPORT
+                            </Nav.Link>
+
+                            <Nav.Link
+                                as={HashLink}
+                                to={`#roasting`}
+                                smooth
+                                scroll={el => scrollWidthOffset(el)}
+                            >
+                                ROASTING
+                            </Nav.Link>
+
+                            <Nav.Link
+                                as={HashLink}
+                                to={`#economics`}
+                                smooth
+                                scroll={el => scrollWidthOffset(el)}
+                            >
+                                ECONOMICS
+                            </Nav.Link>
+
                             <Nav.Link href="/roasters">ROASTERS</Nav.Link>
 
                             <NavDropdown title="FARMERS" id="basic-nav-dropdown">
