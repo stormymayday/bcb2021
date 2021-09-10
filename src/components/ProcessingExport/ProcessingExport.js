@@ -113,7 +113,7 @@ export const ProcessingExport = ({
 
                                     :
 
-                                    <h3 style={{ color: 'white' }}>Catracha Coffee</h3>
+                                    <h3 style={{ color: 'white', 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Catracha Coffee</h3>
 
                             }
                             A social enterprise dedicated to accessing the specialty coffee market for coffee farmers in Santa Elena, La Paz, Honduras.

@@ -24,6 +24,7 @@ import Card from 'react-bootstrap/Card';
 import Farming from '../../components/Farming/Farming';
 import ProcessingExport from '../../components/ProcessingExport/ProcessingExport';
 import Import from '../../components/Import/Import';
+import Economics from '../../components/EconomicsAndTransparency/EconomicsAndTransparency';
 import Footer from '../../components/Footer/Footer';
 
 // Importing default farm picture
@@ -165,6 +166,16 @@ const FarmerDetails = () => {
 
             />
 
+            <Economics
+
+                farmerName={farmer.farmerName}
+                exporterIntakeLots={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.exporterIntakeLots : null}
+
+                // exportLots={farmer.exporterIntakeNode ? farmer.exportNode.exportLots : null}
+                exportLots={farmer.exportNode ? farmer.exportNode.exportLots : null}
+
+            ></Economics>
+
 
             {
                 farmer.farmerName
@@ -178,7 +189,7 @@ const FarmerDetails = () => {
                     null
             }
 
-        </main>
+        </main >
 
     );
 

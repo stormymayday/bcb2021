@@ -19,17 +19,27 @@ export const EconomicsAndTransparency = ({
 
     farmerName,
     exporterIntakeLots,
-    exportLots
+    exportLots,
+    roastingNode
 
 }) => {
 
-    // Filtering out the Wet Parchment lots
-    const wetParchmentLots = exporterIntakeLots.filter(function (exporterIntakeLot) {
-        return exporterIntakeLot.productName === 'Wet Parchment';
-    });
 
-    // Summarizing First Payment from the Wet Parchmenet Lots on Exporter Intake Node
-    const firstPayment = wetParchmentLots.reduce(function (acc, obj) { return acc + parseFloat(obj.value); }, 0);
+    let wetParchmentLots = 0;
+
+    let firstPayment = 0;
+
+    if (exporterIntakeLots) {
+
+        // Filtering out the Wet Parchment lots
+        wetParchmentLots = exporterIntakeLots.filter(function (exporterIntakeLot) {
+            return exporterIntakeLot.productName === 'Wet Parchment';
+        });
+
+        // Summarizing First Payment from the Wet Parchmenet Lots on Exporter Intake Node
+        firstPayment = wetParchmentLots.reduce(function (acc, obj) { return acc + parseFloat(obj.value); }, 0);
+
+    }
 
     return (
         <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='economics'>
@@ -44,19 +54,26 @@ export const EconomicsAndTransparency = ({
 
                     <Col lg={4} sm={12}>
 
-                        <h3 style={{ 'padding-bottom': '0.5em' }}>{farmerName}</h3>
+                        <h3 style={{ 'padding-bottom': '0.5em' }}>{farmerName ? farmerName : `Farmer`}</h3>
 
                         <p>
-                            Paid for Parchment: <b>{firstPayment} {wetParchmentLots[0].asset}</b><br />
-                            Second Payment: <b>{exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : "N/A"} {exportLots[0].secondPaymentAsset ? exportLots[0].secondPaymentAsset : ""}</b><br />
-                            Payment to spouse: <b>{exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : "N/A"} {exportLots[0].spousePaymentAsset ? exportLots[0].spousePaymentAsset : ""}</b><br />
-                            IHCAFE Payment: <b>{exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : "N/A"} {exportLots[0].ihcafePaymentAsset ? exportLots[0].ihcafePaymentAsset : ""}</b>
+                            Paid for Parchment: <b>{firstPayment ? firstPayment + ' ' + wetParchmentLots[0].asset : `Coming Soon`}
+
+                                {/* {firstPayment} {wetParchmentLots[0].asset} */}
+
+                            </b><br />
+                            Second Payment: <b>{exportLots ? exportLots[0].secondPaymentValue + ' ' + exportLots[0].secondPaymentAsset : `Coming Soon`}
+
+                                {/* {exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : "N/A"} {exportLots[0].secondPaymentAsset ? exportLots[0].secondPaymentAsset : ""} */}
+
+                            </b><br />
+                            Payment to spouse: <b>{exportLots ? exportLots[0].spousePaymentValue + ' ' + exportLots[0].spousePaymentAsset : `Coming Soon`}
+                                {/* {exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : "N/A"} {exportLots[0].spousePaymentAsset ? exportLots[0].spousePaymentAsset : ""} */}
+                            </b><br />
+                            IHCAFE Payment: <b>{exportLots ? exportLots[0].ihcafePaymentValue + ' ' + exportLots[0].ihcafePaymentAsset : `Coming Soon`}
+                                {/* {exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : "N/A"} {exportLots[0].ihcafePaymentAsset ? exportLots[0].ihcafePaymentAsset : ""} */}
+                            </b>
                         </p>
-
-
-
-
-
 
                     </Col>
 
@@ -73,19 +90,31 @@ export const EconomicsAndTransparency = ({
 
                     </Col>
 
-                    <Col lg={4} sm={12}>
+                    {
+                        farmerName === `Claudia & Juan`
 
-                        <h3 style={{ 'padding-bottom': '0.5em' }}>Queen City</h3>
+                            ?
 
-                        <p>
-                            QC FOB: <b>Coming Soon</b><br />
-                            QC import cost: <b>Coming Soon</b><br />
-                            QC freight: <b>Coming Soon</b><br />
-                            QC roasting labor: <b>Coming Soon</b><br />
-                            QC total cost at roaster: <b>Coming Soon</b><br />
-                        </p>
+                            <Col lg={4} sm={12}>
 
-                    </Col>
+                                <h3 style={{ 'padding-bottom': '0.5em' }}>Queen City</h3>
+
+                                <p>
+                                    QC FOB: <b>Coming Soon</b><br />
+                                    QC import cost: <b>Coming Soon</b><br />
+                                    QC freight: <b>Coming Soon</b><br />
+                                    QC roasting labor: <b>Coming Soon</b><br />
+                                    QC total cost at roaster: <b>Coming Soon</b><br />
+                                </p>
+
+                            </Col>
+
+                            :
+
+                            null
+
+                    }
+
 
                 </Row>
 

@@ -148,74 +148,34 @@ export const Home = () => {
             </ProcessingExport>
 
 
-            {
 
-                farmer.farmerName && farmer.harvestNode.longitude && farmer.harvestNode.latitude && farmer.importNode ?
 
-                    <>
-
-                        <Import
+            <Import
 
 
 
-                            // mapStyle={mapStyle}
-                            // farmerName={farmer.farmerName}
-                            // longitude={farmer.harvestNode.longitude}
-                            // latitude={farmer.harvestNode.latitude}
+                // mapStyle={mapStyle}
+                // farmerName={farmer.farmerName}
+                // longitude={farmer.harvestNode.longitude}
+                // latitude={farmer.harvestNode.latitude}
 
-                            importerLogo={farmer.importNode ? farmer.importNode.images[0] : null}
-                            importNode={farmer.importNode ? farmer.importNode : null}
-                            importLots={farmer.importNode ? farmer.importNode.importLots : null}
+                importerLogo={farmer.importNode ? farmer.importNode.images[0] : null}
+                importNode={farmer.importNode ? farmer.importNode : null}
+                importLots={farmer.importNode ? farmer.importNode.importLots : null}
 
-                        >
-                        </Import>
+            >
+            </Import>
 
-                    </>
+            <Roasting></Roasting>
 
-                    :
+            <Economics
 
-                    null
+                farmerName={farmer.farmerName}
+                exporterIntakeLots={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.exporterIntakeLots : null}
 
-            }
+                exportLots={farmer.exportNode ? farmer.exportNode.exportLots : null}
 
-            {
-
-                farmer.farmerName ?
-
-                    <>
-
-                        <Roasting></Roasting>
-
-                    </>
-
-                    :
-
-                    null
-
-            }
-
-            {
-
-                farmer.farmerName ?
-
-                    <>
-
-                        <Economics
-
-                            farmerName={farmer.farmerName}
-                            exporterIntakeLots={farmer.exporterIntakeNode.exporterIntakeLots}
-
-                            exportLots={farmer.exportNode.exportLots}
-
-                        ></Economics>
-
-                    </>
-
-                    :
-
-                    null
-
-            }
+            ></Economics>
 
             {
 
