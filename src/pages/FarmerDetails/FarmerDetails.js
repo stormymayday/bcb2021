@@ -24,6 +24,7 @@ import Card from 'react-bootstrap/Card';
 import Farming from '../../components/Farming/Farming';
 import ProcessingExport from '../../components/ProcessingExport/ProcessingExport';
 import Import from '../../components/Import/Import';
+import Roasting from '../../components/Roasting/Roasting';
 import Economics from '../../components/EconomicsAndTransparency/EconomicsAndTransparency';
 import Footer from '../../components/Footer/Footer';
 
@@ -168,6 +169,26 @@ const FarmerDetails = () => {
                 importLots={farmer.importNode ? farmer.importNode.importLots : null}
 
             />
+
+            {
+                farmer.farmerName === 'Claudia & Juan' || farmer.farmerName === 'Luis'
+
+                    ?
+
+                    <Roasting
+
+                        farmerName={farmer.farmerName}
+
+                    >
+
+                    </Roasting>
+
+                    :
+
+                    null
+
+            }
+
 
             <Economics
 

@@ -168,7 +168,9 @@ export const Home = () => {
             >
             </Import>
 
-            <Roasting></Roasting>
+            <Roasting
+                farmerName={farmer.farmerName}
+            ></Roasting>
 
             <Economics
 

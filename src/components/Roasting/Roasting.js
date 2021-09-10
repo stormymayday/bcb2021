@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image'
 
 import qcclogo from '../../images/qc-logo-p-500.png';
+import oldSoullogo from '../../images/oldsoullogo-trans.png';
 
 import Button from 'react-bootstrap/Button';
 
@@ -17,7 +18,11 @@ import paginate from '../../utils';
 
 import './Roasting.css';
 
-export const Roasting = (props) => {
+export const Roasting = ({
+
+    farmerName
+
+}) => {
 
     return (
 
@@ -36,28 +41,67 @@ export const Roasting = (props) => {
 
                     <Card.Body>
 
-                        <a href="https://queencitycollectivecoffee.com/" target="_blank">
+                        {
+                            farmerName === 'Claudia & Juan'
+                                ?
+                                <a href="https://queencitycollectivecoffee.com/" target="_blank">
 
-                            <Card.Img
-                                className="d-block mx-auto img-fluid w-50"
-                                variant="top"
-                                src={qcclogo}
-                                style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
-                            />
+                                    <Card.Img
+                                        className="d-block mx-auto img-fluid w-50"
+                                        variant="top"
+                                        src={qcclogo}
+                                        style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
+                                    />
 
-                        </a>
+                                </a>
+                                :
+                                <a href="https://oldsoulco.com/" target="_blank">
 
-                        <Card.Text>
-                            {/* <h3 style={{ color: 'white' }}>Queen City Collective Coffee</h3> */}
-                            Queen City is a collective coffee company in Denver building community from farm to cup. Our coffee comes from farmers and producers we know, and is then small-batch roasted in the city we love. We believe that honest relationships, from farmers to consumers, achieve an equitable and sustainable coffee supply chain.
-                        </Card.Text>
-                        <Button
-                            variant="outline-light"
-                            href={'https://queencitycollectivecoffee.com/'}
-                            target="_blank"
-                        >
-                            <b>Shop</b>
-                        </Button>
+                                    <Card.Img
+                                        className="d-block mx-auto img-fluid w-50 img-thumbnail"
+                                        variant="top"
+                                        src={oldSoullogo}
+                                        style={{ 'margin-bottom': '1rem', 'margin-top': '1rem', 'max-width': '40%' }}
+                                    />
+
+                                </a>
+                        }
+                        {
+                            farmerName === 'Claudia & Juan'
+                                ?
+                                <Card.Text>
+                                    {/* <h3 style={{ color: 'white' }}>Queen City Collective Coffee</h3> */}
+                                    Queen City is a collective coffee company in Denver building community from farm to cup. Our coffee comes from farmers and producers we know, and is then small-batch roasted in the city we love. We believe that honest relationships, from farmers to consumers, achieve an equitable and sustainable coffee supply chain.
+                                </Card.Text>
+                                :
+                                <Card.Text >
+                                    {/* <h3 style={{ color: 'white' }}>Queen City Collective Coffee</h3> */}
+                                    We are skilled roasters, artisans, and neighbors. We are a platform for local farmers, brewers and purveyors. We are a community space and eatery that connects and celebrates its patrons.
+                                </Card.Text>
+                        }
+                        {
+
+                            farmerName === 'Claudia & Juan'
+                                ?
+
+                                <Button
+                                    variant="outline-light"
+                                    href={'https://queencitycollectivecoffee.com/'}
+                                    target="_blank"
+                                >
+                                    <b>Shop</b>
+                                </Button>
+                                :
+                                <Button
+                                    variant="outline-light"
+                                    href={'https://oldsoulco.com/'}
+                                    target="_blank"
+                                >
+                                    <b>Shop</b>
+                                </Button>
+
+                        }
+
                     </Card.Body>
                 </Card>
 
