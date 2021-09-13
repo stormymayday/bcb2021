@@ -48,6 +48,15 @@ const Farming = ({
 
 }) => {
 
+    // Summarizing Total Weigh
+    let coffeeCherryTotalWeight = 0;
+
+    if (harvestLots) {
+
+        coffeeCherryTotalWeight = harvestLots.reduce(function (acc, obj) { return acc + parseFloat(obj.absorbedWeight); }, 0);
+
+    }
+
     // Filtering out the Wet Parchment lots
 
     let filteredWetMillLots50 = 0;
@@ -99,7 +108,8 @@ const Farming = ({
 
                                         Elevation: <b>{harvestElevation} {harvestElevationUnit}</b><br />
 
-                                        Coffee Cherry Total Weight: <b>{harvestTotalAbsorbedWeight} {harvestTotalAbsorbedWeightUnit}</b><br />
+                                        {/* Coffee Cherry Total Weight: <b>{harvestTotalAbsorbedWeight} {harvestTotalAbsorbedWeightUnit}</b><br /> */}
+                                        Coffee Cherry Total Weight: <b>{coffeeCherryTotalWeight} {harvestLots[0].absorbedWeightUnit}s</b><br />
 
                                         Total number of harvest lots: <b>{numberOfHarvestLots}</b><br />
                                     </p>
