@@ -442,6 +442,21 @@ const AppProvider = ({ children }) => {
                         documents
                         videos
 
+                        fobBasePaymentValue
+                        fobBasePaymentAsset
+                        fobBasePaymentTimeStamp
+                        fobBasePaymentNotes
+
+                        fobPremiumPaymentValue
+                        fobPremiumPaymentAsset
+                        fobPremiumPaymentTimestamp
+                        fobPremiumPaymentNotes
+
+                        catrachaCommunityContributionPaymentValue
+                        catrachaCommunityContributionPaymentAsset
+                        catrachaCommunityContributionPaymentTimeStamp
+                        catrachaCommunityContributionPaymentNotes
+
                         numberOfBags
                         damage
                         transferDate

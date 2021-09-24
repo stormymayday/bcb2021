@@ -198,6 +198,8 @@ const FarmerDetails = () => {
                 // exportLots={farmer.exporterIntakeNode ? farmer.exportNode.exportLots : null}
                 exportLots={farmer.exportNode ? farmer.exportNode.exportLots : null}
 
+                importLots={farmer.importNode ? farmer.importNode.importLots : null}
+
             ></Economics>
 
 

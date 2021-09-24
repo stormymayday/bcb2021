@@ -20,6 +20,7 @@ export const EconomicsAndTransparency = ({
     farmerName,
     exporterIntakeLots,
     exportLots,
+    importLots,
     roastingNode
 
 }) => {
@@ -82,10 +83,10 @@ export const EconomicsAndTransparency = ({
                         <h3 style={{ 'padding-bottom': '0.5em' }}>Catracha Coffee</h3>
 
                         <p>
-                            FOB base: <b>Coming Soon</b><br />
-                            FOB premium: <b>Coming Soon</b><br />
-                            FOB Catracha Community contribution: <b>Coming Soon</b><br />
-                            FOB total: <b>Coming Soon</b><br />
+                            FOB base: <b>{importLots ? importLots[0].fobBasePaymentValue + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
+                            FOB premium: <b>{importLots ? importLots[0].fobPremiumPaymentValue + ' ' + importLots[0].fobPremiumPaymentAsset : `Coming Soon`}</b><br />
+                            FOB Catracha Community contribution: <b>{importLots ? importLots[0].catrachaCommunityContributionPaymentValue + ' ' + importLots[0].catrachaCommunityContributionPaymentAsset : `Coming Soon`}</b><br />
+                            FOB total: <b>{importLots ? parseFloat(importLots[0].fobBasePaymentValue) + parseFloat(importLots[0].fobPremiumPaymentValue) + parseFloat(importLots[0].catrachaCommunityContributionPaymentValue) + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
                         </p>
 
                     </Col>
@@ -97,7 +98,7 @@ export const EconomicsAndTransparency = ({
 
                             <Col lg={4} sm={12}>
 
-                                <h3 style={{ 'padding-bottom': '0.5em' }}>Queen City</h3>
+                                <h3 style={{ 'padding-bottom': '0.5em' }}>Roaster</h3>
 
                                 <p>
                                     QC FOB: <b>Coming Soon</b><br />

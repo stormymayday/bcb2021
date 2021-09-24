@@ -179,6 +179,8 @@ export const Home = () => {
 
                 exportLots={farmer.exportNode ? farmer.exportNode.exportLots : null}
 
+                importLots={farmer.importNode ? farmer.importNode.importLots : null}
+
             ></Economics>
 
             {
