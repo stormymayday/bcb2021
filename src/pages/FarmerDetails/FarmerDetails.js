@@ -200,6 +200,7 @@ const FarmerDetails = () => {
 
                 importLots={farmer.importNode ? farmer.importNode.importLots : null}
 
+
             ></Economics>
 
 

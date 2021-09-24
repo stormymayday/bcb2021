@@ -68,7 +68,7 @@ export const EconomicsAndTransparency = ({
                                 {/* {exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : "N/A"} {exportLots[0].secondPaymentAsset ? exportLots[0].secondPaymentAsset : ""} */}
 
                             </b><br />
-                            Payment to spouse: <b>{exportLots ? exportLots[0].spousePaymentValue + ' ' + exportLots[0].spousePaymentAsset : `Coming Soon`}
+                            Payment to Spouse: <b>{exportLots ? exportLots[0].spousePaymentValue + ' ' + exportLots[0].spousePaymentAsset : `Coming Soon`}
                                 {/* {exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : "N/A"} {exportLots[0].spousePaymentAsset ? exportLots[0].spousePaymentAsset : ""} */}
                             </b><br />
                             IHCAFE Payment: <b>{exportLots ? exportLots[0].ihcafePaymentValue + ' ' + exportLots[0].ihcafePaymentAsset : `Coming Soon`}
@@ -83,10 +83,13 @@ export const EconomicsAndTransparency = ({
                         <h3 style={{ 'padding-bottom': '0.5em' }}>Catracha Coffee</h3>
 
                         <p>
-                            FOB base: <b>{importLots ? importLots[0].fobBasePaymentValue + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
-                            FOB premium: <b>{importLots ? importLots[0].fobPremiumPaymentValue + ' ' + importLots[0].fobPremiumPaymentAsset : `Coming Soon`}</b><br />
-                            FOB Catracha Community contribution: <b>{importLots ? importLots[0].catrachaCommunityContributionPaymentValue + ' ' + importLots[0].catrachaCommunityContributionPaymentAsset : `Coming Soon`}</b><br />
-                            FOB total: <b>{importLots ? parseFloat(importLots[0].fobBasePaymentValue) + parseFloat(importLots[0].fobPremiumPaymentValue) + parseFloat(importLots[0].catrachaCommunityContributionPaymentValue) + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
+                            FOB Base: <b>{importLots ? importLots[0].fobBasePaymentValue + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
+
+                            FOB Premium: <b>{importLots ? importLots[0].fobPremiumPaymentValue + ' ' + importLots[0].fobPremiumPaymentAsset : `Coming Soon`}</b><br />
+
+                            FOB Catracha Community: <b>{importLots ? importLots[0].catrachaCommunityContributionPaymentValue + ' ' + importLots[0].catrachaCommunityContributionPaymentAsset : `Coming Soon`}</b><br />
+
+                            FOB Total Per Pound: <b>{importLots ? ((parseFloat(importLots[0].fobBasePaymentValue) + parseFloat(importLots[0].fobPremiumPaymentValue) + parseFloat(importLots[0].catrachaCommunityContributionPaymentValue)) / parseFloat(importLots[0].absorbedWeight)).toFixed(2) + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
                         </p>
 
                     </Col>
