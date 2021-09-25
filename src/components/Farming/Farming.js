@@ -20,6 +20,7 @@ import paginate from '../../utils';
 const Farming = ({
 
     farmerName,
+    producerName,
 
     harvestNode,
     farmerPicture,
@@ -100,7 +101,7 @@ const Farming = ({
 
                                 <>
                                     <p>
-                                        Producer Name: <b>{farmerName}</b><br />
+                                        Producer: <b>{producerName}</b><br />
 
                                         Location: <b>{harvestCity}, {harvestState}</b><br />
 

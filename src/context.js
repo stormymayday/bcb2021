@@ -18,7 +18,9 @@ const AppProvider = ({ children }) => {
             farmers {
 
                 _id
+
                 farmerName
+                producerName
 
                 harvestNode {
 

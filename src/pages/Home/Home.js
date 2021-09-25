@@ -90,6 +90,7 @@ export const Home = () => {
             <Farming
 
                 farmerName={farmer.farmerName}
+                producerName={farmer.producerName}
 
                 harvestNode={farmer.harvestNode ? farmer.harvestNode : null}
                 farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : null}
