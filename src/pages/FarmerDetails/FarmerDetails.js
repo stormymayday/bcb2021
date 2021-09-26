@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../../components/Loading/Loading';
-import HarvestList from '../../components/HarvestList/HarvestList';
+
 import Pagination from '../../components/Pagination/Pagination';
 import paginate from '../../utils';
 

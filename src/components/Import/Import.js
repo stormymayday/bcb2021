@@ -13,7 +13,6 @@ import JourneyMap from '../JourneyMap/JourneyMap';
 
 import Pagination from '../../components/Pagination/Pagination';
 import paginate from '../../utils';
-import HarvestList from '../HarvestList/HarvestList';
 
 export const Import = ({
 
