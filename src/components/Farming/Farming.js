@@ -181,6 +181,8 @@ const Farming = ({
 
                                     lots={harvestLots ? paginate(harvestLots) : []}
 
+                                    lotType={'harvest'}
+
                                 />
 
                             </Card.Body>

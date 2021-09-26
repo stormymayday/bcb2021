@@ -237,6 +237,8 @@ export const ProcessingExport = ({
 
                                             lots={exportLots ? paginate(exportLots) : []}
 
+                                            lotType={'export'}
+
                                         />
 
                                     </Card.Body>

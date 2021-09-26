@@ -11,7 +11,7 @@ import {
     PageButton
 } from './Pagination.styles';
 
-import HarvestLotCard from '../HarvestLotCard/HarvestLotCard';
+import LotCard from '../LotCard/LotCard';
 
 // import { useFetch } from './useFetch'
 // import Follower from './Follower'
@@ -97,7 +97,7 @@ const Pagination = (props) => {
 
                                 // return <HarvestLotCard key={item.id} harvestLot={item} />
 
-                                return <HarvestLotCard key={item._id} lot={item} />
+                                return <LotCard key={item._id} lot={item} lotType={props.lotType} />
 
                             })
 

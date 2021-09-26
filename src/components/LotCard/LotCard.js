@@ -9,10 +9,10 @@ import {
     CardText,
     CardHeader,
     CardButton
-} from './HarvestLotCard.styles';
+} from './LotCard.styles';
 
 
-const HarvestLotCard = (props) => {
+const LotCard = (props) => {
 
     useEffect(() => {
 
@@ -117,6 +117,18 @@ const HarvestLotCard = (props) => {
 
                         null
                 }
+                {/* Rendering Cupping Score PDF if lotType is export */}
+                {
+                    props.lotType === 'export' && props.lot.documents
+
+                        ?
+
+                        <span><a href={props.lot.documents[0]} target="_blank">Cupping Score</a><br /></span>
+
+                        :
+
+                        null
+                }
 
             </CardText>
             {/* <CardButton>Learn More</CardButton> */}
@@ -124,4 +136,4 @@ const HarvestLotCard = (props) => {
     )
 }
 
-export default HarvestLotCard;
+export default LotCard;
