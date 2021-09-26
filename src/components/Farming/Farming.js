@@ -49,7 +49,7 @@ const Farming = ({
 
 }) => {
 
-    // Summarizing Total Weigh
+    // Summarizing Coffee Cherry Total Weight
     let coffeeCherryTotalWeight = 0;
 
     if (harvestLots) {
@@ -59,7 +59,6 @@ const Farming = ({
     }
 
     // Filtering out the Wet Parchment lots
-
     let filteredWetMillLots50 = 0;
 
     let filteredWetMillLots15 = 0;
@@ -73,6 +72,18 @@ const Farming = ({
         filteredWetMillLots15 = wetMillLots.filter(function (wetMillLot) {
             return wetMillLot.productName === 'Wet Parchment' && wetMillLot.images[0] !== "";
         });
+
+    }
+
+    // Summarizing Wet Parchment Total Weight at 50 and 15% moisture
+    let wetParchmentotalWeight50 = 0;
+    let wetParchmentotalWeight15 = 0;
+
+    if (filteredWetMillLots50 && filteredWetMillLots15) {
+
+        wetParchmentotalWeight50 = filteredWetMillLots50.reduce(function (acc, obj) { return acc + parseFloat(obj.absorbedWeight); }, 0);
+
+        wetParchmentotalWeight15 = filteredWetMillLots15.reduce(function (acc, obj) { return acc + parseFloat(obj.absorbedWeight); }, 0);
 
     }
 
@@ -198,7 +209,8 @@ const Farming = ({
 
                                         Elevation: <b>{wetMillElevation} {wetMillElevationUnit}</b><br />
 
-                                        Wet Parchment Total Weight: <b>{wetMilltTotalAbsorbedWeight} {wetMillTotalAbsorbedWeightUnit}</b><br />
+                                        {/* Total weight at 50% moisture */}
+                                        Wet Parchment Total Weight: <b>{wetParchmentotalWeight50} {wetMillTotalAbsorbedWeightUnit}</b><br />
 
                                         Total number of wet parchment lots: <b>{filteredWetMillLots50.length + filteredWetMillLots15.length}</b><br />
                                     </p>
@@ -232,6 +244,7 @@ const Farming = ({
                 </Row>
 
                 <Accordion style={{ 'margin-top': '3rem' }}>
+
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="0">
                             <button className='bttn bttn-primary'>{filteredWetMillLots50 ? `Wet Mill Lots (50% moisture)` : `Wet Mill Lots (50% moisture) Coming Soon`}</button>
@@ -251,6 +264,7 @@ const Farming = ({
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>
+
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="1">
                             <button className='bttn bttn-primary'>{filteredWetMillLots15 ? `Wet Mill Lots (15% moisture)` : `Wet Mill Lots (15% moisture) Coming Soon`}</button>
