@@ -26,6 +26,7 @@ import ProcessingExport from '../../components/ProcessingExport/ProcessingExport
 import Import from '../../components/Import/Import';
 import Roasting from '../../components/Roasting/Roasting';
 import Economics from '../../components/EconomicsAndTransparency/EconomicsAndTransparency';
+import ScrollToTop from '../../components/ScrollToTop/ScrollTopTop';
 import Footer from '../../components/Footer/Footer';
 
 // Importing default farm picture
@@ -209,8 +210,13 @@ const FarmerDetails = () => {
                 farmer.farmerName
 
                     ?
+                    <>
 
-                    <Footer />
+                        <Footer />
+
+                        <ScrollToTop />
+
+                    </>
 
                     :
 
