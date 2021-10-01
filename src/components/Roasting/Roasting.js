@@ -10,6 +10,7 @@ import oldSoullogo from '../../images/oldsoullogo-trans.png';
 import threeOneNineLogo from '../../images/3-19-logo.jpg';
 import hedgeCoffeeLogo from '../../images/HedgeCoffeeLogo.png';
 import andyTownLogo from '../../images/AndyTownLogo.png';
+import andyTownLogoWhite from '../../images/AndytownLogo_white.png';
 import exploradoraCoffeeLogo from '../../images/ExploradoraCoffeeLogo.jpg';
 import hSCoffeeRoastersLogo from '../../images/H&SCoffeeRoastersLogo.png';
 
@@ -222,16 +223,16 @@ export const Roasting = ({
                                     <a href="https://www.andytownsf.com/" target="_blank">
 
                                         <Card.Img
-                                            className="d-block mx-auto img-fluid w-50 img-thumbnail"
+                                            className="d-block mx-auto img-fluid w-50"
                                             variant="top"
-                                            src={andyTownLogo}
-                                            style={{ 'margin-bottom': '1rem', 'margin-top': '1rem', 'max-width': '40%' }}
+                                            src={andyTownLogoWhite}
+                                            style={{ 'padding-top': '2rem', 'padding-bottom': '3rem' }}
                                         />
 
                                     </a>
 
                                     <Card.Text >
-                                        <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>Andytown Coffee Roasters</h3>
+                                        {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>Andytown Coffee Roasters</h3> */}
                                         Andytown Coffee Roasters was founded in 2014 by baristas Michael McCrory and Lauren Crabbe to bring specialty coffee roasting to the Outer Sunset in San Francisco.
                                         Andytown is built on a foundation of quality, approachability, and transparency. We are constantly working to improve ourselves, our product, and the world in which we live.
                                     </Card.Text>
