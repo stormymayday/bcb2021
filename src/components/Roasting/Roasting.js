@@ -368,6 +368,8 @@ export const Roasting = ({
 
                                                         lots={roasterIntakeLots ? paginate(roasterIntakeLots) : []}
 
+                                                        lotType={'roasterIntake'}
+
                                                     />
 
                                                 </Card.Body>

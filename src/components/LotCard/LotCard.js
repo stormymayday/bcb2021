@@ -107,7 +107,7 @@ const LotCard = (props) => {
                 }
                 {/* Displaying Import Lot Transfer Date*/}
                 {
-                    props.lot.transferDate
+                    props.lot.transferDate && props.lotType !== 'roasterIntake'
 
                         ?
 
