@@ -9,7 +9,6 @@ import qcclogo from '../../images/qc-logo-p-500.png';
 import oldSoullogo from '../../images/oldsoullogo-trans.png';
 import threeOneNineLogo from '../../images/3-19-logo.jpg';
 import hedgeCoffeeLogo from '../../images/HedgeCoffeeLogo.png';
-import andyTownLogo from '../../images/AndyTownLogo.png';
 import andyTownLogoWhite from '../../images/AndytownLogo_white.png';
 import exploradoraCoffeeLogo from '../../images/ExploradoraCoffeeLogo.jpg';
 import hSCoffeeRoastersLogo from '../../images/H&SCoffeeRoastersLogo.png';
