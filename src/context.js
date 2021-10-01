@@ -466,6 +466,87 @@ const AppProvider = ({ children }) => {
                     }
                 }
 
+                roasterIntakeNode {
+
+                    _id
+
+                    tagline
+                    websiteUrl
+
+                    roasterIntakeNodeId
+
+                    totaAbsorbedWeight
+                    totalAbsorbedWeightUnit
+
+                    organizationId
+                    marketplaceId
+                    defaultLocationId
+                    nodeName
+                    nodeType
+                    nodeDetailType
+                    createdDate
+                    lastModifiedDate
+                    organizationName
+
+                    images
+                    videos
+                    documents
+
+                    value
+                    valueUnit
+                    unitValue
+                    unitValueUnit
+
+                    locationId
+                    name
+                    country
+                    city
+                    state
+                    latitude
+                    longitude
+                    elevation
+                    elevationUnit
+
+                    address
+
+                    roasterIntakeLots {
+
+                        _id
+
+                        roasterIntakeLotId
+                        roasterIntakeNodeId
+
+                        organizationId
+                        marketplaceId
+                        productId
+                        lotName
+                        lotType
+                        lotDetailType
+                        createdDate
+                        lastModifiedDate
+                        productName
+                        productToken
+                        productSku
+                        organizationName
+                        currentWeight
+                        currentWeightUnit
+                        absorbedWeight
+                        absorbedWeightUnit
+                        quality
+                        lotIsOpen
+
+                        images
+                        documents
+                        videos
+
+                        numberOfBags
+                        damage
+                        transferDate
+                        receivedDate
+
+                    }
+
+                }
 
             }
         }
