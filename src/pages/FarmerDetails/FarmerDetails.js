@@ -186,6 +186,8 @@ const FarmerDetails = () => {
                     <Roasting
 
                         farmerName={farmer.farmerName}
+                        roasterIntakeNode={farmer.roasterIntakeNode ? farmer.roasterIntakeNode : null}
+                        roasterIntakeLots={farmer.roasterIntakeNode ? farmer.roasterIntakeNode.roasterIntakeLots : null}
 
                     >
 

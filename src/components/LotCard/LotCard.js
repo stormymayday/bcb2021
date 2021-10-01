@@ -117,6 +117,18 @@ const LotCard = (props) => {
 
                         null
                 }
+                {/* Displaying Roaster Lot Received Date*/}
+                {
+                    props.lot.receivedDate
+
+                        ?
+
+                        <span>Received Date: {props.lot.receivedDate}<br /></span>
+
+                        :
+
+                        null
+                }
                 {/* Rendering Cupping Score PDF if lotType is export */}
                 {
                     props.lotType === 'export' && props.lot.documents

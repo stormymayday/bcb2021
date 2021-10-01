@@ -28,6 +28,7 @@ export const Roasting = ({
 
     farmerName,
     roasterIntakeNode,
+    roasterIntakeLots,
     roasterNode
 
 }) => {
@@ -350,25 +351,25 @@ export const Roasting = ({
 
                                     <p style={{ 'color': 'white' }}>
 
-                                        Location: <b>Coming Soon</b><br />
+                                        Location: <b>{roasterIntakeNode.city}, {roasterIntakeNode.state}, {roasterIntakeNode.country}</b><br />
 
-                                        Green Coffee Total Weight: <b>Coming Soon</b><br />
+                                        Green Coffee Total Weight: <b>{roasterIntakeLots ? roasterIntakeLots[0].absorbedWeight + ' ' + roasterIntakeLots[0].absorbedWeightUnit + 's' : "Coming Soon"}</b><br />
 
                                     </p>
 
                                     <Accordion style={{ 'margin-bottom': '1.5rem' }}>
                                         <Card>
                                             <Accordion.Toggle as={Card.Header} eventKey="0">
-                                                <button className='bttn bttn-primary'>Roaster Intake Lots (Coming Soon)</button>
+                                                <button className='bttn bttn-primary'>Roaster Intake Lots</button>
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="0">
                                                 <Card.Body>
 
-                                                    {/* <Pagination
+                                                    <Pagination
 
-                                            lots={coffeeGreenLots ? paginate(coffeeGreenLots) : []}
+                                                        lots={roasterIntakeLots ? paginate(roasterIntakeLots) : []}
 
-                                        /> */}
+                                                    />
 
                                                 </Card.Body>
                                             </Accordion.Collapse>

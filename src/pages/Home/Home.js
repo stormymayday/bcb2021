@@ -170,12 +170,17 @@ export const Home = () => {
             </Import>
 
             <Roasting
+
                 farmerName={farmer.farmerName}
+                roasterIntakeNode={farmer.roasterIntakeNode ? farmer.roasterIntakeNode : null}
+                roasterIntakeLots={farmer.roasterIntakeNode ? farmer.roasterIntakeNode.roasterIntakeLots : null}
+
             ></Roasting>
 
             <Economics
 
                 farmerName={farmer.farmerName}
+
                 exporterIntakeLots={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.exporterIntakeLots : null}
 
                 exportLots={farmer.exportNode ? farmer.exportNode.exportLots : null}
