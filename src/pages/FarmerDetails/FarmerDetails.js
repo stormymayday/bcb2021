@@ -173,7 +173,13 @@ const FarmerDetails = () => {
             />
 
             {
-                farmer.farmerName === 'Claudia & Juan' || farmer.farmerName === 'Luis'
+                farmer.farmerName === 'Claudia & Juan' ||
+                    farmer.farmerName === 'Luis' ||
+                    farmer.farmerName === 'Atanacio' ||
+                    farmer.farmerName === 'Maria Adela' ||
+                    farmer.farmerName === 'Fidelina' ||
+                    farmer.farmerName === 'Francis Omar' ||
+                    farmer.farmerName === 'Jose Antonio'
 
                     ?
 
