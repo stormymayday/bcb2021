@@ -12,6 +12,7 @@ import hedgeCoffeeLogo from '../../images/HedgeCoffeeLogo.png';
 import andyTownLogoWhite from '../../images/AndytownLogo_white.png';
 import exploradoraCoffeeLogo from '../../images/ExploradoraCoffeeLogo.jpg';
 import HandSCoffeeRoastersLogo from '../../images/HandSLogo.png';
+import abanicoLogo from '../../images/AbanicoLogo.png';
 
 import Button from 'react-bootstrap/Button';
 
@@ -321,6 +322,45 @@ export const Roasting = ({
                                     <Button
                                         variant="outline-light"
                                         href={'https://hscoffeeroasters.com/'}
+                                        target="_blank"
+                                    >
+                                        <b>Shop</b>
+                                    </Button>
+
+                                </>
+
+                                :
+
+                                null
+                        }
+
+                        {/* Abanico Coffee Roasters - Mirian */}
+                        {
+                            farmerName === "Mirian"
+
+                                ?
+
+                                <>
+
+                                    <a href="https://www.abanicocoffee.com/" target="_blank">
+
+                                        <Card.Img
+                                            className="d-block mx-auto img-fluid w-50"
+                                            variant="top"
+                                            src={abanicoLogo}
+                                            style={{}}
+                                        />
+
+                                    </a>
+
+                                    <Card.Text >
+                                        {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>H+S Coffee Roasters</h3> */}
+                                        For us, a cafecito sparks sentiments of nostalgia, happiness, attitudes, connection to culture, love and family. We are committed to providing quality by sourcing a fine global selection of specialty coffee, roast in small batches and develop roasts for each unique coffee. Our goal is to provide lovely coffee and inspire you as you.
+                                    </Card.Text>
+
+                                    <Button
+                                        variant="outline-light"
+                                        href={'https://www.abanicocoffee.com/'}
                                         target="_blank"
                                     >
                                         <b>Shop</b>
