@@ -11,7 +11,7 @@ import threeOneNineLogo from '../../images/3-19-logo.jpg';
 import hedgeCoffeeLogo from '../../images/HedgeCoffeeLogo.png';
 import andyTownLogoWhite from '../../images/AndytownLogo_white.png';
 import exploradoraCoffeeLogo from '../../images/ExploradoraCoffeeLogo.jpg';
-import hSCoffeeRoastersLogo from '../../images/H&SCoffeeRoastersLogo.png';
+import HandSCoffeeRoastersLogo from '../../images/HandSLogo.png';
 
 import Button from 'react-bootstrap/Button';
 
@@ -303,10 +303,10 @@ export const Roasting = ({
                                     <a href="https://hscoffeeroasters.com/" target="_blank">
 
                                         <Card.Img
-                                            className="d-block mx-auto img-fluid w-50 img-thumbnail"
+                                            className="d-block mx-auto img-fluid w-50"
                                             variant="top"
-                                            src={hSCoffeeRoastersLogo}
-                                            style={{ 'padding': '3rem', 'margin-bottom': '1rem', 'margin-top': '1rem', 'max-width': '40%' }}
+                                            src={HandSCoffeeRoastersLogo}
+                                            style={{ 'padding-top': '2rem', 'padding-bottom': '3rem' }}
                                         />
 
                                     </a>
