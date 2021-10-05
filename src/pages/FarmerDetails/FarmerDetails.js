@@ -190,6 +190,9 @@ const FarmerDetails = () => {
                         roasterIntakeNode={farmer.roasterIntakeNode ? farmer.roasterIntakeNode : null}
                         roasterIntakeLots={farmer.roasterIntakeNode ? farmer.roasterIntakeNode.roasterIntakeLots : null}
 
+                        roastingNode={farmer.roastingNode ? farmer.roastingNode : null}
+                        roastingLots={farmer.roastingNode ? farmer.roastingNode.roastingLots : null}
+
                     >
 
                     </Roasting>

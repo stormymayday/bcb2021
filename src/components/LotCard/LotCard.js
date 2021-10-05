@@ -142,6 +142,32 @@ const LotCard = (props) => {
                         null
                 }
 
+                {/* Rendering Roast Date if lotType is roasting */}
+                {
+                    props.lotType === 'roasting' && props.lot.roastDate
+
+                        ?
+
+                        <span>Roast date: {props.lot.roastDate}<br /></span>
+
+                        :
+
+                        null
+                }
+
+                {/* Rendering Actor if lotType is roasting */}
+                {
+                    props.lotType === 'roasting' && props.lot.actor
+
+                        ?
+
+                        <span>Roasted by: {props.lot.actor}<br /></span>
+
+                        :
+
+                        null
+                }
+
             </CardText>
             {/* <CardButton>Learn More</CardButton> */}
         </Card>

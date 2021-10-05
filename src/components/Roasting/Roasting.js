@@ -29,7 +29,8 @@ export const Roasting = ({
     farmerName,
     roasterIntakeNode,
     roasterIntakeLots,
-    roasterNode
+    roastingNode,
+    roastingLots
 
 }) => {
 
@@ -432,7 +433,7 @@ export const Roasting = ({
 
                 {/* Roasting */}
                 {
-                    roasterNode ?
+                    roastingNode ?
                         <>
                             <Row>
 
@@ -442,24 +443,26 @@ export const Roasting = ({
 
                                     <p style={{ 'color': 'white' }}>
 
-                                        Location: <b>Coming Soon</b><br />
+                                        Location: <b>{roastingNode.city}, {roastingNode.state}, {roastingNode.country}</b><br />
 
-                                        Weight: <b>Coming Soon</b><br />
+                                        Roasted Coffee Weight: <b>{roastingLots ? roastingLots[0].absorbedWeight + ' ' + roastingLots[0].absorbedWeightUnit + 's' : "Coming Soon"}</b><br />
 
                                     </p>
                                     <Accordion style={{ 'margin-bottom': '3.5rem' }}>
                                         <Card>
                                             <Accordion.Toggle as={Card.Header} eventKey="0">
-                                                <button className='bttn bttn-primary'>Roasting Lots (Coming Soon)</button>
+                                                <button className='bttn bttn-primary'>Roasting Lots</button>
                                             </Accordion.Toggle>
                                             <Accordion.Collapse eventKey="0">
                                                 <Card.Body>
 
-                                                    {/* <Pagination
+                                                    <Pagination
 
-                                    lots={harvestLots ? paginate(harvestLots) : []}
+                                                        lots={roastingLots ? paginate(roastingLots) : []}
 
-                                /> */}
+                                                        lotType={'roasting'}
+
+                                                    />
 
                                                 </Card.Body>
                                             </Accordion.Collapse>
