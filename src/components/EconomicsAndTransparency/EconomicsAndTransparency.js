@@ -101,14 +101,14 @@ export const EconomicsAndTransparency = ({
 
                             <Col lg={4} sm={12}>
 
-                                <h3 style={{ 'padding-bottom': '0.5em' }}>Roaster</h3>
+                                <h3 style={{ 'padding-bottom': '0.5em' }}>Queen City</h3>
 
                                 <p>
-                                    QC FOB: <b>Coming Soon</b><br />
-                                    QC import cost: <b>Coming Soon</b><br />
-                                    QC freight: <b>Coming Soon</b><br />
-                                    QC roasting labor: <b>Coming Soon</b><br />
-                                    QC total cost at roaster: <b>Coming Soon</b><br />
+                                    FOB: <b>Coming Soon</b><br />
+                                    Import Cost: <b>Coming Soon</b><br />
+                                    Freight: <b>Coming Soon</b><br />
+                                    Roasting Labor: <b>Coming Soon</b><br />
+                                    Total Cost at Roaster: <b>Coming Soon</b><br />
                                 </p>
 
                             </Col>
