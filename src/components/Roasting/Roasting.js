@@ -34,6 +34,15 @@ export const Roasting = ({
 
 }) => {
 
+    // Summarizing Roasted Coffee Total Weight
+    let roastedCoffeeTotalWeight = 0;
+
+    if (roastingLots) {
+
+        roastedCoffeeTotalWeight = roastingLots.reduce(function (acc, obj) { return acc + parseFloat(obj.absorbedWeight); }, 0);
+
+    }
+
     return (
 
         <div className="roasting-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='roasting'>
@@ -445,7 +454,7 @@ export const Roasting = ({
 
                                         Location: <b>{roastingNode.city}, {roastingNode.state}, {roastingNode.country}</b><br />
 
-                                        Roasted Coffee Weight: <b>{roastingLots ? roastingLots[0].absorbedWeight + ' ' + roastingLots[0].absorbedWeightUnit + 's' : "Coming Soon"}</b><br />
+                                        Roasted Coffee Weight: <b>{roastedCoffeeTotalWeight + ' ' + roastingLots[0].absorbedWeightUnit + 's'}</b><br />
 
                                     </p>
                                     <Accordion style={{ 'margin-bottom': '3.5rem' }}>
