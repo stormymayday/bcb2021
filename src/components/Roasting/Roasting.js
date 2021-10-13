@@ -13,6 +13,10 @@ import andyTownLogoWhite from '../../images/AndytownLogo_white.png';
 import exploradoraCoffeeLogo from '../../images/ExploradoraCoffeeLogo.jpg';
 import HandSCoffeeRoastersLogo from '../../images/HandSLogo.png';
 import abanicoLogo from '../../images/AbanicoLogo.png';
+import backporchLogo from '../../images/BackporchLogo.jpg';
+import highwireLogo from '../../images/HighwireLogo.jpg';
+import sunsetRoastersLogo from '../../images/SunsetRoastersLogo.jpg';
+import rubyColorfulCoffeesLogo from '../../images/RubyColorfulCoffeesLogo.png';
 
 import Button from 'react-bootstrap/Button';
 
@@ -83,7 +87,8 @@ export const Roasting = ({
 
                                     <Card.Text>
                                         {/* <h3 style={{ color: 'white' }}>Queen City Collective Coffee</h3> */}
-                                        Queen City is a collective coffee company in Denver building community from farm to cup. Our coffee comes from farmers and producers we know, and is then small-batch roasted in the city we love. We believe that honest relationships, from farmers to consumers, achieve an equitable and sustainable coffee supply chain.
+                                        "We believe that honest relationships, from farmers to consumers, achieve an equitable and sustainable coffee supply chain.
+                                        Collective coffee means we’re doing this together - we have real, tangible connection with our coffee farmers; we know the conditions of their production; we then small-batch roast their coffee in the city we love and we proudly serve it in Denver’s historic Baker neighborhood. We believe everyone is welcome to this ragtag group because good coffee should build the collective good."
                                     </Card.Text>
 
                                     <Button
@@ -123,7 +128,7 @@ export const Roasting = ({
 
                                     <Card.Text >
                                         {/* <h3 style={{ color: 'white' }}>Queen City Collective Coffee</h3> */}
-                                        We are skilled roasters, artisans, and neighbors. We are a platform for local farmers, brewers and purveyors. We are a community space and eatery that connects and celebrates its patrons.
+                                        "We are skilled roasters, artisans, and neighbors. We are a platform for local farmers, brewers and purveyors. We are a community space and eatery that connects and celebrates its patrons."
                                     </Card.Text>
 
                                     <Button
@@ -164,9 +169,8 @@ export const Roasting = ({
 
                                     <Card.Text >
                                         <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>3-19 Coffee Roasters</h3>
-                                        3-19 Coffee was founded out of a passion for purpose and our love for memorable coffee experiences.<br />
-
-                                        We source coffee that we believe we can help the global coffee farmer community.We roast small, carefully curated selections of coffee to share and enjoy.
+                                        "3-19 Coffee was founded out of a passion for purpose and our love for memorable coffee experiences.
+                                        We source coffee that we believe we can help the global coffee farmer community.We roast small, carefully curated selections of coffee to share and enjoy."
                                     </Card.Text>
 
                                     <Button
@@ -284,8 +288,8 @@ export const Roasting = ({
 
                                     <Card.Text >
                                         {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>Andytown Coffee Roasters</h3> */}
-                                        Exploradora is the feminine form of “scout” in Spanish. We love all that Exploradora stands for: Learning, Growing, Dreaming, Exploring.
-                                        We want to see communities from all over the world impact each other. Exploradora connects the dots - sourcing thoughtfully and empowering others. Taste our growing list of amazing women-grown coffees and know that your dollars are going to work in coffee country and main street America.
+                                        "Exploradora is the feminine form of “scout” in Spanish. We love all that Exploradora stands for: Learning, Growing, Dreaming, Exploring.
+                                        We want to see communities from all over the world impact each other. Exploradora connects the dots - sourcing thoughtfully and empowering others. Taste our growing list of amazing women-grown coffees and know that your dollars are going to work in coffee country and main street America."
                                     </Card.Text>
 
                                     <Button
@@ -324,9 +328,8 @@ export const Roasting = ({
 
                                     <Card.Text >
                                         {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>H+S Coffee Roasters</h3> */}
-                                        From its origins in the soil to the finished cup, we have a deep seeded love of coffee. Located at 7,200ft in the great plains of Wyoming, we roast smooth, sweet and accessible coffee blends enjoyable by everyone as well as intriguing single origins that challenge and excite your palate. <br />
-
-                                        We place a great deal of focus on sourcing coffees based not only on their quality in the cup, but also on the quality of life that every worker receives during a coffee's long journey from the origin to our roastery. Labor is important. We pledge that every coffee we offer has been vetted to ensure the best working conditions that we can hope for in any given origin.
+                                        "From its origins in the soil to the finished cup, we have a deep seeded love of coffee. Located at 7,200ft in the great plains of Wyoming, we roast smooth, sweet and accessible coffee blends enjoyable by everyone as well as intriguing single origins that challenge and excite your palate.
+                                        We place a great deal of focus on sourcing coffees based not only on their quality in the cup, but also on the quality of life that every worker receives during a coffee's long journey from the origin to our roastery. Labor is important. We pledge that every coffee we offer has been vetted to ensure the best working conditions that we can hope for in any given origin."
                                     </Card.Text>
 
                                     <Button
@@ -365,7 +368,7 @@ export const Roasting = ({
 
                                     <Card.Text >
                                         {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>H+S Coffee Roasters</h3> */}
-                                        For us, a cafecito sparks sentiments of nostalgia, happiness, attitudes, connection to culture, love and family. We are committed to providing quality by sourcing a fine global selection of specialty coffee, roast in small batches and develop roasts for each unique coffee. Our goal is to provide lovely coffee and inspire you as you.
+                                        "For us, a cafecito sparks sentiments of nostalgia, happiness, attitudes, connection to culture, love and family. We are committed to providing quality by sourcing a fine global selection of specialty coffee, roast in small batches and develop roasts for each unique coffee. Our goal is to provide lovely coffee and inspire you as you."
                                     </Card.Text>
 
                                     <Button
@@ -381,6 +384,166 @@ export const Roasting = ({
                                 :
 
                                 null
+                        }
+
+                        {/* Backporch Coffee Roasters - Adan Hernández */}
+                        {
+                            farmerName === "Adan"
+
+                                ?
+
+                                <>
+
+                                    <a href="https://www.backporchcoffeeroasters.com/" target="_blank">
+
+                                        <Card.Img
+                                            className="d-block mx-auto img-fluid w-50 img-thumbnail"
+                                            variant="top"
+                                            src={backporchLogo}
+                                            style={{ 'margin-bottom': '1rem', 'margin-top': '1rem', 'max-width': '40%' }}
+                                        />
+
+                                    </a>
+
+                                    <Card.Text >
+                                        {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>H+S Coffee Roasters</h3> */}
+                                        Backporch Coffee Roasters is born and raised Bend. Owner and operator, Dave Beach has been buying and roasting coffee for 16 years. Dave is passionate about bringing the best out in coffees (and people) and making sure that those who grow the coffee, are compensated fairly for their work.
+                                    </Card.Text>
+
+                                    <Button
+                                        variant="outline-light"
+                                        href={'https://www.backporchcoffeeroasters.com/'}
+                                        target="_blank"
+                                    >
+                                        <b>Shop</b>
+                                    </Button>
+
+                                </>
+
+                                :
+
+                                null
+
+                        }
+
+                        {/* Highwire Coffee Roasters - Gumercindo Ventura */}
+                        {
+                            farmerName === "Gumercindo"
+
+                                ?
+
+                                <>
+
+                                    <a href="https://www.highwirecoffee.com/" target="_blank">
+
+                                        <Card.Img
+                                            className="d-block mx-auto img-fluid w-50 img-thumbnail"
+                                            variant="top"
+                                            src={highwireLogo}
+                                            style={{ 'margin-bottom': '1rem', 'margin-top': '1rem', 'max-width': '40%' }}
+                                        />
+
+                                    </a>
+
+                                    <Card.Text >
+                                        {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>H+S Coffee Roasters</h3> */}
+                                        "We started Highwire because we believe a coffee company can be a force for good. What does that mean to us? "Good" here means a place where people have jobs and spaces that nourish them. A place where our people develop professionally and have a sense of purpose at work. Where their voice matters. It also means we look out for one another, share what we have, partner with people that have similar values and make choices that promote sustainability."
+                                    </Card.Text>
+
+                                    <Button
+                                        variant="outline-light"
+                                        href={'https://www.highwirecoffee.com/'}
+                                        target="_blank"
+                                    >
+                                        <b>Shop</b>
+                                    </Button>
+
+                                </>
+
+                                :
+
+                                null
+
+                        }
+
+                        {/* Sunset Roasters - David Benitez */}
+                        {
+                            farmerName === "David"
+
+                                ?
+
+                                <>
+
+                                    <a href="https://www.sunsetroasters.com/" target="_blank">
+
+                                        <Card.Img
+                                            className="d-block mx-auto img-fluid w-50 img-thumbnail"
+                                            variant="top"
+                                            src={sunsetRoastersLogo}
+                                            style={{ 'margin-bottom': '1rem', 'margin-top': '1rem', 'max-width': '40%' }}
+                                        />
+
+                                    </a>
+
+                                    <Card.Text >
+                                        {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>H+S Coffee Roasters</h3> */}
+                                        "We feel like a pound of coffee shouldn’t be so expensive that the everyday sipper or unofficial connoisseur would be restricted from enjoying it. Sunset Roasters is all about flavor, friendship, and community. Thank you for being a part of our community!"
+                                    </Card.Text>
+
+                                    <Button
+                                        variant="outline-light"
+                                        href={'https://www.sunsetroasters.com/'}
+                                        target="_blank"
+                                    >
+                                        <b>Shop</b>
+                                    </Button>
+
+                                </>
+
+                                :
+
+                                null
+
+                        }
+
+                        {/* Ruby Colorful Coffees - Rigoberto Rodríguez */}
+                        {
+                            farmerName === "Rigoberto"
+
+                                ?
+
+                                <>
+
+                                    <a href="https://rubycoffeeroasters.com/" target="_blank">
+
+                                        <Card.Img
+                                            className="d-block mx-auto img-fluid w-50 img-thumbnail"
+                                            variant="top"
+                                            src={rubyColorfulCoffeesLogo}
+                                            style={{ 'margin-bottom': '1rem', 'margin-top': '1rem', 'max-width': '40%' }}
+                                        />
+
+                                    </a>
+
+                                    <Card.Text >
+                                        {/* <h3 style={{ color: 'white', 'margin-top': '2.5rem', 'margin-bottom': '1.5rem' }}>H+S Coffee Roasters</h3> */}
+                                        "We are guided by the notion that responsible business can do good and create value for everyone involved, from the producers we work with to our dear and valuable supporters drinking our coffees at home or preparing them in their shops. We are driven to present our menu in a way that celebrates the producer while also making the coffees inviting and accessible for everyday drinking."
+                                    </Card.Text>
+
+                                    <Button
+                                        variant="outline-light"
+                                        href={'https://rubycoffeeroasters.com/'}
+                                        target="_blank"
+                                    >
+                                        <b>Shop</b>
+                                    </Button>
+
+                                </>
+
+                                :
+
+                                null
+
                         }
 
                     </Card.Body>

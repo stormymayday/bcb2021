@@ -180,7 +180,11 @@ const FarmerDetails = () => {
                     farmer.farmerName === 'Fidelina' ||
                     farmer.farmerName === 'Francis Omar' ||
                     farmer.farmerName === 'Mirian' ||
-                    farmer.farmerName === 'Jose Antonio'
+                    farmer.farmerName === 'Jose Antonio' ||
+                    farmer.farmerName === 'Adan' ||
+                    farmer.farmerName === 'Gumercindo' ||
+                    farmer.farmerName === 'David' ||
+                    farmer.farmerName === 'Rigoberto'
 
                     ?
 
