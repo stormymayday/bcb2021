@@ -34,7 +34,7 @@ const LotCard = (props) => {
             </CardHeader>
             <CardText>
 
-                Absorbed weight: {props.lot.absorbedWeight} {props.lot.absorbedWeightUnit}<br />
+                Absorbed weight: {props.lot.absorbedWeight} {props.lot.absorbedWeightUnit}s<br />
 
                 {/* Not Displaying lot value if it is a harvest lot */}
                 {
@@ -105,8 +105,8 @@ const LotCard = (props) => {
 
                         null
                 }
-                {/* Displaying Import Lot Transfer Date*/}
-                {
+                {/* Not Displaying Import Lot Transfer Date*/}
+                {/* {
                     props.lot.transferDate && props.lotType !== 'roasterIntake'
 
                         ?
@@ -116,7 +116,8 @@ const LotCard = (props) => {
                         :
 
                         null
-                }
+                } */}
+
                 {/* Displaying Roaster Lot Received Date*/}
                 {
                     props.lot.receivedDate
@@ -142,6 +143,33 @@ const LotCard = (props) => {
                         null
                 }
 
+                {/* Roasting Lot attributes */}
+                {/* Rendering roastLossPercentage if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.roastLossPercentage
+
+                        ?
+
+                        <span>Roast Loss Percentage: {props.lot.roastLossPercentage}<br /></span>
+
+                        :
+
+                        null
+                }
+
+                {/* Rendering roastLossQuantity if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.roastLossQuantity
+
+                        ?
+
+                        <span>Roast Loss Quantity: {props.lot.roastLossQuantity}<br /></span>
+
+                        :
+
+                        null
+                }
+
                 {/* Rendering Roast Date if lotType is roasting */}
                 {
                     props.lotType === 'roasting' && props.lot.roastDate
@@ -155,18 +183,84 @@ const LotCard = (props) => {
                         null
                 }
 
-                {/* Rendering Actor if lotType is roasting */}
+                {/* Rendering varietal if lotType is roasting and attribute is not null */}
                 {
-                    props.lotType === 'roasting' && props.lot.actor
+                    props.lotType === 'roasting' && props.lot.varietal
 
                         ?
 
-                        <span>Roasted by: {props.lot.actor}<br /></span>
+                        <span>Varietal: {props.lot.varietal}<br /></span>
 
                         :
 
                         null
                 }
+
+                {/* Rendering roastType if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.roastType
+
+                        ?
+
+                        <span>Roast Type: {props.lot.roastType}<br /></span>
+
+                        :
+
+                        null
+                }
+
+                {/* Rendering cuppingScore if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.cuppingScore
+
+                        ?
+
+                        <span>Cupping Score: {props.lot.cuppingScore}<br /></span>
+
+                        :
+
+                        null
+                }
+
+                {/* Rendering cuppersNotes if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.cuppersNotes
+
+                        ?
+
+                        <span>Cuppers Notes: {props.lot.cuppersNotes}<br /></span>
+
+                        :
+
+                        null
+                }
+
+                {/* Rendering roasterActor if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.roasterActor
+
+                        ?
+
+                        <span>Roasted by: {props.lot.roasterActor}<br /></span>
+
+                        :
+
+                        null
+                }
+
+                {/* Rendering roastingNotes if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.roastingNotes
+
+                        ?
+
+                        <span>Notes: {props.lot.roastingNotes}<br /></span>
+
+                        :
+
+                        null
+                }
+
 
             </CardText>
             {/* <CardButton>Learn More</CardButton> */}
