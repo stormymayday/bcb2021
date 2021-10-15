@@ -141,7 +141,33 @@ export const ProcessingExport = ({
 
                             Location: <b>{exporterIntakeNode ? exporterIntakeCity + ', ' + exporterIntakeState : `Coming Soon`}</b><br />
 
-                            Dry Parchment Total Weight: <b>{dryParchmentLots != 0 ? dryParchmentLots[0].absorbedWeight + ' ' + dryParchmentLots[0].absorbedWeightUnit : `Coming Soon`}</b><br />
+                            Dry Parchment Total Weight: <b>
+
+                                {
+                                    dryParchmentLots != 0
+
+                                        ?
+
+                                        dryParchmentLots[0].absorbedWeight + ' ' +
+
+                                        (
+                                            dryParchmentLots[0].absorbedWeightUnit.endsWith('s')
+
+                                                ?
+
+                                                dryParchmentLots[0].absorbedWeightUnit
+
+                                                :
+
+                                                dryParchmentLots[0].absorbedWeightUnit + 's'
+                                        )
+
+                                        :
+
+                                        `Coming Soon`
+                                }
+
+                            </b><br />
 
                         </p>
 
@@ -253,7 +279,7 @@ export const ProcessingExport = ({
                 </Row>
 
             </Container>
-        </div>
+        </div >
     );
 }
 
