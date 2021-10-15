@@ -203,7 +203,33 @@ export const ProcessingExport = ({
 
                             Location: <b> {dryMillNode ? dryMillIntakeCity + ', ' + dryMillIntakeState : `Coming Soon`}</b><br />
 
-                            Green Coffee Total Weight: <b>{coffeeGreenLots != 0 ? coffeeGreenLots[0].absorbedWeight + ' ' + coffeeGreenLots[0].absorbedWeightUnit : `Coming Soon`}</b><br />
+                            Green Coffee Total Weight: <b>
+
+                                {
+                                    coffeeGreenLots != 0
+
+                                        ?
+
+                                        coffeeGreenLots[0].absorbedWeight + ' ' +
+
+                                        (
+                                            coffeeGreenLots[0].absorbedWeightUnit.endsWith('s')
+
+                                                ?
+
+                                                coffeeGreenLots[0].absorbedWeightUnit
+
+                                                :
+
+                                                coffeeGreenLots[0].absorbedWeightUnit + 's'
+                                        )
+
+                                        :
+
+                                        `Coming Soon`
+                                }
+
+                            </b><br />
 
                         </p>
 
