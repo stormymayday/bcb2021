@@ -124,7 +124,7 @@ const Farming = ({
 
                                         Coffee Varietal: <b> {harvestLots[0].coffeeVarietal}</b><br />
 
-                                        Coffee Cherry Total Weight: <b>{coffeeCherryTotalWeight} {harvestLots[0].absorbedWeightUnit}s</b><br />
+                                        Coffee Cherry Total Weight: <b>{coffeeCherryTotalWeight} {harvestLots[0].absorbedWeightUnit.endsWith('s') ? harvestLots[0].absorbedWeightUnit : harvestLots[0].absorbedWeightUnit + 's'}</b><br />
 
                                         Total number of harvest lots: <b>{numberOfHarvestLots}</b><br />
                                     </p>
