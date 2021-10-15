@@ -215,7 +215,7 @@ const Farming = ({
                                         Elevation: <b>{wetMillElevation} {wetMillElevationUnit}</b><br />
 
                                         {/* Total weight at 50% moisture */}
-                                        Wet Parchment Total Weight: <b>{wetParchmentotalWeight50} {wetMillTotalAbsorbedWeightUnit}</b><br />
+                                        Wet Parchment Total Weight: <b>{wetParchmentotalWeight50} {wetMillLots[0].absorbedWeightUnit.endsWith('s') ? wetMillLots[0].absorbedWeightUnit : wetMillLots[0].absorbedWeightUnit + 's'}</b><br />
 
                                         Total number of wet parchment lots: <b>{filteredWetMillLots50.length + filteredWetMillLots15.length}</b><br />
                                     </p>
