@@ -34,7 +34,7 @@ const LotCard = (props) => {
             </CardHeader>
             <CardText>
 
-                Weight: {props.lot.absorbedWeight} {props.lot.absorbedWeightUnit}s<br />
+                Weight: {props.lot.absorbedWeight} {props.lot.absorbedWeightUnit.endsWith('s') ? props.lot.absorbedWeightUnit : props.lot.absorbedWeightUnit + 's'}<br />
 
                 {/* Not Displaying lot value if it is a harvest lot */}
                 {
