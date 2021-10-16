@@ -125,7 +125,31 @@ export const Import = ({
                             </b><br />
 
                             Green Coffee Total Weight: <b>
-                                {importLots ? importLots[0].absorbedWeight + ' ' + importLots[0].absorbedWeightUnit : "Coming Soon"}
+
+                                {
+                                    importLots
+
+                                        ?
+
+                                        importLots[0].absorbedWeight + ' ' +
+
+                                        (
+                                            importLots[0].absorbedWeightUnit.endsWith('s')
+
+                                                ?
+
+                                                importLots[0].absorbedWeightUnit
+
+                                                :
+
+                                                importLots[0].absorbedWeightUnit + 's'
+                                        )
+
+                                        :
+
+                                        `Coming Soon`
+                                }
+
                             </b><br />
 
                         </p>
