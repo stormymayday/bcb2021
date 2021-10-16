@@ -270,7 +270,31 @@ export const ProcessingExport = ({
                             </b><br />
 
                             Green Coffee Total Weight: <b>
-                                {exportLots != null ? exportLots[0].absorbedWeight + ' ' + exportLots[0].absorbedWeightUnit : `Coming Soon`}
+
+                                {
+                                    exportLots != null
+
+                                        ?
+
+                                        exportLots[0].absorbedWeight + ' ' +
+
+                                        (
+                                            exportLots[0].absorbedWeightUnit.endsWith('s')
+
+                                                ?
+
+                                                exportLots[0].absorbedWeightUnit
+
+                                                :
+
+                                                exportLots[0].absorbedWeightUnit + 's'
+                                        )
+
+                                        :
+
+                                        `Coming Soon`
+                                }
+
                             </b><br />
 
                         </p>
