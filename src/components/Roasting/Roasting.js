@@ -643,7 +643,33 @@ export const Roasting = ({
 
                                         Location: <b>{roastingNode.city}, {roastingNode.state}, {roastingNode.country}</b><br />
 
-                                        Roasted Coffee Total Weight: <b>{roastedCoffeeTotalWeight.toFixed(2) + ' ' + roastingLots[0].absorbedWeightUnit + 's'}</b><br />
+                                        Roasted Coffee Total Weight: <b>
+
+                                            {
+                                                roastingLots && roastedCoffeeTotalWeight != 0
+
+                                                    ?
+
+                                                    roastedCoffeeTotalWeight.toFixed(2) + ' ' +
+
+                                                    (
+                                                        roastingLots[0].absorbedWeightUnit.endsWith('s')
+
+                                                            ?
+
+                                                            roastingLots[0].absorbedWeightUnit
+
+                                                            :
+
+                                                            roastingLots[0].absorbedWeightUnit + 's'
+                                                    )
+
+                                                    :
+
+                                                    `Coming Soon`
+                                            }
+
+                                        </b><br />
 
                                     </p>
                                     <Accordion style={{ 'margin-bottom': '3.5rem' }}>
