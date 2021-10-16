@@ -565,7 +565,33 @@ export const Roasting = ({
 
                                         Location: <b>{roasterIntakeNode.city}, {roasterIntakeNode.state}, {roasterIntakeNode.country}</b><br />
 
-                                        Green Coffee Total Weight: <b>{roasterIntakeLots ? roasterIntakeLots[0].absorbedWeight + ' ' + roasterIntakeLots[0].absorbedWeightUnit + 's' : "Coming Soon"}</b><br />
+                                        Green Coffee Total Weight: <b>
+
+                                            {
+                                                roasterIntakeLots
+
+                                                    ?
+
+                                                    roasterIntakeLots[0].absorbedWeight + ' ' +
+
+                                                    (
+                                                        roasterIntakeLots[0].absorbedWeightUnit.endsWith('s')
+
+                                                            ?
+
+                                                            roasterIntakeLots[0].absorbedWeightUnit
+
+                                                            :
+
+                                                            roasterIntakeLots[0].absorbedWeightUnit + 's'
+                                                    )
+
+                                                    :
+
+                                                    `Coming Soon`
+                                            }
+
+                                        </b><br />
 
                                     </p>
 
