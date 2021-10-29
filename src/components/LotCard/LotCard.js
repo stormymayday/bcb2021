@@ -253,7 +253,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span><b>Notes</b>: {props.lot.roastingNotes}<br /></span>
+                        <span><b>Roasting Notes</b>: {props.lot.roastingNotes}<br /></span>
 
                         :
 
