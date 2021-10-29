@@ -618,16 +618,17 @@ const AppProvider = ({ children }) => {
                         documents
                         videos
 
-                        roastLossPercentage
-                        roastLossQuantity
-                        transferDate
                         roasterActor
                         roastDate
-                        varietal
+                        chargeTemperature
+                        dropTemperature
+                        totalRoastTime
                         roastType
-                        cuppingScore
-                        cuppersNotes
+                        roastLossQuantity
                         roastingNotes
+                        tastingNotes
+
+                        cuppingScore
 
                     }
 

@@ -144,31 +144,17 @@ const LotCard = (props) => {
                 }
 
                 {/* Roasting Lot attributes */}
-                {/* NOT Rendering roastLossPercentage if lotType is roasting and attribute is not null */}
-                {/* {
-                    props.lotType === 'roasting' && props.lot.roastLossPercentage
-
-                        ?
-
-                        <span>Roast Loss Percentage: {props.lot.roastLossPercentage}<br /></span>
-
-                        :
-
-                        null
-                } */}
-
-                {/* NOT Rendering roastLossQuantity if lotType is roasting and attribute is not null */}
-                {/* {
+                {
                     props.lotType === 'roasting' && props.lot.roastLossQuantity
 
                         ?
 
-                        <span>Roast Loss Quantity: {props.lot.roastLossQuantity}<br /></span>
+                        <span>Roast Loss Quantity: {props.lot.roastLossQuantity} lbs<br /></span>
 
                         :
 
                         null
-                } */}
+                }
 
                 {/* Rendering Roast Date if lotType is roasting */}
                 {
@@ -183,20 +169,46 @@ const LotCard = (props) => {
                         null
                 }
 
-                {/* NOT Rendering varietal if lotType is roasting and attribute is not null */}
-                {/* {
-                    props.lotType === 'roasting' && props.lot.varietal
+                {/* Rendering chargeTemperature if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.chargeTemperature
 
                         ?
 
-                        <span>Varietal: {props.lot.varietal}<br /></span>
+                        <span>Roast Level: {props.lot.chargeTemperature} F<br /></span>
 
                         :
 
                         null
-                } */}
+                }
 
-                {/* Rendering roastType if lotType is roasting and attribute is not null */}
+                {/* Rendering dropTemperature if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.dropTemperature
+
+                        ?
+
+                        <span>Roast Level: {props.lot.dropTemperature} F<br /></span>
+
+                        :
+
+                        null
+                }
+
+                {/* Rendering totalRoastTime if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.totalRoastTime
+
+                        ?
+
+                        <span>Roast Level: {props.lot.totalRoastTime} min<br /></span>
+
+                        :
+
+                        null
+                }
+
+                {/* Rendering roastType if roastType is roasting and attribute is not null */}
                 {
                     props.lotType === 'roasting' && props.lot.roastType
 
@@ -209,26 +221,13 @@ const LotCard = (props) => {
                         null
                 }
 
-                {/* Rendering cuppingScore if lotType is roasting and attribute is not null */}
-                {
+                {/* NOT Rendering cuppingScore if lotType is roasting and attribute is not null */}
+                {/* {
                     props.lotType === 'roasting' && props.lot.cuppingScore
 
                         ?
 
                         <span>Cupping Score: {props.lot.cuppingScore}<br /></span>
-
-                        :
-
-                        null
-                }
-
-                {/* NOT Rendering cuppersNotes if lotType is roasting and attribute is not null */}
-                {/* {
-                    props.lotType === 'roasting' && props.lot.cuppersNotes
-
-                        ?
-
-                        <span>Cuppers Notes: {props.lot.cuppersNotes}<br /></span>
 
                         :
 
@@ -261,6 +260,18 @@ const LotCard = (props) => {
                         null
                 }
 
+                {/* Rendering tastingNotes if lotType is roasting and attribute is not null */}
+                {
+                    props.lotType === 'roasting' && props.lot.tastingNotes
+
+                        ?
+
+                        <span>Cuppers Notes: {props.lot.tastingNotes}<br /></span>
+
+                        :
+
+                        null
+                }
 
             </CardText>
             {/* <CardButton>Learn More</CardButton> */}
