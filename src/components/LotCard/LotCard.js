@@ -34,9 +34,9 @@ const LotCard = (props) => {
             </CardHeader>
             <CardText>
 
-                Product: {props.lot.productName}<br />
+                <b>Product</b>: {props.lot.productName}<br />
 
-                Weight: {props.lot.absorbedWeight} {props.lot.absorbedWeightUnit.endsWith('s') ? props.lot.absorbedWeightUnit : props.lot.absorbedWeightUnit + 's'}<br />
+                <b>Weight</b>: {props.lot.absorbedWeight} {props.lot.absorbedWeightUnit.endsWith('s') ? props.lot.absorbedWeightUnit : props.lot.absorbedWeightUnit + 's'}<br />
 
                 {/* Not Displaying lot value if it is a harvest lot */}
                 {
@@ -62,7 +62,7 @@ const LotCard = (props) => {
                         ?
 
 
-                        <span>Payment: {props.lot.value} {props.lot.asset}<br /></span>
+                        <span><b>Payment</b>: {props.lot.value} {props.lot.asset}<br /></span>
 
                         :
 
@@ -75,7 +75,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Harvest date: {props.lot.harvestDate.split(' ')[0]}<br /></span>
+                        <span><b>Harvest date</b>: {props.lot.harvestDate.split(' ')[0]}<br /></span>
 
                         :
 
@@ -87,7 +87,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Number of bags: {props.lot.numberOfBags}<br /></span>
+                        <span><b>Number of bags</b>: {props.lot.numberOfBags}<br /></span>
 
                         :
 
@@ -99,7 +99,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Damage: {props.lot.damage}<br /></span>
+                        <span><b>Damage</b>: {props.lot.damage}<br /></span>
 
                         :
 
@@ -124,7 +124,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Received Date: {props.lot.receivedDate}<br /></span>
+                        <span><b>Received Date</b>: {props.lot.receivedDate}<br /></span>
 
                         :
 
@@ -136,7 +136,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span><a href={props.lot.documents[0]} target="_blank">Cupping Score</a><br /></span>
+                        <span><b>Cupping Score</b>: <a href={props.lot.documents[0]} target="_blank">download</a><br /></span>
 
                         :
 
@@ -149,7 +149,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Roast Loss Quantity: {props.lot.roastLossQuantity} lbs<br /></span>
+                        <span><b>Roast Loss Quantity</b>: {props.lot.roastLossQuantity} lbs<br /></span>
 
                         :
 
@@ -162,7 +162,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Roast date: {props.lot.roastDate}<br /></span>
+                        <span><b>Roast date</b>: {props.lot.roastDate}<br /></span>
 
                         :
 
@@ -175,7 +175,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Roast Level: {props.lot.chargeTemperature} F<br /></span>
+                        <span><b>Charge Temperature</b>: {props.lot.chargeTemperature} F<br /></span>
 
                         :
 
@@ -188,7 +188,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Roast Level: {props.lot.dropTemperature} F<br /></span>
+                        <span><b>Drop Temperature</b>: {props.lot.dropTemperature} F<br /></span>
 
                         :
 
@@ -201,7 +201,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Roast Level: {props.lot.totalRoastTime} min<br /></span>
+                        <span><b>Total Roast Time</b>: {props.lot.totalRoastTime} min<br /></span>
 
                         :
 
@@ -214,7 +214,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Roast Level: {props.lot.roastType}<br /></span>
+                        <span><b>Roast Level</b>: {props.lot.roastType}<br /></span>
 
                         :
 
@@ -240,7 +240,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Roasted by: {props.lot.roasterActor}<br /></span>
+                        <span><b>Roasted by</b>: {props.lot.roasterActor}<br /></span>
 
                         :
 
@@ -253,7 +253,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Notes: {props.lot.roastingNotes}<br /></span>
+                        <span><b>Notes</b>: {props.lot.roastingNotes}<br /></span>
 
                         :
 
@@ -266,7 +266,7 @@ const LotCard = (props) => {
 
                         ?
 
-                        <span>Cuppers Notes: {props.lot.tastingNotes}<br /></span>
+                        <span><b>Tasting Notes</b>: {props.lot.tastingNotes}<br /></span>
 
                         :
 
