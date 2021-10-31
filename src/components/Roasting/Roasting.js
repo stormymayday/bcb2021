@@ -150,7 +150,7 @@ export const Roasting = ({
 
                         {/* 3-19 - Atanacio */}
                         {
-                            farmerName === "Atanacio"
+                            farmerName === "Atanacio" || farmerName === "Gloria"
 
                                 ?
 

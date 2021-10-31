@@ -184,6 +184,7 @@ const FarmerDetails = () => {
                     farmer.farmerName === 'Adan' ||
                     farmer.farmerName === 'Gumercindo' ||
                     farmer.farmerName === 'David' ||
+                    farmer.farmerName === 'Gloria' ||
                     farmer.farmerName === 'Rigoberto'
 
                     ?
