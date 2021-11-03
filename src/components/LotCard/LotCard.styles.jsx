@@ -6,6 +6,8 @@ export const Card = styled.article`
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 2rem 3.5rem;
   text-align: center;
+
+  max-width: 300px;
 `;
 
 export const CardImage = styled.img`
