@@ -25,7 +25,9 @@ export const Import = ({
     nodeCoordinates,
 
     importNode,
-    importLots
+    importLots,
+
+    crownJewel
 
 }) => {
 
@@ -195,6 +197,87 @@ export const Import = ({
                     </Col>
 
                 </Row>
+
+
+
+                {/* Crown Jewel Section */}
+                {
+                    farmerName === 'Gloria' && crownJewel
+
+                        ?
+
+                        <Card
+                            className="text-center"
+                            border="Dark"
+                            text='Dark'
+                            style={{
+                                'background-color': 'transparent',
+                                'margin-bottom': '1rem',
+                                'margin-top': '3rem',
+                                'border-color': '#000'
+                            }}
+                        >
+
+                            <Card.Body>
+                                {
+                                    importNode
+
+                                        ?
+
+                                        <>
+
+                                            <a href="https://royalcoffee.com/" target="_blank">
+
+                                                <Card.Img
+                                                    className="d-block mx-auto img-fluid w-50"
+                                                    variant="top"
+                                                    src={importerLogo}
+                                                    style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
+                                                />
+
+                                            </a>
+
+                                        </>
+
+                                        :
+
+                                        null
+
+                                }
+
+
+                                <Card.Text>
+
+                                    {
+                                        importNode
+
+                                            ?
+
+                                            null
+
+                                            :
+
+                                            <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3>
+
+                                    }
+
+                                    Royal Coffee is a wholesale green coffee beans importer that is family-owned and operated since 1978.
+                                </Card.Text>
+                                <Button
+                                    variant="outline-dark"
+                                    href={'https://royalcoffee.com/'}
+                                    target="_blank"
+                                >
+                                    <b>Learn More</b>
+                                </Button>
+                            </Card.Body>
+                        </Card>
+
+                        :
+
+                        null
+
+                }
 
             </Container>
         </div>

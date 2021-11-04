@@ -165,7 +165,7 @@ const FarmerDetails = () => {
                 // farmerName={farmer.farmerName}
                 // longitude={farmer.harvestNode.longitude}
                 // latitude={farmer.harvestNode.latitude}
-
+                farmerName={farmer.farmerName}
                 importerLogo={farmer.importNode ? farmer.importNode.images[0] : null}
                 importNode={farmer.importNode ? farmer.importNode : null}
                 importLots={farmer.importNode ? farmer.importNode.importLots : null}

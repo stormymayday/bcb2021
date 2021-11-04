@@ -93,7 +93,8 @@ export const Roasting = ({
 
                                     <Button
                                         variant="outline-light"
-                                        href={'https://queencitycollectivecoffee.com/'}
+                                        // href={'https://queencitycollectivecoffee.com/'}
+                                        href={'https://queencitycollectivecoffee.com/products/claudia-hernandez'}
                                         target="_blank"
                                     >
                                         <b>Shop</b>
