@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 import './RoasterCard.css';
 import queenCity from '../../images/slideTwo.jpg';
 import queenCityLogo from '../../images/qc-logo-p-500.png';
-import oldSoulLogo from '../../images/oldsoullogo-trans.png';
+import oldSoul from '../../images/OldSoulRoasterImage.jpeg';
 
 export const RoasterCard = (props) => {
 
@@ -55,7 +55,7 @@ export const RoasterCard = (props) => {
 
                             alt={props.roaster.roasterName}
 
-                            src={oldSoulLogo}
+                            src={oldSoul}
 
                         />
 
