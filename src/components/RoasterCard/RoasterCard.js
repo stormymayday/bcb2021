@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 // Google Analytics
 import ReactGA from 'react-ga';
 import './RoasterCard.css';
-import slideOne from '../../images/slideTwo.jpg';
-import slideTwo from '../../images/coffee_farm.JPG';
+import queenCity from '../../images/slideTwo.jpg';
+import queenCityLogo from '../../images/qc-logo-p-500.png';
+import oldSoulLogo from '../../images/oldsoullogo-trans.png';
 
 export const RoasterCard = (props) => {
 
@@ -26,16 +27,43 @@ export const RoasterCard = (props) => {
     return (
         <article className='cocktail'>
             <div className='img-contaienr'>
-                <img alt={props.roaster.roasterName}
 
-                    src={
-                        props.roaster.roasterName === 'Queen City' ?
+                {
+                    props.roaster.roasterName === 'Queen City'
 
-                            slideOne :
+                        ?
 
-                            slideTwo
-                    }
-                />
+                        <img
+
+                            alt={props.roaster.roasterName}
+
+                            src={queenCity}
+
+                        />
+
+                        :
+
+                        null
+                }
+
+                {
+                    props.roaster.roasterName === 'Old Soul'
+
+                        ?
+
+                        <img
+
+                            alt={props.roaster.roasterName}
+
+                            src={oldSoulLogo}
+
+                        />
+
+                        :
+
+                        null
+                }
+
             </div>
             <div className='cocktail-footer'>
                 <h3>{props.roaster.roasterName}</h3>

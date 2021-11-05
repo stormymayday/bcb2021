@@ -644,7 +644,13 @@ const AppProvider = ({ children }) => {
     const [roasters, setRoasters] = useState([
         {
             roasterName: 'Queen City',
-            roasterUrl: 'https://queencitycollectivecoffee.com/'
+            roasterUrl: 'https://queencitycollectivecoffee.com/',
+            logo: '../../images/slideTwo.jpg'
+        },
+        {
+            roasterName: 'Old Soul',
+            roasterUrl: 'https://oldsoulco.com/',
+            logo: '../../images/oldsoullogo-trans.png'
         }
     ]);
 
