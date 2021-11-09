@@ -544,6 +544,26 @@ const AppProvider = ({ children }) => {
                         transferDate
                         receivedDate
 
+                        fobPaymentValue
+                        fobPaymentAsset
+                        fobPaymentTimestamp
+                        fobPaymentNotes
+
+                        importCostValue
+                        importCostAsset
+                        importCostTimestamp
+                        importCostNotes
+
+                        freightCostValue
+                        freightCostAsset
+                        freightCostTimetamp
+                        freightCostNotes
+
+                        roastingCostValue
+                        roastingCostAsset
+                        roastingCostTimestamp
+                        roastingCostNotes
+
                     }
 
                 }
