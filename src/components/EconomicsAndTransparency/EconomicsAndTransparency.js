@@ -21,7 +21,9 @@ export const EconomicsAndTransparency = ({
     exporterIntakeLots,
     exportLots,
     importLots,
-    roastingNode
+    roastingNode,
+    organizationName,
+    roasterIntakeLots
 
 }) => {
 
@@ -95,20 +97,79 @@ export const EconomicsAndTransparency = ({
                     </Col>
 
                     {
-                        farmerName === `Claudia & Juan`
+                        roasterIntakeLots
 
                             ?
 
                             <Col lg={4} sm={12}>
 
-                                <h3 style={{ 'padding-bottom': '0.5em' }}>Queen City</h3>
+                                <h3 style={{ 'padding-bottom': '0.5em' }}>{organizationName}</h3>
 
                                 <p>
-                                    FOB: <b>Coming Soon</b><br />
-                                    Import Cost: <b>Coming Soon</b><br />
-                                    Freight: <b>Coming Soon</b><br />
-                                    Roasting Labor: <b>Coming Soon</b><br />
-                                    Total Cost at Roaster: <b>Coming Soon</b><br />
+
+                                    FOB: <b>
+                                        {
+
+                                            roasterIntakeLots[0].fobPaymentValue && roasterIntakeLots[0].fobPaymentAsset
+
+                                                ?
+
+                                                roasterIntakeLots[0].fobPaymentValue + ' ' + roasterIntakeLots[0].fobPaymentAsset
+
+                                                :
+
+                                                `Coming Soon`
+
+                                        }
+                                    </b><br />
+
+                                    Import Cost: <b>
+                                        {
+
+                                            roasterIntakeLots[0].importCostValue && roasterIntakeLots[0].importCostAsset
+
+                                                ?
+
+                                                roasterIntakeLots[0].importCostValue + ' ' + roasterIntakeLots[0].importCostAsset
+
+                                                :
+
+                                                `Coming Soon`
+
+                                        }
+                                    </b><br />
+
+                                    Freight: <b>
+                                        {
+
+                                            roasterIntakeLots[0].freightCostValue && roasterIntakeLots[0].freightCostAsset
+
+                                                ?
+
+                                                roasterIntakeLots[0].freightCostValue + ' ' + roasterIntakeLots[0].freightCostAsset
+
+                                                :
+
+                                                `Coming Soon`
+
+                                        }
+                                    </b><br />
+
+                                    Roasting Labor: <b>
+                                        {
+
+                                            roasterIntakeLots[0].roastingCostValue && roasterIntakeLots[0].roastingCostAsset
+
+                                                ?
+
+                                                roasterIntakeLots[0].roastingCostValue + ' ' + roasterIntakeLots[0].roastingCostAsset
+
+                                                :
+
+                                                `Coming Soon`
+
+                                        }
+                                    </b><br />
                                 </p>
 
                             </Col>

@@ -190,6 +190,10 @@ export const Home = () => {
 
                 importLots={farmer.importNode ? farmer.importNode.importLots : null}
 
+                organizationName={farmer.roasterIntakeNode ? farmer.roasterIntakeNode.organizationName : null}
+
+                roasterIntakeLots={farmer.roasterIntakeNode ? farmer.roasterIntakeNode.roasterIntakeLots : null}
+
             ></Economics>
 
             {
