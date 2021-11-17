@@ -134,7 +134,7 @@ export const Roasting = ({
 
                                     <Button
                                         variant="outline-light"
-                                        href={'https://oldsoulco.com/'}
+                                        href={'https://oldsoulco.com/shop/'}
                                         target="_blank"
                                     >
                                         <b>Shop</b>
