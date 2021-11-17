@@ -32,6 +32,9 @@ export const EconomicsAndTransparency = ({
 
     let firstPayment = 0;
 
+    let totalRoastingCostNote = `/lb†
+    † cost prior to packaging & distribution`;
+
     if (exporterIntakeLots) {
 
         // Filtering out the Wet Parchment lots
@@ -114,7 +117,7 @@ export const EconomicsAndTransparency = ({
 
                                                 ?
 
-                                                roasterIntakeLots[0].fobPaymentValue + ' ' + roasterIntakeLots[0].fobPaymentAsset
+                                                roasterIntakeLots[0].fobPaymentValue + ' ' + roasterIntakeLots[0].fobPaymentAsset + `/lb`
 
                                                 :
 
@@ -130,7 +133,7 @@ export const EconomicsAndTransparency = ({
 
                                                 ?
 
-                                                roasterIntakeLots[0].importCostValue + ' ' + roasterIntakeLots[0].importCostAsset
+                                                roasterIntakeLots[0].importCostValue + ' ' + roasterIntakeLots[0].importCostAsset + `/lb`
 
                                                 :
 
@@ -146,7 +149,7 @@ export const EconomicsAndTransparency = ({
 
                                                 ?
 
-                                                roasterIntakeLots[0].freightCostValue + ' ' + roasterIntakeLots[0].freightCostAsset
+                                                roasterIntakeLots[0].freightCostValue + ' ' + roasterIntakeLots[0].freightCostAsset + `/lb`
 
                                                 :
 
@@ -162,7 +165,7 @@ export const EconomicsAndTransparency = ({
 
                                                 ?
 
-                                                roasterIntakeLots[0].roastingCostValue + ' ' + roasterIntakeLots[0].roastingCostAsset
+                                                roasterIntakeLots[0].roastingCostValue + ' ' + roasterIntakeLots[0].roastingCostAsset + `/lb`
 
                                                 :
 
@@ -170,6 +173,43 @@ export const EconomicsAndTransparency = ({
 
                                         }
                                     </b><br />
+
+                                    Total Cost At Roaster: <b>
+
+                                        {
+
+                                            roasterIntakeLots[0].fobPaymentValue && roasterIntakeLots[0].importCostValue && roasterIntakeLots[0].freightCostValue && roasterIntakeLots[0].roastingCostValue && roasterIntakeLots[0].roastingCostAsset
+
+                                                ?
+
+                                                (parseFloat(roasterIntakeLots[0].fobPaymentValue) + parseFloat(roasterIntakeLots[0].importCostValue) + parseFloat(roasterIntakeLots[0].freightCostValue) + parseFloat(roasterIntakeLots[0].roastingCostValue)).toFixed(2)
+                                                + ' ' + roasterIntakeLots[0].roastingCostAsset +
+                                                `/lb†`
+
+                                                :
+
+                                                `Coming Soon`
+
+                                        }
+
+                                        <p>
+                                            {
+
+                                                roasterIntakeLots[0].fobPaymentValue && roasterIntakeLots[0].importCostValue && roasterIntakeLots[0].freightCostValue && roasterIntakeLots[0].roastingCostValue && roasterIntakeLots[0].roastingCostAsset
+
+                                                    ?
+
+                                                    `† cost prior to packaging & distribution`
+
+                                                    :
+
+                                                    null
+
+                                            }
+                                        </p>
+
+                                    </b><br />
+
                                 </p>
 
                             </Col>
