@@ -142,7 +142,7 @@ export const EconomicsAndTransparency = ({
                                         }
                                     </b><br />
 
-                                    Freight: <b>
+                                    Freight Cost: <b>
                                         {
 
                                             roasterIntakeLots[0].freightCostValue && roasterIntakeLots[0].freightCostAsset
