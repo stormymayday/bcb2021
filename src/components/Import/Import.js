@@ -14,6 +14,8 @@ import JourneyMap from '../JourneyMap/JourneyMap';
 import Pagination from '../../components/Pagination/Pagination';
 import paginate from '../../utils';
 
+import crownJewelImage from '../../images/Crown-Jewel-Box-Cover.png';
+
 export const Import = ({
 
     importerLogo,
@@ -202,7 +204,7 @@ export const Import = ({
 
                 {/* Crown Jewel Section */}
                 {
-                    farmerName === 'Gloria' && crownJewel
+                    farmerName === 'Gloria'
 
                         ?
 
@@ -218,54 +220,39 @@ export const Import = ({
                             }}
                         >
 
+
+
                             <Card.Body>
-                                {
-                                    importNode
 
-                                        ?
+                                <Card.Title
 
-                                        <>
+                                    style={{
 
-                                            <a href="https://royalcoffee.com/" target="_blank">
+                                        'margin-top': '1rem',
 
-                                                <Card.Img
-                                                    className="d-block mx-auto img-fluid w-50"
-                                                    variant="top"
-                                                    src={importerLogo}
-                                                    style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
-                                                />
+                                    }}
 
-                                            </a>
+                                >
+                                    Crown Jewel
+                                </Card.Title>
 
-                                        </>
+                                <a href="https://royalcoffee.com/product/cj1458/" target="_blank">
 
-                                        :
+                                    <Card.Img
+                                        className="d-block mx-auto img-fluid w-50"
+                                        variant="top"
+                                        src={crownJewelImage}
+                                        style={{ 'max-width': '20rem' }}
+                                    />
 
-                                        null
-
-                                }
-
+                                </a>
 
                                 <Card.Text>
-
-                                    {
-                                        importNode
-
-                                            ?
-
-                                            null
-
-                                            :
-
-                                            <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3>
-
-                                    }
-
-                                    Royal Coffee is a wholesale green coffee beans importer that is family-owned and operated since 1978.
+                                    This coffee has been chosen for its high quality by Royal as one of its Crown Jewels! It is available to be directly purchased by you!
                                 </Card.Text>
                                 <Button
                                     variant="outline-dark"
-                                    href={'https://royalcoffee.com/'}
+                                    href={'https://royalcoffee.com/product/cj1458/'}
                                     target="_blank"
                                 >
                                     <b>Learn More</b>
