@@ -24,7 +24,7 @@ const LotCard = (props) => {
         <Card>
             <CardImage
 
-                src={props.lot.images[0] ? props.lot.images[0] : logo}
+                src={props.lot.images[0] && props.lotType !== 'harvest' ? props.lot.images[0] : logo}
 
             />
             <CardHeader>
@@ -53,6 +53,7 @@ const LotCard = (props) => {
 
                         null
                 }
+
 
                 {/* Displaying value if it is a Wet Mill Lot on an ExporterIntake Node */}
                 {
