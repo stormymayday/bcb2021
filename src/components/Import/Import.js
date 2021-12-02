@@ -9,6 +9,8 @@ import Accordion from 'react-bootstrap/Accordion';
 
 import LeafletMap from '../LeafletMap/LeafletMap';
 
+import ReactPlayer from 'react-player';
+
 import JourneyMap from '../JourneyMap/JourneyMap';
 
 import Pagination from '../../components/Pagination/Pagination';
@@ -207,58 +209,85 @@ export const Import = ({
                     farmerName === 'Gloria'
 
                         ?
+                        <>
 
-                        <Card
-                            className="text-center"
-                            border="Dark"
-                            text='Dark'
-                            style={{
-                                'background-color': 'transparent',
-                                'margin-bottom': '1rem',
-                                'margin-top': '3rem',
-                                'border-color': '#000'
-                            }}
-                        >
+                            <Card
+                                className="text-center"
+                                border="Dark"
+                                text='Dark'
+                                style={{
+                                    'background-color': 'transparent',
+                                    'margin-bottom': '1rem',
+                                    'margin-top': '3rem',
+                                    'border-color': '#000'
+                                }}
+                            >
+
+                                <Card.Body>
+
+                                    <a href="https://royalcoffee.com/product/cj1458/" target="_blank">
+
+                                        {/* <Card.Img
+                                            className="d-block mx-auto img-fluid w-50"
+                                            variant="top"
+                                            src={crownJewelImage}
+                                            style={{ 'max-width': '20rem' }}
+                                        /> */}
+                                    </a>
+
+                                    <div
+                                        style={{
+
+                                            'position': 'relative',
+                                            'padding-top': '56.25%'
+
+                                        }}
+                                    >
+                                        <ReactPlayer
+                                            url="https://vimeo.com/643996958"
+                                            width="100%"
+                                            height="100%"
+                                            controls
+                                            style={{
+
+                                                'position': 'absolute',
+                                                'top': '0',
+                                                'left': '0'
+
+                                            }}
+                                        />
+                                    </div>
 
 
 
-                            <Card.Body>
+                                    <Card.Title
 
-                                <Card.Title
+                                        style={{
 
-                                    style={{
+                                            'margin-top': '1rem',
 
-                                        'margin-top': '1rem',
+                                        }}
 
-                                    }}
+                                    >
+                                        Crown Jewel
+                                    </Card.Title>
 
-                                >
-                                    Crown Jewel
-                                </Card.Title>
 
-                                <a href="https://royalcoffee.com/product/cj1458/" target="_blank">
 
-                                    <Card.Img
-                                        className="d-block mx-auto img-fluid w-50"
-                                        variant="top"
-                                        src={crownJewelImage}
-                                        style={{ 'max-width': '20rem' }}
-                                    />
+                                    <Card.Text>
+                                        This coffee has been chosen for its high quality by Royal as one of its Crown Jewels! It is available to be directly purchased by you!
+                                    </Card.Text>
+                                    <Button
+                                        variant="outline-dark"
+                                        href={'https://royalcoffee.com/product/cj1458/'}
+                                        target="_blank"
+                                    >
+                                        <b>Learn More</b>
+                                    </Button>
+                                </Card.Body>
+                            </Card>
 
-                                </a>
-
-                                <Card.Text>
-                                    This coffee has been chosen for its high quality by Royal as one of its Crown Jewels! It is available to be directly purchased by you!
-                                </Card.Text>
-                                <Button
-                                    variant="outline-dark"
-                                    href={'https://royalcoffee.com/product/cj1458/'}
-                                    target="_blank"
-                                >
-                                    <b>Learn More</b>
-                                </Button>
-                            </Card.Body>
-                        </Card>
+                        </>
 
                         :
 
