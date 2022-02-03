@@ -77,6 +77,7 @@ export const PartnersSection = () => {
                             </Card.Body>
                         </Card>
 
+
                     </Col>
 
                     <Col lg={6} sm={12}>

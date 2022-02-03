@@ -12,6 +12,7 @@ import ReactGA from 'react-ga';
 import { useGlobalContext } from '../../context';
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import BootstrapCarousel from '../../components/Carousel/BootstrapCarousel';
 
 // Components
 import FarmerDetailsPageNavigation from '../../components/FarmerDetailsPageNavigation/FarmerDetailsPageNavigation';
@@ -31,6 +32,7 @@ import Footer from '../../components/Footer/Footer';
 
 // Importing default farm picture
 import defaultPicture from '../../images/coffee_farm.JPG';
+import { Carousel } from 'react-bootstrap';
 
 const FarmerDetails = () => {
 
@@ -72,7 +74,9 @@ const FarmerDetails = () => {
                     <>
                         <FarmerDetailsPageNavigation />
 
-                        <Jumbotron style={{
+                        <BootstrapCarousel farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture} />
+
+                        {/* <Jumbotron style={{
                             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5),
                         rgba(0, 0, 0, 0.5)),
                         url(${farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture})`,
@@ -84,7 +88,8 @@ const FarmerDetails = () => {
                             <Container>
                                 <h1 style={{ color: 'white' }}>{farmer.farmerName}</h1>
                             </Container>
-                        </Jumbotron>
+                        </Jumbotron> */}
+
                     </>
 
                     :
