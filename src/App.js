@@ -15,6 +15,7 @@ import FarmerDetails from './pages/FarmerDetails/FarmerDetails';
 import Error from './pages/Error/Error';
 import FarmersPage from './pages/FarmersPage/FarmersPage';
 import RoastersPage from './pages/RoastersPage/RoastersPage';
+import MediaPage from './pages/MediaPage/MediaPage';
 
 
 const App = () => {
@@ -47,7 +48,7 @@ const App = () => {
           <Error />
         </Route>
         <Route exact path="/media">
-          <Error />
+          <MediaPage />
         </Route>
         <Route exact path="/farmers-2021">
           <FarmersPage />

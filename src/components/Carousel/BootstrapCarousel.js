@@ -1,7 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Button, Carousel } from 'react-bootstrap';
 import './BootstrapCarousel.css';
+
+
 import defaultPicture from '../../images/coffee_farm.JPG';
+import slideTwo from '../../images/3rd payment edited.jpeg';
+import slideThree from '../../images/slideTwo.jpg';
+import slideFour from '../../images/oldsoulpin.jpg';
 
 
 
@@ -59,7 +64,7 @@ export default function BootstrapCarousel({
                 <Carousel.Item>
                     <img
                         className="d-block w-100 carousel-img"
-                        src="https://images.unsplash.com/photo-1524350876685-274059332603?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
+                        src={slideTwo}
                         alt="Third slide"
                     />
                     <Carousel.Caption>
@@ -73,7 +78,7 @@ export default function BootstrapCarousel({
                 <Carousel.Item>
                     <img
                         className="d-block w-100 carousel-img"
-                        src="https://images.unsplash.com/photo-1552346989-e069318e20a5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1774&q=80"
+                        src={slideThree}
                         alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -94,7 +99,7 @@ export default function BootstrapCarousel({
                 <Carousel.Item>
                     <img
                         className="d-block w-100 carousel-img"
-                        src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                        src={slideFour}
                         alt="Third slide"
                     />
                     <Carousel.Caption>
@@ -104,11 +109,11 @@ export default function BootstrapCarousel({
                     </Carousel.Caption>
                 </Carousel.Item>
 
-                {/* Fourth Slide */}
+                {/* Fifth Slide */}
                 <Carousel.Item>
                     <img
                         className="d-block w-100 carousel-img"
-                        src="https://media.gettyimages.com/photos/man-using-digital-tablet-and-drinking-coffee-while-working-at-home-picture-id1359589403?s=2048x2048"
+                        src="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
                         alt="Third slide"
                     />
                     <Carousel.Caption>
