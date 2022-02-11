@@ -15,7 +15,9 @@ import FarmerDetails from './pages/FarmerDetails/FarmerDetails';
 import Error from './pages/Error/Error';
 import FarmersPage from './pages/FarmersPage/FarmersPage';
 import RoastersPage from './pages/RoastersPage/RoastersPage';
+import PartnersPage from './pages/PartnersPage/PartnersPage';
 import MediaPage from './pages/MediaPage/MediaPage';
+import About from './pages/About/About';
 
 
 const App = () => {
@@ -41,11 +43,11 @@ const App = () => {
         <Route exact path="/roasters">
           <RoastersPage />
         </Route>
-        <Route exact path="/about-us">
-          <Error />
+        <Route exact path="/about">
+          <About />
         </Route>
         <Route exact path="/partners">
-          <Error />
+          <PartnersPage />
         </Route>
         <Route exact path="/media">
           <MediaPage />

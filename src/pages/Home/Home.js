@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Hero from '../../components/Hero/Hero';
+import BootstrapCarousel from '../../components/Carousel/BootstrapCarousel';
 
 // Google Analytics
 import ReactGA from 'react-ga';
@@ -77,7 +78,8 @@ export const Home = () => {
                     <>
                         <HomePageNavigation />
 
-                        <Hero farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture} />
+                        <BootstrapCarousel farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture} />
+                        {/* <Hero farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture} /> */}
                     </>
 
                     :

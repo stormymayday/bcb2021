@@ -1,0 +1,39 @@
+.bext-section-bg {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('https://bext360.com/wp-content/uploads/2020/02/901941-black-wallpaper-desktop-1920x1080-mobile.jpg') no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.catracha-section-bg {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('https://images.squarespace-cdn.com/content/v1/59e4f0f48c56a8b4f0ae1290/1508185258674-RQ6B5VK6LHEL7UDQKKQQ/identity-hero.png') no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.qccc-section-bg {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('https://cdn.shopify.com/s/files/1/0509/9782/1598/t/164/assets/Bellafonte-Render.jpg?v=1870134959964754245') no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100vh;
+}
+
+.old-soul-section-bg {
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/270289375_10159679892439347_7409489311493427132_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=a26aad&_nc_ohc=j00nCcEjbUgAX_SOAhp&_nc_ht=scontent-lax3-1.xx&oh=00_AT-yobi7ojWCO8pMxooutWFLvdQv8IKKsqruao1S7HDFuQ&oe=62078D9F') no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	min-height: 100vh;
+}

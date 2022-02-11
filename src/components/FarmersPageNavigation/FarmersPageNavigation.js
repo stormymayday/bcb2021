@@ -33,8 +33,11 @@ export default function FarmersPageNavigation() {
 
                         <Nav className="ml-auto">
 
-                            <Nav.Link href="/">HOME</Nav.Link>
+                            {/* <Nav.Link href="/">HOME</Nav.Link> */}
 
+                            <Nav.Link href="/partners">PARTNERS</Nav.Link>
+                            <Nav.Link href="/about">ABOUT</Nav.Link>
+                            <Nav.Link href="/media">MEDIA</Nav.Link>
                             <Nav.Link href="/roasters">ROASTERS</Nav.Link>
 
                             <NavDropdown title="FARMERS" id="basic-nav-dropdown">

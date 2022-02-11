@@ -79,15 +79,17 @@ export default function HomePageNavigation() {
                                 ECONOMICS
                             </Nav.Link>
 
-                            <Nav.Link
+                            {/* <Nav.Link
                                 as={HashLink}
                                 to={`#partners`}
                                 smooth
                                 scroll={el => scrollWidthOffset(el)}
                             >
                                 PARTNERS
-                            </Nav.Link>
-
+                            </Nav.Link> */}
+                            <Nav.Link href="/partners">PARTNERS</Nav.Link>
+                            <Nav.Link href="/about">ABOUT</Nav.Link>
+                            <Nav.Link href="/media">MEDIA</Nav.Link>
                             <Nav.Link href="/roasters">ROASTERS</Nav.Link>
 
                             <NavDropdown title="FARMERS" id="basic-nav-dropdown">

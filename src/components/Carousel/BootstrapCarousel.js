@@ -70,7 +70,7 @@ export default function BootstrapCarousel({
                     <Carousel.Caption>
                         <h3>Be a part of something special</h3>
                         <p>Your roaster and exporter struck up a unique partnership to boost the income of farmers and laborers that made your specialty coffee possible.</p>
-                        <Button variant="light" href="/about-us">Learn more</Button>
+                        <Button variant="light" href="/about">Learn more</Button>
                     </Carousel.Caption>
                 </Carousel.Item>
 

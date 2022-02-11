@@ -33,8 +33,10 @@ export default function RoastersPageNavigation() {
 
                         <Nav className="ml-auto">
 
-                            <Nav.Link href="/">HOME</Nav.Link>
-
+                            {/* <Nav.Link href="/">HOME</Nav.Link> */}
+                            <Nav.Link href="/partners">PARTNERS</Nav.Link>
+                            <Nav.Link href="/about">ABOUT</Nav.Link>
+                            <Nav.Link href="/media">MEDIA</Nav.Link>
                             <NavDropdown title="FARMERS" id="basic-nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/farmers-2021" key="0">Harvest 2021</NavDropdown.Item>
                                 <NavDropdown.Item onClick={openExternalURL} key="1">Harvest 2020</NavDropdown.Item>

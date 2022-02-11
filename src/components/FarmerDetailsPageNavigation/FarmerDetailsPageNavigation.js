@@ -32,7 +32,7 @@ export default function FarmerDetailsPageNavigation() {
 
                         <Nav className="ml-auto">
 
-                            <Nav.Link href="/">HOME</Nav.Link>
+                            {/* <Nav.Link href="/">HOME</Nav.Link> */}
 
                             <Nav.Link
                                 as={HashLink}
@@ -79,6 +79,9 @@ export default function FarmerDetailsPageNavigation() {
                                 ECONOMICS
                             </Nav.Link>
 
+                            <Nav.Link href="/partners">PARTNERS</Nav.Link>
+                            <Nav.Link href="/about">ABOUT</Nav.Link>
+                            <Nav.Link href="/media">MEDIA</Nav.Link>
                             <Nav.Link href="/roasters">ROASTERS</Nav.Link>
 
                             <NavDropdown title="FARMERS" id="basic-nav-dropdown">
