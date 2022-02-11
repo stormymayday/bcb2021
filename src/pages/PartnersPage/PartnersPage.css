@@ -5,7 +5,6 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 100vh;
 }
 
 .catracha-section-bg {
@@ -15,7 +14,6 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 100vh;
 }
 
 .qccc-section-bg {
@@ -25,15 +23,13 @@
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 100vh;
 }
 
 .old-soul-section-bg {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
 		url('https://scontent-lax3-1.xx.fbcdn.net/v/t39.30808-6/270289375_10159679892439347_7409489311493427132_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=a26aad&_nc_ohc=j00nCcEjbUgAX_SOAhp&_nc_ht=scontent-lax3-1.xx&oh=00_AT-yobi7ojWCO8pMxooutWFLvdQv8IKKsqruao1S7HDFuQ&oe=62078D9F') no-repeat center;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	min-height: 100vh;
 }

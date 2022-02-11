@@ -62,7 +62,7 @@ export const PartnersPage = () => {
                     <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Meet Blockchain Coffee Beans Partners</h2>
                     <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
 
-                    <Row id='harvest' style={{ 'padding-top': '1em' }}>
+                    <Row style={{ 'padding-top': '1em' }}>
 
                         <Col md='12' lg='12'>
 
@@ -82,11 +82,11 @@ export const PartnersPage = () => {
 
 
             {/* iDE */}
-            <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em', 'min-height': '100vh' }} id=''>
+            <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
 
                 <Container>
 
-                    <Row style={{ 'padding-top': '2rem' }}>
+                    <Row style={{ 'padding-top': '2rem' }} className="align-items-center">
 
                         <Col lg={4} sm={12}>
 
@@ -140,6 +140,7 @@ export const PartnersPage = () => {
                         </Col>
 
                     </Row>
+
                 </Container>
             </div>
             {/* iDE */}
@@ -149,7 +150,7 @@ export const PartnersPage = () => {
 
                 <Container>
 
-                    <Row style={{ 'padding-top': '2rem' }}>
+                    <Row style={{ 'padding-top': '2rem' }} className="align-items-center">
 
                         <Col lg={4} sm={12}>
 
@@ -161,7 +162,7 @@ export const PartnersPage = () => {
                                     className="d-block mx-auto img-fluid w-50"
                                     variant="top"
                                     src={bextlogo}
-                                    style={{ 'max-width': '9.3rem', 'padding-top': '2rem', 'padding-bottom': '2rem' }}
+                                    style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
                                 />
                             </a>
 
@@ -267,10 +268,10 @@ export const PartnersPage = () => {
 
                             <a href="https://queencitycollectivecoffee.com/" target="_blank">
                                 <Card.Img
-                                    className="d-block mx-auto img-fluid w-50"
+                                    className="d-block mx-auto img-fluid w-100"
                                     variant="top"
                                     src={qccclogo}
-                                    style={{ 'max-width': '9.3rem', 'padding-top': '2rem', 'padding-bottom': '2rem' }}
+                                    style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
                                 />
                             </a>
 
@@ -315,10 +316,10 @@ export const PartnersPage = () => {
 
                             <a href="https://oldsoulco.com/" target="_blank">
                                 <Card.Img
-                                    className="d-block mx-auto img-fluid w-50"
+                                    className="d-block mx-auto img-fluid w-100"
                                     variant="top"
                                     src={oldsoullogo}
-                                    style={{ 'max-width': '9.3rem', 'padding-top': '2rem', 'padding-bottom': '2rem' }}
+                                    style={{ 'padding-bottom': '2rem' }}
                                 />
                             </a>
 
@@ -348,7 +349,6 @@ export const PartnersPage = () => {
                 </Container>
             </div>
             {/* Old Soul */}
-
 
             <Footer />
 
