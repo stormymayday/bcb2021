@@ -44,6 +44,7 @@ export default function BootstrapCarousel({
 
                 ref={ref}
                 fade
+                interval={null}
 
             >
                 {/* First Slide */}
@@ -123,11 +124,7 @@ export default function BootstrapCarousel({
                     </Carousel.Caption>
                 </Carousel.Item>
 
-
             </Carousel>
-
-
-
 
         </div>
 
