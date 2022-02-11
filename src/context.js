@@ -698,7 +698,7 @@ const AppProvider = ({ children }) => {
         {
             mediaName: `Project Summary: Blockchain Beans`,
             mediaUrl: 'https://www.ideglobal.org/key-project/blockchain-coffee-beans',
-            mediaImg: 'https://cdn.ideglobal.org/images/gallery/photo/7839/_380x214_crop_center-center/20190130_Honduras_Comsa-Coffee-Processing-Center_Photos-by-Emily-Karol-iDE_IMG_7087.JPG?mtime=20211116131412'
+            mediaImg: 'https://cdn.ideglobal.org/images/photo/_1920x1080_crop_center-center/16x9-hero-coffee-in-hand.jpg?mtime=20200720193128'
         },
         {
             mediaName: `Partnerships Turn Local into Global`,
