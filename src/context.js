@@ -671,6 +671,11 @@ const AppProvider = ({ children }) => {
             roasterName: 'Old Soul',
             roasterUrl: 'https://oldsoulco.com/',
             logo: '../../images/oldsoullogo-trans.png'
+        },
+        {
+            roasterName: 'Andy Town',
+            roasterUrl: 'https://www.andytownsf.com/',
+            logo: '../../images/oldsoullogo-trans.png'
         }
     ]);
 

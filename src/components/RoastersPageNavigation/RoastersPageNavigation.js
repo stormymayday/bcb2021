@@ -34,6 +34,7 @@ export default function RoastersPageNavigation() {
                         <Nav className="ml-auto">
 
                             {/* <Nav.Link href="/">HOME</Nav.Link> */}
+                            <Nav.Link href="/roasters">ROASTERS</Nav.Link>
                             <Nav.Link href="/partners">PARTNERS</Nav.Link>
                             <Nav.Link href="/about">ABOUT</Nav.Link>
                             <Nav.Link href="/media">MEDIA</Nav.Link>

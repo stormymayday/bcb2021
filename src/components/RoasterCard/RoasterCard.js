@@ -6,6 +6,7 @@ import './RoasterCard.css';
 import queenCity from '../../images/slideTwo.jpg';
 import queenCityLogo from '../../images/qc-logo-p-500.png';
 import oldSoul from '../../images/OldSoulRoasterImage.jpeg';
+import andyTown from '../../images/AndyTownCard.jpeg';
 
 export const RoasterCard = (props) => {
 
@@ -56,6 +57,25 @@ export const RoasterCard = (props) => {
                             alt={props.roaster.roasterName}
 
                             src={oldSoul}
+
+                        />
+
+                        :
+
+                        null
+                }
+
+                {
+                    props.roaster.roasterName === 'Andy Town'
+
+                        ?
+
+                        <img
+
+                            alt={props.roaster.roasterName}
+
+                            src={andyTown}
+
 
                         />
 
