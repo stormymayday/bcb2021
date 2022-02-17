@@ -673,7 +673,7 @@ const AppProvider = ({ children }) => {
             logo: '../../images/oldsoullogo-trans.png'
         },
         {
-            roasterName: 'Andy Town',
+            roasterName: 'Andytown',
             roasterUrl: 'https://www.andytownsf.com/',
             logo: '../../images/oldsoullogo-trans.png'
         }

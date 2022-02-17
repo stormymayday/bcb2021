@@ -40,6 +40,7 @@ import idelogo from '../../images/IDE_logo_white.png';
 import catratchalogo from '../../images/catracha-logo.jpg';
 import oldsoullogo from '../../images/oldsoullogo-trans.png';
 import qccclogo from '../../images/qc-logo-p-500.png';
+import qcccSmallImage from '../../images/NovemberDelivery_-14.jpg';
 
 import Button from 'react-bootstrap/Button';
 
@@ -128,8 +129,9 @@ export const PartnersPage = () => {
                                         'top': '0',
                                         'left': '0',
                                         'width': '100 %',
-                                        'height': '100 %'
-
+                                        'height': '100 %',
+                                        'border': '0.3em solid #fff',
+                                        'border-radius': '0.3em'
                                     }}
 
                                     controls url='https://www.youtube.com/watch?v=agNxd7l0tyQ' width='100%' height='100%' />
@@ -193,7 +195,9 @@ export const PartnersPage = () => {
                                         'top': '0',
                                         'left': '0',
                                         'width': '100 %',
-                                        'height': '100 %'
+                                        'height': '100 %',
+                                        'border': '0.3em solid #fff',
+                                        'border-radius': '0.3em'
 
                                     }}
 
@@ -244,7 +248,7 @@ export const PartnersPage = () => {
 
                         <Col lg={4} sm={12}>
 
-                            <Image src='https://images.squarespace-cdn.com/content/v1/59e4f0f48c56a8b4f0ae1290/1550634814653-IAZ32XG1PP5ABETM5ME8/20180225_093228.jpg?format=1000w'></Image>
+                            <Image thumbnail src='https://images.squarespace-cdn.com/content/v1/59e4f0f48c56a8b4f0ae1290/1550634814653-IAZ32XG1PP5ABETM5ME8/20180225_093228.jpg?format=1000w'></Image>
 
 
                         </Col>
@@ -292,7 +296,7 @@ export const PartnersPage = () => {
 
                         <Col lg={4} sm={12}>
 
-                            <Image src='https://oldsoulco.com/wp-content/uploads/2018/01/685Z2945-2-1-1440x780-c-default.webp'></Image>
+                            <Image thumbnail src={qcccSmallImage}></Image>
 
 
                         </Col>
@@ -303,7 +307,7 @@ export const PartnersPage = () => {
             {/* QCCC */}
 
             {/* Old Soul */}
-            <div className="old-soul-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
+            <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
 
                 <Container>
 
@@ -340,7 +344,9 @@ export const PartnersPage = () => {
 
                         <Col lg={4} sm={12}>
 
-                            <Image src='https://oldsoulco.com/wp-content/uploads/2018/01/685Z2945-2-1-1440x780-c-default.webp'></Image>
+
+
+                            <Image thumbnail src='https://oldsoulco.com/wp-content/uploads/2018/01/685Z2945-2-1-1440x780-c-default.webp'></Image>
 
 
                         </Col>

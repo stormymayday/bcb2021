@@ -41,11 +41,13 @@ export const About = () => {
 
             <RoastersPageNavigation />
 
-            {/* <div className='about-bg' style={{ 'padding-top': '5em', 'padding-bottom': '4em' }}>
+            <div className='about-bg' style={{ 'padding-top': '5em', 'padding-bottom': '4em' }}>
 
 
-            </div > */}
-            <div style={{
+            </div >
+
+
+            {/* <div style={{
                 'padding-top': '5em',
                 'padding-bottom': '4em',
                 'background-color': '#808080'
@@ -142,7 +144,7 @@ export const About = () => {
                     // icon={<StarIcon />}
                     />
                 </VerticalTimeline>
-            </div>
+            </div> */}
 
             <Footer />
 
