@@ -191,7 +191,7 @@ export const About = () => {
                                         style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
                                     />
                                 </a> */}
-                                <a href="https://www.catrachacoffee.com/" target="_blank">
+                                <a href="https://queencitycollectivecoffee.com/" target="_blank">
                                     <Image
 
                                         src={qccclogo}
