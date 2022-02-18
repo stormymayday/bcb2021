@@ -80,7 +80,7 @@ export const PartnersPage = () => {
 
                 <Container>
 
-                    <Row style={{ 'padding-top': '2rem' }} className="align-items-center">
+                    <Row style={{ 'padding-top': '2rem' }}>
 
                         <Col lg={4} sm={12}>
 
@@ -145,7 +145,7 @@ export const PartnersPage = () => {
 
                 <Container>
 
-                    <Row style={{ 'padding-top': '2rem' }} className="align-items-center">
+                    <Row style={{ 'padding-top': '2rem' }}>
 
                         <Col lg={4} sm={12}>
 
