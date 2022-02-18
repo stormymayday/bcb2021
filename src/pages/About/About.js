@@ -30,6 +30,15 @@ import 'react-vertical-timeline-component/style.min.css';
 
 import Button from 'react-bootstrap/Button';
 
+//Icons
+import { FaHandshake } from 'react-icons/fa';
+import { HiUserGroup } from 'react-icons/hi';
+import { BsStarFill } from 'react-icons/bs';
+
+//Logos
+import qccclogo from '../../images/qc-logo-p-500.png';
+import catratchalogo from '../../images/catracha-logo.jpg';
+
 import './About.css';
 
 export const About = () => {
@@ -155,45 +164,101 @@ export const About = () => {
                     <Row>
 
                         <VerticalTimeline>
+
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
-                                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                                date="2011 - present"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                            // icon={<WorkIcon />}
+                                // contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                // contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
+                                date="2019-08-07"
+                                // iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                iconStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
+                                icon={<FaHandshake />}
                             >
-                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
-                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <h3 className="vertical-timeline-element-title">QCCC agreed in principle to participate!</h3>
+                                {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
                                 <p>
                                     Varius morbi enim nunc faucibus a pellentesque
-                                </p>
+                                </p> */}
+                                {/* <a href="https://queencitycollectivecoffee.com/" target="_blank">
+                                    <Card.Img
+                                        className="d-block mx-auto img-fluid w-50"
+                                        variant="top"
+                                        src={qccclogo}
+                                        style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
+                                    />
+                                </a> */}
+                                <a href="https://www.catrachacoffee.com/" target="_blank">
+                                    <Image
+
+                                        src={qccclogo}
+                                        style={{
+                                            'background-color': '#000',
+                                            'max-width': '75%',
+                                            'margin-top': '2rem',
+                                            'margin-bottom': '2rem',
+                                            'display': 'block',
+                                            'margin-left': 'auto',
+                                            'margin-right': 'auto'
+                                        }}
+                                    ></Image>
+                                </a>
                             </VerticalTimelineElement>
+
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
-                                date="2010 - 2011"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                            // icon={<WorkIcon />}
+                                date="2019-08-21"
+                                contentStyle={{ background: '#AF1115', color: '#fff' }}
+                                // contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                                contentArrowStyle={{ borderRight: '7px solid  #AF1115' }}
+                                // iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                                iconStyle={{ background: '#AF1115', color: '#fff' }}
+                                icon={<FaHandshake />}
                             >
-                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
-                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <h3 className="vertical-timeline-element-title">Catracha agreed in principle to participate!</h3>
+                                {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
                                 <p>
                                     Varius morbi enim nunc faucibus a pellentesque
-                                </p>
+                                </p> */}
+                                {/* <a href="https://www.catrachacoffee.com/" target="_blank">
+                                    <Card.Img
+                                        className="d-block mx-auto img-fluid w-50"
+                                        variant="top"
+                                        src={catratchalogo}
+                                        style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
+                                    />
+                                </a> */}
+                                <a href="https://www.catrachacoffee.com/" target="_blank">
+                                    <Image
+                                        thumbnail
+                                        src={catratchalogo}
+                                        style={{
+                                            'max-width': '75%',
+                                            'margin-top': '2rem',
+                                            'margin-bottom': '2rem',
+                                            'display': 'block',
+                                            'margin-left': 'auto',
+                                            'margin-right': 'auto'
+                                        }}
+                                    ></Image>
+                                </a>
                             </VerticalTimelineElement>
+
                             <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
-                                date="2008 - 2010"
+                                date="2019-10-09"
                                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                            // icon={<WorkIcon />}
+                                icon={<HiUserGroup />}
                             >
-                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
-                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <h3 className="vertical-timeline-element-title">First call with all 4 parties - confirm match</h3>
+                                {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
                                 <p>
                                     Varius morbi enim nunc faucibus a pellentesque
-                                </p>
+                                </p> */}
                             </VerticalTimelineElement>
-                            <VerticalTimelineElement
+
+                            {/* <VerticalTimelineElement
                                 className="vertical-timeline-element--work"
                                 date="2006 - 2008"
                                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
@@ -240,10 +305,10 @@ export const About = () => {
                                 <p>
                                     Varius morbi enim nunc faucibus a pellentesque
                                 </p>
-                            </VerticalTimelineElement>
+                            </VerticalTimelineElement> */}
                             <VerticalTimelineElement
                                 iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                            // icon={<StarIcon />}
+                                icon={<BsStarFill />}
                             />
                         </VerticalTimeline>
 

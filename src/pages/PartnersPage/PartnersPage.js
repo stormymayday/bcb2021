@@ -29,12 +29,6 @@ import ScrollToTop from '../../components/ScrollToTop/ScrollTopTop';
 // Importing default farm picture
 import defaultPicture from '../../images/coffee_farm.JPG';
 
-
-
-
-
-
-
 import bextlogo from '../../images/BextLogoWhite.png';
 import idelogo from '../../images/IDE_logo_white.png';
 import catratchalogo from '../../images/catracha-logo.jpg';
