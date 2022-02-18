@@ -240,10 +240,29 @@ export const PartnersPage = () => {
                         </Col>
 
                         <Col lg={4} sm={12}>
+                            <div
+                                style={{
+                                    'position': 'relative',
+                                    'padding-top': '56.25%'
+                                }}
+                            >
+                                <ReactPlayer
 
-                            <Image thumbnail src='https://images.squarespace-cdn.com/content/v1/59e4f0f48c56a8b4f0ae1290/1550634814653-IAZ32XG1PP5ABETM5ME8/20180225_093228.jpg?format=1000w'></Image>
+                                    style={{
 
+                                        'position': 'absolute',
+                                        'top': '0',
+                                        'left': '0',
+                                        'width': '100 %',
+                                        'height': '100 %',
+                                        'border': '0.3em solid #fff',
+                                        'border-radius': '0.3em'
 
+                                    }}
+
+                                    controls url='https://www.youtube.com/watch?v=u107zqcYs6M' width='100%' height='100%' />
+
+                            </div>
                         </Col>
 
                     </Row>
