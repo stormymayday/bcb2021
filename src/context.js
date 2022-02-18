@@ -681,6 +681,11 @@ const AppProvider = ({ children }) => {
 
     const [media, setMedia] = useState([
         {
+            mediaName: `Catracha Coffee: Single Origin`,
+            mediaUrl: 'https://www.youtube.com/watch?v=xnv6MRVwcgM',
+            mediaImg: 'https://img.youtube.com/vi/xnv6MRVwcgM/maxresdefault.jpg'
+        },
+        {
             mediaName: `Updates from Catracha Coffee Pt. 1: Maria Adela's Coffee`,
             mediaUrl: 'https://www.andytownsf.com/andytown-blog/2021/10/21/updates-from-catracha-coffee-pt-1-maria-adelas-coffee',
             mediaImg: 'https://images.squarespace-cdn.com/content/v1/5254408ae4b007332ef69d54/1635784499039-EB6B28PVFPERWG6D2I87/Catracha+Maria+Adela+Portrait.jpg?format=750w'
