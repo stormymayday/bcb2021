@@ -34,6 +34,8 @@ import Button from 'react-bootstrap/Button';
 import { FaHandshake } from 'react-icons/fa';
 import { HiUserGroup } from 'react-icons/hi';
 import { BsStarFill } from 'react-icons/bs';
+import { MdSettingsRemote } from 'react-icons/md';
+import { GiCoffeeBeans } from 'react-icons/gi';
 
 //Logos
 import qccclogo from '../../images/qc-logo-p-500.png';
@@ -158,7 +160,7 @@ export const About = () => {
                 id=''>
                 <Container>
 
-                    <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#fff' }}>Blockchain Coffee Bean Milestones</h2>
+                    <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#fff' }}>Blockchain Coffee Beans Milestones</h2>
                     <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
                     <Row>
@@ -252,6 +254,45 @@ export const About = () => {
                                 icon={<HiUserGroup />}
                             >
                                 <h3 className="vertical-timeline-element-title">First call with all 4 parties - confirm match</h3>
+                                {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p> */}
+                            </VerticalTimelineElement>
+
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date="2020-01-06"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                icon={<MdSettingsRemote />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Remote training for Lowell @ Catracha</h3>
+                                {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p> */}
+                            </VerticalTimelineElement>
+
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date="2020-01-13"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                icon={<GiCoffeeBeans />}
+                            >
+                                <h3 className="vertical-timeline-element-title">First harvest for Claudia and Juan</h3>
+                                {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p> */}
+                            </VerticalTimelineElement>
+
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date="2020-02-14"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                icon={<GiCoffeeBeans />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Last harvest for Claudia and Juan</h3>
                                 {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
                                 <p>
                                     Varius morbi enim nunc faucibus a pellentesque
