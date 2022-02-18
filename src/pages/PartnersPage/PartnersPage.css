@@ -1,3 +1,11 @@
+.blue-green-gradient-bg {
+	background: linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%) no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 .bext-section-bg {
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url('https://bext360.com/wp-content/uploads/2020/02/901941-black-wallpaper-desktop-1920x1080-mobile.jpg') no-repeat center;

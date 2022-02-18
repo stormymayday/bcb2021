@@ -17,7 +17,8 @@ export const FarmerList = (props) => {
                 <>
 
                     <section className='section'>
-                        <h2 className='section-title'>Roasters</h2>
+                        <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Roasters</h2>
+                        <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
                         <div className='cocktails-center'>
                             {roasters.map((roaster, index) => {
                                 return <RoasterCard key={roaster.id} roaster={roaster} index={index} />

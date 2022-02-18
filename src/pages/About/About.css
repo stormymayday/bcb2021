@@ -1,4 +1,4 @@
-.about-bg {
+.coming-soon-bg {
 	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url('https://images.unsplash.com/photo-1585166169032-551d4ea843fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2787&q=80') no-repeat center;
 	-webkit-background-size: cover;
@@ -6,4 +6,12 @@
 	-o-background-size: cover;
 	background-size: cover;
 	min-height: 100vh;
+}
+
+.blue-green-gradient-bg {
+	background: linear-gradient(45deg, #4361c2, #4fa49a 50%, #9dc66b 95%) no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }

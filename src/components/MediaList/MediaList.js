@@ -18,7 +18,8 @@ export const MediaList = (props) => {
                 <>
 
                     <section className='section'>
-                        <h2 className='section-title'>Media</h2>
+                        <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Media</h2>
+                        <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
                         <div className='cocktails-center'>
                             {media.map((mediaItem, index) => {
                                 return <MediaCard key={mediaItem.id} mediaItem={mediaItem} index={index} />

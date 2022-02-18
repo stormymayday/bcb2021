@@ -44,7 +44,6 @@ import qcccSmallImage from '../../images/NovemberDelivery_-14.jpg';
 
 import Button from 'react-bootstrap/Button';
 
-import '../../sections/partners/PartnersSection.styles.css';
 import './PartnersPage.css';
 
 export const PartnersPage = () => {
@@ -56,7 +55,7 @@ export const PartnersPage = () => {
 
             <RoastersPageNavigation />
 
-            <div style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='farming'>
+            <div style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
 
                 <Container>
 
@@ -83,7 +82,7 @@ export const PartnersPage = () => {
 
 
             {/* iDE */}
-            <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
+            <div className="blue-green-gradient-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
 
                 <Container>
 
@@ -307,7 +306,7 @@ export const PartnersPage = () => {
             {/* QCCC */}
 
             {/* Old Soul */}
-            <div className="economics-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
+            <div className="blue-green-gradient-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
 
                 <Container>
 

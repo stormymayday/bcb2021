@@ -41,110 +41,217 @@ export const About = () => {
 
             <RoastersPageNavigation />
 
-            <div className='about-bg' style={{ 'padding-top': '5em', 'padding-bottom': '4em' }}>
+            {/* <div className='about-bg' style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} /> */}
+
+            <div
+                className="blue-green-gradient-bg"
+                style={{
+                    'padding-top': '5em',
+                    'padding-bottom': '4em',
+                    'color': '#fff'
+                }} id=''>
+                <Container>
+
+                    <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>About Blockchain Coffee Beans</h2>
+                    <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
+
+                    <Row style={{ 'padding-top': '1em' }}>
+
+                        <Col md='12' lg='12'>
+
+                            <h3 style={{ 'padding-bottom': '0.5em' }}>What am I looking at?</h3>
+
+                            <p>Here you can connect to your coffee like in ways you have never before - see where it is picked and by who, trace its journey across the sea as it transforms from cherries to beans. Learn about the exporters and roasters that make your speciality coffee possible and the economics behind them. </p>
+
+                            <p>
+                                The partners highlighted here are also participating in direct trade and sharing the proceed of their sales back to the farmers, laborers and the community in what we call the Third Payment! (see more below)
+                            </p>
+
+                            <h3 style={{ 'padding-top': '1em', 'padding-bottom': '0.5em' }}>Why are we doing this?</h3>
+
+                            <p>Making great coffee is hard. Together we, a group of exporters, roasters, technologist and impact experts who care about sustainability of the people and the land joined together to see if we can do better. The project aims to answer the following questions:</p>
+
+                            <ul>
+                                <li style={{
+                                    'list-style': 'inside',
+                                    'margin-left': '0.5em'
+                                }}>
+                                    What does it take to implement blockchain technology to track goods in the specialized coffee value chain?
+                                </li>
+                                <li style={{
+                                    'list-style': 'inside',
+                                    'margin-left': '0.5em'
+                                }}>
+                                    What level of transparency can be achieved and is trust created?
+                                    Is that valuable to exporters, roasters and end customers along the coffee value chain?
+                                </li>
+                                <li style={{
+                                    'list-style': 'inside',
+                                    'margin-left': '0.5em'
+                                }}>
+                                    Finally, if indeed people did find this transparency to be valuable, how might we translate this into meaningful benefits for producers around the world?
+                                </li>
+                            </ul>
+
+                        </Col>
+
+                    </Row>
+                </Container>
+            </div>
+
+            <div
+                style={{
+                    'padding-top': '5em',
+                    'padding-bottom': '4em'
+                }}
+                id=''>
+                <Container>
+
+                    <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Third Payment</h2>
+                    <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
+
+                    <Row style={{ 'padding-top': '1em' }}>
+
+                        <Col md='12' lg='12'>
+
+                            <h3 style={{ 'padding-bottom': '0.5em' }}>Lowell, co-founder of Catracha Coffee put it this way:</h3>
+
+                            <p>“We want to start a customer driven initiative called "third payment." Currently we make two payments to producers, the first when Catracha buys the coffee here in Honduras, and the second when we sell the coffee and receive a premium from the roaster.  This second payment is called profit sharing and payment happens in August.</p>
+
+                            <p>
+                                With Third Payment, roasters could add $1 to the roasted price of a pound of coffee and let the customer know that you will send that extra dollar back to the producer.  This is a customer driven payment so a customer feels part of improving our supply chain.
+                            </p>
+
+                            <p>
+                                The plan is to split this "third payment" three ways.  One part would go straight to the producer who produces the coffee.  One part would be used to increase the wages of coffee pickers.  And the third part would be used to create an emergency medical care response fund to help producers who are dealing with unexpected expenses from a medical emergency.
+                            </p>
+
+                            <p>
+                                Paying pickers would happen in the next harvest.  The third payment fund would add to what the farmer pays the pickers.  The goal would be to add 25%.  We can use the blockchain platform and landing page for data so we can track payment to every picker, and customers would see the increase.  We hope to pay pickers better and avoid increased upfront labor costs for producers.  The quality of the pick would likely improve too, positively impacting the quality of the green coffee.
+                            </p>
+
+                            <p>
+                                The emergency medical care fund will need some ground rules that can be developed later.  Our first thought is to deposit funds into the rural bank that we formed with producers and use the same board members who approve credit to also approve emergency funds.
+                            </p>
+
+                        </Col>
+
+                    </Row>
+                </Container>
+            </div>
+
+            <div
+                className="blue-green-gradient-bg"
+                style={{
+                    'padding-top': '5em',
+                    'padding-bottom': '4em',
+                }}
+                id=''>
+                <Container>
+
+                    <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#fff' }}>Blockchain Coffee Bean Milestones</h2>
+                    <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
+
+                    <Row>
+
+                        <VerticalTimeline>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                                contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                                date="2011 - present"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                            // icon={<WorkIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
+                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date="2010 - 2011"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                            // icon={<WorkIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
+                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date="2008 - 2010"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                            // icon={<WorkIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
+                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--work"
+                                date="2006 - 2008"
+                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                            // icon={<WorkIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Web Designer</h3>
+                                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
+                                <p>
+                                    User Experience, Visual Design
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--education"
+                                date="April 2013"
+                                iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                            // icon={<SchoolIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
+                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--education"
+                                date="November 2012"
+                                iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                            // icon={<SchoolIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
+                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                className="vertical-timeline-element--education"
+                                date="2002 - 2006"
+                                iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                            // icon={<SchoolIcon />}
+                            >
+                                <h3 className="vertical-timeline-element-title">Sagittis Aliquam</h3>
+                                <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
+                                <p>
+                                    Varius morbi enim nunc faucibus a pellentesque
+                                </p>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement
+                                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+                            // icon={<StarIcon />}
+                            />
+                        </VerticalTimeline>
 
 
-            </div >
+                    </Row>
+                </Container>
+            </div>
 
-
-            {/* <div style={{
-                'padding-top': '5em',
-                'padding-bottom': '4em',
-                'background-color': '#808080'
-            }}>
-                <VerticalTimeline>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                        date="2011 - present"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    // icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-                        <p>
-                            Creative Direction, User Experience, Visual Design, Project Management, Team Leading
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2010 - 2011"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    // icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Art Director</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                        <p>
-                            Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2008 - 2010"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    // icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                        <p>
-                            User Experience, Visual Design
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--work"
-                        date="2006 - 2008"
-                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    // icon={<WorkIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                        <p>
-                            User Experience, Visual Design
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="April 2013"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                    // icon={<SchoolIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Content Marketing for Web, Mobile and Social Media</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-                        <p>
-                            Strategy, Social Media
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="November 2012"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                    // icon={<SchoolIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Agile Development Scrum Master</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-                        <p>
-                            Creative Direction, User Experience, Visual Design
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        className="vertical-timeline-element--education"
-                        date="2002 - 2006"
-                        iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                    // icon={<SchoolIcon />}
-                    >
-                        <h3 className="vertical-timeline-element-title">Bachelor of Science in Interactive Digital Media Visual Imaging</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Bachelor Degree</h4>
-                        <p>
-                            Creative Direction, Visual Design
-                        </p>
-                    </VerticalTimelineElement>
-                    <VerticalTimelineElement
-                        iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                    // icon={<StarIcon />}
-                    />
-                </VerticalTimeline>
-            </div> */}
 
             <Footer />
 
