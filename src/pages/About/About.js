@@ -81,7 +81,7 @@ export const About = () => {
 
                             <h3 style={{ 'padding-bottom': '0.5em' }}>What am I looking at?</h3>
 
-                            <p>Here you can connect to your coffee like in ways you have never before - see where it is picked and by who, trace its journey across the sea as it transforms from cherries to beans. Learn about the exporters and roasters that make your speciality coffee possible and the economics behind them. </p>
+                            <p>Here you can connect to your coffee in ways you never have before - see where it is picked and by who, trace its journey across the sea as it transforms from cherries to beans. Learn about the exporters and roasters that make your speciality coffee possible and the economics behind them. </p>
 
                             <p>
                                 The partners highlighted here are also participating in direct trade and sharing the proceed of their sales back to the farmers, laborers and the community in what we call the Third Payment! (see more below)
