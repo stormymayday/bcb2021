@@ -45,6 +45,15 @@ import './About.css';
 
 export const About = () => {
 
+    useEffect(() => {
+
+        // Google Analytics initiazation
+        // ReactGA.initialize(`${process.env.REACT_APP_GA_ID}`);
+        // Google Analytics Page View report
+        ReactGA.pageview(window.location.pathname + window.location.search);
+
+    }, [])
+
 
     return (
 
