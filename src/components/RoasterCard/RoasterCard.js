@@ -48,7 +48,7 @@ export const RoasterCard = (props) => {
                 }
 
                 {
-                    props.roaster.roasterName === 'Old Soul'
+                    props.roaster.roasterName === 'Old Soul Co.'
 
                         ?
 

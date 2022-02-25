@@ -668,7 +668,7 @@ const AppProvider = ({ children }) => {
             logo: '../../images/slideTwo.jpg'
         },
         {
-            roasterName: 'Old Soul',
+            roasterName: 'Old Soul Co.',
             roasterUrl: 'https://oldsoulco.com/',
             logo: '../../images/oldsoullogo-trans.png'
         },
