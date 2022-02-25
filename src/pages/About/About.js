@@ -87,7 +87,7 @@ export const About = () => {
                                 The partners highlighted here are also participating in direct trade and sharing the proceed of their sales back to the farmers, laborers and the community in what we call the Third Payment! (see more below)
                             </p>
 
-                            <h3 style={{ 'padding-top': '1em', 'padding-bottom': '0.5em' }}>Why are you doing this</h3>
+                            <h3 style={{ 'padding-top': '1em', 'padding-bottom': '0.5em' }}>Why are you doing this?</h3>
 
                             <p>Making great coffee is hard. Together we, a group of exporters, roasters, technologist and impact experts who care about sustainability of the people and the land joined together to see if we can do better. The project aims to answer the following questions:</p>
 
