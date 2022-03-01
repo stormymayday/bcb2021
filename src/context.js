@@ -724,6 +724,26 @@ const AppProvider = ({ children }) => {
             mediaName: `Forging linkages in value chain with blockchain - iDE's Experience`,
             mediaUrl: 'https://vimeo.com/673382286',
             mediaImg: 'https://vumbnail.com/673382286.jpg'
+        },
+        {
+            mediaName: `Arrow Electronics Update: Technology Project Helps Coffee Growers Increase Revenue`,
+            mediaUrl: 'https://www.3blmedia.com/news/arrow-electronics-update-technology-project-helps-coffee-growers-increase-revenue',
+            mediaImg: 'https://www.3blmedia.com/sites/www.3blmedia.com/files/images/Juan_and_Claudia_.jpeg'
+        },
+        {
+            mediaName: `Blockchain enables Denver coffee drinkers to support Honduran farmers`,
+            mediaUrl: 'https://www.comunicaffe.com/blockchain-enables-denver-coffee-drinkers-to-support-honduran-farmers/',
+            mediaImg: 'https://www.3blmedia.com/sites/www.3blmedia.com/files/styles/fmr_page_photos_mm_2_col/public/images/Coffee_Roasting_2.png?itok=aajaOjEF'
+        },
+        {
+            mediaName: `Life on Capitol Hill - Business Matters`,
+            mediaUrl: 'https://www.lifeoncaphill.com/stories/business-matters,385516?',
+            mediaImg: 'https://www.lifeoncaphill.com/images/nameplates/life-on-capitol-hill.png'
+        },
+        {
+            mediaName: `Doing good through sustainable businesses`,
+            mediaUrl: 'https://www.ideglobal.org/story/small-businesses-doing-good',
+            mediaImg: 'https://cdn.ideglobal.org/images/photo/_1440x810_crop_center-center/16-9-Catracha.jpg?mtime=20201211224924'
         }
     ]);
 
