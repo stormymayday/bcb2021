@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+import { useGlobalContext } from '../../context';
+
 // Google Analytics
 import ReactGA from 'react-ga';
 
@@ -32,7 +34,7 @@ import Button from 'react-bootstrap/Button';
 
 //Icons
 import { FaHandshake, FaShip, FaDollarSign, FaTruck, FaCheck } from 'react-icons/fa';
-import { HiUserGroup } from 'react-icons/hi';
+// import { HiUserGroup } from 'react-icons/hi';
 import { BsStarFill } from 'react-icons/bs';
 import { MdSettingsRemote } from 'react-icons/md';
 import { GiCoffeeBeans } from 'react-icons/gi';
@@ -54,6 +56,8 @@ import ClaudiaAndJuanThirdPayment from '../../images/WhatsApp Image 2021-02-15 a
 import './About.css';
 
 export const About = () => {
+
+    const { timelineElements } = useGlobalContext();
 
     useEffect(() => {
 
@@ -664,6 +668,94 @@ export const About = () => {
                         </VerticalTimeline>
 
                     </Row>
+
+
+
+                    {/* <VerticalTimeline>
+                        {
+                            timelineElements.map(element => {
+
+                                return (
+                                    <VerticalTimelineElement
+
+                                        key={element.id}
+
+                                        className="vertical-timeline-element--work"
+                                        contentStyle={element.contentStyle}
+                                        contentArrowStyle={element.contentArrowStyle}
+                                        date={element.date}
+                                        iconStyle={element.iconStyle}
+                                        icon={< element.icon />}
+
+                                    >
+
+                                        <h3
+                                            className="vertical-timeline-element-title"
+                                            style={{
+                                                'letter-spacing': 'normal',
+                                                'font-size': '1.5em'
+                                            }}
+                                        >
+                                            {element.title}
+                                        </h3>
+
+                                        {
+                                            element.subTitle
+                                                ?
+                                                <h4 className="vertical-timeline-element-subtitle"
+                                                    style={{
+                                                        'letter-spacing': 'normal',
+                                                        'font-size': '1.3em'
+                                                    }}
+                                                >
+                                                    {element.subTitle}
+                                                </h4>
+                                                :
+                                                null
+                                        }
+
+                                        {
+                                            element.text
+                                                ?
+                                                <p>element.text</p>
+                                                :
+                                                null
+                                        }
+
+                                        {
+                                            element.media
+                                                ?
+                                                <a
+                                                    href={
+                                                        element.mediaURL
+                                                            ?
+                                                            element.mediaURL
+                                                            :
+                                                            null
+                                                    }
+                                                    target="_blank"
+                                                >
+                                                    <Image
+                                                        src={element.media}
+                                                        style={{
+                                                            'max-width': '100%',
+                                                            'margin-top': '2rem',
+                                                            'margin-bottom': '2rem',
+                                                            'display': 'block',
+                                                            'margin-left': 'auto',
+                                                            'margin-right': 'auto'
+                                                        }}
+                                                    ></Image>
+                                                </a>
+                                                :
+                                                null
+                                        }
+
+                                    </VerticalTimelineElement>
+                                )
+                            })
+                        }
+                    </VerticalTimeline> */}
 
                 </Container>
 

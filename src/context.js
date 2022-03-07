@@ -1,6 +1,20 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { useCallback } from 'react';
 
+//Icons
+import { FaHandshake, FaShip, FaDollarSign, FaTruck, FaCheck } from 'react-icons/fa';
+import { HiUserGroup } from 'react-icons/hi';
+
+//Logos
+import qccclogo from '../src/images/qc-logo-p-500.png';
+import catratchalogo from '../src/images/catracha-logo.jpg';
+import oldsoullogo from '../src/images/oldsoullogo-trans.png';
+import royalcoffeelogo from '../src/images/royalcoffeelogo.png';
+import posnerlogo from '../src/images/posner-logo.png';
+
+// Images
+import ClaudiaAndJuanThirdPayment from '../src/images/WhatsApp Image 2021-02-15 at 12.39.06 PM.jpeg';
+
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
@@ -744,6 +758,40 @@ const AppProvider = ({ children }) => {
             mediaName: `Doing good through sustainable businesses`,
             mediaUrl: 'https://www.ideglobal.org/story/small-businesses-doing-good',
             mediaImg: 'https://cdn.ideglobal.org/images/photo/_1440x810_crop_center-center/16-9-Catracha.jpg?mtime=20201211224924'
+        },
+        {
+            mediaName: `Podcast: Old Soul Co.'s Jason Griest on Sacramento Coffee Scene`,
+            mediaUrl: 'https://www.visitsacramento.com/blog/stories/post/podcast-old-soul-cos-jason-griest-on-sacramento-coffee-scene/',
+            mediaImg: 'https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_400,q_75,w_1366/v1/clients/sacramento/Old_Soul_Alley_e571b59a-9a24-49c9-b39b-1d01a9a5be0e.jpg'
+        }
+    ]);
+
+    const [timelineElements, setTimelineElements] = useState([
+        {
+            id: 1,
+            contentStyle: { background: 'rgb(255, 255, 255)', color: '#000' },
+            contentArrowStyle: { borderRight: '7px solid  rgb(255, 255, 255)' },
+            date: 'Sep 30 2021',
+            iconStyle: { background: '#D0A555', color: '#fff' },
+            icon: FaHandshake,
+            title: 'Old Soul Co. agreed to join!',
+            subTitle: 'Sacramento, CA',
+            text: '',
+            media: oldsoullogo,
+            mediaURL: 'https://oldsoulco.com/',
+        },
+        {
+            id: 2,
+            contentStyle: { background: 'rgb(255, 255, 255)', color: '#000' },
+            contentArrowStyle: { borderRight: '7px solid  rgb(255, 255, 255)' },
+            date: 'Sep 30 2021',
+            iconStyle: { background: '#D0A555', color: '#fff' },
+            icon: FaHandshake,
+            title: 'Old Soul Co. agreed to join!',
+            subTitle: 'Sacramento, CA',
+            text: '',
+            media: oldsoullogo,
+            mediaURL: 'https://oldsoulco.com/',
         }
     ]);
 
@@ -777,7 +825,7 @@ const AppProvider = ({ children }) => {
 
     return (
         <AppContext.Provider
-            value={{ loading, roasters, media, setSearchTerm, farmersMongoDB }}
+            value={{ loading, roasters, media, setSearchTerm, farmersMongoDB, timelineElements }}
         >
             {children}
         </AppContext.Provider>
