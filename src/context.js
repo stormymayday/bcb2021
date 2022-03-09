@@ -1075,8 +1075,6 @@ const AppProvider = ({ children }) => {
         }
     ]);
 
-    timelineElements.reverse();
-
     useEffect(() => {
 
         fetch(`${process.env.REACT_APP_GRAPHQL_URL}`, {

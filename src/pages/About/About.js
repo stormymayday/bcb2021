@@ -66,6 +66,8 @@ export const About = () => {
         // Google Analytics Page View report
         ReactGA.pageview(window.location.pathname + window.location.search);
 
+        // timelineElements.reverse();
+
     }, [])
 
     return (
@@ -194,7 +196,7 @@ export const About = () => {
 
                                 <VerticalTimeline>
                                     {
-                                        timelineElements.map(element => {
+                                        timelineElements.reverse().map(element => {
 
                                             return (
                                                 <VerticalTimelineElement
