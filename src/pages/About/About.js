@@ -34,7 +34,7 @@ import Button from 'react-bootstrap/Button';
 
 //Icons
 import { FaHandshake, FaShip, FaDollarSign, FaTruck, FaCheck } from 'react-icons/fa';
-// import { HiUserGroup } from 'react-icons/hi';
+import { HiUserGroup } from 'react-icons/hi';
 import { BsStarFill } from 'react-icons/bs';
 import { MdSettingsRemote } from 'react-icons/md';
 import { GiCoffeeBeans } from 'react-icons/gi';
@@ -67,7 +67,6 @@ export const About = () => {
         ReactGA.pageview(window.location.pathname + window.location.search);
 
     }, [])
-
 
     return (
 
@@ -174,592 +173,124 @@ export const About = () => {
                 </Container>
             </div>
 
-            <div
-                className="blue-green-gradient-bg"
-                style={{
-                    'padding-top': '5em',
-                    'padding-bottom': '4em',
-                }}
-                id=''>
-                <Container>
+            {
+                timelineElements
 
-                    <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#fff' }}>Blockchain Coffee Beans Milestones</h2>
-                    <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
+                    ?
 
-                    <Row>
+                    <div
+                        className="blue-green-gradient-bg"
+                        style={{
+                            'padding-top': '5em',
+                            'padding-bottom': '4em',
+                        }}
+                        id=''>
+                        <Container>
 
-                        <VerticalTimeline>
+                            <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#fff' }}>Blockchain Coffee Beans Milestones</h2>
+                            <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Sep 30 2021"
-                                iconStyle={{ background: '#D0A555', color: '#fff' }}
-                                icon={<FaHandshake />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Old Soul Co. agreed to join!</h3>
-                                <a href="https://oldsoulco.com/" target="_blank">
-                                    <Image
+                            <Row>
 
-                                        src={oldsoullogo}
-                                        style={{
-                                            'max-width': '75%',
-                                            'margin-top': '2rem',
-                                            'display': 'block',
-                                            'margin-left': 'auto',
-                                            'margin-right': 'auto'
-                                        }}
-                                    ></Image>
-                                </a>
-                            </VerticalTimelineElement>
+                                <VerticalTimeline>
+                                    {
+                                        timelineElements.map(element => {
 
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Sep 22 2021"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                icon={<IoMdCube />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >First roast of Luis' 2021 blockchained coffee by Old Soul Co.</h3>
-                            </VerticalTimelineElement>
+                                            return (
+                                                <VerticalTimelineElement
 
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Sep 2 2021"
-                                iconStyle={{ background: '#D72128', color: '#fff' }}
-                                icon={<FaShip />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Majority of tracked coffee arrives at Royal Coffee</h3>
-                                <p>Warehouse is in Oakland, CA</p>
-                                <a href="https://royalcoffee.com/" target="_blank">
-                                    <Image
+                                                    key={element.id}
 
-                                        src={royalcoffeelogo}
-                                        style={{
-                                            'max-width': '75%',
-                                            'margin-top': '2rem',
-                                            'margin-bottom': '2rem',
-                                            'display': 'block',
-                                            'margin-left': 'auto',
-                                            'margin-right': 'auto'
-                                        }}
-                                    ></Image>
-                                </a>
-                            </VerticalTimelineElement>
+                                                    className="vertical-timeline-element--work"
+                                                    contentStyle={element.contentStyle}
+                                                    contentArrowStyle={element.contentArrowStyle}
+                                                    date={element.date}
+                                                    iconStyle={element.iconStyle}
+                                                    icon={< element.icon />}
 
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Aug 23 2021"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                icon={<FaHandshake />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Third payment concept introduced by Catracha</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Aug 9 2021"
-                                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                                icon={<IoRocketSharp />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Version 2 of the blockchaincoffeebeans.com site launched</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Jul 15 2021"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                icon={<FaShip />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Majority of tracked coffee left Puerto Cortes, Honduras</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Feb 17 2021"
-                                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                                icon={<VscFileBinary />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Version 2 of the blockchaincoffeebeans.com site in development</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Feb 15 2021"
-                                iconStyle={{ background: '#FFD700', color: '#fff' }}
-                                icon={<FaDollarSign />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >3rd payment Money Reached Claudia and Juan in full</h3>
-                                <Image
-                                    rounded
-                                    src={ClaudiaAndJuanThirdPayment}
-                                    style={{
-                                        'max-width': '75%',
-                                        'margin-top': '2rem',
-                                        'margin-bottom': '2rem',
-                                        'display': 'block',
-                                        'margin-left': 'auto',
-                                        'margin-right': 'auto'
-                                    }}
-                                ></Image>
-                                <p>Farmers in this case made $526 more, which is a 36% increase of the revenue normally would have earned!</p>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Nov 2 2020"
-                                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                                icon={<IoRocketSharp />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >blockchaincoffeebeans.com site launched</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Oct 1 2020"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                icon={<FaTruck />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Claudia's and Juan's coffee arrived at QCCC</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Aug 20 2020"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                icon={<FaShip />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Container of coffee arrives in US</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Jul 10 2020"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                icon={<FaShip />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Coffee exported from Puerto Cortes, Honduras</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Mar 1 2020"
-                                iconStyle={{ background: '#D72128', color: '#fff' }}
-                                icon={<RiVirusFill />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Coronavirus began to disrupt lives worldwide</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Feb 14 2020"
-                                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                                icon={<GiCoffeeBeans />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Last 2020 harvest for Claudia and Juan</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Feb 14 2020"
-                                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                                icon={<GiCoffeeBeans />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >First 2020 harvest for Claudia and Juan</h3>
-                                <p>Information is recorded on a smart phone.</p>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Dec 20 2019"
-                                iconStyle={{ background: '#654321', color: '#fff' }}
-                                icon={<GiCoffeeBeans />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Last roast of 2019 batch</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Dec 3 2019"
-                                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                                icon={<VscFileBinary />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Data model confirmed</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Oct 9 2019"
-                                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                icon={<FaHandshake />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >All parties confirmed participation in blockchain coffee project!</h3>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Aug 21 2019"
-                                contentStyle={{ background: '#AF1115', color: '#fff' }}
-                                // contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                                contentArrowStyle={{ borderRight: '7px solid  #AF1115' }}
-                                // iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
-                                iconStyle={{ background: '#AF1115', color: '#fff' }}
-                                icon={<FaHandshake />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Catracha agreed to join!</h3>
-                                {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
-                                <p>
-                                    Varius morbi enim nunc faucibus a pellentesque
-                                </p> */}
-                                {/* <a href="https://www.catrachacoffee.com/" target="_blank">
-                                    <Card.Img
-                                        className="d-block mx-auto img-fluid w-50"
-                                        variant="top"
-                                        src={catratchalogo}
-                                        style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
-                                    />
-                                </a> */}
-                                <a href="https://www.catrachacoffee.com/" target="_blank">
-                                    <Image
-                                        thumbnail
-                                        src={catratchalogo}
-                                        style={{
-                                            'max-width': '75%',
-                                            'margin-top': '2rem',
-                                            'margin-bottom': '2rem',
-                                            'display': 'block',
-                                            'margin-left': 'auto',
-                                            'margin-right': 'auto'
-                                        }}
-                                    ></Image>
-                                </a>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                // contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                contentStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
-                                // contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                                contentArrowStyle={{ borderRight: '7px solid  rgb(0, 0, 0)' }}
-                                date="Aug 07 2019"
-                                // iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                                iconStyle={{ background: 'rgb(0, 0, 0)', color: '#fff' }}
-                                icon={<FaHandshake />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >QCCC agreed to join!</h3>
-                                {/* <h4 className="vertical-timeline-element-subtitle">Nibh, Tortor</h4>
-                                <p>
-                                    Varius morbi enim nunc faucibus a pellentesque
-                                </p> */}
-                                {/* <a href="https://queencitycollectivecoffee.com/" target="_blank">
-                                    <Card.Img
-                                        className="d-block mx-auto img-fluid w-50"
-                                        variant="top"
-                                        src={qccclogo}
-                                        style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}
-                                    />
-                                </a> */}
-                                <a href="https://queencitycollectivecoffee.com/" target="_blank">
-                                    <Image
-
-                                        src={qccclogo}
-                                        style={{
-                                            'background-color': '#000',
-                                            'max-width': '75%',
-                                            'margin-top': '2rem',
-                                            'margin-bottom': '2rem',
-                                            'display': 'block',
-                                            'margin-left': 'auto',
-                                            'margin-right': 'auto'
-                                        }}
-                                    ></Image>
-                                </a>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Jun 18 2019"
-                                iconStyle={{ background: '#654321', color: '#fff' }}
-                                icon={<GiCoffeeBeans />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Friends-cupping event at iDE annual meeting</h3>
-                                <Image
-                                    rounded
-                                    src="https://cdn.ideglobal.org/images/photo/_1440x810_crop_center-center/16x9-hero-coffee-cupping.jpg?mtime=20200720194050"
-                                    style={{
-                                        'max-width': '75%',
-                                        'margin-top': '2rem',
-                                        'margin-bottom': '2rem',
-                                        'display': 'block',
-                                        'margin-left': 'auto',
-                                        'margin-right': 'auto'
-                                    }}
-                                ></Image>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="May 20 2019"
-                                iconStyle={{ background: '#04B2DC', color: '#fff' }}
-                                icon={<FaCheck />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Posner Center awarded grant to iDE and Bext360 for Blockchain Coffee Bean project</h3>
-                                <a href="https://posnercenter.org/" target="_blank">
-                                    <Image
-
-                                        src={posnerlogo}
-                                        style={{
-                                            'max-width': '75%',
-                                            'margin-top': '2rem',
-                                            'margin-bottom': '2rem',
-                                            'display': 'block',
-                                            'margin-left': 'auto',
-                                            'margin-right': 'auto'
-                                        }}
-                                    ></Image>
-                                </a>
-                            </VerticalTimelineElement>
-
-                            <VerticalTimelineElement
-                                className="vertical-timeline-element--work"
-                                date="Jan 1 2019"
-                                iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
-                                icon={<GiCoffeeBeans />}
-                            >
-                                <h3
-                                    className="vertical-timeline-element-title"
-                                    style={{
-                                        'letter-spacing': 'normal',
-                                        'font-size': '1.5em'
-                                    }}
-                                >Claudia and Juan picked their first cherries in 2019</h3>
-                            </VerticalTimelineElement>
-
-                        </VerticalTimeline>
-
-                    </Row>
-
-
-
-                    {/* <VerticalTimeline>
-                        {
-                            timelineElements.map(element => {
-
-                                return (
-                                    <VerticalTimelineElement
-
-                                        key={element.id}
-
-                                        className="vertical-timeline-element--work"
-                                        contentStyle={element.contentStyle}
-                                        contentArrowStyle={element.contentArrowStyle}
-                                        date={element.date}
-                                        iconStyle={element.iconStyle}
-                                        icon={< element.icon />}
-
-                                    >
-
-                                        <h3
-                                            className="vertical-timeline-element-title"
-                                            style={{
-                                                'letter-spacing': 'normal',
-                                                'font-size': '1.5em'
-                                            }}
-                                        >
-                                            {element.title}
-                                        </h3>
-
-                                        {
-                                            element.subTitle
-                                                ?
-                                                <h4 className="vertical-timeline-element-subtitle"
-                                                    style={{
-                                                        'letter-spacing': 'normal',
-                                                        'font-size': '1.3em'
-                                                    }}
                                                 >
-                                                    {element.subTitle}
-                                                </h4>
-                                                :
-                                                null
-                                        }
 
-                                        {
-                                            element.text
-                                                ?
-                                                <p>element.text</p>
-                                                :
-                                                null
-                                        }
+                                                    <h3
+                                                        className="vertical-timeline-element-title"
+                                                        style={{
+                                                            'letter-spacing': 'normal',
+                                                            'font-size': '1.5em'
+                                                        }}
+                                                    >
+                                                        {element.title}
+                                                    </h3>
 
-                                        {
-                                            element.media
-                                                ?
-                                                <a
-                                                    href={
-                                                        element.mediaURL
+                                                    {
+                                                        element.subTitle
                                                             ?
-                                                            element.mediaURL
+                                                            <h4 className="vertical-timeline-element-subtitle"
+                                                                style={{
+                                                                    'letter-spacing': 'normal',
+                                                                    'font-size': '1.2em',
+                                                                    'margin-top': '0.6em'
+                                                                }}
+                                                            >
+                                                                {element.subTitle}
+                                                            </h4>
                                                             :
                                                             null
                                                     }
-                                                    target="_blank"
-                                                >
-                                                    <Image
-                                                        src={element.media}
-                                                        style={{
-                                                            'max-width': '100%',
-                                                            'margin-top': '2rem',
-                                                            'margin-bottom': '2rem',
-                                                            'display': 'block',
-                                                            'margin-left': 'auto',
-                                                            'margin-right': 'auto'
-                                                        }}
-                                                    ></Image>
-                                                </a>
-                                                :
-                                                null
-                                        }
 
-                                    </VerticalTimelineElement>
-                                )
-                            })
-                        }
-                    </VerticalTimeline> */}
+                                                    {
+                                                        element.media
+                                                            ?
+                                                            <a
+                                                                href={
+                                                                    element.mediaURL
+                                                                        ?
+                                                                        element.mediaURL
+                                                                        :
+                                                                        null
+                                                                }
+                                                                target="_blank"
+                                                            >
+                                                                <Image
+                                                                    rounded
+                                                                    src={element.media}
+                                                                    style={{
+                                                                        'max-width': '100%',
+                                                                        'margin-top': '2rem',
+                                                                        'margin-bottom': '1.5rem',
+                                                                        'display': 'block',
+                                                                        'margin-left': 'auto',
+                                                                        'margin-right': 'auto'
+                                                                    }}
+                                                                ></Image>
+                                                            </a>
+                                                            :
+                                                            null
+                                                    }
 
-                </Container>
+                                                    {
+                                                        element.text
+                                                            ?
+                                                            <p>{element.text}</p>
+                                                            :
+                                                            null
+                                                    }
 
-            </div>
+                                                </VerticalTimelineElement>
+                                            )
+                                        })
+                                    }
+                                </VerticalTimeline>
+
+                            </Row>
+
+                        </Container>
+
+                    </div>
+
+                    :
+
+                    null
+
+            }
 
             <Footer />
 
