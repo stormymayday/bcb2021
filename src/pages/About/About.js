@@ -66,8 +66,6 @@ export const About = () => {
         // Google Analytics Page View report
         ReactGA.pageview(window.location.pathname + window.location.search);
 
-        // timelineElements.reverse();
-
     }, [])
 
     return (
@@ -196,7 +194,7 @@ export const About = () => {
 
                                 <VerticalTimeline>
                                     {
-                                        timelineElements.reverse().map(element => {
+                                        timelineElements.slice(0).reverse().map(element => {
 
                                             return (
                                                 <VerticalTimelineElement
@@ -297,8 +295,6 @@ export const About = () => {
             <Footer />
 
             <ScrollToTop />
-
-
 
         </main >
     )
