@@ -14,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Image from 'react-bootstrap/Image';
+import Button from 'react-bootstrap/Button';
 
 // Sections
 import Farming from '../../components/Farming/Farming';
@@ -28,9 +29,6 @@ import ScrollToTop from '../../components/ScrollToTop/ScrollTopTop';
 
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-
-
-import Button from 'react-bootstrap/Button';
 
 //Icons
 import { FaHandshake, FaShip, FaDollarSign, FaTruck, FaCheck } from 'react-icons/fa';
@@ -58,6 +56,8 @@ import './About.css';
 export const About = () => {
 
     const { timelineElements } = useGlobalContext();
+
+    const [data, setData] = useState(timelineElements);
 
     useEffect(() => {
 
@@ -173,6 +173,8 @@ export const About = () => {
                 </Container>
             </div>
 
+
+
             {
                 timelineElements
 
@@ -190,11 +192,25 @@ export const About = () => {
                             <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#fff' }}>Blockchain Coffee Beans Milestones</h2>
                             <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
+                            <div class="col-md-12 text-center">
+                                <Button
+                                    style={{ 'margin-bottom': '4em' }}
+                                    variant="light"
+                                    onClick={() => {
+
+                                        setData(data.slice(0).reverse());
+
+                                    }}
+                                >
+                                    Reverse
+                                </Button>
+                            </div>
+
                             <Row>
 
                                 <VerticalTimeline>
                                     {
-                                        timelineElements.slice(0).reverse().map(element => {
+                                        data.map(element => {
 
                                             return (
                                                 <VerticalTimelineElement
@@ -281,6 +297,20 @@ export const About = () => {
                                 </VerticalTimeline>
 
                             </Row>
+
+                            <div class="col-md-12 text-center">
+                                <Button
+                                    style={{ 'margin-top': '4em' }}
+                                    variant="light"
+                                    onClick={() => {
+
+                                        setData(data.slice(0).reverse());
+
+                                    }}
+                                >
+                                    Reverse
+                                </Button>
+                            </div>
 
                         </Container>
 
