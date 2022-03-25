@@ -743,8 +743,8 @@ const AppProvider = ({ children }) => {
         },
         {
             mediaName: `Forging linkages in value chain with blockchain - iDE's Experience`,
-            mediaUrl: 'https://vimeo.com/673382286',
-            mediaImg: 'https://vumbnail.com/673382286.jpg'
+            mediaUrl: 'https://vimeo.com/673382286/85741867eb',
+            mediaImg: 'https://cdn.ideglobal.org/images/photo/_1920x1080_crop_center-center/16x9-hero-coffee-in-hand.jpg?mtime=20200720193128'
         },
         {
             mediaName: `Arrow Electronics Update: Technology Project Helps Coffee Growers Increase Revenue`,
