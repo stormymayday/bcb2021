@@ -74,7 +74,11 @@ const FarmerDetails = () => {
                     <>
                         <FarmerDetailsPageNavigation />
 
-                        <BootstrapCarousel farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture} />
+                        <BootstrapCarousel
+                            farmerName={farmer.farmerName}
+                            farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : defaultPicture}
+                            finishedProductLots={farmer.finishedProductNode ? farmer.finishedProductNode.finishedProductLots : null}
+                        />
 
 
 

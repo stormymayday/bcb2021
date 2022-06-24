@@ -18,8 +18,20 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 
 export default function BootstrapCarousel({
-    farmerPicture
+    farmerName,
+    farmerPicture,
+    finishedProductLots
 }) {
+
+    let firstPayment = 0;
+    let thirdPayment = 0;
+
+    // Calculating Third Payment
+    if (finishedProductLots) {
+
+        thirdPayment = finishedProductLots.reduce(function (acc, obj) { return acc + parseFloat(obj.thirdPaymentValue); }, 0);
+
+    }
 
     const scrollWidthOffset = (el) => {
         const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
@@ -69,8 +81,21 @@ export default function BootstrapCarousel({
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3>Be a part of something special</h3>
-                        <p>Your roaster and exporter struck up a unique partnership to boost the income of farmers and laborers that made your specialty coffee possible.</p>
+
+                        {
+                            thirdPayment
+                                ?
+                                <div>
+                                    <h3>{farmerName}'s family increased their sale revenue by ${thirdPayment} this year</h3>
+                                    <p>This is made possible by collaboration between Catracha, {finishedProductLots[0].organizationName} and you!</p>
+                                </div>
+                                :
+                                <div>
+                                    <h3>Be a part of something special</h3>
+                                    <p>Your roaster and exporter struck up a unique partnership to boost the income of farmers and laborers that made your specialty coffee possible.</p>
+                                </div>
+                        }
+
                         <Button variant="light" href="/about">Learn more</Button>
                     </Carousel.Caption>
                 </Carousel.Item>
