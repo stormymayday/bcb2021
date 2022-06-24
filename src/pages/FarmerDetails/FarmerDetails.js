@@ -208,6 +208,8 @@ const FarmerDetails = () => {
 
                             roasterIntakeLots={farmer.roasterIntakeNode ? farmer.roasterIntakeNode.roasterIntakeLots : null}
 
+                            finishedProductLots={farmer.finishedProductNode ? farmer.finishedProductNode.finishedProductLots : null}
+
                         ></Economics>
 
 

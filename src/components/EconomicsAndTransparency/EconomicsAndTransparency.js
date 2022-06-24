@@ -23,7 +23,8 @@ export const EconomicsAndTransparency = ({
     importLots,
     roastingNode,
     organizationName,
-    roasterIntakeLots
+    roasterIntakeLots,
+    finishedProductLots
 
 }) => {
 
@@ -31,6 +32,8 @@ export const EconomicsAndTransparency = ({
     let wetParchmentLots = 0;
 
     let firstPayment = 0;
+
+    let thirdPayment = 0;
 
     let totalRoastingCostNote = `/lb†
     † cost prior to packaging & distribution`;
@@ -44,6 +47,13 @@ export const EconomicsAndTransparency = ({
 
         // Summarizing First Payment from the Wet Parchmenet Lots on Exporter Intake Node
         firstPayment = wetParchmentLots.reduce(function (acc, obj) { return acc + parseFloat(obj.value); }, 0);
+
+    }
+
+    // Calculating Third Payment
+    if (finishedProductLots) {
+
+        thirdPayment = finishedProductLots.reduce(function (acc, obj) { return acc + parseFloat(obj.thirdPaymentValue); }, 0);
 
     }
 
@@ -78,7 +88,10 @@ export const EconomicsAndTransparency = ({
                             </b><br />
                             IHCAFE Payment: <b>{exportLots ? exportLots[0].ihcafePaymentValue + ' ' + exportLots[0].ihcafePaymentAsset : `Coming Soon`}
                                 {/* {exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : "N/A"} {exportLots[0].ihcafePaymentAsset ? exportLots[0].ihcafePaymentAsset : ""} */}
+                            </b><br />
+                            Third Payment: <b>{thirdPayment ? thirdPayment + ' ' + finishedProductLots[0].thirdPaymentAsset : `Coming Soon`}
                             </b>
+
                         </p>
 
                     </Col>

@@ -675,6 +675,79 @@ const AppProvider = ({ children }) => {
 
                 }
 
+
+
+                finishedProductNode {
+
+                    _id
+
+                    finishedProductNodeId
+
+                    totaAbsorbedWeight
+                    totalAbsorbedWeightUnit
+                    organizationId
+                    marketplaceId
+                    defaultLocationId
+                    nodeName
+                    nodeType
+                    nodeDetailType
+                    createdDate
+                    lastModifiedDate
+                    organizationName
+                    images
+                    videos
+                    documents
+                    value
+                    valueUnit
+                    unitValue
+                    unitValueUnit
+                    locationId
+                    name
+                    country
+                    city
+                    state
+                    latitude
+                    longitude
+                    elevation
+                    elevationUnit
+                    address
+
+                    finishedProductLots {
+
+                        _id
+
+                        finishedProductLotId
+                        finishedProductNodeId
+                        organizationId
+                        marketplaceId
+                        productId
+                        lotName
+                        lotType
+                        lotDetailType
+                        createdDate
+                        lastModifiedDate
+                        productName
+                        productToken
+                        productSku
+                        organizationName
+                        currentWeight
+                        currentWeightUnit
+                        absorbedWeight
+                        absorbedWeightUnit
+                        quality
+                        lotIsOpen
+                        images
+                        documents
+                        videos
+                        thirdPaymentValue
+                        thirdPaymentAsset
+                        thirdPaymentTimeStamp
+                        thirdPaymentNotes
+
+                    }
+
+                }
+
             }
         }
 
