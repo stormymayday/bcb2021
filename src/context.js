@@ -754,7 +754,7 @@ const AppProvider = ({ children }) => {
       `
     };
 
-
+    // Roasters
     const [roasters, setRoasters] = useState([
         {
             roasterName: 'Queen City',
@@ -773,6 +773,7 @@ const AppProvider = ({ children }) => {
         }
     ]);
 
+    // Media Elements
     const [media, setMedia] = useState([
         {
             mediaName: `Catracha Coffee: Single Origin`,
@@ -843,9 +844,15 @@ const AppProvider = ({ children }) => {
             mediaName: `Podcast: Old Soul Co.'s Jason Griest on Sacramento Coffee Scene`,
             mediaUrl: 'https://www.visitsacramento.com/blog/stories/post/podcast-old-soul-cos-jason-griest-on-sacramento-coffee-scene/',
             mediaImg: 'https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_400,q_75,w_1366/v1/clients/sacramento/Old_Soul_Alley_e571b59a-9a24-49c9-b39b-1d01a9a5be0e.jpg'
+        },
+        {
+            mediaName: `From Cherry to Cup: Drips of Experience`,
+            mediaUrl: 'https://www.youtube.com/watch?v=28fG4T50iqU&t=165s',
+            mediaImg: 'https://i.vimeocdn.com/video/1451737501-777239e321b92216f361e7fb29a571820b58c216945739e54af9277ae6a76055-d_640'
         }
     ]);
 
+    // Timeline Elements
     const [timelineElements, setTimelineElements] = useState([
         {
             id: 1,
