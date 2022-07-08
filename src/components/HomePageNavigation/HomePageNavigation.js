@@ -34,7 +34,7 @@ export default function HomePageNavigation() {
 
                             {/* <Nav.Link href="/">HOME</Nav.Link> */}
 
-                            <Nav.Link
+                            {/* <Nav.Link
                                 as={HashLink}
                                 to={`#farming`}
                                 smooth
@@ -77,7 +77,7 @@ export default function HomePageNavigation() {
                                 scroll={el => scrollWidthOffset(el)}
                             >
                                 ECONOMICS
-                            </Nav.Link>
+                            </Nav.Link> */}
 
                             {/* <Nav.Link
                                 as={HashLink}
@@ -87,15 +87,21 @@ export default function HomePageNavigation() {
                             >
                                 PARTNERS
                             </Nav.Link> */}
-                            <Nav.Link href="/partners">PARTNERS</Nav.Link>
-                            <Nav.Link href="/about">ABOUT</Nav.Link>
-                            <Nav.Link href="/media">MEDIA</Nav.Link>
-                            <Nav.Link href="/roasters">ROASTERS</Nav.Link>
+                            {/* <Nav.Link href="/partners">PARTNERS</Nav.Link> */}
+                            {/* <Nav.Link href="/about">ABOUT</Nav.Link> */}
+
+
 
                             <NavDropdown title="FARMERS" id="basic-nav-dropdown">
                                 <NavDropdown.Item as={Link} to="/farmers-2021" key="0">Harvest 2021</NavDropdown.Item>
                                 <NavDropdown.Item onClick={openExternalURL} key="1">Harvest 2020</NavDropdown.Item>
                             </NavDropdown>
+
+                            <Nav.Link href="/roasters">ROASTERS</Nav.Link>
+
+                            <Nav.Link href="/media">MEDIA</Nav.Link>
+
+                            <Nav.Link href="/partners">PARTNERS</Nav.Link>
 
                         </Nav>
 

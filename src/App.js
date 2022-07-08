@@ -19,6 +19,8 @@ import PartnersPage from './pages/PartnersPage/PartnersPage';
 import MediaPage from './pages/MediaPage/MediaPage';
 import About from './pages/About/About';
 
+import ScrollRestoration from './components/ScrollRestoration/ScrollRestoration';
+
 
 const App = () => {
 
@@ -36,6 +38,7 @@ const App = () => {
 
   return (
     <>
+      <ScrollRestoration />
       <Switch>
         <Route exact path="/">
           <Home />
