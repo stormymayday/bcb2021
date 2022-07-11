@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+
+import './Home.css';
 
 import HomePageCarousel from '../../components/HomePageCarousel/HomePageCarousel';
 
@@ -101,7 +103,8 @@ export const Home = () => {
                 {/* <HomePageCarousel></HomePageCarousel> */}
 
                 <div
-                    className="blue-green-gradient-bg"
+                    // className="blue-green-gradient-bg"
+                    className="top-section-bg"
                     style={{
                         'padding-top': '10em',
                         'padding-bottom': '5em',
