@@ -22,10 +22,11 @@ export default function HomePageNavigation() {
 
     return (
         <>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
+            <Navbar collapseOnSelect expand="lg" variant="dark" sticky="top" style={{ 'background': '#000' }}>
+
                 <Container>
 
-                    <Navbar.Brand href="/"><img src={logo} style={{ 'width': '3em' }}></img></Navbar.Brand>
+                    <Navbar.Brand href="/"><img src={logo} style={{ 'width': '3.5em' }}></img></Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
