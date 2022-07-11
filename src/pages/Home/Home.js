@@ -270,7 +270,7 @@ export const Home = () => {
 
                             <Col md='12' lg='12'>
 
-                                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#0F172A' }}>Our Impact</h2>
+                                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#0F172A' }}>Our Impact Harvest 2021</h2>
                                 <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#0F172A' }}></div>
 
                             </Col>
@@ -309,7 +309,7 @@ export const Home = () => {
                                         </div>
                                         <div className='cocktail-footer'>
                                             <h3>Luis</h3>
-                                            <p>He earned an extra $974 by working with Old Soul Co. and Catracha Coffee, increasing their revenue by 26%</p>
+                                            <p>He earned an extra $958 by working with Old Soul Co. and Catracha Coffee, increasing their revenue by 26%</p>
                                             <Link
                                                 onClick={googleAnalyicsEvent}
                                                 to={`/farmer-2021/Luis`}
