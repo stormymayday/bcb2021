@@ -263,15 +263,18 @@ export const Home = () => {
                     </Container>
                 </div>
 
-                <div style={{ 'background': '#F1F5F8' }}>
+                <div
+                    className="blue-green-gradient-bg"
+                // style={{ 'background': '#F1F5F8' }}
+                >
                     <Container>
 
                         <Row id='' style={{ 'padding-top': '5em', }}>
 
                             <Col md='12' lg='12'>
 
-                                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#0F172A' }}>Our Impact Harvest 2021</h2>
-                                <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#0F172A' }}></div>
+                                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': '#fff' }}>Our Impact Harvest 2021</h2>
+                                <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#fff' }}></div>
 
                             </Col>
 
@@ -328,15 +331,15 @@ export const Home = () => {
 
                             <Col md='12' lg='12'>
 
-                                <h3 style={{ 'padding-bottom': '0.5em' }}>Where is the extra money coming from and going to</h3>
+                                <h3 style={{ 'padding-bottom': '0.5em', 'color': '#fff' }}>Where is the extra money coming from and going to</h3>
 
-                                <p>
+                                <p style={{ 'color': '#fff' }}>
                                     “We want to start a customer driven initiative called "third payment." Currently we make two payments to producers, the first when Catracha buys the coffee here in Honduras, and the second when we sell the coffee and receive a premium from the roaster.
 
                                     With Third Payment, roasters could add $1 to the roasted price of a pound of coffee and let the customer know that you will send that extra dollar back to the producer.
                                 </p>
 
-                                <p>
+                                <p style={{ 'color': '#fff' }}>
                                     The plan is to split this "third payment" three ways.  One part would go straight to the producer who produces the coffee.  One part would be used to increase the wages of coffee pickers.  And the third part would be used to create an emergency medical care response fund to help producers who are dealing with unexpected expenses from a medical emergency.
                                 </p>
 
@@ -347,6 +350,41 @@ export const Home = () => {
                     </Container>
 
                 </div>
+
+                <div style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id=''>
+
+                    <Container>
+
+                        <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Meet Blockchain Coffee Beans Partners</h2>
+                        <div className='underline' style={{ 'margin-bottom': '4em', 'background': '#000' }}></div>
+
+                        <Row style={{ 'padding-top': '1em' }}>
+
+                            <Col md='12' lg='12'>
+
+                                {/* <h3 style={{ 'padding-bottom': '0.5em' }}>Meet Blockchain Coffee Beans Partners</h3> */}
+
+                                <p>Doing something new is not easy; It takes trust and daring to put your brand and data out into the world. Here is the motley crew that is making it work and their role in merging great coffee with hard numbers, and bringing it to you.</p>
+
+
+                            </Col>
+
+                        </Row>
+
+                        <Row style={{ 'padding-top': '1em' }}>
+
+                            <Col md='12' lg='12'>
+
+                                <HomePageCarousel></HomePageCarousel>
+
+                            </Col>
+
+
+                        </Row>
+
+                    </Container>
+
+                </div >
 
                 {/* <HomePageCarousel></HomePageCarousel> */}
 
