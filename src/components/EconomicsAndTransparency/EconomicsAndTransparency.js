@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
+import Carousel from 'react-bootstrap/Carousel';
+import Image from 'react-bootstrap/Image';
 
 import Button from 'react-bootstrap/Button';
 
@@ -235,6 +237,78 @@ export const EconomicsAndTransparency = ({
 
 
                 </Row>
+
+
+
+                <Row>
+
+                    {
+                        finishedProductLots[0].images[0]
+
+                            ?
+
+                            <Col lg={4} sm={12} style={{ 'padding-bottom': '2em' }}>
+
+                                <Image src={finishedProductLots[0].images[0]} thumbnail />
+
+                                {/* <Carousel
+                                    style={{
+                                        'width': 'auto',
+                                        'height': 'auto'
+                                    }}
+                                >
+                                    {finishedProductLots[0].images.map(item => (
+                                        <Carousel.Item key={item.id}>
+                                            <img
+                                                className="d-block w-100"
+                                                src={item}
+                                            />
+                                        </Carousel.Item>
+                                    ))}
+                                </Carousel> */}
+
+                            </Col>
+
+                            :
+
+                            null
+                    }
+
+                    {
+                        finishedProductLots[0].images[1]
+
+                            ?
+
+                            <Col lg={4} sm={12} style={{ 'padding-bottom': '2em' }}>
+                                <Image src={finishedProductLots[0].images[1]} thumbnail />
+
+                            </Col>
+
+                            :
+
+                            null
+                    }
+
+                    {
+                        finishedProductLots[0].images[2]
+
+                            ?
+
+                            <Col lg={4} sm={12}>
+                                <Image src={finishedProductLots[0].images[2]} thumbnail />
+                            </Col>
+
+                            :
+
+                            null
+                    }
+
+
+
+                </Row>
+
+
+
 
                 {/* Testing the Lots */}
                 {/* <Accordion style={{ 'margin-bottom': '1.5rem' }}>
