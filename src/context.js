@@ -42,6 +42,7 @@ const AppProvider = ({ children }) => {
 
                 farmerName
                 producerName
+                harvestYear
 
                 harvestNode {
 
