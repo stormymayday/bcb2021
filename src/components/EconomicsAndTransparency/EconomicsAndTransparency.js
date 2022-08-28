@@ -239,100 +239,71 @@ export const EconomicsAndTransparency = ({
                 </Row>
 
 
+                {
 
-                <Row>
+                    finishedProductLots
 
-                    {
-                        finishedProductLots[0].images[0]
+                        ?
 
-                            ?
+                        <Row>
 
-                            <Col lg={4} sm={12} style={{ 'padding-bottom': '2em' }}>
+                            {
+                                finishedProductLots[0].images[0]
 
-                                <Image src={finishedProductLots[0].images[0]} thumbnail />
+                                    ?
 
-                                {/* <Carousel
-                                    style={{
-                                        'width': 'auto',
-                                        'height': 'auto'
-                                    }}
-                                >
-                                    {finishedProductLots[0].images.map(item => (
-                                        <Carousel.Item key={item.id}>
-                                            <img
-                                                className="d-block w-100"
-                                                src={item}
-                                            />
-                                        </Carousel.Item>
-                                    ))}
-                                </Carousel> */}
+                                    <Col lg={4} sm={12} style={{ 'padding-bottom': '2em' }}>
 
-                            </Col>
+                                        <Image src={finishedProductLots[0].images[0]} thumbnail />
 
-                            :
+                                    </Col>
 
-                            null
-                    }
+                                    :
 
-                    {
-                        finishedProductLots[0].images[1]
+                                    null
+                            }
 
-                            ?
+                            {
+                                finishedProductLots[0].images[1]
 
-                            <Col lg={4} sm={12} style={{ 'padding-bottom': '2em' }}>
-                                <Image src={finishedProductLots[0].images[1]} thumbnail />
+                                    ?
 
-                            </Col>
+                                    <Col lg={4} sm={12} style={{ 'padding-bottom': '2em' }}>
+                                        <Image src={finishedProductLots[0].images[1]} thumbnail />
 
-                            :
+                                    </Col>
 
-                            null
-                    }
+                                    :
 
-                    {
-                        finishedProductLots[0].images[2]
+                                    null
+                            }
 
-                            ?
+                            {
+                                finishedProductLots[0].images[2]
 
-                            <Col lg={4} sm={12}>
-                                <Image src={finishedProductLots[0].images[2]} thumbnail />
-                            </Col>
+                                    ?
 
-                            :
+                                    <Col lg={4} sm={12}>
+                                        <Image src={finishedProductLots[0].images[2]} thumbnail />
+                                    </Col>
 
-                            null
-                    }
+                                    :
 
+                                    null
+                            }
 
+                        </Row>
 
-                </Row>
+                        :
 
+                        null
 
-
-
-                {/* Testing the Lots */}
-                {/* <Accordion style={{ 'margin-bottom': '1.5rem' }}>
-                    <Card>
-                        <Accordion.Toggle as={Card.Header} eventKey="0">
-                            <button className='bttn bttn-primary'>Test</button>
-                        </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                            <Card.Body>
-
-                                <Pagination
-
-                                    lots={wetParchmentLots ? paginate(wetParchmentLots) : []}
-
-                                />
-
-                            </Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
-                </Accordion> */}
-
+                }
 
             </Container>
+
         </div>
+
     );
 }
 
