@@ -20,7 +20,10 @@ export const FarmerList = (props) => {
                         <h2 className='section-title'>Farmers</h2>
                         <div className='cocktails-center'>
                             {farmersMongoDB.map((farmer, index) => {
-                                return <FarmerCard key={farmer.id} farmer={farmer} index={index} />
+                                if (farmer.harvestYear === props.year) {
+                                    return <FarmerCard key={farmer.id} farmer={farmer} index={index} />
+                                }
+
                             })}
                         </div>
                     </section>

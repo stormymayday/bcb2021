@@ -13,7 +13,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from './pages/Home/Home';
 import FarmerDetails from './pages/FarmerDetails/FarmerDetails';
 import Error from './pages/Error/Error';
-import FarmersPage from './pages/FarmersPage/FarmersPage';
+
+import FarmersPage2021 from './pages/FarmersPage2021/FarmersPage2021';
+
+
 import RoastersPage from './pages/RoastersPage/RoastersPage';
 import PartnersPage from './pages/PartnersPage/PartnersPage';
 import MediaPage from './pages/MediaPage/MediaPage';
@@ -55,10 +58,16 @@ const App = () => {
         <Route exact path="/media">
           <MediaPage />
         </Route>
+
         <Route exact path="/farmers-2021">
-          <FarmersPage />
+          <FarmersPage2021 />
         </Route>
-        <Route exact path="/farmer-2021/:name">
+
+        {/* <Route exact path="/farmers-2022">
+          <FarmersPage />
+        </Route> */}
+
+        <Route exact path="/:year/:name">
           <FarmerDetails />
         </Route>
         <Route path="*">

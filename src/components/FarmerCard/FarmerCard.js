@@ -48,7 +48,7 @@ export const FarmerCard = (props) => {
                             <h3>{props.farmer.farmerName}</h3>
                             <Link
                                 onClick={googleAnalyicsEvent}
-                                to={`/farmer-2021/${props.farmer.farmerName}`}
+                                to={`/${props.farmer.harvestYear}/${props.farmer.farmerName}`}
                                 className="bttn bttn-primary bttn-details"
                                 style={{ 'text-decoration': 'none' }}
                             >

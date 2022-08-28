@@ -9,7 +9,7 @@ import FarmerList from '../../components/FarmerList/FarmerList';
 import ScrollToTop from '../../components/ScrollToTop/ScrollTopTop';
 import Footer from '../../components/Footer/Footer';
 
-export const FarmersPage = () => {
+export const FarmersPage2021 = () => {
 
     useEffect(() => {
 
@@ -25,7 +25,7 @@ export const FarmersPage = () => {
 
             <FarmersPageNavigation />
 
-            <FarmerList />
+            <FarmerList year={'2021'} />
 
             <ScrollToTop />
 
@@ -35,4 +35,4 @@ export const FarmersPage = () => {
     )
 }
 
-export default FarmersPage;
+export default FarmersPage2021;
