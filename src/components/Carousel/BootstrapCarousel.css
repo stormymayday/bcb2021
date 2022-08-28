@@ -6,15 +6,17 @@
   display: block;
   position: absolute;
 }
+
 .carousel-inner .carousel-item:first-of-type {
   position: relative;
 }
+
 .carousel-inner .active {
   opacity: 1;
 }
 
 .carousel-img {
-    object-fit: cover;
-    filter: brightness(.4);
-    height: 90vh;    
+  object-fit: cover;
+  filter: brightness(.4);
+  height: 90vh;
 }

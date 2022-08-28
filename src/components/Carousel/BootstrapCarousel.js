@@ -60,7 +60,9 @@ export default function BootstrapCarousel({
 
             >
                 {/* First Slide */}
-                <Carousel.Item>
+                <Carousel.Item
+                    style={{ 'height': '90vh' }}
+                >
                     <img
                         className="d-block w-100 carousel-img"
                         src={`${farmerPicture ? farmerPicture : defaultPicture}`}
@@ -74,7 +76,9 @@ export default function BootstrapCarousel({
                 </Carousel.Item>
 
                 {/* Second Slide */}
-                <Carousel.Item>
+                <Carousel.Item
+                    style={{ 'height': '90vh' }}
+                >
                     <img
                         className="d-block w-100 carousel-img"
                         src={slideTwo}
@@ -101,7 +105,9 @@ export default function BootstrapCarousel({
                 </Carousel.Item>
 
                 {/* Third Slide */}
-                <Carousel.Item>
+                <Carousel.Item
+                    style={{ 'height': '90vh' }}
+                >
                     <img
                         className="d-block w-100 carousel-img"
                         src={slideThree}
@@ -122,7 +128,9 @@ export default function BootstrapCarousel({
                 </Carousel.Item>
 
                 {/* Fourth Slide */}
-                <Carousel.Item>
+                <Carousel.Item
+                    style={{ 'height': '90vh' }}
+                >
                     <img
                         className="d-block w-100 carousel-img"
                         src={slideFour}
@@ -136,7 +144,9 @@ export default function BootstrapCarousel({
                 </Carousel.Item>
 
                 {/* Fifth Slide */}
-                <Carousel.Item>
+                <Carousel.Item
+                    style={{ 'height': '90vh' }}
+                >
                     <img
                         className="d-block w-100 carousel-img"
                         src="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
