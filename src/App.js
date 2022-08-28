@@ -15,6 +15,7 @@ import FarmerDetails from './pages/FarmerDetails/FarmerDetails';
 import Error from './pages/Error/Error';
 
 import FarmersPage2021 from './pages/FarmersPage2021/FarmersPage2021';
+import FarmersPage2022 from './pages/FarmersPage2022/FarmersPage2022';
 
 
 import RoastersPage from './pages/RoastersPage/RoastersPage';
@@ -63,9 +64,9 @@ const App = () => {
           <FarmersPage2021 />
         </Route>
 
-        {/* <Route exact path="/farmers-2022">
-          <FarmersPage />
-        </Route> */}
+        <Route exact path="/farmers-2022">
+          <FarmersPage2022 />
+        </Route>
 
         <Route exact path="/:year/:name">
           <FarmerDetails />

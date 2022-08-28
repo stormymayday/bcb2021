@@ -94,7 +94,9 @@ export default function HomePageNavigation() {
 
 
                             <NavDropdown title="FARMERS" id="basic-nav-dropdown">
+                                <NavDropdown.Item as={Link} to="/farmers-2022" key="0">Harvest 2022</NavDropdown.Item>
                                 <NavDropdown.Item as={Link} to="/farmers-2021" key="0">Harvest 2021</NavDropdown.Item>
+
                                 <NavDropdown.Item onClick={openExternalURL} key="1">Harvest 2020</NavDropdown.Item>
                             </NavDropdown>
 

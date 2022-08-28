@@ -17,7 +17,7 @@ export const FarmerList = (props) => {
                 <>
 
                     <section className='section'>
-                        <h2 className='section-title'>Farmers</h2>
+                        <h2 className='section-title'>Farmers {props.year}</h2>
                         <div className='cocktails-center'>
                             {farmersMongoDB.map((farmer, index) => {
                                 if (farmer.harvestYear === props.year) {
