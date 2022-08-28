@@ -22,6 +22,8 @@ import Card from 'react-bootstrap/Card';
 
 // Sections
 import Farming from '../../components/Farming/Farming';
+import Harvest from '../../components/Harvest/Harvest';
+import WetMill from '../../components/WetMill/WetMill';
 import ProcessingExport from '../../components/ProcessingExport/ProcessingExport';
 import Import from '../../components/Import/Import';
 import Roasting from '../../components/Roasting/Roasting';
@@ -80,9 +82,67 @@ const FarmerDetails = () => {
                             finishedProductLots={farmer.finishedProductNode ? farmer.finishedProductNode.finishedProductLots : null}
                         />
 
+                        {
 
+                            farmer.harvestNode
 
-                        <Farming
+                                ?
+
+                                <Harvest
+                                    farmerName={farmer.farmerName}
+                                    producerName={farmer.producerName}
+
+                                    harvestNode={farmer.harvestNode ? farmer.harvestNode : null}
+                                    farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : null}
+                                    harvestCity={farmer.harvestNode ? farmer.harvestNode.city : null}
+                                    harvestState={farmer.harvestNode ? farmer.harvestNode.state : null}
+                                    harvestCountry={farmer.harvestNode ? farmer.harvestNode.country : null}
+                                    harvestElevation={farmer.harvestNode ? farmer.harvestNode.elevation : null}
+                                    harvestElevationUnit={farmer.harvestNode ? farmer.harvestNode.elevationUnit : null}
+                                    longitude={farmer.harvestNode ? farmer.harvestNode.longitude : null}
+                                    latitude={farmer.harvestNode ? farmer.harvestNode.latitude : null}
+                                    harvestTotalAbsorbedWeight={farmer.harvestNode ? farmer.harvestNode.totaAbsorbedWeight : null}
+                                    harvestTotalAbsorbedWeightUnit={farmer.harvestNode ? farmer.harvestNode.totalAbsorbedWeightUnit : null}
+                                    harvestLots={farmer.harvestNode ? farmer.harvestNode.harvestLots : null}
+                                    numberOfHarvestLots={farmer.harvestNode ? farmer.harvestNode.harvestLots.length : null}
+                                />
+
+                                :
+
+                                null
+
+                        }
+
+                        {
+
+                            farmer.wetMillNode
+
+                                ?
+
+                                <WetMill
+
+                                    farmerPicture={farmer.harvestNode ? farmer.harvestNode.images[0] : null}
+
+                                    wetMillNode={farmer.wetMillNode ? farmer.wetMillNode : null}
+                                    wetMillCity={farmer.wetMillNode ? farmer.wetMillNode.city : null}
+                                    wetMillState={farmer.wetMillNode ? farmer.wetMillNode.state : null}
+                                    wetMillCountry={farmer.wetMillNode ? farmer.wetMillNode.country : null}
+                                    wetMillElevation={farmer.wetMillNode ? farmer.wetMillNode.elevation : null}
+                                    wetMillElevationUnit={farmer.wetMillNode ? farmer.wetMillNode.elevationUnit : null}
+                                    wetMilltTotalAbsorbedWeight={farmer.wetMillNode ? farmer.wetMillNode.totaAbsorbedWeight : null}
+                                    wetMillTotalAbsorbedWeightUnit={farmer.wetMillNode ? farmer.wetMillNode.totalAbsorbedWeightUnit : null}
+                                    wetMillLots={farmer.wetMillNode ? farmer.wetMillNode.wetMillLots : null}
+                                    numberOfWetMillLots={farmer.wetMillNode ? farmer.wetMillNode.wetMillLots.length : null}
+
+                                />
+
+                                :
+
+                                null
+
+                        }
+
+                        {/* <Farming
 
                             farmerName={farmer.farmerName}
                             producerName={farmer.producerName}
@@ -113,7 +173,8 @@ const FarmerDetails = () => {
                             numberOfWetMillLots={farmer.wetMillNode ? farmer.wetMillNode.wetMillLots.length : null}
 
                         >
-                        </Farming>
+                        </Farming> */}
+
 
                         <ProcessingExport
 
