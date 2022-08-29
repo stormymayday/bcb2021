@@ -14,6 +14,8 @@ import './ProcessingExport.css';
 import Pagination from '../Pagination/Pagination';
 import paginate from '../../utils';
 
+import catrachaBG from '../../images/mural-min.JPG';
+
 
 export const ProcessingExport = ({
 
@@ -66,20 +68,30 @@ export const ProcessingExport = ({
 
     return (
 
-        <div className="processing-section-bg" style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='processing-export'>
+        <div style={{ 'padding-top': '5em', 'padding-bottom': '4em' }} id='processing-export'>
 
             <Container>
 
-                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': 'white' }}>Processing & Export</h2>
-                <div className='underline' style={{ 'margin-bottom': '3em', 'background': '#fff' }}></div>
+                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Processing & Export</h2>
+                <div className='underline' style={{ 'margin-bottom': '3em', 'background': '#000' }}></div>
 
                 <Card
+
                     className="text-center"
                     border="light"
                     text='light'
                     style={{ 'background-color': 'transparent', 'margin-bottom': '1rem' }}>
 
-                    <Card.Body>
+                    <Card.Body
+
+                        style={{
+                            background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${catrachaBG})`,
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
+                        }}
+
+                    >
 
                         {
                             exporterIntakeNode
@@ -90,10 +102,10 @@ export const ProcessingExport = ({
 
 
                                     <Card.Img
-                                        className="d-block mx-auto img-fluid w-50"
+                                        className="d-block mx-auto img-fluid w-50 img-thumbnail"
                                         variant="top"
                                         src={exporterIntakeNode ? exporterLogo : null}
-                                        style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
+                                        style={{ 'margin-bottom': '1rem', 'margin-top': '1rem', 'max-width': '15rem' }}
                                     />
 
                                 </a>
@@ -134,10 +146,10 @@ export const ProcessingExport = ({
 
                     <Col md='12' lg='4'>
 
-                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Exporter Intake</h3>
+                        <h3 style={{ 'padding-top': '0.5em' }}>Exporter Intake</h3>
 
 
-                        <p style={{ color: 'white' }}>
+                        <p>
 
                             Location: <b>{exporterIntakeNode ? exporterIntakeCity + ', ' + exporterIntakeState : `Coming Soon`}</b><br />
 
@@ -191,15 +203,15 @@ export const ProcessingExport = ({
                             </Card>
                         </Accordion>
 
-                        <p style={{ color: 'white' }}>The producer dries the wet parchment at their mill and then sells the dry parchment to Catracha Coffee.   After the moisture is removed, the remaining weight of the seed inside the thin membrane is called dry parchment.  The producer is paid based on the weight of the dry parchment delivered to Catracha Coffee.</p>
+                        <p>The producer dries the wet parchment at their mill and then sells the dry parchment to Catracha Coffee.   After the moisture is removed, the remaining weight of the seed inside the thin membrane is called dry parchment.  The producer is paid based on the weight of the dry parchment delivered to Catracha Coffee.</p>
 
                     </Col>
 
                     <Col md='12' lg='4'>
 
-                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Dry Mill</h3>
+                        <h3 style={{ 'padding-top': '0.5em' }}>Dry Mill</h3>
 
-                        <p style={{ color: 'white' }}>
+                        <p>
 
                             Location: <b> {dryMillNode ? dryMillIntakeCity + ', ' + dryMillIntakeState : `Coming Soon`}</b><br />
 
@@ -254,16 +266,16 @@ export const ProcessingExport = ({
                             </Card>
                         </Accordion>
 
-                        <p style={{ color: 'white' }}>The coffee seeds are removed from the thin membrane (parchment) and sorted to remove lower quality seeds.  After this process of dehulling and sorting, the remaining weight of the seed is called green coffee.</p>
+                        <p>The coffee seeds are removed from the thin membrane (parchment) and sorted to remove lower quality seeds.  After this process of dehulling and sorting, the remaining weight of the seed is called green coffee.</p>
 
 
                     </Col>
 
                     <Col md='12' lg='4'>
 
-                        <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Export</h3>
+                        <h3 style={{ 'padding-top': '0.5em' }}>Export</h3>
 
-                        <p style={{ color: 'white' }}>
+                        <p>
 
                             Location: <b>
                                 {exportNode ? exportNode.city : `Coming Soon`}
@@ -322,7 +334,7 @@ export const ProcessingExport = ({
                             </Card>
                         </Accordion>
 
-                        <p style={{ color: 'white' }}>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export. A container can hold up to 275 bags of green coffee.</p>
+                        <p>The green coffee is packaged in 69 kg bags and placed inside of a shipping container for export. A container can hold up to 275 bags of green coffee.</p>
 
                     </Col>
 
