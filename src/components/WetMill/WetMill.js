@@ -34,10 +34,32 @@ const WetMill = ({
 
 }) => {
 
+    let wetParchmentLots = [];
+
+    // Filtering Wet Parchment Lots
+    if (wetMillLots) {
+
+        wetParchmentLots = wetMillLots.filter(function (wetMillLot) {
+            return wetMillLot.productName === 'Wet Parchment';
+        });
+
+    }
+
+    let wetParchmentTotalWeight = 0;
+
+    if (wetParchmentLots) {
+
+        wetParchmentTotalWeight = wetParchmentLots.reduce(function (acc, obj) { return acc + parseFloat(obj.absorbedWeight); }, 0);
+
+    }
+
+    // This Splitting is no longer used
     // Filtering out the Wet Parchment lots
     let filteredWetMillLots50 = 0;
 
     let filteredWetMillLots15 = 0;
+
+
 
     if (wetMillLots) {
 
@@ -62,6 +84,8 @@ const WetMill = ({
         wetParchmentotalWeight15 = filteredWetMillLots15.reduce(function (acc, obj) { return acc + parseFloat(obj.absorbedWeight); }, 0);
 
     }
+
+    // This splitting is no longer used
 
     return (
 
@@ -94,7 +118,7 @@ const WetMill = ({
                                         Elevation: <b>{wetMillElevation} {wetMillElevationUnit}</b><br />
 
                                         {/* Total weight at 50% moisture */}
-                                        Wet Parchment Total Weight: <b>{wetParchmentotalWeight50} {wetMillLots[0].absorbedWeightUnit.endsWith('s') ? wetMillLots[0].absorbedWeightUnit : wetMillLots[0].absorbedWeightUnit + 's'}</b><br />
+                                        Wet Parchment Total Weight: <b>{wetParchmentTotalWeight} {wetMillLots[0].absorbedWeightUnit.endsWith('s') ? wetMillLots[0].absorbedWeightUnit : wetMillLots[0].absorbedWeightUnit + 's'}</b><br />
 
                                         Total number of wet parchment lots: <b>{filteredWetMillLots50.length + filteredWetMillLots15.length}</b><br />
                                     </p>
@@ -131,7 +155,7 @@ const WetMill = ({
 
                     <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="0">
-                            <button className='bttn bttn-primary'>{filteredWetMillLots50 ? `Wet Mill Lots (50% moisture)` : `Wet Mill Lots (50% moisture) Coming Soon`}</button>
+                            <button className='bttn bttn-primary'>{filteredWetMillLots50 ? `Wet Parchment Lots` : `Wet Parchment Lots Coming Soon`}</button>
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>
@@ -149,7 +173,7 @@ const WetMill = ({
                         </Accordion.Collapse>
                     </Card>
 
-                    <Card>
+                    {/* <Card>
                         <Accordion.Toggle as={Card.Header} eventKey="1">
                             <button className='bttn bttn-primary'>{filteredWetMillLots15 ? `Wet Mill Lots (15% moisture)` : `Wet Mill Lots (15% moisture) Coming Soon`}</button>
                         </Accordion.Toggle>
@@ -167,7 +191,7 @@ const WetMill = ({
 
                             </Card.Body>
                         </Accordion.Collapse>
-                    </Card>
+                    </Card> */}
                 </Accordion>
 
             </Container>
