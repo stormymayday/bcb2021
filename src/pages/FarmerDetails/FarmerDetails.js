@@ -42,7 +42,7 @@ const FarmerDetails = () => {
     // Google Analytics Page View report
     ReactGA.pageview(window.location.pathname + window.location.search);
 
-    let { name } = useParams();
+    let { name, year } = useParams();
 
     const { farmersMongoDB } = useGlobalContext();
 
@@ -54,13 +54,16 @@ const FarmerDetails = () => {
 
         if (farmersMongoDB.length > 0) {
 
-            // Filtering farmer based on farmerName
+            // Filtering farmer based on farmerName and harvestYear
             const thisFarmer = farmersMongoDB.filter(function (value) {
 
-                return value.farmerName === name && setFarmer(value);;
+                if (value.farmerName === name && value.harvestYear === year) {
+                    return value;
+                }
 
             });
 
+            setFarmer(thisFarmer[0]);
         }
 
     }, [farmersMongoDB]);
