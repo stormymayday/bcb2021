@@ -26,7 +26,8 @@ import Card from 'react-bootstrap/Card';
 import Pagination from '../../components/Pagination/Pagination';
 import paginate from '../../utils';
 
-import './Roasting.css';
+// import './Roasting.css';
+import portOakland from '../../images/QC.30-min.jpg';
 
 export const Roasting = ({
 
@@ -53,16 +54,24 @@ export const Roasting = ({
 
             <Container>
 
-                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center', 'color': 'white' }}>Roasting</h2>
-                <div className='underline' style={{ 'margin-bottom': '3em', 'background': '#fff' }}></div>
+                <h2 style={{ 'padding-bottom': '0.1em', 'text-align': 'center' }}>Roasting</h2>
+                <div className='underline' style={{ 'margin-bottom': '3em', 'background': '#000' }}></div>
 
                 <Card
                     className="text-center"
-                    border="light"
+                    border="Dark"
                     text='light'
-                    style={{ 'background-color': 'transparent', 'margin-bottom': '1rem' }}>
+                    style={{ 'background-color': 'transparent', 'margin-bottom': '1rem', 'border-color': '#000' }}
+                >
 
-                    <Card.Body>
+                    <Card.Body
+                        style={{
+                            background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${portOakland})`,
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
+                        }}
+                    >
 
                         {/* Roasters */}
 
@@ -94,7 +103,7 @@ export const Roasting = ({
                                     <Button
                                         variant="outline-light"
                                         // href={'https://queencitycollectivecoffee.com/'}
-                                        href={'https://queencitycollectivecoffee.com/products/claudia-hernandez'}
+                                        href={'https://queencitycollectivecoffee.com'}
                                         target="_blank"
                                     >
                                         <b>Shop</b>
@@ -551,7 +560,7 @@ export const Roasting = ({
                 </Card>
 
                 {/* Roaster Intake */}
-                {
+                {/* {
                     roasterIntakeNode ?
 
                         <>
@@ -560,9 +569,9 @@ export const Roasting = ({
 
                                 <Col lg='12'>
 
-                                    <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Roaster Intake</h3>
+                                    <h3 style={{ 'padding-top': '0.5em', 'color': '#000' }}>Roaster Intake</h3>
 
-                                    <p style={{ 'color': 'white' }}>
+                                    <p style={{ 'color': '#000' }}>
 
                                         Location: <b>{roasterIntakeNode.city}, {roasterIntakeNode.state}, {roasterIntakeNode.country}</b><br />
 
@@ -617,7 +626,7 @@ export const Roasting = ({
                                         </Card>
                                     </Accordion>
 
-                                    <p style={{ 'color': 'white' }}>The importer sends the bags of green coffee to the roastery where the coffee is roasted.</p>
+                                    <p style={{ 'color': '#000' }}>The importer sends the bags of green coffee to the roastery where the coffee is roasted.</p>
 
                                 </Col>
                             </Row>
@@ -628,7 +637,7 @@ export const Roasting = ({
 
                         null
 
-                }
+                } */}
 
                 {/* Roasting */}
                 {
@@ -638,9 +647,9 @@ export const Roasting = ({
 
                                 <Col lg='12'>
 
-                                    <h3 style={{ 'padding-top': '0.5em', 'color': 'white' }}>Roasting</h3>
+                                    <h3 style={{ 'padding-top': '0.5em', 'color': '#000' }}>Roasting</h3>
 
-                                    <p style={{ 'color': 'white' }}>
+                                    <p style={{ 'color': '#000' }}>
 
                                         Location: <b>{roastingNode.city}, {roastingNode.state}, {roastingNode.country}</b><br />
 

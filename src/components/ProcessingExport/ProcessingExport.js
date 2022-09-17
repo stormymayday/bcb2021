@@ -79,9 +79,11 @@ export const ProcessingExport = ({
                 <Card
 
                     className="text-center"
-                    border="light"
+                    border="Dark"
                     text='light'
-                    style={{ 'background-color': 'transparent', 'margin-bottom': '1rem' }}>
+                    style={{ 'background-color': 'transparent', 'margin-bottom': '1rem', 'border-color': '#000' }}
+
+                >
 
                     <Card.Body
 

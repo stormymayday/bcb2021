@@ -16,6 +16,7 @@ import JourneyMap from '../JourneyMap/JourneyMap';
 import Pagination from '../../components/Pagination/Pagination';
 import paginate from '../../utils';
 
+import portOakland from '../../images/ronan-furuta-daSq9zhROxY-unsplash.jpg';
 import crownJewelImage from '../../images/Crown-Jewel-Box-Cover.png';
 
 export const Import = ({
@@ -55,38 +56,41 @@ export const Import = ({
                 <Card
                     className="text-center"
                     border="Dark"
-                    text='Dark'
-                    style={{
-                        'background-color': 'transparent',
-                        'margin-bottom': '1rem',
-                        'border-color': '#000'
-                    }}
+                    text='light'
+                    style={{ 'background-color': 'transparent', 'margin-bottom': '1rem', 'border-color': '#000' }}
                 >
 
-                    <Card.Body>
+                    <Card.Body
+                        style={{
+                            background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${portOakland})`,
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
+                        }}
+                    >
                         {
-                            importNode
+                            // importNode
 
-                                ?
+                            //     ?
 
-                                <>
+                            //     <>
 
-                                    <a href="https://royalcoffee.com/" target="_blank">
+                            //         <a href="https://royalcoffee.com/" target="_blank">
 
-                                        <Card.Img
-                                            className="d-block mx-auto img-fluid w-50"
-                                            variant="top"
-                                            src={importerLogo}
-                                            style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
-                                        />
+                            //             <Card.Img
+                            //                 className="d-block mx-auto img-fluid w-50"
+                            //                 variant="top"
+                            //                 src={importerLogo}
+                            //                 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem', 'max-width': '15rem' }}
+                            //             />
 
-                                    </a>
+                            //         </a>
 
-                                </>
+                            //     </>
 
-                                :
+                            //     :
 
-                                null
+                            //     null
 
                         }
 
@@ -94,22 +98,22 @@ export const Import = ({
                         <Card.Text>
 
                             {
-                                importNode
+                                // importNode
 
-                                    ?
+                                //     ?
 
-                                    null
+                                //     null
 
-                                    :
+                                //     :
 
-                                    <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3>
+                                <h3 style={{ 'padding-top': '2rem', 'padding-bottom': '2rem' }}>Royal Coffee</h3>
 
                             }
 
                             Royal Coffee is a wholesale green coffee beans importer that is family-owned and operated since 1978.
                         </Card.Text>
                         <Button
-                            variant="outline-dark"
+                            variant="outline-light"
                             href={'https://royalcoffee.com/'}
                             target="_blank"
                         >
@@ -206,7 +210,7 @@ export const Import = ({
 
                 {/* Crown Jewel Section */}
                 {
-                    farmerName === 'Gloria'
+                    farmerName === 'null'
 
                         ?
                         <>
