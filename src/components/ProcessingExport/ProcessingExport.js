@@ -26,6 +26,7 @@ export const ProcessingExport = ({
     exporterIntakeCountry,
     exporterIntakeElevation,
     exporterIntakeElevationUnit,
+    exporterIntakeLots,
 
     dryMillNode,
     dryMillIntakeCity,

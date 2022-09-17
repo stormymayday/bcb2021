@@ -189,6 +189,8 @@ const FarmerDetails = () => {
                             exporterIntakeElevation={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.elevation : null}
                             exporterIntakeElevationUnit={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.elevationUnit : null}
 
+                            exporterIntakeLots={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.exporterIntakeLots : null}
+
                             dryMillNode={farmer.dryMillNode ? farmer.dryMillNode : null}
                             dryMillIntakeCity={farmer.dryMillNode ? farmer.dryMillNode.city : null}
                             dryMillIntakeState={farmer.dryMillNode ? farmer.dryMillNode.state : null}

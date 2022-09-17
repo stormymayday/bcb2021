@@ -133,7 +133,7 @@ const LotCard = (props) => {
                 }
                 {/* Rendering Cupping Score PDF if lotType is export */}
                 {
-                    props.lotType === 'export' && props.lot.documents
+                    props.lotType === 'export' && props.lot.documents[0]
 
                         ?
 
