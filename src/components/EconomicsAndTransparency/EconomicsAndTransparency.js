@@ -35,6 +35,8 @@ export const EconomicsAndTransparency = ({
 
     let firstPayment = 0;
 
+    let secondPayment = 0;
+
     let thirdPayment = 0;
 
     let totalRoastingCostNote = `/lb†
@@ -50,6 +52,11 @@ export const EconomicsAndTransparency = ({
         // Summarizing First Payment from the Wet Parchmenet Lots on Exporter Intake Node
         firstPayment = wetParchmentLots.reduce(function (acc, obj) { return acc + parseFloat(obj.value); }, 0);
 
+    }
+
+    // Extracting Second Payment
+    if (exportLots) {
+        secondPayment = exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : 'N/A';
     }
 
     // Calculating Third Payment
@@ -81,11 +88,20 @@ export const EconomicsAndTransparency = ({
                                 {/* {firstPayment} {wetParchmentLots[0].asset} */}
 
                             </b><br />
-                            Second Payment: <b>{exportLots ? exportLots[0].secondPaymentValue + ' ' + exportLots[0].secondPaymentAsset : `Coming Soon`}
+                            {
+                                (secondPayment && secondPayment !== 'N/A')
 
-                                {/* {exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : "N/A"} {exportLots[0].secondPaymentAsset ? exportLots[0].secondPaymentAsset : ""} */}
+                                    ?
 
-                            </b><br />
+                                    <span>Second Payment: <b>{exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue + ' ' + exportLots[0].secondPaymentAsset : `Coming Soon`}
+                                    </b><br />
+                                    </span>
+
+                                    :
+
+                                    null
+                            }
+
                             Payment to Spouse: <b>{exportLots ? exportLots[0].spousePaymentValue + ' ' + exportLots[0].spousePaymentAsset : `Coming Soon`}
                                 {/* {exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : "N/A"} {exportLots[0].spousePaymentAsset ? exportLots[0].spousePaymentAsset : ""} */}
                             </b><br />
