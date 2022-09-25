@@ -75,7 +75,8 @@ export const EconomicsAndTransparency = ({
                         <h3 style={{ 'padding-bottom': '0.5em' }}>{farmerName ? farmerName : `Farmer`}</h3>
 
                         <p>
-                            Paid for Parchment: <b>{firstPayment ? firstPayment + ' ' + wetParchmentLots[0].asset : `Coming Soon`}
+                            {/* Converting First Payment to USD by dividing it by 24.6 */}
+                            Paid for Parchment: <b>{firstPayment ? Math.round(firstPayment / 24.6) + ` USD` : `Coming Soon`}
 
                                 {/* {firstPayment} {wetParchmentLots[0].asset} */}
 
