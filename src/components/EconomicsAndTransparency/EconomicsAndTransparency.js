@@ -37,6 +37,8 @@ export const EconomicsAndTransparency = ({
 
     let secondPayment = 0;
 
+    let spousePayment = 0;
+
     let thirdPayment = 0;
 
     let totalRoastingCostNote = `/lb†
@@ -57,6 +59,11 @@ export const EconomicsAndTransparency = ({
     // Extracting Second Payment
     if (exportLots) {
         secondPayment = exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : 'N/A';
+    }
+
+    // Extracting Payment to Spuse
+    if (exportLots) {
+        spousePayment = exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : 'N/A';
     }
 
     // Calculating Third Payment
@@ -102,9 +109,22 @@ export const EconomicsAndTransparency = ({
                                     null
                             }
 
-                            Payment to Spouse: <b>{exportLots ? exportLots[0].spousePaymentValue + ' ' + exportLots[0].spousePaymentAsset : `Coming Soon`}
-                                {/* {exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : "N/A"} {exportLots[0].spousePaymentAsset ? exportLots[0].spousePaymentAsset : ""} */}
-                            </b><br />
+                            {
+
+                                (spousePayment && spousePayment !== 'N/A')
+
+                                    ?
+
+                                    <span>Payment to Spouse: <b>{exportLots ? exportLots[0].spousePaymentValue + ' ' + exportLots[0].spousePaymentAsset : `Coming Soon`}
+                                    </b><br />
+                                    </span>
+
+                                    :
+
+                                    null
+
+                            }
+
                             IHCAFE Payment: <b>{exportLots ? exportLots[0].ihcafePaymentValue + ' ' + exportLots[0].ihcafePaymentAsset : `Coming Soon`}
                                 {/* {exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : "N/A"} {exportLots[0].ihcafePaymentAsset ? exportLots[0].ihcafePaymentAsset : ""} */}
                             </b><br />
