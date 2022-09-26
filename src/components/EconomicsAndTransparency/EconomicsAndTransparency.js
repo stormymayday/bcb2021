@@ -42,6 +42,7 @@ export const EconomicsAndTransparency = ({
     let catrachaCommunityFOB = 0;
     let catrachaFOBPerPound = 0;
 
+
     let totalRoastingCostNote = `/lb†
     † cost prior to packaging & distribution`;
 
@@ -240,7 +241,7 @@ export const EconomicsAndTransparency = ({
                     </Col>
 
                     {
-                        roasterIntakeLots
+                        roasterIntakeLots[0]
 
                             ?
 
