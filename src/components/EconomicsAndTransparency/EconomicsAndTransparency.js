@@ -1,5 +1,6 @@
 // EconomicsAndTransparency
 import React from 'react';
+import { useState } from "react";
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -30,7 +31,6 @@ export const EconomicsAndTransparency = ({
 
 }) => {
 
-
     let wetParchmentLots = 0;
     let firstPayment = 0;
     let secondPayment = 0;
@@ -41,7 +41,6 @@ export const EconomicsAndTransparency = ({
     let catrachaFOBPremium = 0;
     let catrachaCommunityFOB = 0;
     let catrachaFOBPerPound = 0;
-
 
     let totalRoastingCostNote = `/lb†
     † cost prior to packaging & distribution`;
@@ -241,7 +240,7 @@ export const EconomicsAndTransparency = ({
                     </Col>
 
                     {
-                        roasterIntakeLots[0]
+                        roasterIntakeLots
 
                             ?
 
