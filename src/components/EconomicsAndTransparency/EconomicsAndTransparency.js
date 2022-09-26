@@ -32,16 +32,12 @@ export const EconomicsAndTransparency = ({
 
 
     let wetParchmentLots = 0;
-
     let firstPayment = 0;
-
     let secondPayment = 0;
-
     let spousePayment = 0;
-
     let ihcafePayment = 0;
-
     let thirdPayment = 0;
+    let catrachaFOBPrice = 0;
 
     let totalRoastingCostNote = `/lb†
     † cost prior to packaging & distribution`;
@@ -69,6 +65,14 @@ export const EconomicsAndTransparency = ({
 
         // Extracting IHCAFE Payment
         ihcafePayment = exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : 'N/A';
+
+    }
+
+    if (importLots) {
+
+        // Extracting Catracha FOB Base value (FOB Price)
+        catrachaFOBPrice = importLots[0].fobBasePaymentValue ? importLots[0].fobBasePaymentValue : 'N/A';
+
 
     }
 
@@ -160,7 +164,19 @@ export const EconomicsAndTransparency = ({
                         <h3 style={{ 'padding-bottom': '0.5em' }}>Catracha Coffee</h3>
 
                         <p>
-                            FOB Base: <b>{importLots ? importLots[0].fobBasePaymentValue + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
+                            {
+                                (catrachaFOBPrice && catrachaFOBPrice !== 'N/A')
+
+                                    ?
+
+                                    <span>FOB Price: <b>{importLots ? importLots[0].fobBasePaymentValue + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}
+                                    </b><br />
+                                    </span>
+
+                                    :
+
+                                    null
+                            }
 
                             FOB Premium: <b>{importLots ? importLots[0].fobPremiumPaymentValue + ' ' + importLots[0].fobPremiumPaymentAsset : `Coming Soon`}</b><br />
 
