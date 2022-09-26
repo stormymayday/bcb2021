@@ -40,6 +40,7 @@ export const EconomicsAndTransparency = ({
     let catrachaFOBPrice = 0;
     let catrachaFOBPremium = 0;
     let catrachaCommunityFOB = 0;
+    let catrachaFOBPerPound = 0;
 
     let totalRoastingCostNote = `/lb†
     † cost prior to packaging & distribution`;
@@ -73,13 +74,19 @@ export const EconomicsAndTransparency = ({
     if (importLots) {
 
         // Extracting Catracha FOB Base value (FOB Price)
-        catrachaFOBPrice = importLots[0].fobBasePaymentValue ? importLots[0].fobBasePaymentValue : 'N/A';
+        catrachaFOBPrice = importLots[0].fobBasePaymentValue ? importLots[0].fobBasePaymentValue : 0;
 
         // Extracting Catracha FOB Premium value
-        catrachaFOBPremium = importLots[0].fobPremiumPaymentValue ? importLots[0].fobPremiumPaymentValue : 'N/A';
+        catrachaFOBPremium = importLots[0].fobPremiumPaymentValue ? importLots[0].fobPremiumPaymentValue : 0;
 
         // Extracting Catracha FOB Premium value
-        catrachaCommunityFOB = importLots[0].catrachaCommunityContributionPaymentValue ? importLots[0].catrachaCommunityContributionPaymentValue : 'N/A';
+        catrachaCommunityFOB = importLots[0].catrachaCommunityContributionPaymentValue ? importLots[0].catrachaCommunityContributionPaymentValue : 0;
+
+        // Calculating Catracha FOB Total per pound
+        if (catrachaFOBPrice) {
+            catrachaFOBPerPound = ((parseFloat(catrachaFOBPrice) + parseFloat(catrachaFOBPremium) + parseFloat(catrachaCommunityFOB)) / parseFloat(importLots[0].absorbedWeight)).toFixed(2);
+        }
+
 
 
     }
@@ -214,7 +221,20 @@ export const EconomicsAndTransparency = ({
                                     null
                             }
 
-                            FOB Total Per Pound: <b>{importLots ? ((parseFloat(importLots[0].fobBasePaymentValue) + parseFloat(importLots[0].fobPremiumPaymentValue) + parseFloat(importLots[0].catrachaCommunityContributionPaymentValue)) / parseFloat(importLots[0].absorbedWeight)).toFixed(2) + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
+                            {
+                                catrachaFOBPerPound
+
+                                    ?
+
+                                    <span>FOB Total Per Pound: <b>{`${catrachaFOBPerPound} USD`}
+                                    </b><br />
+                                    </span>
+
+                                    :
+
+                                    null
+                            }
+
                         </p>
 
                     </Col>
