@@ -39,6 +39,7 @@ export const EconomicsAndTransparency = ({
     let thirdPayment = 0;
     let catrachaFOBPrice = 0;
     let catrachaFOBPremium = 0;
+    let catrachaCommunityFOB = 0;
 
     let totalRoastingCostNote = `/lb†
     † cost prior to packaging & distribution`;
@@ -74,8 +75,11 @@ export const EconomicsAndTransparency = ({
         // Extracting Catracha FOB Base value (FOB Price)
         catrachaFOBPrice = importLots[0].fobBasePaymentValue ? importLots[0].fobBasePaymentValue : 'N/A';
 
-        // Extracting Catracha FOB Base value (FOB Price)
+        // Extracting Catracha FOB Premium value
         catrachaFOBPremium = importLots[0].fobPremiumPaymentValue ? importLots[0].fobPremiumPaymentValue : 'N/A';
+
+        // Extracting Catracha FOB Premium value
+        catrachaCommunityFOB = importLots[0].catrachaCommunityContributionPaymentValue ? importLots[0].catrachaCommunityContributionPaymentValue : 'N/A';
 
 
     }
@@ -196,7 +200,19 @@ export const EconomicsAndTransparency = ({
                                     null
                             }
 
-                            FOB Catracha Community: <b>{importLots ? importLots[0].catrachaCommunityContributionPaymentValue + ' ' + importLots[0].catrachaCommunityContributionPaymentAsset : `Coming Soon`}</b><br />
+                            {
+                                (catrachaCommunityFOB && catrachaCommunityFOB !== 'N/A')
+
+                                    ?
+
+                                    <span>FOB Catracha Community: <b>{importLots ? importLots[0].catrachaCommunityContributionPaymentValue + ' ' + importLots[0].catrachaCommunityContributionPaymentAsset : `Coming Soon`}
+                                    </b><br />
+                                    </span>
+
+                                    :
+
+                                    null
+                            }
 
                             FOB Total Per Pound: <b>{importLots ? ((parseFloat(importLots[0].fobBasePaymentValue) + parseFloat(importLots[0].fobPremiumPaymentValue) + parseFloat(importLots[0].catrachaCommunityContributionPaymentValue)) / parseFloat(importLots[0].absorbedWeight)).toFixed(2) + ' ' + importLots[0].fobBasePaymentAsset : `Coming Soon`}</b><br />
                         </p>
