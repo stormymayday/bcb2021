@@ -39,6 +39,8 @@ export const EconomicsAndTransparency = ({
 
     let spousePayment = 0;
 
+    let ihcafePayment = 0;
+
     let thirdPayment = 0;
 
     let totalRoastingCostNote = `/lb†
@@ -56,15 +58,20 @@ export const EconomicsAndTransparency = ({
 
     }
 
-    // Extracting Second Payment
+
     if (exportLots) {
+
+        // Extracting Second Payment
         secondPayment = exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : 'N/A';
+
+        // Extracting Payment to Spuse
+        spousePayment = exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : 'N/A';
+
+        // Extracting IHCAFE Payment
+        ihcafePayment = exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : 'N/A';
+
     }
 
-    // Extracting Payment to Spuse
-    if (exportLots) {
-        spousePayment = exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : 'N/A';
-    }
 
     // Calculating Third Payment
     if (finishedProductLots) {
@@ -125,9 +132,22 @@ export const EconomicsAndTransparency = ({
 
                             }
 
-                            IHCAFE Payment: <b>{exportLots ? exportLots[0].ihcafePaymentValue + ' ' + exportLots[0].ihcafePaymentAsset : `Coming Soon`}
-                                {/* {exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : "N/A"} {exportLots[0].ihcafePaymentAsset ? exportLots[0].ihcafePaymentAsset : ""} */}
-                            </b><br />
+                            {
+
+                                (ihcafePayment && ihcafePayment !== 'N/A')
+
+                                    ?
+
+                                    <span>IHCAFE Payment: <b>{exportLots ? exportLots[0].ihcafePaymentValue + ' ' + exportLots[0].ihcafePaymentAsset : `Coming Soon`}
+                                    </b><br />
+                                    </span>
+
+                                    :
+
+                                    null
+
+                            }
+
                             Third Payment: <b>{thirdPayment ? thirdPayment + ' ' + finishedProductLots[0].thirdPaymentAsset : `Coming Soon`}
                             </b>
 
