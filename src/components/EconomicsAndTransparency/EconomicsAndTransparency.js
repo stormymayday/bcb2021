@@ -38,6 +38,7 @@ export const EconomicsAndTransparency = ({
     let ihcafePayment = 0;
     let thirdPayment = 0;
     let catrachaFOBPrice = 0;
+    let catrachaFOBPremium = 0;
 
     let totalRoastingCostNote = `/lb†
     † cost prior to packaging & distribution`;
@@ -60,7 +61,7 @@ export const EconomicsAndTransparency = ({
         // Extracting Second Payment
         secondPayment = exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : 'N/A';
 
-        // Extracting Payment to Spuse
+        // Extracting Payment to Spouse
         spousePayment = exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : 'N/A';
 
         // Extracting IHCAFE Payment
@@ -72,6 +73,9 @@ export const EconomicsAndTransparency = ({
 
         // Extracting Catracha FOB Base value (FOB Price)
         catrachaFOBPrice = importLots[0].fobBasePaymentValue ? importLots[0].fobBasePaymentValue : 'N/A';
+
+        // Extracting Catracha FOB Base value (FOB Price)
+        catrachaFOBPremium = importLots[0].fobPremiumPaymentValue ? importLots[0].fobPremiumPaymentValue : 'N/A';
 
 
     }
@@ -178,7 +182,19 @@ export const EconomicsAndTransparency = ({
                                     null
                             }
 
-                            FOB Premium: <b>{importLots ? importLots[0].fobPremiumPaymentValue + ' ' + importLots[0].fobPremiumPaymentAsset : `Coming Soon`}</b><br />
+                            {
+                                (catrachaFOBPremium && catrachaFOBPremium !== 'N/A')
+
+                                    ?
+
+                                    <span>FOB Premium: <b>{importLots ? importLots[0].fobPremiumPaymentValue + ' ' + importLots[0].fobPremiumPaymentAsset : `Coming Soon`}
+                                    </b><br />
+                                    </span>
+
+                                    :
+
+                                    null
+                            }
 
                             FOB Catracha Community: <b>{importLots ? importLots[0].catrachaCommunityContributionPaymentValue + ' ' + importLots[0].catrachaCommunityContributionPaymentAsset : `Coming Soon`}</b><br />
 
