@@ -20,7 +20,10 @@ import paginate from '../../utils';
 
 export const EconomicsAndTransparency = ({
 
+
+
     farmerName,
+    harvestYear,
     exporterIntakeLots,
     exportLots,
     importLots,
@@ -36,7 +39,11 @@ export const EconomicsAndTransparency = ({
     let secondPayment = 0;
     let spousePayment = 0;
     let ihcafePayment = 0;
+
     let thirdPayment = 0;
+
+    let totalPerPound = 0;
+
     let catrachaFOBPrice = 0;
     let catrachaFOBPremium = 0;
     let catrachaCommunityFOB = 0;
@@ -53,7 +60,7 @@ export const EconomicsAndTransparency = ({
         });
 
         // Summarizing First Payment from the Wet Parchmenet Lots on Exporter Intake Node
-        firstPayment = wetParchmentLots.reduce(function (acc, obj) { return acc + parseFloat(obj.value); }, 0);
+        firstPayment = Math.round(wetParchmentLots.reduce(function (acc, obj) { return acc + parseFloat(obj.value); }, 0) / 24.6);
 
     }
 
@@ -61,13 +68,16 @@ export const EconomicsAndTransparency = ({
     if (exportLots) {
 
         // Extracting Second Payment
-        secondPayment = exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : 'N/A';
+        secondPayment = exportLots[0].secondPaymentValue ? exportLots[0].secondPaymentValue : 0;
 
         // Extracting Payment to Spouse
-        spousePayment = exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : 'N/A';
+        spousePayment = exportLots[0].spousePaymentValue ? exportLots[0].spousePaymentValue : 0;
 
         // Extracting IHCAFE Payment
-        ihcafePayment = exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : 'N/A';
+        ihcafePayment = exportLots[0].ihcafePaymentValue ? exportLots[0].ihcafePaymentValue : 0;
+
+        // Calculating Total per pound
+        totalPerPound = ((parseFloat(firstPayment) + parseFloat(secondPayment) + parseFloat(spousePayment) + parseFloat(ihcafePayment) + parseFloat(thirdPayment)) / parseFloat(exportLots[0].absorbedWeight)).toFixed(2);
 
     }
 
@@ -116,7 +126,7 @@ export const EconomicsAndTransparency = ({
 
                         <p>
                             {/* Converting First Payment to USD by dividing it by 24.6 */}
-                            Paid for Parchment: <b>{firstPayment ? Math.round(firstPayment / 24.6) + ` USD` : `Coming Soon`}
+                            Paid for Parchment: <b>{firstPayment ? firstPayment + ` USD` : `Coming Soon`}
 
                                 {/* {firstPayment} {wetParchmentLots[0].asset} */}
 
@@ -167,8 +177,23 @@ export const EconomicsAndTransparency = ({
 
                             }
 
-                            Third Payment: <b>{thirdPayment ? thirdPayment + ' ' + finishedProductLots[0].thirdPaymentAsset : `Coming Soon`}
-                            </b>
+                            Third Payment: <b>{thirdPayment ? thirdPayment + ' ' + finishedProductLots[0].thirdPaymentAsset : `Coming Soon`} </b><br />
+
+                            {
+
+                                (totalPerPound && harvestYear !== '2021')
+
+                                    ?
+
+                                    <span>Payment Per Pound Exported: <b>{`${totalPerPound} USD`}
+                                    </b><br />
+                                    </span>
+
+                                    :
+
+                                    null
+
+                            }
 
                         </p>
 
@@ -427,7 +452,7 @@ export const EconomicsAndTransparency = ({
 
             </Container>
 
-        </div>
+        </div >
 
     );
 }

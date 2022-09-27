@@ -267,6 +267,7 @@ const FarmerDetails = () => {
                         <Economics
 
                             farmerName={farmer.farmerName}
+                            harvestYear={farmer.harvestYear}
                             exporterIntakeLots={farmer.exporterIntakeNode ? farmer.exporterIntakeNode.exporterIntakeLots : null}
 
                             // exportLots={farmer.exporterIntakeNode ? farmer.exportNode.exportLots : null}
