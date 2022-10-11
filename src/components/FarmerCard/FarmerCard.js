@@ -39,16 +39,20 @@ export const FarmerCard = (props) => {
 
                     <article className='cocktail'>
                         <div className='img-contaienr'>
-                            <img alt={props.farmer.farmerName}
+                            <img
+                                alt={props.farmer.farmerName}
+                                // alt={props.farmer.id}
 
                                 src={props.farmer.harvestNode ? props.farmer.harvestNode.images[0] : defaultPicture}
                             />
                         </div>
                         <div className='cocktail-footer'>
                             <h3>{props.farmer.farmerName}</h3>
+                            {/* <h3>{props.farmer._id}</h3> */}
                             <Link
                                 onClick={googleAnalyicsEvent}
-                                to={`/${props.farmer.harvestYear}/${props.farmer.farmerName}`}
+                                // to={`/${props.farmer.harvestYear}/${props.farmer.farmerName}`}
+                                to={`/${props.farmer.harvestYear}/${props.farmer._id}`}
                                 className="bttn bttn-primary bttn-details"
                                 style={{ 'text-decoration': 'none' }}
                             >

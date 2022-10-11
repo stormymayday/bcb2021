@@ -68,9 +68,14 @@ const App = () => {
           <FarmersPage2022 />
         </Route>
 
-        <Route exact path="/:year/:name">
+        {/* <Route exact path="/:year/:name">
+          <FarmerDetails />
+        </Route> */}
+
+        <Route exact path="/:year/:id">
           <FarmerDetails />
         </Route>
+
         <Route path="*">
           <Error />
         </Route>
