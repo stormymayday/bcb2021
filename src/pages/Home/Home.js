@@ -315,7 +315,7 @@ export const Home = () => {
                                             <p>He earned an extra $958 by working with Old Soul Co. and Catracha Coffee, increasing their revenue by 26%</p>
                                             <Link
                                                 onClick={googleAnalyicsEvent}
-                                                to={`/farmer-2021/Luis`}
+                                                to={`/2021/613a9694e697483d168be5d4`}
                                                 className="bttn bttn-primary bttn-details"
                                                 style={{ 'text-decoration': 'none' }}
                                             >
