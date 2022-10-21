@@ -291,7 +291,7 @@ export const Home = () => {
                                             <p>They earned an extra $974 by working with Queen City Collective Coffee and Catracha Coffee, increasing their revenue by 28%</p>
                                             <Link
                                                 onClick={googleAnalyicsEvent}
-                                                to={`/farmer-2021/Claudia%20&%20Juan`}
+                                                to={`/2021/60eb7fe31bc2c19311e8419f`}
                                                 className="bttn bttn-primary bttn-details"
                                                 style={{ 'text-decoration': 'none' }}
                                             >
