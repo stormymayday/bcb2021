@@ -36,6 +36,7 @@ const AppProvider = ({ children }) => {
         query: `
 
         query {
+            
             farmers {
 
                 _id
