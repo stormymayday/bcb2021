@@ -1157,7 +1157,7 @@ const AppProvider = ({ children }) => {
     ]);
 
     useEffect(() => {
-
+        // Switch to Heroku
         fetch(`${process.env.REACT_APP_GRAPHQL_URL}`, {
             method: 'POST',
             body: JSON.stringify(requestBody),
